@@ -12,6 +12,7 @@ public class ToggleCanvasDisplayAction : Action
     private void Start()
     {
         canvasGroup = GetComponent<CanvasGroup>();
+        Hide();
     }
 
     public override void Act()
