@@ -6,12 +6,12 @@ public class Movement : MonoBehaviour
 {
     public float Speed;
 
-    public Rigidbody2D rb;
+    private Rigidbody2D rb;
     // private Animator animator;
 
     void Start()
     {
-        rb = this.GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
         //animator = this.GetComponent<Animator>();
     }
 
