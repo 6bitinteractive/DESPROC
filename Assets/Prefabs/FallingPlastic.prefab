@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114802341443213930}
   - component: {fileID: 50626729013393270}
   - component: {fileID: 61784941575470050}
+  - component: {fileID: 114066218682282850}
   m_Layer: 0
   m_Name: FallingPlastic
   m_TagString: Untagged
@@ -89,6 +90,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.38166666, y: 0.52666664}
   m_EdgeRadius: 0
+--- !u!114 &114066218682282850
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1146301481400082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30b82150402bdd8449ea402a3818d6f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Collected: 0
+  Duration: 0
+  BuffValue: 5
 --- !u!114 &114560177819896800
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -111,7 +126,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94ce1c0c066bbaa408d3174a3032493e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: -1
+  xSpeed: 0
+  ySpeed: 3
 --- !u!212 &212393479532453306
 SpriteRenderer:
   m_ObjectHideFlags: 1

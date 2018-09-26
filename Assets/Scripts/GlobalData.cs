@@ -5,8 +5,8 @@ public class GlobalData : MonoBehaviour
 {
     public static GlobalData Instance { get; private set; }
 
-    public float Tortpoints = 0;
     public float Tortgold = 0;
+    public float Tortpoints = 0;
 
     void Awake()
     {

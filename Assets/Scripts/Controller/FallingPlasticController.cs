@@ -11,7 +11,7 @@ public class FallingPlasticController : MonoBehaviour
     void Start()
     {
         movement = GetComponent<Movement>();
-        movement.Speed = Random.Range(1, 5); // Randomizes speed
+        movement.xSpeed = Random.Range(1, 5); // Randomizes speed
         transform.localScale = Vector3.one * Random.Range(1, 3);
     }
 
