@@ -24,15 +24,7 @@ public class UpgradeManager : MonoBehaviour
     
     public void UpgradPickupSpeed()
     {
-        /*
-        if (GlobalData.Instance.Tortgold <= 0)
-        {
-            return;
-        }
-
-        GlobalData.Instance.MovementSpeed = Mathf.Round(GlobalData.Instance.MovementSpeed + 1);
-        GlobalData.Instance.Tortgold -= UpgradeCost;
-        */
+       
     }
     
 

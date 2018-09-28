@@ -5,6 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class SceneHandler : MonoBehaviour
 {
+    public bool LoadPersistentData;
+
+    void Start()
+    {
+        if (LoadPersistentData)
+        {
+            SceneManager.LoadScene("PersistentData", LoadSceneMode.Additive);
+        }
+    }
+
     public void ExitScene()
     {
         Application.Quit();
@@ -13,10 +23,5 @@ public class SceneHandler : MonoBehaviour
     public void LoadScene(string NextScene)
     {
         SceneManager.LoadScene(NextScene);
-    }
-
-    public void LoadPersistentData()
-    {
-        SceneManager.LoadScene("PersistentData", LoadSceneMode.Additive);
     }
 }

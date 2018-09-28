@@ -10,6 +10,11 @@ public class Countdown : MonoBehaviour
     public float CountdownValue;
     public Text CountdownText;
 
+    void Awake()
+    {
+        CountdownValue = CountdownValue + (CountdownValue * GlobalData.Instance.Clock); // Add percentage
+    }
+
     void Start()
     {
         StartCoroutine(StartCountdown());
@@ -34,6 +39,6 @@ public class Countdown : MonoBehaviour
 
     void OnCountdownEnd()
     {
-        SceneHandler.LoadScene(NextScene);
+      SceneHandler.LoadScene(NextScene);
     }
 }
