@@ -113,6 +113,46 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &12290665
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 12290666}
+  - component: {fileID: 12290667}
+  m_Layer: 0
+  m_Name: Scene Handler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &12290666
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 12290665}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 822735563}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &12290667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 12290665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23d3874e5cc2b1b458bc486cdd84738c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &256642577
 GameObject:
   m_ObjectHideFlags: 0
@@ -518,6 +558,7 @@ Transform:
   m_Children:
   - {fileID: 2088547806}
   - {fileID: 1797090606}
+  - {fileID: 12290666}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -878,7 +919,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebd2ea738a8bcd34b8a33f48d150f8f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CountdownValue: 60
+  SceneHandler: {fileID: 12290667}
+  NextScene: UpgradeScreen
+  CountdownValue: 30
   CountdownText: {fileID: 298793219}
 --- !u!1 &2012596822
 GameObject:
@@ -951,8 +994,8 @@ MonoBehaviour:
   - {fileID: 520807907}
   - {fileID: 568925822}
   - {fileID: 2132574758}
-  MinimumSpawnRate: 0
-  MaximumSpawnRate: 5
+  MinimumSpawnRate: 1
+  MaximumSpawnRate: 1
   NumberOfObjects: 10
 --- !u!4 &2088547806
 Transform:

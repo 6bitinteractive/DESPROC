@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Score : MonoBehaviour
 {
     public Text TortpointsText;
-    public Text TortGoldText;
+    public Text TortgoldText;
     public bool isInWorldMap = false;
 
     void Update()
@@ -26,6 +26,6 @@ public class Score : MonoBehaviour
     public void DisplayScore()
     {
         TortpointsText.text = GlobalData.Instance.Tortpoints.ToString();
-        TortGoldText.text = GlobalData.Instance.Tortgold.ToString();
+        TortgoldText.text = GlobalData.Instance.Tortgold.ToString();
     }
 }

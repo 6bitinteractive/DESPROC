@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class Countdown : MonoBehaviour
 {
+    public SceneHandler SceneHandler;
+    public string NextScene;
     public float CountdownValue;
     public Text CountdownText;
 
@@ -30,9 +32,8 @@ public class Countdown : MonoBehaviour
         }
     }
 
-
     void OnCountdownEnd()
     {
-        Debug.Log("Countdown Ended");
+        SceneHandler.LoadScene(NextScene);
     }
 }
