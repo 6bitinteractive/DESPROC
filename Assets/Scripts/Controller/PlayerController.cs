@@ -8,12 +8,20 @@ public class PlayerController : MonoBehaviour
     Direction direction;
     public PlayerChildCollision Body;
 
-
     // Use this for initialization
     void Start()
     {
         movement = GetComponent<Movement>();
         direction = GetComponent<Direction>();
+
+        SetGlobalData();
+    }
+
+    // Set the player's stats based on the Global Data
+    public void SetGlobalData()
+    {
+        movement.xSpeed = GlobalData.Instance.MovementSpeed;
+        movement.ySpeed = GlobalData.Instance.MovementSpeed;
     }
 
     // Update is called once per frame
@@ -44,5 +52,7 @@ public class PlayerController : MonoBehaviour
         }
         */
     }
+
+
 }
 

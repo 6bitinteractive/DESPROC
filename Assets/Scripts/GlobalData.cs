@@ -7,6 +7,8 @@ public class GlobalData : MonoBehaviour
 
     public float Tortgold = 0;
     public float Tortpoints = 0;
+    public float MovementSpeed = 0;
+    public float PickupSpeed = 0;
 
     void Awake()
     {
