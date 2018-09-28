@@ -5,14 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class SceneHandler : MonoBehaviour
 {
-    public string NextScene;
 
     public void ExitScene()
     {
         Application.Quit();
     }
 
-    public void LoadScene()
+    public void LoadScene(string NextScene)
     {
         SceneManager.LoadScene(NextScene);
         SceneManager.LoadSceneAsync("PersistentData", LoadSceneMode.Additive);
