@@ -7,11 +7,11 @@ public class Score : MonoBehaviour
 {
     public Text TortpointsText;
     public Text TortgoldText;
-    public bool isInWorldMap = false;
+    public bool ShowScore = false;
 
     void Update()
     {
-        if (isInWorldMap)
+        if (ShowScore)
         {
             DisplayScore();
         }
@@ -19,8 +19,8 @@ public class Score : MonoBehaviour
 
     public void EarnScore(float scoreValue)
     {
-        GlobalData.Instance.Tortpoints += scoreValue;
-        GlobalData.Instance.Tortgold += scoreValue;
+        GlobalData.Instance.Tortpoints += scoreValue + (scoreValue * GlobalData.Instance.Luck);
+        GlobalData.Instance.Tortgold += scoreValue + (scoreValue * GlobalData.Instance.Luck);
     }
 
     public void DisplayScore()

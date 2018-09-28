@@ -12,7 +12,7 @@ public class Countdown : MonoBehaviour
 
     void Awake()
     {
-        CountdownValue = CountdownValue + (CountdownValue * GlobalData.Instance.Clock); // Add percentage
+        CountdownValue += (CountdownValue * GlobalData.Instance.Clock);
     }
 
     void Start()
