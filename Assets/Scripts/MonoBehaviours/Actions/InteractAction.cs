@@ -9,7 +9,11 @@ public class InteractAction : Action
         if (target == null)
             return;
 
-        if (target.GetComponent<TurtleInteractable>() != null)
-            Debug.Log("Hello, turtle-san.");
+        TurtleInteractable turtle = target.GetComponent<TurtleInteractable>();
+        if (turtle != null)
+        {
+            turtle.Save();
+        }
+
     }
 }
