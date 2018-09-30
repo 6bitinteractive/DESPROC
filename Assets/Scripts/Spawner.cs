@@ -14,12 +14,12 @@ public class Spawner : MonoBehaviour
     private int spawnLocationIndex;
 
     // Use this for initialization
-    void Start ()
+    void Start()
     {
         SetObjects();
         StartCoroutine(SpawnRandomObjects());
-	}
-	
+    }
+
     void SetObjects()
     {
         index = 0;
@@ -52,7 +52,7 @@ public class Spawner : MonoBehaviour
         {
             PooledObjectList[i].transform.position = SpawnLocations[spawnLocationIndex].position; // Sets spawn location back to originanl position
             PooledObjectList[i].SetActive(true); // Activate the pooled object
-            
+
         }
         StartCoroutine(SpawnRandomObjects()); // Restart the process
     }

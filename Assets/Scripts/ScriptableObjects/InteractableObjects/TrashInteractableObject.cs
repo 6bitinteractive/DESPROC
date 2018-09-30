@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "InteractableObjects/Trash", fileName = "Trash")]
+[CreateAssetMenu(menuName = "Main/InteractableObjects/Trash", fileName = "Trash")]
 public class TrashInteractableObject : InteractableObject
 {
 

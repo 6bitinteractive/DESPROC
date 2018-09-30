@@ -5,7 +5,7 @@ using UnityEngine;
 public class Boundary : MonoBehaviour
 {
     void OnTriggerEnter2D(Collider2D collider)
-    {      
+    {
         collider.gameObject.SetActive(false);
     }
 }
