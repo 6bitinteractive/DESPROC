@@ -22,8 +22,8 @@ public class Countdown : MonoBehaviour
 
     void Update()
     {
-        CountdownText.text = CountdownValue.ToString(); // Display countdown
-
+        CountdownText.text = Mathf.Floor(CountdownValue / 60).ToString("00") + ":" + Mathf.FloorToInt(CountdownValue % 60).ToString("00"); // Display countdown
+                                                                                                                                      
         if (CountdownValue <= 0) OnCountdownEnd(); // If countdown ended call onCountdownEnd function
 
     }
