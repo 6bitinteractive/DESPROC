@@ -1,10 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+
+// TODO: Separate TrashPickup and EmptyBin actions; inherit from InventoryAction?
 
 public class InventoryAction : Action
 {
     public Inventory Inventory;
+    public UnityEvent OnTrashPickup = new UnityEvent();
+    public UnityEvent OnEmptyBin = new UnityEvent();
 
     public override void Act()
     {
@@ -15,10 +20,12 @@ public class InventoryAction : Action
         if (interactableObj != null)
         {
             AddToInventory(interactableObj);
+            OnTrashPickup.Invoke();
         }
         else if (target.GetComponent<Bin>() != null)
         {
             Inventory.Empty();
+            OnEmptyBin.Invoke();
             Debug.Log("Empty bin.");
         }
     }

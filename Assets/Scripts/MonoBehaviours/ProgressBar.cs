@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class ProgressBar : MonoBehaviour
 {
     public Image ProgressBarFill;
     public Text ProgressBarText;
+    public UnityEvent OnSavedEnoughTurtles = new UnityEvent();
 
     private int total;
     private int saved = 0;
@@ -32,5 +34,8 @@ public class ProgressBar : MonoBehaviour
 
         ProgressBarFill.fillAmount = percentage;
         ProgressBarText.text = string.Format("Turtles Saved: {0} %", Mathf.RoundToInt(percentage * 100f));
+
+        if (saved >= total * GameState.MinTurtlesToSavePercentage )
+            OnSavedEnoughTurtles.Invoke();
     }
 }

@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Inventory : MonoBehaviour
 {
+    public UnityEvent OnInventoryFull = new UnityEvent();
+
     [SerializeField] private GameObject gridContainer;
     private InventorySlot[] inventorySlots;
     private int currentEmptySlot = 0;
@@ -32,6 +35,11 @@ public class Inventory : MonoBehaviour
             // Move to next empty slot
             currentEmptySlot++;
             currentEmptySlot %= slotCount; // Avoid index going out of range
+        }
+        else
+        {
+            OnInventoryFull.Invoke();
+            Debug.Log("Inventory is full.");
         }
     }
 
