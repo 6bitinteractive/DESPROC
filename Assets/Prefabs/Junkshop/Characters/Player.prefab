@@ -58,7 +58,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1850680461205014}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.64, y: -0.27, z: 0}
+  m_LocalPosition: {x: 1.83, y: -0.86, z: 0}
   m_LocalScale: {x: -1.146, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4730961827658492}
@@ -110,18 +110,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.9345442, y: -0.8831948}
+  m_Offset: {x: 2.1486325, y: -1.5254575}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.03, y: 3.93}
+    oldSize: {x: 2.41, y: 4.55}
     newSize: {x: 3.03, y: 3.93}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.89273953, y: 1.1731157}
+  m_Size: {x: 1.0873654, y: 0.9784887}
   m_EdgeRadius: 0
 --- !u!95 &95947168344395538
 Animator:
@@ -201,9 +201,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36bf66944b10eba4b9e58083b9d2fc1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Tortpoints: {fileID: 0}
-  Tortgold: {fileID: 0}
-  isInWorldMap: 0
+  TortpointsText: {fileID: 0}
+  TortgoldText: {fileID: 0}
+  ShowScore: 0
 --- !u!212 &212186437859008384
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -285,7 +285,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 346ab7ae687954749b7b52dd7ad5a4a6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b350b06950066ab4a96bbf2603deb5ca, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
