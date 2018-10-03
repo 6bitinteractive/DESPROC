@@ -31,6 +31,6 @@ public class ProgressBar : MonoBehaviour
             percentage = saved / total;
 
         ProgressBarFill.fillAmount = percentage;
-        ProgressBarText.text = string.Format("Saved: {0} %", Mathf.RoundToInt(percentage * 100f));
+        ProgressBarText.text = string.Format("Turtles Saved: {0} %", Mathf.RoundToInt(percentage * 100f));
     }
 }
