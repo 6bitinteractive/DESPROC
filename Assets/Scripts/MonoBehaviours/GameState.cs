@@ -39,14 +39,4 @@ public class GameState : MonoBehaviour
         else if (hasRunOutOfTime)
             OnLose.Invoke();
     }
-
-    public void OnWonDebug()
-    {
-        Debug.Log("Win");
-    }
-
-    public void OnLoseDebug()
-    {
-        Debug.Log("Lose");
-    }
 }

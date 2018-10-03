@@ -23,7 +23,7 @@ public class Countdown : MonoBehaviour
     void Update()
     {
         CountdownText.text = Mathf.Floor(CountdownValue / 60).ToString("00") + ":" + Mathf.FloorToInt(CountdownValue % 60).ToString("00"); // Display countdown
-                                                                                                                                      
+
         if (CountdownValue <= 0) OnCountdownEnd(); // If countdown ended call onCountdownEnd function
 
     }
@@ -39,6 +39,6 @@ public class Countdown : MonoBehaviour
 
     void OnCountdownEnd()
     {
-      SceneHandler.LoadScene(NextScene);
+        SceneHandler.LoadScene(NextScene);
     }
 }
