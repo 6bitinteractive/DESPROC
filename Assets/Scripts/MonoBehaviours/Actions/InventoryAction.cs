@@ -9,7 +9,7 @@ public class InventoryAction : Action
 {
     public Inventory Inventory;
     public UnityEvent OnTrashPickup = new UnityEvent();
-    public UnityEvent OnEmptyBin = new UnityEvent();
+    public UnityEvent OnEmptyInventory = new UnityEvent();
 
     public override void Act()
     {
@@ -25,8 +25,8 @@ public class InventoryAction : Action
         else if (target.GetComponent<Bin>() != null)
         {
             Inventory.Empty();
-            OnEmptyBin.Invoke();
-            Debug.Log("Empty bin.");
+            OnEmptyInventory.Invoke();
+            Debug.Log("Empty inventory.");
         }
     }
 
