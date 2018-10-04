@@ -12,7 +12,7 @@ public class FallingPlasticController : MonoBehaviour
     {
         movement = GetComponent<Movement>();
         movement.xSpeed = Random.Range(1, 5); // Randomizes speed
-        transform.localScale = Vector3.one * Random.Range(1, 3);
+       // transform.localScale = Vector3.one * Random.Range(1, 3);
     }
 
     // Update is called once per frame

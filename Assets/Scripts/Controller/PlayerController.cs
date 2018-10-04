@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     Movement movement;
     Direction direction;
     public PlayerChildCollision Body;
-
+    public bool isInMiniGame = false;
     // Use this for initialization
     void Start()
     {
@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     public void SetGlobalData()
     {
         movement.xSpeed = GlobalData.Instance.MovementSpeed;
-        movement.ySpeed = GlobalData.Instance.MovementSpeed;
+        if (!isInMiniGame) movement.ySpeed = GlobalData.Instance.MovementSpeed;
     }
 
     // Update is called once per frame
