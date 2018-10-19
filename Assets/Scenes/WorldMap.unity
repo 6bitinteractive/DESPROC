@@ -163,12 +163,12 @@ Prefab:
     - target: {fileID: 224643197592655126, guid: 7d94380ed31c84343b01a5f3436cf69a,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 470
+      value: -38
       objectReference: {fileID: 0}
     - target: {fileID: 224643197592655126, guid: 7d94380ed31c84343b01a5f3436cf69a,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -59
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224643197592655126, guid: 7d94380ed31c84343b01a5f3436cf69a,
         type: 2}
@@ -183,7 +183,7 @@ Prefab:
     - target: {fileID: 224643197592655126, guid: 7d94380ed31c84343b01a5f3436cf69a,
         type: 2}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224643197592655126, guid: 7d94380ed31c84343b01a5f3436cf69a,
         type: 2}
@@ -193,7 +193,7 @@ Prefab:
     - target: {fileID: 224643197592655126, guid: 7d94380ed31c84343b01a5f3436cf69a,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224643197592655126, guid: 7d94380ed31c84343b01a5f3436cf69a,
         type: 2}
@@ -203,12 +203,12 @@ Prefab:
     - target: {fileID: 224643197592655126, guid: 7d94380ed31c84343b01a5f3436cf69a,
         type: 2}
       propertyPath: m_Pivot.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224643197592655126, guid: 7d94380ed31c84343b01a5f3436cf69a,
         type: 2}
       propertyPath: m_Pivot.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d94380ed31c84343b01a5f3436cf69a, type: 2}
@@ -324,8 +324,9 @@ GameObject:
   - component: {fileID: 512432843}
   - component: {fileID: 512432845}
   - component: {fileID: 512432844}
+  - component: {fileID: 512432846}
   m_Layer: 5
-  m_Name: World_Map_Unpolished
+  m_Name: World_Map
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -346,7 +347,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.015076, y: -0.2}
+  m_AnchoredPosition: {x: 0.00024445727, y: -0.000048831105}
   m_SizeDelta: {x: 1920, y: 1086}
   m_Pivot: {x: 0.5000001, y: 0.49999994}
 --- !u!114 &512432844
@@ -368,7 +369,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 6fd7b50e9b5cf6c408d08849b3b1504f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 71126dc0ce4479048b526fd47a249121, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -383,6 +384,24 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 512432842}
   m_CullTransparentMesh: 0
+--- !u!95 &512432846
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 512432842}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4d32a072bad682a4ba81289a7ee2c1e1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &657903176
 GameObject:
   m_ObjectHideFlags: 0
