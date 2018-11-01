@@ -33,6 +33,6 @@ public class HoverOnButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     void IPointerUpHandler.OnPointerUp(PointerEventData eventData)
     {
-        //MouseDownImage.enabled = false;
+        MouseDownImage.enabled = false;
     }
 }
