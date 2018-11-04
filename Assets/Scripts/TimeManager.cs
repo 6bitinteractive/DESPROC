@@ -4,16 +4,13 @@ using UnityEngine;
 
 public class TimeManager : MonoBehaviour
 {
-
-	// Use this for initialization
-	void Start ()
+    public void Pause()
     {
         Time.timeScale = 0;
     }
-	
 
-	void Update ()
+    public void Unpause()
     {
-		
-	}
+        Time.timeScale = 1;
+    }
 }
