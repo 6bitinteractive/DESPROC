@@ -15,14 +15,9 @@ public class CatchingMinigameCamera : MonoBehaviour
         targetPos.z = -10;
         transform.position = Vector3.MoveTowards(transform.position, targetPos, Speed * Time.unscaledDeltaTime);
 
-        if (transform.position.y == 0)
-        {
-            CameraStopped.Raise();
-            Debug.Log("Nep");
-        }
-        else
-        {
-            CameraMoving.Raise();
-        }
+        if (transform.position.y == 0) CameraStopped.Raise();
+
+        else CameraMoving.Raise();
+   
     }
 }
