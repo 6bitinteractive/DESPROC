@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class GameDataHandler : DataHandler
 {
-    [SerializeField] private GameData gameData;
+    private GameData gameData;
 
     protected override void LoadData()
     {

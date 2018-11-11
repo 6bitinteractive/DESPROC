@@ -126,7 +126,7 @@ GameObject:
   m_Layer: 0
   m_Name: SpawnArea (6)
   m_TagString: Untagged
-  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -541,7 +541,7 @@ GameObject:
   m_Layer: 0
   m_Name: SpawnArea (2)
   m_TagString: Untagged
-  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -734,7 +734,7 @@ GameObject:
   m_Layer: 0
   m_Name: SpawnArea (15)
   m_TagString: Untagged
-  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -894,7 +894,7 @@ GameObject:
   m_Layer: 0
   m_Name: SpawnArea (1)
   m_TagString: Untagged
-  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1021,7 +1021,7 @@ GameObject:
   m_Layer: 0
   m_Name: SpawnArea (14)
   m_TagString: Untagged
-  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1284,7 +1284,7 @@ GameObject:
   m_Layer: 0
   m_Name: SpawnArea (16)
   m_TagString: Untagged
-  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -42774,7 +42774,7 @@ GameObject:
   m_Layer: 0
   m_Name: SpawnArea (4)
   m_TagString: Untagged
-  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -42934,7 +42934,7 @@ GameObject:
   m_Layer: 0
   m_Name: SpawnArea (19)
   m_TagString: Untagged
-  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -43123,7 +43123,7 @@ GameObject:
   m_Layer: 0
   m_Name: SpawnArea (17)
   m_TagString: Untagged
-  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -45349,7 +45349,7 @@ GameObject:
   m_Layer: 0
   m_Name: SpawnArea (3)
   m_TagString: Untagged
-  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -45455,7 +45455,7 @@ GameObject:
   m_Layer: 0
   m_Name: SpawnArea (13)
   m_TagString: Untagged
-  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -46007,6 +46007,25 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1818406877250148, guid: bfbabfdd22addb54891582c16f6d89cf,
     type: 2}
   m_PrefabInternal: {fileID: 1185187517}
+--- !u!114 &1185187520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1185187518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 502c5c38619f7524d886a4713e53cb7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dataFileName: playerData.json
+  playerData:
+    Gold: 0
+    Points: 0
+    InventoryCapacity: 20
+    MovementSpeed: 3
+    PickupSpeed: 1.5
+    Luck: 0
 --- !u!4 &1185187530 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4894992979352498, guid: bfbabfdd22addb54891582c16f6d89cf,
@@ -48041,7 +48060,7 @@ GameObject:
   m_Layer: 0
   m_Name: SpawnArea (9)
   m_TagString: Untagged
-  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -48351,7 +48370,7 @@ GameObject:
   m_Layer: 0
   m_Name: SpawnArea (12)
   m_TagString: Untagged
-  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -48403,7 +48422,7 @@ GameObject:
   m_Layer: 0
   m_Name: SpawnArea (5)
   m_TagString: Untagged
-  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -48542,7 +48561,7 @@ GameObject:
   m_Layer: 0
   m_Name: SpawnArea (7)
   m_TagString: Untagged
-  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -48721,7 +48740,7 @@ GameObject:
   m_Layer: 0
   m_Name: SpawnArea (11)
   m_TagString: Untagged
-  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -48903,7 +48922,7 @@ GameObject:
   m_Layer: 0
   m_Name: SpawnArea
   m_TagString: Untagged
-  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -49266,7 +49285,7 @@ GameObject:
   m_Layer: 0
   m_Name: SpawnArea (8)
   m_TagString: Untagged
-  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -49785,7 +49804,7 @@ GameObject:
   m_Layer: 0
   m_Name: SpawnArea (10)
   m_TagString: Untagged
-  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -50324,7 +50343,7 @@ GameObject:
   m_Layer: 0
   m_Name: SpawnArea (18)
   m_TagString: Untagged
-  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1

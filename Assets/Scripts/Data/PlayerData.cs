@@ -4,12 +4,12 @@ using UnityEditor;
 using UnityEngine;
 
 [System.Serializable]
-public class PlayerData
+public class PlayerData : Data
 {
-    public int Gold = 0;
-    public int Points = 0;
-    public int InventoryCapacity = 20;
-    public float MovementSpeed = 3f;
-    public float PickupSpeed = 1.5f;
-    public float Luck = 0f;
+    public int Gold;
+    public int Points;
+    public int InventoryCapacity;
+    public float MovementSpeed;
+    public float PickupSpeed;
+    public float Luck;
 }
