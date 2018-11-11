@@ -2,8 +2,5 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public class GameData : Data
-{
-    public float Clock;
-}
+public abstract class Data
+{ }

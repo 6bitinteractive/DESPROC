@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class PlayerDataHandler : DataHandler
 {
-    [SerializeField] private PlayerData playerData;
+    public PlayerData playerData;
 
     protected override void Start()
     {
@@ -24,25 +24,25 @@ public class PlayerDataHandler : DataHandler
 
             if (string.IsNullOrEmpty(contents))
             {
-                Debug.LogWarning("JSON data file is empty; returning new data.");
+                Debug.LogWarning(this + " JSON data file is empty; returning new data.");
                 playerData = new PlayerData();
             }
             else
             {
-                Debug.Log("Loading JSON data file.");
+                Debug.Log(this + " Loading JSON data file.");
                 playerData = JsonUtility.FromJson<PlayerData>(contents);
             }
         }
         else
         {
-            Debug.LogWarning("JSON data file not found; returning new data.");
+            Debug.LogWarning(this + " JSON data file not found; returning new data.");
             playerData = new PlayerData();
         }
     }
 
     public override void SaveData()
     {
-        Debug.Log("JSON data file saved.");
+        Debug.Log(this + " JSON data file saved.");
         string dataAsJson = JsonUtility.ToJson(playerData);
         File.WriteAllText(filePath, dataAsJson);
     }
