@@ -10,9 +10,20 @@ public class Countdown : MonoBehaviour
     public float CountdownValue;
     public Text CountdownText;
 
+    [SerializeField] private GameDataHandler gameDataHandler;
+
     void Awake()
     {
-        CountdownValue += (CountdownValue * GlobalData.Instance.Clock);
+        if (gameDataHandler == null)
+        {
+            Debug.LogWarning("GameDataHandler object is null; set through FindByObjectOfType<>.");
+            gameDataHandler = FindObjectOfType<GameDataHandler>();
+        }
+
+        // Fix: loading of data occurs on Start (in the GameDataHandler script) so this occurs first and doesn't use the loaded value from the JSON file
+        // This simply uses whatever is set in the inspector
+        GameData gameData = gameDataHandler.gameData;
+        CountdownValue += (CountdownValue * gameData.Clock);
     }
 
     void Start()

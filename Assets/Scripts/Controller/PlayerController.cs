@@ -2,17 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Movement))]
+[RequireComponent(typeof(Direction))]
+[RequireComponent(typeof(PlayerDataHandler))]
+
 public class PlayerController : MonoBehaviour
 {
     Movement movement;
     Direction direction;
+    PlayerData playerData;
+
     public PlayerChildCollision Body;
     public bool isInMiniGame = false;
-    // Use this for initialization
+
     void Start()
     {
         movement = GetComponent<Movement>();
         direction = GetComponent<Direction>();
+        playerData = GetComponent<PlayerDataHandler>().playerData;
 
         SetGlobalData();
     }
@@ -20,11 +27,10 @@ public class PlayerController : MonoBehaviour
     // Set the player's stats based on the Global Data
     public void SetGlobalData()
     {
-        movement.xSpeed = GlobalData.Instance.MovementSpeed;
-        if (!isInMiniGame) movement.ySpeed = GlobalData.Instance.MovementSpeed;
+        movement.xSpeed = playerData.MovementSpeed;
+        if (!isInMiniGame) movement.ySpeed = playerData.MovementSpeed;
     }
 
-    // Update is called once per frame
     void Update()
     {
         Move();

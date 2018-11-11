@@ -300,6 +300,7 @@ Transform:
   m_Children:
   - {fileID: 1912072820}
   - {fileID: 1519764810}
+  - {fileID: 129027514}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -528,6 +529,49 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.41859818, y: 2.9635558}
   m_EdgeRadius: 0
+--- !u!1 &129027513
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 129027514}
+  - component: {fileID: 129027515}
+  m_Layer: 0
+  m_Name: GameData
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &129027514
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 129027513}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 52862142}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &129027515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 129027513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 959c73fbf9df8e54ea556031497bdf57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dataFileName: gameData.json
+  gameData:
+    Clock: 0
 --- !u!1 &155088817
 GameObject:
   m_ObjectHideFlags: 0
@@ -1114,6 +1158,7 @@ MonoBehaviour:
   NextScene: GameOver
   CountdownValue: 180
   CountdownText: {fileID: 254808125}
+  gameDataHandler: {fileID: 129027515}
 --- !u!114 &254808125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46020,8 +46065,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dataFileName: playerData.json
   playerData:
-    Gold: 0
-    Points: 0
+    Tortgold: 0
+    Tortpoints: 0
     InventoryCapacity: 20
     MovementSpeed: 3
     PickupSpeed: 1.5
