@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[CreateAssetMenu(menuName = "Entity RuntimeSet")]
+[CreateAssetMenu]
 public class EntityRuntimeSet : RuntimeSet<Entity>
 {
 
