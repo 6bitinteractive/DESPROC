@@ -12,4 +12,5 @@ public class PlayerData : Data
     public float MovementSpeed;
     public float PickupSpeed;
     public float Luck;
+    public float Clock;
 }

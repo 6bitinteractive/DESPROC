@@ -5,5 +5,4 @@ using UnityEngine;
 [System.Serializable]
 public class GameData : Data
 {
-    public float Clock;
 }
