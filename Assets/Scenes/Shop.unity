@@ -1747,6 +1747,30 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 224643197592655126, guid: 7d94380ed31c84343b01a5f3436cf69a,
     type: 2}
   m_PrefabInternal: {fileID: 612832367}
+--- !u!1 &612832369 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1729563247253280, guid: 7d94380ed31c84343b01a5f3436cf69a,
+    type: 2}
+  m_PrefabInternal: {fileID: 612832367}
+--- !u!114 &612832370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 612832369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 502c5c38619f7524d886a4713e53cb7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dataFileName: Data.json
+  playerData:
+    Tortgold: 0
+    Tortpoints: 0
+    InventoryCapacity: 0
+    MovementSpeed: 0
+    PickupSpeed: 0
+    Luck: 0
 --- !u!1 &625521811
 GameObject:
   m_ObjectHideFlags: 0
