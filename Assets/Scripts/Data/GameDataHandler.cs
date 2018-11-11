@@ -7,9 +7,11 @@ public class GameDataHandler : DataHandler
 {
     public GameData gameData;
 
-    protected override void Start()
+    protected override void Awake()
     {
-        base.Start();
+        dataFileName = "gameData.json";
+
+        base.Awake();
     }
 
     protected override void LoadData()

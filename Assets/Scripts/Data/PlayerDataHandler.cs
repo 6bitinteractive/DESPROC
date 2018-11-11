@@ -9,10 +9,11 @@ public class PlayerDataHandler : DataHandler
 {
     public PlayerData playerData;
 
-    protected override void Start()
+    protected override void Awake()
     {
-        base.Start();
+        dataFileName = "playerData.json";
 
+        base.Awake();
         //filePath = Path.Combine(Application.persistentDataPath, dataFileName);
     }
 

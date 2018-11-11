@@ -6,12 +6,10 @@ using UnityEngine;
 
 public abstract class DataHandler : MonoBehaviour
 {
-    [Tooltip("Make sure to rename to a unique filename.")]
-    [SerializeField] protected string dataFileName = "Data.json";
-
+    protected string dataFileName;
     protected string filePath;
 
-    protected virtual void Start()
+    protected virtual void Awake()
     {
         filePath = Path.Combine(Application.streamingAssetsPath, dataFileName);
         LoadData();
