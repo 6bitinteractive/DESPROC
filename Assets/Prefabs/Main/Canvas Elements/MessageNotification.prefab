@@ -36,6 +36,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 224017128450892078}
+  - component: {fileID: 114401973706431910}
   m_Layer: 5
   m_Name: MessageNotification
   m_TagString: Untagged
@@ -87,6 +88,19 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114401973706431910
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1416741403650888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 132a5786e146bf345b6b5013ec06dfcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  messagePrefab: {fileID: 1416741403650888}
+  MessageDuration: 1.5
 --- !u!114 &114941059004137456
 MonoBehaviour:
   m_ObjectHideFlags: 1

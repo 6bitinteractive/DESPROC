@@ -5,21 +5,29 @@ using UnityEngine.Events;
 
 public class Inventory : MonoBehaviour
 {
+
     public UnityEvent OnInventoryFull = new UnityEvent();
 
+    [Header("Inventory Slots")]
     [SerializeField] private GameObject gridContainer;
+    [SerializeField] private GameObject inventorySlotPrefab;
+    [SerializeField] private int slotCount = 15;
+
     private InventorySlot[] inventorySlots;
     private int currentEmptySlot = 0;
-    private int slotCount;
 
     void Start()
     {
-        slotCount = gridContainer.transform.childCount;
         inventorySlots = new InventorySlot[slotCount];
 
         for (int i = 0; i < slotCount; i++)
         {
-            inventorySlots[i] = gridContainer.transform.GetChild(i).GetComponent<InventorySlot>();
+            // Create a slot
+            GameObject slot = Instantiate(inventorySlotPrefab);
+            slot.transform.SetParent(gridContainer.transform, false);
+
+            // Add the InventorySlot component to the array
+            inventorySlots[i] = slot.GetComponent<InventorySlot>();
         }
     }
 

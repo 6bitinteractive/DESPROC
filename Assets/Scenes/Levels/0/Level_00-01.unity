@@ -2010,7 +2010,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23d3874e5cc2b1b458bc486cdd84738c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LoadPersistentData: 0
 --- !u!224 &1181083366
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2223,48 +2222,6 @@ Prefab:
     - target: {fileID: 4894992979352498, guid: bfbabfdd22addb54891582c16f6d89cf, type: 2}
       propertyPath: m_RootOrder
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 61252590505353560, guid: bfbabfdd22addb54891582c16f6d89cf,
-        type: 2}
-      propertyPath: m_Offset.x
-      value: 0.027363658
-      objectReference: {fileID: 0}
-    - target: {fileID: 61252590505353560, guid: bfbabfdd22addb54891582c16f6d89cf,
-        type: 2}
-      propertyPath: m_Size.x
-      value: 0.99032474
-      objectReference: {fileID: 0}
-    - target: {fileID: 61252590505353560, guid: bfbabfdd22addb54891582c16f6d89cf,
-        type: 2}
-      propertyPath: m_Offset.y
-      value: -2.0960813
-      objectReference: {fileID: 0}
-    - target: {fileID: 61252590505353560, guid: bfbabfdd22addb54891582c16f6d89cf,
-        type: 2}
-      propertyPath: m_Size.y
-      value: 0.10442257
-      objectReference: {fileID: 0}
-    - target: {fileID: 4894992979352498, guid: bfbabfdd22addb54891582c16f6d89cf, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4894992979352498, guid: bfbabfdd22addb54891582c16f6d89cf, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 212878809467831140, guid: bfbabfdd22addb54891582c16f6d89cf,
-        type: 2}
-      propertyPath: m_SortingLayerID
-      value: -23263383
-      objectReference: {fileID: 0}
-    - target: {fileID: 212878809467831140, guid: bfbabfdd22addb54891582c16f6d89cf,
-        type: 2}
-      propertyPath: m_SortingLayer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1818406877250148, guid: bfbabfdd22addb54891582c16f6d89cf, type: 2}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfbabfdd22addb54891582c16f6d89cf, type: 2}
@@ -2519,40 +2476,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4289659899268976, guid: 2cc0196d598e7f0488bd07ad32c5f60c,
     type: 2}
   m_PrefabInternal: {fileID: 1722308516}
---- !u!1 &1816857038 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1818406877250148, guid: bfbabfdd22addb54891582c16f6d89cf,
-    type: 2}
-  m_PrefabInternal: {fileID: 1342323945}
---- !u!114 &1816857039
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1816857038}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 502c5c38619f7524d886a4713e53cb7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dataFileName: 
-  playerData:
-    Tortgold: 0
-    Tortpoints: 0
-    InventoryCapacity: 0
-    MovementSpeed: 0
-    PickupSpeed: 0
-    Luck: 0
---- !u!210 &1816857050
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1816857038}
-  m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
 --- !u!1 &1955667014
 GameObject:
   m_ObjectHideFlags: 0
