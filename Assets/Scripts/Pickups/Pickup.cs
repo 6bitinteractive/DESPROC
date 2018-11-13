@@ -18,7 +18,6 @@ public class Pickup : MonoBehaviour
         {
             StartCoroutine(BuffTimer(collision));
             Collected = true; // prevents an item from being collected more than once
-            GetComponent<SpriteRenderer>().enabled = false;  // Hides this sprite
         }
     }
 
