@@ -12,23 +12,23 @@ public class GameState : MonoBehaviour
 
     public UnityEvent OnWin = new UnityEvent();
     public UnityEvent OnLose = new UnityEvent();
-    public Text TotalTrashCollectedText;
-    public Text MinTrashToCollectText;
+    //public Text TotalTrashCollectedText;
+    //public Text MinTrashToCollectText;
 
     private int totalTrashCollected;
     private bool hasSavedEnoughTurtles;
     private bool hasRunOutOfTime;
 
-    public void Update()
-    {
-        DisplayTotalTrash();
-    }
+    //public void Update()
+    //{
+    //    DisplayTotalTrash();
+    //}
 
-    public void DisplayTotalTrash()
-    {
-        TotalTrashCollectedText.text = totalTrashCollected.ToString();
-        MinTrashToCollectText.text = " / " + MinTrashToCollect.ToString();
-    }
+    //public void DisplayTotalTrash()
+    //{
+    //    TotalTrashCollectedText.text = totalTrashCollected.ToString();
+    //    MinTrashToCollectText.text = " / " + MinTrashToCollect.ToString();
+    //}
 
     public void IncreaseTrashCollected()
     {
@@ -54,7 +54,7 @@ public class GameState : MonoBehaviour
             OnWin.Invoke();
             SceneHandler.LoadScene("Victory"); //temporary fix remove later reeeee
         }
-       
+
         else if (hasRunOutOfTime)
             OnLose.Invoke();
     }

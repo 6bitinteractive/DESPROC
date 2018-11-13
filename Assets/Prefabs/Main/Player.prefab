@@ -56,6 +56,7 @@ GameObject:
   - component: {fileID: 224700634678209170}
   - component: {fileID: 222275719585740064}
   - component: {fileID: 114192820610198690}
+  - component: {fileID: 114993508103128402}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -122,6 +123,7 @@ GameObject:
   - component: {fileID: 114793475689548548}
   - component: {fileID: 210264825501542982}
   - component: {fileID: 114910424478352604}
+  - component: {fileID: 61800077227703970}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -187,6 +189,31 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 0.99032474, y: 0.10442257}
+  m_EdgeRadius: 0
+--- !u!61 &61800077227703970
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1818406877250148}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.41, y: 4.55}
+    newSize: {x: 3.03, y: 3.93}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.41, y: 4.55}
   m_EdgeRadius: 0
 --- !u!95 &95765094612013732
 Animator:
@@ -319,16 +346,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Key: 101
   Inventory: {fileID: 114632064142718352}
-  OnTrashPickup:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnEmptyInventory:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &114307454379359542
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -364,7 +381,7 @@ MonoBehaviour:
   m_CellSize: {x: 100, y: 100}
   m_Spacing: {x: 10, y: 10}
   m_Constraint: 1
-  m_ConstraintCount: 5
+  m_ConstraintCount: 3
 --- !u!114 &114560759842145190
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -401,27 +418,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac411e203c2697b43a7e43b91b63a9d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnInventoryFull:
+  OnTrashPickup:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114401973706431910, guid: fa38a55a60512c044a87af344a9199dc,
-          type: 2}
-        m_MethodName: ShowMessage
-        m_Mode: 5
+      - m_Target: {fileID: 0}
+        m_MethodName: UpdateProgress
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Inventory is full.
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: UpdateProgress
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnEmptyInventory:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnInventoryFull:
+    m_PersistentCalls:
+      m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   gridContainer: {fileID: 1219272236895998}
   inventorySlotPrefab: {fileID: 1202196545639678, guid: dde910d319fbffc4fbd97fbaf4f6cbe1,
     type: 2}
-  slotCount: 15
+  slotCount: 9
 --- !u!114 &114677827106650748
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -546,6 +583,20 @@ MonoBehaviour:
     MovementSpeed: 0
     PickupSpeed: 0
     Luck: 0
+--- !u!114 &114993508103128402
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1517817139705850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1573420865, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0.8490566, g: 0.8490566, b: 0.8490566, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!210 &210264825501542982
 SortingGroup:
   m_ObjectHideFlags: 1
@@ -686,8 +737,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 350, y: 350}
-  m_SizeDelta: {x: 650, y: 550}
+  m_AnchoredPosition: {x: 300, y: 350}
+  m_SizeDelta: {x: 420, y: 550}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224700634678209170
 RectTransform:

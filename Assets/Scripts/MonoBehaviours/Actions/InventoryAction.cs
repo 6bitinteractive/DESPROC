@@ -8,8 +8,6 @@ using UnityEngine.Events;
 public class InventoryAction : Action
 {
     public Inventory Inventory;
-    public UnityEvent OnTrashPickup = new UnityEvent();
-    public UnityEvent OnEmptyInventory = new UnityEvent();
 
     public override void Act()
     {
@@ -20,12 +18,10 @@ public class InventoryAction : Action
         if (interactableObj != null)
         {
             AddToInventory(interactableObj);
-            OnTrashPickup.Invoke();
         }
         else if (target.GetComponent<Bin>() != null)
         {
             Inventory.Empty();
-            OnEmptyInventory.Invoke();
             Debug.Log("Empty inventory.");
         }
     }

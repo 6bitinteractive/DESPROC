@@ -3,20 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(Image))]
-public class Interactable : MonoBehaviour
-{
-    public InteractableObject Base;
+[RequireComponent(typeof(SpriteRenderer))]
 
-    private Image Image;
+public abstract class Interactable : MonoBehaviour
+{
+    [SerializeField] Sprite[] sprites;
+    protected SpriteRenderer spriteRenderer;
 
     private void Awake()
     {
-        Image = GetComponent<Image>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Start()
     {
-        Image.sprite = Base.Sprite;
+        spriteRenderer.sprite = sprites[Random.Range(0, sprites.Length)];
     }
 }

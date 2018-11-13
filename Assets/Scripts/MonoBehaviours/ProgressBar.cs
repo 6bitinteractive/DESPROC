@@ -4,38 +4,35 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-public class ProgressBar : MonoBehaviour
+public abstract class ProgressBar : MonoBehaviour
 {
-    public Image ProgressBarFill;
-    public Text ProgressBarText;
-    public UnityEvent OnSavedEnoughTurtles = new UnityEvent();
+    [SerializeField] protected Image ProgressBarFill;
+    [SerializeField] protected Text ProgressBarText;
 
-    private int total;
-    private int saved = 0;
+    protected int total;
+    protected int current = 0;
 
-    private void Start()
+    protected virtual void Start()
     {
-        total = TurtleManager.TotalTurtles;
         UpdateBar();
     }
 
-    public void UpdateProgress()
+    public virtual void UpdateProgress()
     {
-        saved++;
+        current++;
         UpdateBar();
     }
 
-    private void UpdateBar()
+    protected virtual void UpdateBar()
     {
         float percentage = 0f;
 
-        if (total != 0)
-            percentage = saved / total;
+        if (total > 0)
+            percentage = (float)current / (float)total; // Needs to be float or else it's always 0%
 
         ProgressBarFill.fillAmount = percentage;
-        ProgressBarText.text = string.Format("Turtles Saved: {0} %", Mathf.RoundToInt(percentage * 100f));
-
-        if (saved >= total * GameState.MinTurtlesToSavePercentage )
-            OnSavedEnoughTurtles.Invoke();
+        SetProgressBarText(percentage);
     }
+
+    protected abstract void SetProgressBarText(float percentage);
 }

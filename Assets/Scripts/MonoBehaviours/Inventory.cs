@@ -5,13 +5,14 @@ using UnityEngine.Events;
 
 public class Inventory : MonoBehaviour
 {
-
+    public UnityEvent OnTrashPickup = new UnityEvent();
+    public UnityEvent OnEmptyInventory = new UnityEvent();
     public UnityEvent OnInventoryFull = new UnityEvent();
 
     [Header("Inventory Slots")]
     [SerializeField] private GameObject gridContainer;
     [SerializeField] private GameObject inventorySlotPrefab;
-    [SerializeField] private int slotCount = 15;
+    [SerializeField] private int slotCount = 9;
 
     private InventorySlot[] inventorySlots;
     private int currentEmptySlot = 0;
@@ -28,6 +29,8 @@ public class Inventory : MonoBehaviour
 
             // Add the InventorySlot component to the array
             inventorySlots[i] = slot.GetComponent<InventorySlot>();
+
+
         }
     }
 
@@ -38,11 +41,15 @@ public class Inventory : MonoBehaviour
             inventorySlots[currentEmptySlot].inventoryItem = interactableObj;
             interactableObj.transform.position = inventorySlots[currentEmptySlot].transform.position;
             interactableObj.transform.SetParent(inventorySlots[currentEmptySlot].transform);
+            inventorySlots[currentEmptySlot].UpdateImage();
             interactableObj.GetComponent<CircleCollider2D>().enabled = false; // Make sure it's not interactable once it's in the inventory
 
             // Move to next empty slot
             currentEmptySlot++;
             currentEmptySlot %= slotCount; // Avoid index going out of range
+
+            // Broadcast that trash has been picked up
+            OnTrashPickup.Invoke();
         }
         else
         {
@@ -63,5 +70,6 @@ public class Inventory : MonoBehaviour
         }
 
         currentEmptySlot = 0;
+        OnEmptyInventory.Invoke();
     }
 }
