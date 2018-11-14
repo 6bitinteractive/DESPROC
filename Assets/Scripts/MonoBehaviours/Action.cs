@@ -5,7 +5,8 @@ using UnityEngine.Events;
 
 public abstract class Action : MonoBehaviour
 {
-    public KeyCode Key;
+    [SerializeField] protected KeyCode Key;
+    [SerializeField] protected LayerMask interactableLayerMask;
 
     protected GameObject target;
 
@@ -13,14 +14,19 @@ public abstract class Action : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log("Target: " + target);
         if (Input.GetKeyDown(Key))
+        {
             Act();
+        }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        target = collision.gameObject;
-        //Debug.Log("Target: " + target);
+        if ((interactableLayerMask.value & 1 << collision.gameObject.layer) != 0)
+        {
+            target = collision.gameObject;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -28,3 +34,6 @@ public abstract class Action : MonoBehaviour
         target = null;
     }
 }
+
+// Reference: Check layer mask for collision
+// http://answers.unity.com/answers/454913/view.html
