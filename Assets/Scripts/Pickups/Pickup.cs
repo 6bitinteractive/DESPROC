@@ -31,5 +31,6 @@ public class Pickup : MonoBehaviour
     {
         // Reset buff
         gameObject.SetActive(false);
+        Collected = false;    
     }
 }
