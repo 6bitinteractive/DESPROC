@@ -14,7 +14,7 @@ public class CheckDistance : MonoBehaviour
     void Update()
     {
         currentDistance = Vector2.Distance(transform.position, TargetPosition.position);
-        //Debug.Log(currentDistance);
+        Debug.Log(currentDistance);
 
         if (currentDistance <= MinimumDistance) EnterAreaPrompt.Raise();
  

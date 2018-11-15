@@ -14,7 +14,7 @@ public abstract class Action : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log("Target: " + target);
+        //Debug.Log("Target: " + target);
         if (Input.GetKeyDown(Key))
         {
             Act();
