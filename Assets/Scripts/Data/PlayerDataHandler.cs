@@ -47,4 +47,10 @@ public class PlayerDataHandler : DataHandler
         string dataAsJson = JsonUtility.ToJson(playerData);
         File.WriteAllText(filePath, dataAsJson);
     }
+
+    public void ResetData()
+    {
+        playerData = new PlayerData();
+        SaveData();       
+    }
 }
