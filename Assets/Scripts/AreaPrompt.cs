@@ -19,7 +19,7 @@ public class AreaPrompt : MonoBehaviour
         if (collision.gameObject.layer == 8)
         {
             EnterAreaPrompt.Raise();
-            NewAreaText.text = AreaName;
+            NewAreaText.text = AreaName.ToUpper();
         }
 
     }
