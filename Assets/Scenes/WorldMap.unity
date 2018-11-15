@@ -235,6 +235,7 @@ GameObject:
   - component: {fileID: 3039370}
   - component: {fileID: 3039369}
   - component: {fileID: 3039368}
+  - component: {fileID: 3039372}
   m_Layer: 5
   m_Name: Main Island
   m_TagString: Untagged
@@ -361,6 +362,19 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 3039366}
   m_CullTransparentMesh: 0
+--- !u!114 &3039372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 3039366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abc04b61a056cc3458c6ce8fb92bc66a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CursorPoint: {fileID: 2800000, guid: 4107904901fccc84bbe8883e4883adcc, type: 3}
+  CursorClick: {fileID: 2800000, guid: 4c22d81034eca784d93210eaa153e6b0, type: 3}
 --- !u!1 &114480239
 GameObject:
   m_ObjectHideFlags: 0
@@ -770,6 +784,7 @@ GameObject:
   - component: {fileID: 1026169184}
   - component: {fileID: 1026169183}
   - component: {fileID: 1026169186}
+  - component: {fileID: 1026169187}
   m_Layer: 5
   m_Name: Island 2
   m_TagString: Untagged
@@ -896,6 +911,19 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &1026169187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1026169181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abc04b61a056cc3458c6ce8fb92bc66a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CursorPoint: {fileID: 2800000, guid: 4107904901fccc84bbe8883e4883adcc, type: 3}
+  CursorClick: {fileID: 2800000, guid: 4c22d81034eca784d93210eaa153e6b0, type: 3}
 --- !u!1 &1051765740
 GameObject:
   m_ObjectHideFlags: 0
@@ -1115,6 +1143,7 @@ GameObject:
   - component: {fileID: 1313630644}
   - component: {fileID: 1313630643}
   - component: {fileID: 1313630642}
+  - component: {fileID: 1313630646}
   m_Layer: 5
   m_Name: Island 1
   m_TagString: Untagged
@@ -1241,6 +1270,19 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1313630640}
   m_CullTransparentMesh: 0
+--- !u!114 &1313630646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1313630640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abc04b61a056cc3458c6ce8fb92bc66a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CursorPoint: {fileID: 2800000, guid: 4107904901fccc84bbe8883e4883adcc, type: 3}
+  CursorClick: {fileID: 2800000, guid: 4c22d81034eca784d93210eaa153e6b0, type: 3}
 --- !u!1 &1324182247
 GameObject:
   m_ObjectHideFlags: 0
@@ -1582,6 +1624,7 @@ GameObject:
   - component: {fileID: 1819583283}
   - component: {fileID: 1819583282}
   - component: {fileID: 1819583281}
+  - component: {fileID: 1819583285}
   m_Layer: 5
   m_Name: Island 3
   m_TagString: Untagged
@@ -1708,6 +1751,47 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1819583279}
   m_CullTransparentMesh: 0
+--- !u!114 &1819583285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1819583279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abc04b61a056cc3458c6ce8fb92bc66a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CursorPoint: {fileID: 2800000, guid: 4107904901fccc84bbe8883e4883adcc, type: 3}
+  CursorClick: {fileID: 2800000, guid: 4c22d81034eca784d93210eaa153e6b0, type: 3}
+--- !u!1 &1943656325
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1943656327}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1943656327
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1943656325}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.9593582, y: -3.311288, z: 0.19482422}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2062140431
 GameObject:
   m_ObjectHideFlags: 0
