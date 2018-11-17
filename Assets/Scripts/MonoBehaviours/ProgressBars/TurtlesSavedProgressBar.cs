@@ -9,7 +9,7 @@ public class TurtlesSavedProgressBar : ProgressBar
 
     protected override void Start()
     {
-        total = TurtleManager.TotalTurtles;
+        total = TurtleManager.Total;
 
         base.Start();
     }

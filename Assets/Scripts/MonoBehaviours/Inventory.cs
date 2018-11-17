@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class Inventory : MonoBehaviour
 {
-    public UnityEvent OnTrashPickup = new UnityEvent();
+    public UnityEvent OnAddedToInventory = new UnityEvent();
     public UnityEvent OnEmptyInventory = new UnityEvent();
     public UnityEvent OnInventoryFull = new UnityEvent();
 
@@ -29,12 +29,10 @@ public class Inventory : MonoBehaviour
 
             // Add the InventorySlot component to the array
             inventorySlots[i] = slot.GetComponent<InventorySlot>();
-
-
         }
     }
 
-    public void AddToEmptySlot(InventoryInteractable interactableObj)
+    public void AddToEmptySlot(PlasticInteractable interactableObj)
     {
         if (inventorySlots[currentEmptySlot].inventoryItem == null)
         {
@@ -48,8 +46,8 @@ public class Inventory : MonoBehaviour
             currentEmptySlot++;
             currentEmptySlot %= slotCount; // Avoid index going out of range
 
-            // Broadcast that trash has been picked up
-            OnTrashPickup.Invoke();
+            // Broadcast that trash has been added to the inventory
+            OnAddedToInventory.Invoke();
         }
         else
         {

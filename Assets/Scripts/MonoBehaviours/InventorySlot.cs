@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class InventorySlot : MonoBehaviour
 {
-    [HideInInspector] public InventoryInteractable inventoryItem;
+    [HideInInspector] public PlasticInteractable inventoryItem;
     [SerializeField] private Image image; // Note: this is sort of a hack; see comment at the end of script
 
     private void Start()

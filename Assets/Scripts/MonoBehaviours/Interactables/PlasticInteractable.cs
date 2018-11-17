@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class InventoryAction : Action
+public class PlasticInteractable : Interactable
 {
-    public Inventory Inventory;
 }

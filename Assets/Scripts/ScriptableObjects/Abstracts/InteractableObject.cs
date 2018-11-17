@@ -7,6 +7,6 @@ public abstract class InteractableObject : ScriptableObject
     [Header("Display")]
     public Sprite Sprite;
 
-    [Header("Stats")]
-    public int Value = 1;
+    [Header("Data")]
+    public string Name;
 }
