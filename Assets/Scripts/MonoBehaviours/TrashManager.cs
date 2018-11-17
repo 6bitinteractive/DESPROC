@@ -9,7 +9,7 @@ public class TrashManager : MonoBehaviour
 
     private void Awake()
     {
-        int Total = transform.childCount;
         Trash = GetComponentsInChildren<PlasticInteractable>();
+        Total = Trash.Length;
     }
 }

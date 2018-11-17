@@ -9,7 +9,7 @@ public class TurtleManager : MonoBehaviour
 
     private void Awake()
     {
-        int Total = transform.childCount;
         Turtles = GetComponentsInChildren<TurtleInteractable>();
+        Total = Turtles.Length;
     }
 }
