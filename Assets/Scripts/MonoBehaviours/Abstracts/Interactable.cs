@@ -7,7 +7,9 @@ using UnityEngine.UI;
 
 public abstract class Interactable : MonoBehaviour
 {
-    [SerializeField] InteractableObject[] Bases;
+    [SerializeField] private InteractableObject[] Bases;
+    public int baseIndex { get; private set; }
+
     protected SpriteRenderer spriteRenderer;
 
     private void Awake()
@@ -17,7 +19,7 @@ public abstract class Interactable : MonoBehaviour
 
     private void Start()
     {
-        int randomIndex = Random.Range(0, Bases.Length);
-        spriteRenderer.sprite = Bases[randomIndex].Sprite;
+        baseIndex = Random.Range(0, Bases.Length);
+        spriteRenderer.sprite = Bases[baseIndex].Sprite;
     }
 }
