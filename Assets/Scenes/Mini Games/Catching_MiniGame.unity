@@ -435,13 +435,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 502c5c38619f7524d886a4713e53cb7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerData:
-    Tortgold: 0
-    Tortpoints: 0
-    InventoryCapacity: 0
-    MovementSpeed: 5
-    PickupSpeed: 0
-    Luck: 0
+  playerSession: {fileID: 11400000, guid: abafadf5e1ffbbd42ab1dce3502a2e21, type: 2}
+  PlayerData: {fileID: 0}
 --- !u!114 &298793219 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114160065535760776, guid: ceccc46a222ca3141b31ba531bec1c5c,
@@ -1906,8 +1901,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 959c73fbf9df8e54ea556031497bdf57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameData:
-    Clock: 0
+  baseGameData: {fileID: 0}
+  GameData: {fileID: 0}
 --- !u!1 &1566737518
 GameObject:
   m_ObjectHideFlags: 0
@@ -1997,13 +1992,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 502c5c38619f7524d886a4713e53cb7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerData:
-    Tortgold: 0
-    Tortpoints: 0
-    InventoryCapacity: 0
-    MovementSpeed: 0
-    PickupSpeed: 0
-    Luck: 0
+  playerSession: {fileID: 11400000, guid: 1b4469707503a7549ade0a695d8079fc, type: 2}
+  PlayerData: {fileID: 0}
 --- !u!1 &1961338490
 GameObject:
   m_ObjectHideFlags: 0

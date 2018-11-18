@@ -4361,7 +4361,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1051765740}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.503502, y: 1.7159424, z: -10}
+  m_LocalPosition: {x: -5.5010757, y: 1.7159581, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -6223,7 +6223,7 @@ Prefab:
     - target: {fileID: 224553445824078042, guid: 2a1121811150f654188fb85bb3ac7879,
         type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 224553445824078042, guid: 2a1121811150f654188fb85bb3ac7879,
         type: 2}
@@ -7328,13 +7328,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 502c5c38619f7524d886a4713e53cb7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerData:
-    Tortgold: 0
-    Tortpoints: 0
-    InventoryCapacity: 0
-    MovementSpeed: 0
-    PickupSpeed: 0
-    Luck: 0
+  playerSession: {fileID: 11400000, guid: 1b4469707503a7549ade0a695d8079fc, type: 2}
+  PlayerData: {fileID: 0}
 --- !u!210 &1816857050
 SortingGroup:
   m_ObjectHideFlags: 0

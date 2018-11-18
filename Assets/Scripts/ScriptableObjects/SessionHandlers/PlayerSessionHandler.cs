@@ -9,14 +9,11 @@ public class PlayerSessionHandler : SessionHandler
     public PlayerData SessionData;
     public PlayerData StoredSessionData;
 
-    public void InitializeData(PlayerDataHandler dataHandler)
+    public void InitializeDataToDefault(PlayerDataHandler dataHandler)
     {
         Debug.Log("Initialized player data to default");
         // Copy the data from the base default
         Utilities.CopyObjectAttributes(basePlayerData, dataHandler.PlayerData);
-
-        // Overwrite the data if there's a saved file, else keep the default
-        dataHandler.LoadData<PlayerData>(dataHandler.PlayerData);
     }
 
     public void UpdateSessionData(PlayerData data)

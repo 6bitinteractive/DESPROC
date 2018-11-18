@@ -15,7 +15,7 @@ public class PlayerDataHandler : DataHandler
 
         base.Awake();
 
-        PlayerData = playerSession.SessionData;
+        //PlayerData = playerSession.SessionData;
         if (PlayerData == null)
         {
             Debug.Log("Player data is null; initializing data to default or loading saved data.");
@@ -25,9 +25,14 @@ public class PlayerDataHandler : DataHandler
         }
     }
 
+    public void LoadSavedData()
+    {
+        LoadData<PlayerData>(PlayerData);
+    }
+
     public void InitializeData()
     {
-        playerSession.InitializeData(this);
+        playerSession.InitializeDataToDefault(this);
     }
 
     private void Update()
