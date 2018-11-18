@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "RecycleCode", fileName = "RecycleCode")]
+[CreateAssetMenu(menuName = "Plastic/RecycleCode", fileName = "RecycleCode")]
 public class RecycleCode : ScriptableObject
 {
     public int RecyclingNumber;
