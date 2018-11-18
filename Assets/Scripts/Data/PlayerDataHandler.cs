@@ -3,54 +3,37 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
-// NOTE: Player data might best be saved as a binary file and stored at the persistentData path?
-
 public class PlayerDataHandler : DataHandler
 {
-    public PlayerData playerData;
+    [SerializeField] protected PlayerData basePlayerData;
+
+    [Tooltip("Player data for the current session.")]
+    public PlayerData PlayerData;
+
+    public PlayerData LevelPlayerData;
 
     protected override void Awake()
     {
+        // Change the dataFileName first
         dataFileName = "playerData.json";
 
         base.Awake();
-        //filePath = Path.Combine(Application.persistentDataPath, dataFileName);
+
+        Utilities.CopyObjectAttributes(basePlayerData, PlayerData);
+
+        // Overwrite the data if there's a saved file, else keep the default
+        PlayerData = LoadData<PlayerData>(PlayerData);
     }
 
-    protected override void LoadData()
+    protected override string GetDataAsJson()
     {
-        if (File.Exists(filePath))
-        {
-            string contents = File.ReadAllText(filePath);
-
-            if (string.IsNullOrEmpty(contents))
-            {
-                Debug.LogWarning(this + " JSON data file is empty; returning new data.");
-                playerData = new PlayerData();
-            }
-            else
-            {
-                Debug.Log(this + " Loading JSON data file.");
-                playerData = JsonUtility.FromJson<PlayerData>(contents);
-            }
-        }
-        else
-        {
-            Debug.LogWarning(this + " JSON data file not found; returning new data.");
-            playerData = new PlayerData();
-        }
+        return JsonUtility.ToJson(PlayerData);
     }
 
-    public override void SaveData()
+    public override void ResetData()
     {
-        Debug.Log(this + " JSON data file saved.");
-        string dataAsJson = JsonUtility.ToJson(playerData);
-        File.WriteAllText(filePath, dataAsJson);
-    }
-
-    public void ResetData()
-    {
-        playerData = new PlayerData();
-        SaveData();       
+        PlayerData = ScriptableObject.CreateInstance<PlayerData>();
+        base.ResetData();
     }
 }
+

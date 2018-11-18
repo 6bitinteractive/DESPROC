@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
+[CreateAssetMenu(menuName = "Game Data", fileName = "GameData")]
 public class GameData : Data
 {
     public float Clock;

@@ -37,9 +37,9 @@ public class Inventory : MonoBehaviour
         if (inventorySlots[currentEmptySlot].inventoryItem == null)
         {
             inventorySlots[currentEmptySlot].inventoryItem = interactableObj;
+            inventorySlots[currentEmptySlot].UpdateImage();
             interactableObj.transform.position = inventorySlots[currentEmptySlot].transform.position;
             interactableObj.transform.SetParent(inventorySlots[currentEmptySlot].transform);
-            inventorySlots[currentEmptySlot].UpdateImage();
             interactableObj.GetComponent<CircleCollider2D>().enabled = false; // Make sure it's not interactable once it's in the inventory
 
             // Move to next empty slot

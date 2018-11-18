@@ -11,10 +11,46 @@ public abstract class DataHandler : MonoBehaviour
 
     protected virtual void Awake()
     {
-        filePath = Path.Combine(Application.streamingAssetsPath, dataFileName);
-        LoadData();
+        filePath = Path.Combine(Application.persistentDataPath, dataFileName);
     }
 
-    protected abstract void LoadData();
-    public abstract void SaveData();
+    public virtual T LoadData<T>(T data)
+    {
+        if (File.Exists(filePath))
+        {
+            string contents = File.ReadAllText(filePath);
+
+            if (string.IsNullOrEmpty(contents))
+            {
+                Debug.LogWarning(this + ": JSON data file is empty; returning new data.");
+                return data;
+            }
+            else
+            {
+                Debug.Log(this + ": Loading JSON data file.");
+                JsonUtility.FromJsonOverwrite(contents, data);
+                return data;
+            }
+        }
+        else
+        {
+            Debug.LogWarning(this + ": JSON data file not found; returning new data.");
+            return data;
+        }
+    }
+
+    public virtual void SaveData()
+    {
+        Debug.Log(this + " JSON data file saved.");
+        string dataAsJson = GetDataAsJson();
+        File.WriteAllText(filePath, dataAsJson);
+    }
+
+    public virtual void ResetData()
+    {
+        Debug.Log(this + ": Data has been reset.");
+        SaveData();
+    }
+
+    protected abstract string GetDataAsJson();
 }
