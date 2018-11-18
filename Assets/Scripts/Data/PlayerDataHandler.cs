@@ -16,13 +16,13 @@ public class PlayerDataHandler : DataHandler
         base.Awake();
 
         //PlayerData = playerSession.SessionData;
-        if (PlayerData == null)
-        {
-            Debug.Log("Player data is null; initializing data to default or loading saved data.");
-            ResetData();
-            InitializeDataToDefault();
-            playerSession.UpdateSessionData(PlayerData);
-        }
+        //if (PlayerData == null)
+        //{
+        //    Debug.Log("Player data is null; initializing data to default or loading saved data.");
+        //    ResetData();
+        //    InitializeDataToDefault();
+        //    playerSession.UpdateSessionData(PlayerData);
+        //}
     }
 
     public void LoadSavedData()
