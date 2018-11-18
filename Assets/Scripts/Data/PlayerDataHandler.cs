@@ -35,14 +35,6 @@ public class PlayerDataHandler : DataHandler
         playerSession.InitializeDataToDefault(this);
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            playerSession.SessionData.MovementSpeed++;
-        }
-    }
-
     protected override string GetDataAsJson()
     {
         return JsonUtility.ToJson(PlayerData);
