@@ -3,54 +3,49 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
-// NOTE: Player data might best be saved as a binary file and stored at the persistentData path?
-
 public class PlayerDataHandler : DataHandler
 {
-    public PlayerData playerData;
+    [SerializeField] protected PlayerSessionHandler playerSession;
+    [HideInInspector] public PlayerData PlayerData;
 
     protected override void Awake()
     {
+        // Change the dataFileName first
         dataFileName = "playerData.json";
 
         base.Awake();
-        //filePath = Path.Combine(Application.persistentDataPath, dataFileName);
-    }
 
-    protected override void LoadData()
-    {
-        if (File.Exists(filePath))
+        PlayerData = playerSession.SessionData;
+        if (PlayerData == null)
         {
-            string contents = File.ReadAllText(filePath);
-
-            if (string.IsNullOrEmpty(contents))
-            {
-                Debug.LogWarning(this + " JSON data file is empty; returning new data.");
-                playerData = new PlayerData();
-            }
-            else
-            {
-                Debug.Log(this + " Loading JSON data file.");
-                playerData = JsonUtility.FromJson<PlayerData>(contents);
-            }
-        }
-        else
-        {
-            Debug.LogWarning(this + " JSON data file not found; returning new data.");
-            playerData = new PlayerData();
+            Debug.Log("Player data is null; initializing data to default or loading saved data.");
+            ResetData();
+            InitializeData();
+            playerSession.UpdateSessionData(PlayerData);
         }
     }
 
-    public override void SaveData()
+    public void InitializeData()
     {
-        Debug.Log(this + " JSON data file saved.");
-        string dataAsJson = JsonUtility.ToJson(playerData);
-        File.WriteAllText(filePath, dataAsJson);
+        playerSession.InitializeData(this);
     }
 
-    public void ResetData()
+    private void Update()
     {
-        playerData = new PlayerData();
-        SaveData();       
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            playerSession.SessionData.MovementSpeed++;
+        }
+    }
+
+    protected override string GetDataAsJson()
+    {
+        return JsonUtility.ToJson(PlayerData);
+    }
+
+    public override void ResetData()
+    {
+        base.ResetData();
+        PlayerData = ScriptableObject.CreateInstance<PlayerData>();
     }
 }

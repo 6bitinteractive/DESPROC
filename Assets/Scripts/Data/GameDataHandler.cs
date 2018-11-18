@@ -5,43 +5,24 @@ using UnityEngine;
 
 public class GameDataHandler : DataHandler
 {
-    public GameData gameData;
+    [SerializeField] protected GameData baseGameData;
+
+    [HideInInspector] public GameData GameData;
 
     protected override void Awake()
     {
         dataFileName = "gameData.json";
 
         base.Awake();
+
+        GameData = new GameData();
+        Utilities.CopyObjectAttributes(baseGameData, GameData);
+
+        GameData = LoadData<GameData>(GameData);
     }
 
-    protected override void LoadData()
+    protected override string GetDataAsJson()
     {
-        if (File.Exists(filePath))
-        {
-            string contents = File.ReadAllText(filePath);
-
-            if (string.IsNullOrEmpty(contents))
-            {
-                Debug.LogWarning(this + " JSON data file is empty; returning new data.");
-                gameData = new GameData();
-            }
-            else
-            {
-                Debug.Log(this + " Loading JSON data file.");
-                gameData = JsonUtility.FromJson<GameData>(contents);
-            }
-        }
-        else
-        {
-            Debug.LogWarning(this + " JSON data file not found; returning new data.");
-            gameData = new GameData();
-        }
-    }
-
-    public override void SaveData()
-    {
-        Debug.Log(this + " JSON data file saved.");
-        string dataAsJson = JsonUtility.ToJson(gameData);
-        File.WriteAllText(filePath, dataAsJson);
+        return JsonUtility.ToJson(GameData);
     }
 }

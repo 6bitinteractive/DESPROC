@@ -9,7 +9,8 @@ using System.IO;
 public class PlayerDataHandlerInspector : Editor
 {
     private PlayerData playerData;
-    private string gameDataProjectFilePath = "/StreamingAssets/playerData.json";
+    //private string gameDataProjectFilePath = "/StreamingAssets/playerData.json";
+    private string fileName = "playerData.json";
     private string filePath;
 
     //SerializedProperty fileNameProperty;
@@ -17,29 +18,30 @@ public class PlayerDataHandlerInspector : Editor
 
     private void OnEnable()
     {
-        filePath = Application.dataPath + gameDataProjectFilePath;
+        filePath = Path.Combine(Application.persistentDataPath, fileName);
+        //filePath = Application.dataPath + gameDataProjectFilePath;
         //fileNameProperty = serializedObject.FindProperty("dataFileName");
         //playerDataProperty = serializedObject.FindProperty("playerData");
 
         PlayerDataHandler dataHandler = (PlayerDataHandler)target;
-        playerData = dataHandler.playerData;
+        playerData = dataHandler.PlayerData;
     }
 
     public override void OnInspectorGUI()
     {
         base.OnInspectorGUI(); // keep default inspector
 
-        //serializedObject.Update();
+        serializedObject.Update();
 
         //EditorGUILayout.PropertyField(fileNameProperty);
         //EditorGUILayout.PropertyField(playerDataProperty, true);
 
-        //serializedObject.ApplyModifiedProperties();
+        serializedObject.ApplyModifiedProperties();
 
-        if (GUILayout.Button("Save data"))
-        {
-            SavePlayerData();
-        }
+        //if (GUILayout.Button("Save data"))
+        //{
+        //    SavePlayerData();
+        //}
 
         //if (GUILayout.Button("Load data"))
         //{

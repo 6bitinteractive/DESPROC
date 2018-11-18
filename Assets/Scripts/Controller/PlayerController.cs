@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     {
         movement = GetComponent<Movement>();
         direction = GetComponent<Direction>();
-        playerData = GetComponent<PlayerDataHandler>().playerData;
+        playerData = GetComponent<PlayerDataHandler>().PlayerData;
 
         SetGlobalData();
     }

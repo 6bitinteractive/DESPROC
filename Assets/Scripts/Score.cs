@@ -15,7 +15,7 @@ public class Score : MonoBehaviour
 
     private void Start()
     {
-        playerData = GetComponent<PlayerDataHandler>().playerData;
+        playerData = GetComponent<PlayerDataHandler>().PlayerData;
     }
 
     void Update()

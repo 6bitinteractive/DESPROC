@@ -22,7 +22,7 @@ public class Countdown : MonoBehaviour
 
         // Fix: loading of data occurs on Start (in the GameDataHandler script) so this occurs first and doesn't use the loaded value from the JSON file
         // This simply uses whatever is set in the inspector
-        GameData gameData = gameDataHandler.gameData;
+        GameData gameData = gameDataHandler.GameData;
         CountdownValue += (CountdownValue * gameData.Clock);
     }
 
