@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "PlasticFactory", fileName = "Plastics")]
+[CreateAssetMenu(menuName = "Plastic/PlasticFactory", fileName = "Plastics")]
 public class PlasticFactory : Factory
 {
 }
