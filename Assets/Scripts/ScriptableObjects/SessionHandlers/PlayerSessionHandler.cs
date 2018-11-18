@@ -9,11 +9,11 @@ public class PlayerSessionHandler : SessionHandler
     public PlayerData SessionData;
     public PlayerData StoredSessionData;
 
-    public void InitializeDataToDefault(PlayerDataHandler dataHandler)
+    public void InitializeDataToDefault(PlayerData playerData)
     {
         Debug.Log("Initialized player data to default");
         // Copy the data from the base default
-        Utilities.CopyObjectAttributes(basePlayerData, dataHandler.PlayerData);
+        Utilities.CopyObjectAttributes(basePlayerData, playerData);
     }
 
     public void UpdateSessionData(PlayerData data)

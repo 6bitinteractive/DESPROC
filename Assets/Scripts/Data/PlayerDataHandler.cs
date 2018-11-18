@@ -20,7 +20,7 @@ public class PlayerDataHandler : DataHandler
         {
             Debug.Log("Player data is null; initializing data to default or loading saved data.");
             ResetData();
-            InitializeData();
+            InitializeDataToDefault();
             playerSession.UpdateSessionData(PlayerData);
         }
     }
@@ -30,9 +30,9 @@ public class PlayerDataHandler : DataHandler
         LoadData<PlayerData>(PlayerData);
     }
 
-    public void InitializeData()
+    public void InitializeDataToDefault()
     {
-        playerSession.InitializeDataToDefault(this);
+        playerSession.InitializeDataToDefault(PlayerData);
     }
 
     protected override string GetDataAsJson()

@@ -12,4 +12,4 @@ public static class Utilities
 }
 
 // Reference: http://answers.unity.com/answers/1261070/view.html
-// |_ Hack to do a deep copy of the values of another class, i.e. copy by value not reference
+// |_ Hack to do a deep copy of the values of another object, i.e. copy by value not reference
