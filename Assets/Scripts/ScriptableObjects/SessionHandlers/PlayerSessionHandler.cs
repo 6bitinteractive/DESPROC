@@ -18,16 +18,19 @@ public class PlayerSessionHandler : SessionHandler
 
     public void UpdateSessionData(PlayerData data)
     {
+        Debug.Log("Player data saved to session.");
         Utilities.CopyObjectAttributes(data, SessionData);
     }
 
     public void BackupCurrentSession()
     {
+        Debug.Log("Current session data stored for later retrieval.");
         Utilities.CopyObjectAttributes(SessionData, StoredSessionData);
     }
 
     public void RestorePreviousSession()
     {
+        Debug.Log("Restored previous session.");
         Utilities.CopyObjectAttributes(StoredSessionData, SessionData);
     }
 }

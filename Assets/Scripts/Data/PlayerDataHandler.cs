@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerDataHandler : DataHandler
 {
-    [SerializeField] protected PlayerSessionHandler playerSession;
+    public PlayerSessionHandler playerSession;
     [HideInInspector] public PlayerData PlayerData;
 
     protected override void Awake()
