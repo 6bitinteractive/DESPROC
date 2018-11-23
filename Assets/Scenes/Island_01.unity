@@ -879,6 +879,28 @@ Prefab:
       propertyPath: m_Name
       value: Shop Area
       objectReference: {fileID: 0}
+    - target: {fileID: 114729370182048934, guid: 543e5379cd949194ea8afe54a722b8bf,
+        type: 2}
+      propertyPath: gameEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 54ee9b32991019d4dba3cdb56a5ff508,
+        type: 2}
+    - target: {fileID: 114729370182048934, guid: 543e5379cd949194ea8afe54a722b8bf,
+        type: 2}
+      propertyPath: nextScene
+      value: Shop
+      objectReference: {fileID: 0}
+    - target: {fileID: 114729370182048934, guid: 543e5379cd949194ea8afe54a722b8bf,
+        type: 2}
+      propertyPath: playerLayerMask.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 114729370182048934, guid: 543e5379cd949194ea8afe54a722b8bf,
+        type: 2}
+      propertyPath: OnEnterArea
+      value: 
+      objectReference: {fileID: 11400000, guid: 54ee9b32991019d4dba3cdb56a5ff508,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 543e5379cd949194ea8afe54a722b8bf, type: 2}
   m_IsPrefabAsset: 0
@@ -2351,7 +2373,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 912218019}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.8878822, y: 0.8093424, z: 8.733493}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1833985469}
@@ -2616,7 +2638,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1051765740}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.31002098, y: -3.0180218, z: -10}
+  m_LocalPosition: {x: -0.31002146, y: -3.0180228, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2724,6 +2746,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1181083366}
   - component: {fileID: 1181083365}
+  - component: {fileID: 1181083367}
   m_Layer: 5
   m_Name: SceneHandler
   m_TagString: Untagged
@@ -2760,6 +2783,17 @@ RectTransform:
   m_AnchoredPosition: {x: 264.69995, y: 325.30002}
   m_SizeDelta: {x: 82.4, y: 81.4}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1181083367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1181083364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b550eaa65e0cb654aac94b75859b899d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1209879036 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4456988694253218, guid: 25a56f266a4791a4c8af52a14307a629,
@@ -3028,8 +3062,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1472249405}
-  - component: {fileID: 1472249404}
   - component: {fileID: 1472249403}
+  - component: {fileID: 1472249404}
   m_Layer: 0
   m_Name: Boat Area
   m_TagString: Untagged
@@ -3075,7 +3109,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fc09075b86b2a94ba3f07b6da9a235f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NextScene: WorldMap
+  OnEnterArea: {fileID: 0}
+  nextScene: 
+  playerLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!4 &1472249405
 Transform:
   m_ObjectHideFlags: 0
@@ -3552,8 +3590,8 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1833985468}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.42, y: -4.96, z: -8.48154}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 912218020}
@@ -3631,6 +3669,44 @@ MonoBehaviour:
     responseForSentString:
       m_PersistentCalls:
         m_Calls: []
+      m_TypeName: ResponseWithString, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+    responseForSentInt:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: ResponseWithInt, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+    responseForSentFloat:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: ResponseWithFloat, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+    responseForSentBool:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: ResponseWithBool, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+  - name: Enter Shop
+    gameEvent: {fileID: 11400000, guid: 54ee9b32991019d4dba3cdb56a5ff508, type: 2}
+    response:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    responseForSentString:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1181083367}
+          m_MethodName: LoadScene
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
       m_TypeName: ResponseWithString, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
     responseForSentInt:
