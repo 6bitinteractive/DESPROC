@@ -3167,6 +3167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0da184f77466b14abba81bd1ba93f98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerDataHandler: {fileID: 1342323946}
   ProgressBarFill: {fileID: 680876038}
   ProgressBarText: {fileID: 242252277}
   OnCollectedEnoughTrash:
@@ -3852,6 +3853,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d74adffa57c015499da1838ce4d5543, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerDataHandler: {fileID: 1342323946}
   ProgressBarFill: {fileID: 699444325}
   ProgressBarText: {fileID: 1404700918}
 --- !u!1 &921754185
@@ -4361,7 +4363,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1051765740}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.5020323, y: 1.715952, z: -10}
+  m_LocalPosition: {x: -5.502345, y: 1.71595, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5495,71 +5497,25 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 61252590505353560, guid: bfbabfdd22addb54891582c16f6d89cf,
-        type: 2}
-      propertyPath: m_Offset.x
-      value: 0.027363658
-      objectReference: {fileID: 0}
-    - target: {fileID: 61252590505353560, guid: bfbabfdd22addb54891582c16f6d89cf,
-        type: 2}
-      propertyPath: m_Size.x
-      value: 0.99032474
-      objectReference: {fileID: 0}
-    - target: {fileID: 61252590505353560, guid: bfbabfdd22addb54891582c16f6d89cf,
-        type: 2}
-      propertyPath: m_Offset.y
-      value: -2.0960813
-      objectReference: {fileID: 0}
-    - target: {fileID: 61252590505353560, guid: bfbabfdd22addb54891582c16f6d89cf,
-        type: 2}
-      propertyPath: m_Size.y
-      value: 0.10442257
-      objectReference: {fileID: 0}
-    - target: {fileID: 4894992979352498, guid: bfbabfdd22addb54891582c16f6d89cf, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4894992979352498, guid: bfbabfdd22addb54891582c16f6d89cf, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 212878809467831140, guid: bfbabfdd22addb54891582c16f6d89cf,
-        type: 2}
-      propertyPath: m_SortingLayerID
-      value: -23263383
-      objectReference: {fileID: 0}
-    - target: {fileID: 212878809467831140, guid: bfbabfdd22addb54891582c16f6d89cf,
-        type: 2}
-      propertyPath: m_SortingLayer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1818406877250148, guid: bfbabfdd22addb54891582c16f6d89cf, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 114632064142718352, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
-      propertyPath: OnTrashPickup.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      propertyPath: OnAddedToInventory.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 768758358}
     - target: {fileID: 114632064142718352, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
-      propertyPath: OnTrashPickup.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: UpdateProgress
-      objectReference: {fileID: 0}
-    - target: {fileID: 114632064142718352, guid: bfbabfdd22addb54891582c16f6d89cf,
-        type: 2}
-      propertyPath: OnTrashPickup.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      propertyPath: OnAddedToInventory.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 908103383}
-    - target: {fileID: 114632064142718352, guid: bfbabfdd22addb54891582c16f6d89cf,
-        type: 2}
-      propertyPath: OnTrashPickup.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: UpdateProgress
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfbabfdd22addb54891582c16f6d89cf, type: 2}
   m_IsPrefabAsset: 0
+--- !u!114 &1342323946 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114910424478352604, guid: bfbabfdd22addb54891582c16f6d89cf,
+    type: 2}
+  m_PrefabInternal: {fileID: 1342323945}
+  m_Script: {fileID: 11500000, guid: 502c5c38619f7524d886a4713e53cb7e, type: 3}
 --- !u!1 &1394183190
 GameObject:
   m_ObjectHideFlags: 0
@@ -6174,6 +6130,31 @@ Prefab:
     - target: {fileID: 4449663579890798, guid: b0788a606b823404f926369698281250, type: 2}
       propertyPath: m_LocalScale.y
       value: 1.3078126
+      objectReference: {fileID: 0}
+    - target: {fileID: 114077405332796924, guid: b0788a606b823404f926369698281250,
+        type: 2}
+      propertyPath: eventAndResponses.Array.data[2].response.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1342323946}
+    - target: {fileID: 114077405332796924, guid: b0788a606b823404f926369698281250,
+        type: 2}
+      propertyPath: eventAndResponses.Array.data[2].response.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SaveData
+      objectReference: {fileID: 0}
+    - target: {fileID: 114077405332796924, guid: b0788a606b823404f926369698281250,
+        type: 2}
+      propertyPath: eventAndResponses.Array.data[2].responseForSentString.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1181083365}
+    - target: {fileID: 114077405332796924, guid: b0788a606b823404f926369698281250,
+        type: 2}
+      propertyPath: eventAndResponses.Array.data[2].responseForSentString.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 114697930165634274, guid: b0788a606b823404f926369698281250,
+        type: 2}
+      propertyPath: nextScene
+      value: Level_00-01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0788a606b823404f926369698281250, type: 2}
@@ -7312,39 +7293,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.40710688, y: 0.5487573}
   m_EdgeRadius: 0
---- !u!1 &1816857038 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1818406877250148, guid: bfbabfdd22addb54891582c16f6d89cf,
-    type: 2}
-  m_PrefabInternal: {fileID: 1342323945}
---- !u!114 &1816857039
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1816857038}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 502c5c38619f7524d886a4713e53cb7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerData:
-    Tortgold: 0
-    Tortpoints: 0
-    InventoryCapacity: 0
-    MovementSpeed: 0
-    PickupSpeed: 0
-    Luck: 0
---- !u!210 &1816857050
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1816857038}
-  m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
 --- !u!1001 &1829278762
 Prefab:
   m_ObjectHideFlags: 0
@@ -8251,6 +8199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9acb6a017729044459ae77d87fd71971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerDataHandler: {fileID: 1342323946}
   ProgressBarFill: {fileID: 1701195619}
   ProgressBarText: {fileID: 1226391959}
   OnSavedEnoughTurtles:

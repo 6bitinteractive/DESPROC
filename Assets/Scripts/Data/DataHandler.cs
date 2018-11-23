@@ -15,6 +15,6 @@ public abstract class DataHandler : MonoBehaviour
         LoadData();
     }
 
-    protected abstract void LoadData();
+    public abstract void LoadData();
     public abstract void SaveData();
 }

@@ -4,4 +4,8 @@ using UnityEngine;
 
 public class PlasticInteractable : Interactable
 {
+    public Plastic GetPlastic()
+    {
+        return base.GetInteractable() as Plastic;
+    }
 }

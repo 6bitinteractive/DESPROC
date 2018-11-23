@@ -14,7 +14,7 @@ public class GameDataHandler : DataHandler
         base.Awake();
     }
 
-    protected override void LoadData()
+    public override void LoadData()
     {
         if (File.Exists(filePath))
         {

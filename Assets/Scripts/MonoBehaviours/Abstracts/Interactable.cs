@@ -22,4 +22,9 @@ public abstract class Interactable : MonoBehaviour
         baseIndex = Random.Range(0, Factory.BaseObjects.Length);
         spriteRenderer.sprite = Factory.BaseObjects[baseIndex].Sprite;
     }
+
+    public virtual InteractableObject GetInteractable()
+    {
+        return Factory.BaseObjects[baseIndex];
+    }
 }

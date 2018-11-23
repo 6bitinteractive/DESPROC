@@ -17,7 +17,7 @@ public class PlayerDataHandler : DataHandler
         //filePath = Path.Combine(Application.persistentDataPath, dataFileName);
     }
 
-    protected override void LoadData()
+    public override void LoadData()
     {
         if (File.Exists(filePath))
         {
@@ -51,6 +51,6 @@ public class PlayerDataHandler : DataHandler
     public void ResetData()
     {
         playerData = new PlayerData();
-        SaveData();       
+        SaveData();
     }
 }

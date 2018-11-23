@@ -119,8 +119,8 @@ GameObject:
   - component: {fileID: 114677827106650748}
   - component: {fileID: 95765094612013732}
   - component: {fileID: 114771197757940374}
-  - component: {fileID: 210264825501542982}
   - component: {fileID: 114910424478352604}
+  - component: {fileID: 210886395426421982}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -527,6 +527,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  playerDataHandler: {fileID: 114910424478352604}
   gridContainer: {fileID: 1219272236895998}
   inventorySlotPrefab: {fileID: 1202196545639678, guid: dde910d319fbffc4fbd97fbaf4f6cbe1,
     type: 2}
@@ -634,10 +635,13 @@ MonoBehaviour:
   playerData:
     Tortgold: 0
     Tortpoints: 0
-    InventoryCapacity: 0
-    MovementSpeed: 0
+    InventoryCapacity: 9
+    MovementSpeed: 2.5
     PickupSpeed: 0
     Luck: 0
+    Inventory: []
+    Bin: []
+    TotalTrash: 0
 --- !u!114 &114993508103128402
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -652,7 +656,7 @@ MonoBehaviour:
   m_EffectColor: {r: 0.8490566, g: 0.8490566, b: 0.8490566, a: 0.5}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
---- !u!210 &210264825501542982
+--- !u!210 &210886395426421982
 SortingGroup:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}

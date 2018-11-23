@@ -6,14 +6,20 @@ using UnityEngine.UI;
 
 public abstract class ProgressBar : MonoBehaviour
 {
+    [SerializeField] protected PlayerDataHandler playerDataHandler;
     [SerializeField] protected Image ProgressBarFill;
     [SerializeField] protected Text ProgressBarText;
 
     protected int total;
     protected int current = 0;
 
+    protected virtual void Awake()
+    {
+    }
+
     protected virtual void Start()
     {
+        InitializeData();
         UpdateBar();
     }
 
@@ -35,4 +41,5 @@ public abstract class ProgressBar : MonoBehaviour
     }
 
     protected abstract void SetProgressBarText(float percentage);
+    protected abstract void InitializeData();
 }

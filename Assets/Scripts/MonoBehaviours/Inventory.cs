@@ -9,6 +9,9 @@ public class Inventory : MonoBehaviour
     public UnityEvent OnEmptyInventory = new UnityEvent();
     public UnityEvent OnInventoryFull = new UnityEvent();
 
+    [Header("Player")]
+    [SerializeField] private PlayerDataHandler playerDataHandler;
+
     [Header("Inventory Slots")]
     [SerializeField] private GameObject gridContainer;
     [SerializeField] private GameObject inventorySlotPrefab;
@@ -30,17 +33,36 @@ public class Inventory : MonoBehaviour
             // Add the InventorySlot component to the array
             inventorySlots[i] = slot.GetComponent<InventorySlot>();
         }
+
+        int inventoryCount = playerDataHandler.playerData.Inventory.Count;
+        if (inventoryCount > 0 && inventoryCount < slotCount)
+        {
+            currentEmptySlot = inventoryCount;
+        }
+        else
+        {
+            Debug.Log("PlayerInventory count: " + inventoryCount);
+        }
     }
 
     public void AddToEmptySlot(PlasticInteractable interactableObj)
     {
         if (inventorySlots[currentEmptySlot].inventoryItem == null)
         {
+            // Store to inventory slot
             inventorySlots[currentEmptySlot].inventoryItem = interactableObj;
-            interactableObj.transform.position = inventorySlots[currentEmptySlot].transform.position;
-            interactableObj.transform.SetParent(inventorySlots[currentEmptySlot].transform);
+
+            // Update the slot image
             inventorySlots[currentEmptySlot].UpdateImage();
-            interactableObj.GetComponent<CircleCollider2D>().enabled = false; // Make sure it's not interactable once it's in the inventory
+
+            // Add the plastic scriptable object to player data list
+            playerDataHandler.playerData.Inventory.Add(interactableObj.GetPlastic());
+
+            // Increase total plastic collected in player data
+            playerDataHandler.playerData.TotalTrash++;
+
+            // Deactivate interactableObject in scene
+            interactableObj.gameObject.SetActive(false);
 
             // Move to next empty slot
             currentEmptySlot++;

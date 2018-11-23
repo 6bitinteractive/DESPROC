@@ -6,10 +6,26 @@ using UnityEngine;
 [System.Serializable]
 public class PlayerData : Data
 {
-    public float Tortgold = 0f;
-    public float Tortpoints = 0f;
-    public int InventoryCapacity = 9;
-    public float MovementSpeed = 2.5f;
-    public float PickupSpeed = 0f;
-    public float Luck = 0f;
+    public float Tortgold;
+    public float Tortpoints;
+    public int InventoryCapacity;
+    public float MovementSpeed;
+    public float PickupSpeed;
+    public float Luck;
+    public List<Plastic> Inventory;
+    public List<Plastic> Bin;
+    public int TotalTrash;
+
+    public PlayerData()
+    {
+        Tortgold = 0f;
+        Tortpoints = 0f;
+        InventoryCapacity = 9;
+        MovementSpeed = 2.5f;
+        PickupSpeed = 1f;
+        Luck = 1f;
+        Inventory = new List<Plastic>();
+        Bin = new List<Plastic>();
+        TotalTrash = 0;
+    }
 }

@@ -7,13 +7,6 @@ public class TrashCollectedProgressBar : ProgressBar
 {
     public UnityEvent OnCollectedEnoughTrash = new UnityEvent();
 
-    protected override void Start()
-    {
-        total = GameState.MinTrashToCollect;
-
-        base.Start();
-    }
-
     protected override void UpdateBar()
     {
         base.UpdateBar();
@@ -25,5 +18,11 @@ public class TrashCollectedProgressBar : ProgressBar
     protected override void SetProgressBarText(float percentage)
     {
         ProgressBarText.text = string.Format("Trash Collected: {0} %", Mathf.RoundToInt(percentage * 100f));
+    }
+
+    protected override void InitializeData()
+    {
+        total = GameState.MinTrashToCollect;
+        current = playerDataHandler.playerData.TotalTrash;
     }
 }

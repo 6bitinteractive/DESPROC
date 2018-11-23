@@ -7,13 +7,6 @@ public class TurtlesSavedProgressBar : ProgressBar
 {
     public UnityEvent OnSavedEnoughTurtles = new UnityEvent();
 
-    protected override void Start()
-    {
-        total = TurtleManager.Total;
-
-        base.Start();
-    }
-
     protected override void UpdateBar()
     {
         base.UpdateBar();
@@ -25,5 +18,10 @@ public class TurtlesSavedProgressBar : ProgressBar
     protected override void SetProgressBarText(float percentage)
     {
         ProgressBarText.text = string.Format("Turtles Saved: {0} %", Mathf.RoundToInt(percentage * 100f));
+    }
+
+    protected override void InitializeData()
+    {
+        total = TurtleManager.Total;
     }
 }

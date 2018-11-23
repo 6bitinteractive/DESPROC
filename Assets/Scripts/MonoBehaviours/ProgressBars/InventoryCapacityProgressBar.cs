@@ -5,15 +5,16 @@ using UnityEngine.Events;
 
 public class InventoryCapacityProgressBar : ProgressBar
 {
-    protected override void Start()
-    {
-        total = 9; // Fix: hard-code
-
-        base.Start();
-    }
-
     protected override void SetProgressBarText(float percentage)
     {
         ProgressBarText.text = string.Format("Inventory Capacity: {0}%", Mathf.RoundToInt(percentage * 100f));
+    }
+
+    protected override void InitializeData()
+    {
+        total = playerDataHandler.playerData.InventoryCapacity;
+
+        int inventoryCount = playerDataHandler.playerData.Inventory.Count;
+        current = (inventoryCount > 0) ? inventoryCount : 0;
     }
 }
