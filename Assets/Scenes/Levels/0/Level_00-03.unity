@@ -4114,7 +4114,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1051765740}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.524517, y: -2.1404607, z: -10}
+  m_LocalPosition: {x: -5.5233603, y: -2.140453, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5543,6 +5543,21 @@ Prefab:
     - target: {fileID: 4449663579890798, guid: b0788a606b823404f926369698281250, type: 2}
       propertyPath: m_LocalScale.y
       value: 0.7625
+      objectReference: {fileID: 0}
+    - target: {fileID: 114077405332796924, guid: b0788a606b823404f926369698281250,
+        type: 2}
+      propertyPath: eventAndResponses.Array.data[2].responseForSentString.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1181083365}
+    - target: {fileID: 114077405332796924, guid: b0788a606b823404f926369698281250,
+        type: 2}
+      propertyPath: eventAndResponses.Array.data[2].responseForSentString.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 114697930165634274, guid: b0788a606b823404f926369698281250,
+        type: 2}
+      propertyPath: nextScene
+      value: Level_00-04
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0788a606b823404f926369698281250, type: 2}
