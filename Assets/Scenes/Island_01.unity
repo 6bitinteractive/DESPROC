@@ -899,7 +899,7 @@ Prefab:
         type: 2}
       propertyPath: OnEnterArea
       value: 
-      objectReference: {fileID: 11400000, guid: f633a72e49e955744ad98802fa1afd19,
+      objectReference: {fileID: 11400000, guid: ccea961ca2d235e49a456b6450354de7,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 543e5379cd949194ea8afe54a722b8bf, type: 2}
@@ -3109,11 +3109,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fc09075b86b2a94ba3f07b6da9a235f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnEnterArea: {fileID: 0}
-  nextScene: 
+  OnEnterArea: {fileID: 11400000, guid: f633a72e49e955744ad98802fa1afd19, type: 2}
+  nextScene: WorldMap
   playerLayerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
 --- !u!4 &1472249405
 Transform:
   m_ObjectHideFlags: 0
@@ -3688,6 +3688,44 @@ MonoBehaviour:
         PublicKeyToken=null
   - name: Enter Area
     gameEvent: {fileID: 11400000, guid: f633a72e49e955744ad98802fa1afd19, type: 2}
+    response:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    responseForSentString:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1181083365}
+          m_MethodName: LoadScene
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: ResponseWithString, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+    responseForSentInt:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: ResponseWithInt, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+    responseForSentFloat:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: ResponseWithFloat, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+    responseForSentBool:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: ResponseWithBool, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+  - name: Enter Area (Additive) - Shop
+    gameEvent: {fileID: 11400000, guid: ccea961ca2d235e49a456b6450354de7, type: 2}
     response:
       m_PersistentCalls:
         m_Calls: []
