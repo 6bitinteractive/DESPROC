@@ -17,6 +17,7 @@ public class EnterArea : MonoBehaviour
         if (collisionLayerMask == playerLayerMask.value)
         {
             //SceneManager.LoadScene(nextScene);
+            OnEnterArea.sentString = nextScene;
             OnEnterArea.Raise();
         }
     }
