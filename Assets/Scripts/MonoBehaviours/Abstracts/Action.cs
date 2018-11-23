@@ -37,3 +37,4 @@ public abstract class Action : MonoBehaviour
 
 // Reference: Check layer mask for collision
 // http://answers.unity.com/answers/454913/view.html
+// https://gamedev.stackexchange.com/questions/119667/how-to-get-the-gameobjects-layermask

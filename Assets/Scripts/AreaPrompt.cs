@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class AreaPrompt : MonoBehaviour
 {
-
     public GameEvent EnterAreaPrompt;
     public GameEvent ExitAreaPrompt;
     public Text NewAreaText;
@@ -21,7 +20,6 @@ public class AreaPrompt : MonoBehaviour
             EnterAreaPrompt.Raise();
             NewAreaText.text = AreaName.ToUpper();
         }
-
     }
 
     private void OnTriggerExit2D(Collider2D collision)
