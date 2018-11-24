@@ -5,6 +5,7 @@ using UnityEngine;
 
 // NOTE: Player data might best be saved as a binary file and stored at the persistentData path?
 
+[DisallowMultipleComponent]
 public class PlayerDataHandler : DataHandler
 {
     public PlayerData playerData;

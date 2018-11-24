@@ -8,4 +8,9 @@ public class PlasticInteractable : Interactable
     {
         return base.GetInteractable() as Plastic;
     }
+
+    public override Sprite GetSprite()
+    {
+        return GetPlastic().Sprite;
+    }
 }

@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public abstract class Interactable : MonoBehaviour
 {
     [SerializeField] private Factory Factory;
-    public int baseIndex { get; private set; }
+    public int baseIndex { get; set; }
 
     protected SpriteRenderer spriteRenderer;
 
@@ -26,5 +26,15 @@ public abstract class Interactable : MonoBehaviour
     public virtual InteractableObject GetInteractable()
     {
         return Factory.BaseObjects[baseIndex];
+    }
+
+    public virtual Sprite GetSprite()
+    {
+        return spriteRenderer.sprite;
+    }
+
+    public virtual Factory GetFactory()
+    {
+        return Factory;
     }
 }

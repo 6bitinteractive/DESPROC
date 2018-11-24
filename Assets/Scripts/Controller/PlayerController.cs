@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
     // Set the player's stats based on the Global Data
     public void SetGlobalData()
     {
-        movement.xSpeed = playerData.MovementSpeed;
+        movement.xSpeed = isInMiniGame ? 5f : playerData.MovementSpeed;
         if (!isInMiniGame) movement.ySpeed = playerData.MovementSpeed;
     }
 
