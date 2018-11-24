@@ -307,7 +307,7 @@ Prefab:
     - target: {fileID: 224787878200040678, guid: ceccc46a222ca3141b31ba531bec1c5c,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -60.476
+      value: -60.476013
       objectReference: {fileID: 0}
     - target: {fileID: 224787878200040678, guid: ceccc46a222ca3141b31ba531bec1c5c,
         type: 2}
@@ -990,6 +990,16 @@ Prefab:
         type: 2}
       propertyPath: ShowScore
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 61527453347384670, guid: 7c057c46234bfda49a894260009f6303,
+        type: 2}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 2.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 61527453347384670, guid: 7c057c46234bfda49a894260009f6303,
+        type: 2}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 4.55
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c057c46234bfda49a894260009f6303, type: 2}
@@ -1981,7 +1991,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SceneHandler: {fileID: 12290667}
   CountdownEndScreen: {fileID: 11400000, guid: 1ab8b5b8ea9932347a4e5c2eb7daed4e, type: 2}
-  CountdownValue: 15
+  CountdownValue: 60
   CountdownText: {fileID: 298793219}
   gameDataHandler: {fileID: 1517688867}
 --- !u!1 &1892637689 stripped

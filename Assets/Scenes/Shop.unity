@@ -901,6 +901,49 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 114664701129671232, guid: 5b10a48e702edd6469f4ad6f4b3bfb3e,
+        type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 404ee0ded1fa1554aa52818b5e661fdb,
+        type: 3}
+    - target: {fileID: 224036633731309780, guid: 5b10a48e702edd6469f4ad6f4b3bfb3e,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 72.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224036633731309780, guid: 5b10a48e702edd6469f4ad6f4b3bfb3e,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 395.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224036633731309780, guid: 5b10a48e702edd6469f4ad6f4b3bfb3e,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -32
+      objectReference: {fileID: 0}
+    - target: {fileID: 224036633731309780, guid: 5b10a48e702edd6469f4ad6f4b3bfb3e,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 246.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114664701129671232, guid: 5b10a48e702edd6469f4ad6f4b3bfb3e,
+        type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114664701129671232, guid: 5b10a48e702edd6469f4ad6f4b3bfb3e,
+        type: 2}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114664701129671232, guid: 5b10a48e702edd6469f4ad6f4b3bfb3e,
+        type: 2}
+      propertyPath: m_Text
+      value: '  Welcome,
+
+        my tomodachi!'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b10a48e702edd6469f4ad6f4b3bfb3e, type: 2}
   m_IsPrefabAsset: 0
@@ -1557,6 +1600,9 @@ MonoBehaviour:
     MovementSpeed: 0
     PickupSpeed: 0
     Luck: 0
+    Inventory: []
+    Bin: []
+    TotalTrash: 0
 --- !u!1 &625521811
 GameObject:
   m_ObjectHideFlags: 0
