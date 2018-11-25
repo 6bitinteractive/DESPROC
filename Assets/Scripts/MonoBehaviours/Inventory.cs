@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+[System.Serializable] public class OnAddedToInventory : UnityEvent<Interactable> { };
+
 public class Inventory : MonoBehaviour
 {
-    public UnityEvent OnAddedToInventory = new UnityEvent();
+    //public UnityEvent OnAddedToInventory = new UnityEvent();
+    public OnAddedToInventory OnAddedToInventory = new OnAddedToInventory();
     public UnityEvent OnEmptyInventory = new UnityEvent();
     public UnityEvent OnInventoryFull = new UnityEvent();
 
@@ -71,7 +74,7 @@ public class Inventory : MonoBehaviour
             inventorySlots[currentEmptySlot].UpdateImage();
 
             // Add the plastic scriptable object to player data list
-            if(!alreadyInPlayerData)
+            if (!alreadyInPlayerData)
                 playerDataHandler.playerData.Inventory.Add(interactableObj.GetPlastic());
 
             // Increase total plastic collected in player data
@@ -85,7 +88,7 @@ public class Inventory : MonoBehaviour
             currentEmptySlot %= slotCount; // Avoid index going out of range
 
             // Broadcast that trash has been added to the inventory
-            OnAddedToInventory.Invoke();
+            OnAddedToInventory.Invoke(interactableObj);
         }
         else
         {

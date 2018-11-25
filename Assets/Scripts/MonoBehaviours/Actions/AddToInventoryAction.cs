@@ -17,7 +17,7 @@ public class AddToInventoryAction : InventoryAction
         }
     }
 
-    private void AddToInventory(PlasticInteractable interactableObj)
+    protected void AddToInventory(PlasticInteractable interactableObj)
     {
         if (interactableObj != null)
             Inventory.AddToEmptySlot(interactableObj);

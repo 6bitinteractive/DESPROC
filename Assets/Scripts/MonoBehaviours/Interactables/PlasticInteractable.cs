@@ -13,4 +13,9 @@ public class PlasticInteractable : Interactable
     {
         return GetPlastic().Sprite;
     }
+
+    public AudioClip GetPickupSfx()
+    {
+        return GetPlastic().PickupSfx;
+    }
 }
