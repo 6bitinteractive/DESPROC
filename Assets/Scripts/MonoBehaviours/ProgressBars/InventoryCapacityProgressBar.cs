@@ -20,6 +20,6 @@ public class InventoryCapacityProgressBar : ProgressBar
         //current = (inventoryCount > 0) ? inventoryCount : 0;
 
         total = sessionData.InventoryCapacity;
-        //current = sessionData.Inventory.Count;
+        current = sessionData.Inventory.Count;
     }
 }

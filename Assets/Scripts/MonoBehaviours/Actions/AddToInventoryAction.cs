@@ -38,27 +38,27 @@ public class AddToInventoryAction : InventoryAction
         //}
 
         // We add whatever trash is in the player data to the inventory, else there's nothing to do
-        int inventoryCountInData = sessionData.Inventory.Count;
+        //int inventoryCountInData = sessionData.Inventory.Count;
 
-        if (inventoryCountInData <= 0 || inventoryCountInData > Inventory.GetSlotCount())
-            return;
+        //if (inventoryCountInData <= 0 || inventoryCountInData > Inventory.GetSlotCount())
+        //    return;
 
-        for (int i = 0; i < inventoryCountInData; i++)
-        {
-            PlasticInteractable p = Instantiate(plasticPrefab) as PlasticInteractable;
-            Plastic plasticInInventory = sessionData.Inventory[i];
+        //for (int i = 0; i < inventoryCountInData; i++)
+        //{
+        //    PlasticInteractable p = Instantiate(plasticPrefab) as PlasticInteractable;
+        //    Plastic plasticInInventory = sessionData.Inventory[i];
 
-            for (int j = 0; j < p.GetFactory().BaseObjects.Length; j++)
-            {
-                if (plasticInInventory == p.GetFactory().BaseObjects[j])
-                {
-                    p.baseIndex = j;
-                }
-            }
+        //    for (int j = 0; j < p.GetFactory().BaseObjects.Length; j++)
+        //    {
+        //        if (plasticInInventory == p.GetFactory().BaseObjects[j])
+        //        {
+        //            p.baseIndex = j;
+        //        }
+        //    }
 
-            Debug.Log(p);
-            AddToInventory(p, true);
-        }
+        //    Debug.Log(p.name);
+        //    AddToInventory(p, true);
+        //}
     }
 
     public override void Act()
@@ -100,16 +100,8 @@ public class AddToInventoryAction : InventoryAction
         }
 
         if (interactableObj != null)
-            Inventory.AddToEmptySlot(interactableObj);
+            Inventory.AddToEmptySlot(interactableObj, alreadyInPlayerData);
 
-        if (!alreadyInPlayerData)
-        {
-            // Add the plastic scriptable object to player data list
-            sessionData.Inventory.Add(interactableObj.GetPlastic());
-
-            // Increase total plastic collected in player data
-            sessionData.TotalTrash++;
-        }
 
         // Remove the reference to the previous obejct
         target = null;

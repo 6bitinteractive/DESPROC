@@ -58,6 +58,7 @@ GameObject:
   - component: {fileID: 114422274705407104}
   - component: {fileID: 114692552158088702}
   - component: {fileID: 114248611263704458}
+  - component: {fileID: 114399513883103692}
   m_Layer: 5
   m_Name: Curreny Container
   m_TagString: Untagged
@@ -197,6 +198,27 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'Tortgold:'
+--- !u!114 &114399513883103692
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1729563247253280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 502c5c38619f7524d886a4713e53cb7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerData:
+    Tortgold: 0
+    Tortpoints: 0
+    InventoryCapacity: 0
+    MovementSpeed: 0
+    PickupSpeed: 0
+    Luck: 0
+    Inventory: []
+    Bin: []
+    TotalTrash: 0
 --- !u!114 &114422274705407104
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -323,6 +345,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36bf66944b10eba4b9e58083b9d2fc1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sessionData: {fileID: 11400000, guid: d145efb78b7a3894d99040295d0cceb3, type: 2}
   TortpointsText: {fileID: 114714263326247466}
   TortgoldText: {fileID: 114569539257188978}
   ShowScore: 1
@@ -435,8 +458,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -38, y: 1}
-  m_SizeDelta: {x: 382.5, y: 29.5}
+  m_AnchoredPosition: {x: -45.4, y: 5}
+  m_SizeDelta: {x: 278.2, y: 28.8}
   m_Pivot: {x: 1, y: 1}
 --- !u!224 &224645883931778702
 RectTransform:

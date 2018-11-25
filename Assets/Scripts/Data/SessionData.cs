@@ -14,17 +14,30 @@ namespace TurtleTale
         [SerializeField] private float basePickupSpeed;
         [SerializeField] private float baseLuck;
 
-        [HideInInspector] public float Tortgold;
-        [HideInInspector] public float Tortpoints;
-        [HideInInspector] public int InventoryCapacity;
-        [HideInInspector] public float MovementSpeed;
-        [HideInInspector] public float PickupSpeed;
-        [HideInInspector] public float Luck;
-        [HideInInspector] public List<Plastic> Inventory;
-        [HideInInspector] public List<Plastic> Bin;
-        [HideInInspector] public int TotalTrash;
-        [HideInInspector] public AudioClip audioToPersist;
-        [HideInInspector] public float audioTimePause;
+        //[HideInInspector] public float Tortgold;
+        //[HideInInspector] public float Tortpoints;
+        //[HideInInspector] public int InventoryCapacity;
+        //[HideInInspector] public float MovementSpeed;
+        //[HideInInspector] public float PickupSpeed;
+        //[HideInInspector] public float Luck;
+        //[HideInInspector] public List<Plastic> Inventory;
+        //[HideInInspector] public List<Plastic> Bin;
+        //[HideInInspector] public int TotalTrash;
+        //[HideInInspector] public AudioClip audioToPersist;
+        //[HideInInspector] public float audioTimePause;
+
+        [Header("DO NOT CHANGE THE VALUES; Exposed for testing")]
+        public float Tortgold;
+        public float Tortpoints;
+        public int InventoryCapacity;
+        public float MovementSpeed;
+        public float PickupSpeed;
+        public float Luck;
+        public List<Plastic> Inventory;
+        public List<Plastic> Bin;
+        public int TotalTrash;
+        public AudioClip audioToPersist;
+        public float audioTimePause;
 
         private void OnEnable()
         {

@@ -616,6 +616,11 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 207856298}
   m_CullTransparentMesh: 0
+--- !u!1 &253937799 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1049383383790788, guid: bfbabfdd22addb54891582c16f6d89cf,
+    type: 2}
+  m_PrefabInternal: {fileID: 1342323945}
 --- !u!1 &255043141
 GameObject:
   m_ObjectHideFlags: 0
@@ -1445,12 +1450,12 @@ GameObject:
   - component: {fileID: 698472919}
   - component: {fileID: 698472918}
   m_Layer: 5
-  m_Name: UI Canvas
+  m_Name: UI Canvas - DO NOT USE?
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &698472918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1796,11 +1801,6 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 744555426}
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
---- !u!1 &744555428 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1134564704710652, guid: 2a1121811150f654188fb85bb3ac7879,
-    type: 2}
-  m_PrefabInternal: {fileID: 744555426}
 --- !u!224 &744555429 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 224553445824078042, guid: 2a1121811150f654188fb85bb3ac7879,
@@ -2579,7 +2579,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1051765740}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.31002146, y: -3.0180218, z: -10}
+  m_LocalPosition: {x: -0.31002146, y: -3.0180228, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3721,7 +3721,7 @@ MonoBehaviour:
     response:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 744555428}
+        - m_Target: {fileID: 253937799}
           m_MethodName: SetActive
           m_Mode: 6
           m_Arguments:
@@ -3759,7 +3759,7 @@ MonoBehaviour:
     response:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 744555428}
+        - m_Target: {fileID: 253937799}
           m_MethodName: SetActive
           m_Mode: 6
           m_Arguments:
@@ -4043,6 +4043,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36bf66944b10eba4b9e58083b9d2fc1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sessionData: {fileID: 0}
   TortpointsText: {fileID: 1600927272}
   TortgoldText: {fileID: 2024023960}
   ShowScore: 1

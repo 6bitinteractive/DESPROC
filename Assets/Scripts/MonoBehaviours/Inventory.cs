@@ -39,13 +39,16 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public void AddToEmptySlot(PlasticInteractable interactableObj)
+    public void AddToEmptySlot(PlasticInteractable interactableObj, bool alreadyInPlayerData = false)
     {
         if (inventorySlots[currentEmptySlot].inventoryItem == null)
         {
             // Update session data
-            sessionData.Inventory.Add(interactableObj.GetPlastic());
-            sessionData.TotalTrash++;
+            if (!alreadyInPlayerData)
+            {
+                sessionData.Inventory.Add(interactableObj.GetPlastic());
+                sessionData.TotalTrash++;
+            }
 
             // Store to inventory slot
             inventorySlots[currentEmptySlot].inventoryItem = interactableObj;
