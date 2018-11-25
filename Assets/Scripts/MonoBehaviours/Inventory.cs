@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+[System.Serializable] public class OnAddedToInventory : UnityEvent<Interactable> { }
+
 public class Inventory : MonoBehaviour
 {
     //public UnityEvent OnAddedToInventory = new UnityEvent();
@@ -51,7 +53,7 @@ public class Inventory : MonoBehaviour
             currentEmptySlot %= slotCount; // Avoid index going out of range
 
             // Broadcast that trash has been added to the inventory
-            OnAddedToInventory.Invoke();
+            OnAddedToInventory.Invoke(interactableObj);
         }
         else
         {
