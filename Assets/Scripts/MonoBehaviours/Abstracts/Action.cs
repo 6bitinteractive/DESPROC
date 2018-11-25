@@ -13,7 +13,8 @@ public abstract class Action : MonoBehaviour
     public abstract void Act();
 
     protected virtual void Start()
-    { }
+    {
+    }
 
     protected virtual void Update()
     {

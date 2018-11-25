@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-[System.Serializable] public class OnAddedToInventory : UnityEvent<Interactable> { }
+[System.Serializable] public class OnAddedToInventory : UnityEvent<Interactable> { };
 
 public class Inventory : MonoBehaviour
 {
