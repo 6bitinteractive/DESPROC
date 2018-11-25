@@ -9,7 +9,7 @@ public class ToggleCanvasDisplayAction : Action
 {
     CanvasGroup canvasGroup;
 
-    private void Start()
+    protected override void Start()
     {
         canvasGroup = GetComponent<CanvasGroup>();
         Hide();

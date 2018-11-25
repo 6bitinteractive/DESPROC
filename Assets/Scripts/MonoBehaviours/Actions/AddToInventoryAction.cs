@@ -31,7 +31,6 @@ public class AddToInventoryAction : InventoryAction
                     p.baseIndex = j;
                     break;
                 }
-
             }
 
             AddToInventory(p, true);
