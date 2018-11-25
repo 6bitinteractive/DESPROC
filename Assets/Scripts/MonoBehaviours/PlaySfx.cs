@@ -16,7 +16,7 @@ public class PlaySfx : MonoBehaviour
     public void PlayPlasticPickupSfx(Interactable interactableObject)
     {
         PlasticInteractable plasticObject = interactableObject as PlasticInteractable;
-        audioSource.clip = plasticObject.GetPlastic().PickupSfx;
+        audioSource.clip = plasticObject.GetPickupSfx();
         audioSource.Play();
     }
 }
