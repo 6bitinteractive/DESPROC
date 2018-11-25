@@ -12,7 +12,10 @@ public abstract class Action : MonoBehaviour
 
     public abstract void Act();
 
-    private void Update()
+    protected virtual void Start()
+    { }
+
+    protected virtual void Update()
     {
         //Debug.Log("Target: " + target);
         if (Input.GetKeyDown(Key))
@@ -21,7 +24,7 @@ public abstract class Action : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    protected virtual void OnTriggerStay2D(Collider2D collision)
     {
         if ((interactableLayerMask.value & 1 << collision.gameObject.layer) != 0)
         {
@@ -29,7 +32,7 @@ public abstract class Action : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    protected virtual void OnTriggerExit2D(Collider2D collision)
     {
         target = null;
     }
