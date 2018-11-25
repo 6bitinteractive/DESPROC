@@ -12,10 +12,6 @@ public class Inventory : MonoBehaviour
     public UnityEvent OnEmptyInventory = new UnityEvent();
     public UnityEvent OnInventoryFull = new UnityEvent();
 
-    [Header("Temporary Hacks")]
-    [SerializeField] private PlayerDataHandler playerDataHandler;
-    [SerializeField] private PlasticInteractable plasticPrefab;
-
     [Header("Inventory Slots")]
     [SerializeField] private GameObject gridContainer;
     [SerializeField] private GameObject inventorySlotPrefab;
@@ -37,33 +33,9 @@ public class Inventory : MonoBehaviour
             // Add the InventorySlot component to the array
             inventorySlots[i] = slot.GetComponent<InventorySlot>();
         }
-
-        // We add whatever trash is in the player data to the inventory UI, else there's nothing to do
-        int inventoryCount = playerDataHandler.playerData.Inventory.Count;
-
-        if (inventoryCount <= 0 || inventoryCount >= slotCount)
-            return;
-
-        for (int i = 0; i < inventoryCount; i++)
-        {
-            PlasticInteractable p = Instantiate(plasticPrefab) as PlasticInteractable;
-            Plastic plasticInInventory = playerDataHandler.playerData.Inventory[i];
-
-            for (int j = 0; j < p.GetFactory().BaseObjects.Length; j++)
-            {
-                if (plasticInInventory == p.GetFactory().BaseObjects[j])
-                {
-                    p.baseIndex = j;
-                    break;
-                }
-
-            }
-
-            AddToEmptySlot(p, true);
-        }
     }
 
-    public void AddToEmptySlot(PlasticInteractable interactableObj, bool alreadyInPlayerData = false)
+    public void AddToEmptySlot(PlasticInteractable interactableObj)
     {
         if (inventorySlots[currentEmptySlot].inventoryItem == null)
         {
@@ -72,13 +44,6 @@ public class Inventory : MonoBehaviour
 
             // Update the slot image
             inventorySlots[currentEmptySlot].UpdateImage();
-
-            // Add the plastic scriptable object to player data list
-            if (!alreadyInPlayerData)
-                playerDataHandler.playerData.Inventory.Add(interactableObj.GetPlastic());
-
-            // Increase total plastic collected in player data
-            playerDataHandler.playerData.TotalTrash++;
 
             // Deactivate interactableObject in scene
             interactableObj.gameObject.SetActive(false);
@@ -110,5 +75,10 @@ public class Inventory : MonoBehaviour
 
         currentEmptySlot = 0;
         OnEmptyInventory.Invoke();
+    }
+
+    public int GetSlotCount()
+    {
+        return slotCount;
     }
 }
