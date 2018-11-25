@@ -16,7 +16,7 @@ public class AddToInventoryAction : InventoryAction
         // We add whatever trash is in the player data to the inventory, else there's nothing to do
         int inventoryCountInData = playerDataHandler.playerData.Inventory.Count;
 
-        if (inventoryCountInData <= 0 || inventoryCountInData >= Inventory.GetSlotCount())
+        if (inventoryCountInData <= 0 || inventoryCountInData > Inventory.GetSlotCount())
             return;
 
         for (int i = 0; i < inventoryCountInData; i++)
@@ -29,11 +29,10 @@ public class AddToInventoryAction : InventoryAction
                 if (plasticInInventory == p.GetFactory().BaseObjects[j])
                 {
                     p.baseIndex = j;
-                    break;
+                    AddToInventory(p, true);
                 }
             }
 
-            AddToInventory(p, true);
         }
     }
 
@@ -51,6 +50,12 @@ public class AddToInventoryAction : InventoryAction
 
     protected void AddToInventory(PlasticInteractable interactableObj, bool alreadyInPlayerData = false)
     {
+        if (playerDataHandler.playerData.Inventory.Count == Inventory.GetSlotCount())
+        {
+            Inventory.OnInventoryFull.Invoke();
+            return;
+        }
+
         if (interactableObj != null)
             Inventory.AddToEmptySlot(interactableObj);
 

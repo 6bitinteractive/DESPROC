@@ -12,9 +12,11 @@ public class InventoryCapacityProgressBar : ProgressBar
 
     protected override void InitializeData()
     {
-        total = playerDataHandler.playerData.InventoryCapacity;
+        total = 9; // FIX: hard-code
 
-        int inventoryCount = playerDataHandler.playerData.Inventory.Count;
-        current = (inventoryCount > 0) ? inventoryCount : 0;
+        //total = playerDataHandler.playerData.InventoryCapacity;
+
+        //int inventoryCount = playerDataHandler.playerData.Inventory.Count;
+        //current = (inventoryCount > 0) ? inventoryCount : 0;
     }
 }

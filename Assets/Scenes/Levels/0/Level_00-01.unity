@@ -2535,11 +2535,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a1121811150f654188fb85bb3ac7879, type: 2}
   m_IsPrefabAsset: 0
---- !u!1 &757032840 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1134564704710652, guid: 2a1121811150f654188fb85bb3ac7879,
-    type: 2}
-  m_PrefabInternal: {fileID: 707624009}
 --- !u!1 &763846644
 GameObject:
   m_ObjectHideFlags: 0
@@ -3590,12 +3585,12 @@ GameObject:
   - component: {fileID: 1122165484}
   - component: {fileID: 1122165483}
   m_Layer: 5
-  m_Name: UI Canvas
+  m_Name: UI Canvas - DO NOT USE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1122165483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4003,7 +3998,7 @@ MonoBehaviour:
     response:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 757032840}
+        - m_Target: {fileID: 1211678909}
           m_MethodName: SetActive
           m_Mode: 6
           m_Arguments:
@@ -4041,7 +4036,7 @@ MonoBehaviour:
     response:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 757032840}
+        - m_Target: {fileID: 1211678909}
           m_MethodName: SetActive
           m_Mode: 6
           m_Arguments:
@@ -4328,9 +4323,34 @@ Prefab:
       propertyPath: OnAddedToInventory.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 187282291}
+    - target: {fileID: 114632064142718352, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: OnAddedToInventory.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2146652374}
+    - target: {fileID: 114632064142718352, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: OnAddedToInventory.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpdateProgress
+      objectReference: {fileID: 0}
+    - target: {fileID: 114632064142718352, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: OnAddedToInventory.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1393316609}
+    - target: {fileID: 114632064142718352, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: OnAddedToInventory.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: UpdateProgress
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfbabfdd22addb54891582c16f6d89cf, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1211678909 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1049383383790788, guid: bfbabfdd22addb54891582c16f6d89cf,
+    type: 2}
+  m_PrefabInternal: {fileID: 1211678908}
 --- !u!1 &1220019332
 GameObject:
   m_ObjectHideFlags: 0
@@ -5070,6 +5090,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4789821731012548, guid: 7aed055a18a12684d99e99f6504c5266,
     type: 2}
   m_PrefabInternal: {fileID: 1200622700}
+--- !u!114 &1393316609 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114833747968637560, guid: bfbabfdd22addb54891582c16f6d89cf,
+    type: 2}
+  m_PrefabInternal: {fileID: 1211678908}
+  m_Script: {fileID: 11500000, guid: 2d74adffa57c015499da1838ce4d5543, type: 3}
 --- !u!1 &1425155281
 GameObject:
   m_ObjectHideFlags: 0
@@ -6718,3 +6744,9 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2146652374 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114358371689595722, guid: bfbabfdd22addb54891582c16f6d89cf,
+    type: 2}
+  m_PrefabInternal: {fileID: 1211678908}
+  m_Script: {fileID: 11500000, guid: b0da184f77466b14abba81bd1ba93f98, type: 3}
