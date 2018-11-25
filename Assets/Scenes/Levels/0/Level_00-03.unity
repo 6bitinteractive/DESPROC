@@ -2449,7 +2449,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0da184f77466b14abba81bd1ba93f98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerDataHandler: {fileID: 1342323946}
+  sessionData: {fileID: 0}
   ProgressBarFill: {fileID: 1457824505}
   ProgressBarText: {fileID: 91692958}
   OnCollectedEnoughTrash:
@@ -4118,7 +4118,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1051765740}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.5200996, y: -2.6404321, z: -10}
+  m_LocalPosition: {x: -5.5161667, y: -2.6404064, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4950,6 +4950,12 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1342323945}
   m_Script: {fileID: 11500000, guid: b0da184f77466b14abba81bd1ba93f98, type: 3}
+--- !u!114 &1342323950 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114977636317308962, guid: bfbabfdd22addb54891582c16f6d89cf,
+    type: 2}
+  m_PrefabInternal: {fileID: 1342323945}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &1370018154
 GameObject:
   m_ObjectHideFlags: 0
@@ -5001,6 +5007,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36bf66944b10eba4b9e58083b9d2fc1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sessionData: {fileID: 0}
   TortpointsText: {fileID: 1865378450}
   TortgoldText: {fileID: 2018548341}
   ShowScore: 1
@@ -5342,7 +5349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9acb6a017729044459ae77d87fd71971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerDataHandler: {fileID: 0}
+  sessionData: {fileID: 0}
   ProgressBarFill: {fileID: 1843702325}
   ProgressBarText: {fileID: 509890580}
   OnSavedEnoughTurtles:
@@ -5703,7 +5710,7 @@ Prefab:
         type: 2}
       propertyPath: NewAreaText
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1342323950}
     - target: {fileID: 4449663579890798, guid: b0788a606b823404f926369698281250, type: 2}
       propertyPath: m_LocalScale.y
       value: 0.7625
@@ -7124,7 +7131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d74adffa57c015499da1838ce4d5543, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerDataHandler: {fileID: 1342323946}
+  sessionData: {fileID: 0}
   ProgressBarFill: {fileID: 1043185082}
   ProgressBarText: {fileID: 1625530996}
 --- !u!114 &2029703878
