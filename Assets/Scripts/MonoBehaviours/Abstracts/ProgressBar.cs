@@ -6,12 +6,13 @@ using UnityEngine.UI;
 
 public abstract class ProgressBar : MonoBehaviour
 {
-    [SerializeField] protected PlayerDataHandler playerDataHandler;
+    [SerializeField] protected TurtleTale.SessionData sessionData;
+    //[SerializeField] protected PlayerDataHandler playerDataHandler;
     [SerializeField] protected Image ProgressBarFill;
     [SerializeField] protected Text ProgressBarText;
 
     protected int total;
-    protected int current = 0;
+    protected int current;
 
     protected virtual void Awake()
     {

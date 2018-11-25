@@ -8,9 +8,11 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private TurtleTale.SessionData sessionData;
+
     Movement movement;
     Direction direction;
-    PlayerData playerData;
+    //PlayerData playerData;
 
     public PlayerChildCollision Body;
     public bool isInMiniGame = false;
@@ -19,7 +21,7 @@ public class PlayerController : MonoBehaviour
     {
         movement = GetComponent<Movement>();
         direction = GetComponent<Direction>();
-        playerData = GetComponent<PlayerDataHandler>().playerData;
+        //playerData = GetComponent<PlayerDataHandler>().playerData;
 
         SetGlobalData();
     }
@@ -27,8 +29,8 @@ public class PlayerController : MonoBehaviour
     // Set the player's stats based on the Global Data
     public void SetGlobalData()
     {
-        movement.xSpeed = isInMiniGame ? 5f : playerData.MovementSpeed;
-        if (!isInMiniGame) movement.ySpeed = playerData.MovementSpeed;
+        movement.xSpeed = isInMiniGame ? 5f : sessionData.MovementSpeed;
+        if (!isInMiniGame) movement.ySpeed = sessionData.MovementSpeed;
     }
 
     void Update()

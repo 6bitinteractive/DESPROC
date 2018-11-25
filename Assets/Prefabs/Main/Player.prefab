@@ -45,6 +45,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1049383383790788
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 224249758436251312}
+  - component: {fileID: 222557528668031822}
+  - component: {fileID: 114977636317308962}
+  - component: {fileID: 114660489807343978}
+  m_Layer: 5
+  m_Name: New Area Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
 --- !u!1 &1063546631112734
 GameObject:
   m_ObjectHideFlags: 1
@@ -542,7 +560,7 @@ GameObject:
   - component: {fileID: 95765094612013732}
   - component: {fileID: 114771197757940374}
   - component: {fileID: 114910424478352604}
-  - component: {fileID: 210973149118933220}
+  - component: {fileID: 210322459037546010}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -1031,6 +1049,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2173e0b69b3f40d499b4a9e5b5d65b4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sessionData: {fileID: 11400000, guid: d145efb78b7a3894d99040295d0cceb3, type: 2}
   Body: {fileID: 114677827106650748}
   isInMiniGame: 0
 --- !u!114 &114307454379359542
@@ -1090,7 +1109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0da184f77466b14abba81bd1ba93f98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerDataHandler: {fileID: 114910424478352604}
+  sessionData: {fileID: 11400000, guid: d145efb78b7a3894d99040295d0cceb3, type: 2}
   ProgressBarFill: {fileID: 114686993828083732}
   ProgressBarText: {fileID: 114066710556191034}
   OnCollectedEnoughTrash:
@@ -1235,7 +1254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9acb6a017729044459ae77d87fd71971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerDataHandler: {fileID: 114910424478352604}
+  sessionData: {fileID: 11400000, guid: d145efb78b7a3894d99040295d0cceb3, type: 2}
   ProgressBarFill: {fileID: 114444928195195544}
   ProgressBarText: {fileID: 114970686581143140}
   OnSavedEnoughTurtles:
@@ -1286,7 +1305,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   Inventory: {fileID: 114632064142718352}
-  playerDataHandler: {fileID: 114910424478352604}
+  sessionData: {fileID: 11400000, guid: d145efb78b7a3894d99040295d0cceb3, type: 2}
   plasticPrefab: {fileID: 114796640138566288, guid: 7aed055a18a12684d99e99f6504c5266,
     type: 2}
 --- !u!114 &114489847184158744
@@ -1316,6 +1335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36bf66944b10eba4b9e58083b9d2fc1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sessionData: {fileID: 0}
   TortpointsText: {fileID: 114349275269424154}
   TortgoldText: {fileID: 114166071775500784}
   ShowScore: 1
@@ -1404,7 +1424,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef9a559e6bf697f488b3316807276d06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Key: 0
+  Key: 105
   interactableLayerMask:
     serializedVersion: 2
     m_Bits: 0
@@ -1487,10 +1507,10 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  sessionData: {fileID: 11400000, guid: d145efb78b7a3894d99040295d0cceb3, type: 2}
   gridContainer: {fileID: 1219272236895998}
   inventorySlotPrefab: {fileID: 1202196545639678, guid: dde910d319fbffc4fbd97fbaf4f6cbe1,
     type: 2}
-  slotCount: 9
 --- !u!114 &114634821605453338
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1518,6 +1538,20 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114660489807343978
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1049383383790788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1573420865, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 1, g: 1, b: 1, a: 0.5}
+  m_EffectDistance: {x: 5, y: -5}
+  m_UseGraphicAlpha: 1
 --- !u!114 &114672612879791924
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1731,6 +1765,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36bf66944b10eba4b9e58083b9d2fc1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sessionData: {fileID: 11400000, guid: d145efb78b7a3894d99040295d0cceb3, type: 2}
   TortpointsText: {fileID: 0}
   TortgoldText: {fileID: 0}
   ShowScore: 0
@@ -1761,7 +1796,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d74adffa57c015499da1838ce4d5543, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerDataHandler: {fileID: 114910424478352604}
+  sessionData: {fileID: 11400000, guid: d145efb78b7a3894d99040295d0cceb3, type: 2}
   ProgressBarFill: {fileID: 114404333221140100}
   ProgressBarText: {fileID: 114097936428063652}
 --- !u!114 &114853236239078202
@@ -1960,6 +1995,39 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 100 %
+--- !u!114 &114977636317308962
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1049383383790788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 404ee0ded1fa1554aa52818b5e661fdb, type: 3}
+    m_FontSize: 200
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 271
+    m_Alignment: 7
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: About to enter new area
 --- !u!114 &114993508103128402
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1974,7 +2042,7 @@ MonoBehaviour:
   m_EffectColor: {r: 0.8490566, g: 0.8490566, b: 0.8490566, a: 0.5}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
---- !u!210 &210973149118933220
+--- !u!210 &210322459037546010
 SortingGroup:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2163,6 +2231,13 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1137817319228570}
   m_CullTransparentMesh: 0
+--- !u!222 &222557528668031822
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1049383383790788}
+  m_CullTransparentMesh: 0
 --- !u!222 &222607043924660878
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -2286,6 +2361,7 @@ RectTransform:
   - {fileID: 224605478860438246}
   - {fileID: 224619953085637010}
   - {fileID: 224163949817584082}
+  - {fileID: 224249758436251312}
   m_Father: {fileID: 4894992979352498}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2449,6 +2525,24 @@ RectTransform:
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 300, y: 350}
   m_SizeDelta: {x: 420, y: 550}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!224 &224249758436251312
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1049383383790788}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.39166662, y: 0.39166662, z: 0.39166662}
+  m_Children: []
+  m_Father: {fileID: 224042726800394570}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: -0.0040043974, y: 59.839012}
+  m_SizeDelta: {x: 4902.1, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224296752815386294
 RectTransform:

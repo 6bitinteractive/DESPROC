@@ -13,15 +13,19 @@ public class Inventory : MonoBehaviour
     public UnityEvent OnInventoryFull = new UnityEvent();
 
     [Header("Inventory Slots")]
+    [SerializeField] private TurtleTale.SessionData sessionData;
     [SerializeField] private GameObject gridContainer;
     [SerializeField] private GameObject inventorySlotPrefab;
-    [SerializeField] private int slotCount = 9;
 
     private InventorySlot[] inventorySlots;
-    private int currentEmptySlot = 0;
+    private int slotCount;
+    private int currentEmptySlot;
 
     void Start()
     {
+        slotCount = sessionData.InventoryCapacity;
+        //currentEmptySlot = (sessionData.Inventory.Count - 1) % slotCount;
+        //currentEmptySlot = Mathf.Clamp(currentEmptySlot, 0, int.MaxValue);
         inventorySlots = new InventorySlot[slotCount];
 
         for (int i = 0; i < slotCount; i++)
@@ -39,6 +43,10 @@ public class Inventory : MonoBehaviour
     {
         if (inventorySlots[currentEmptySlot].inventoryItem == null)
         {
+            // Update session data
+            sessionData.Inventory.Add(interactableObj.GetPlastic());
+            sessionData.TotalTrash++;
+
             // Store to inventory slot
             inventorySlots[currentEmptySlot].inventoryItem = interactableObj;
 

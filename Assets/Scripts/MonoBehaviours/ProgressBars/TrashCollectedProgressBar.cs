@@ -23,5 +23,6 @@ public class TrashCollectedProgressBar : ProgressBar
     protected override void InitializeData()
     {
         total = GameState.MinTrashToCollect;
+        current = sessionData.TotalTrash;
     }
 }

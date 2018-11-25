@@ -1406,7 +1406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0da184f77466b14abba81bd1ba93f98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerDataHandler: {fileID: 1300136942}
+  sessionData: {fileID: 0}
   ProgressBarFill: {fileID: 1425155283}
   ProgressBarText: {fileID: 357660837}
   OnCollectedEnoughTrash:
@@ -2535,11 +2535,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a1121811150f654188fb85bb3ac7879, type: 2}
   m_IsPrefabAsset: 0
---- !u!1 &757032840 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1134564704710652, guid: 2a1121811150f654188fb85bb3ac7879,
-    type: 2}
-  m_PrefabInternal: {fileID: 707624009}
 --- !u!1 &763846644
 GameObject:
   m_ObjectHideFlags: 0
@@ -3538,6 +3533,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36bf66944b10eba4b9e58083b9d2fc1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sessionData: {fileID: 0}
   TortpointsText: {fileID: 1704307744}
   TortgoldText: {fileID: 1309297197}
   ShowScore: 1
@@ -3590,12 +3586,12 @@ GameObject:
   - component: {fileID: 1122165484}
   - component: {fileID: 1122165483}
   m_Layer: 5
-  m_Name: UI Canvas
+  m_Name: UI Canvas - DO NOT USE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1122165483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4003,7 +3999,7 @@ MonoBehaviour:
     response:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 757032840}
+        - m_Target: {fileID: 1211678909}
           m_MethodName: SetActive
           m_Mode: 6
           m_Arguments:
@@ -4041,7 +4037,7 @@ MonoBehaviour:
     response:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 757032840}
+        - m_Target: {fileID: 1211678909}
           m_MethodName: SetActive
           m_Mode: 6
           m_Arguments:
@@ -4230,7 +4226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d74adffa57c015499da1838ce4d5543, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerDataHandler: {fileID: 1300136942}
+  sessionData: {fileID: 0}
   ProgressBarFill: {fileID: 1291951206}
   ProgressBarText: {fileID: 1962801241}
 --- !u!1001 &1206363412
@@ -4331,6 +4327,11 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfbabfdd22addb54891582c16f6d89cf, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1211678909 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1049383383790788, guid: bfbabfdd22addb54891582c16f6d89cf,
+    type: 2}
+  m_PrefabInternal: {fileID: 1211678908}
 --- !u!1 &1220019332
 GameObject:
   m_ObjectHideFlags: 0
@@ -6615,7 +6616,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9acb6a017729044459ae77d87fd71971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerDataHandler: {fileID: 1300136942}
+  sessionData: {fileID: 0}
   ProgressBarFill: {fileID: 1493121152}
   ProgressBarText: {fileID: 502158272}
   OnSavedEnoughTurtles:
