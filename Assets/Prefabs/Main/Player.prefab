@@ -643,7 +643,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1818406877250148}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.56, y: 1.93, z: 0}
+  m_LocalPosition: {x: -3.978, y: 0.1, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.5}
   m_Children:
   - {fileID: 224042726800394570}
@@ -1049,6 +1049,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2173e0b69b3f40d499b4a9e5b5d65b4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sessionData: {fileID: 11400000, guid: d145efb78b7a3894d99040295d0cceb3, type: 2}
   Body: {fileID: 114677827106650748}
   isInMiniGame: 0
 --- !u!114 &114307454379359542
@@ -1108,7 +1109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0da184f77466b14abba81bd1ba93f98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerDataHandler: {fileID: 114910424478352604}
+  sessionData: {fileID: 11400000, guid: d145efb78b7a3894d99040295d0cceb3, type: 2}
   ProgressBarFill: {fileID: 114686993828083732}
   ProgressBarText: {fileID: 114066710556191034}
   OnCollectedEnoughTrash:
@@ -1253,7 +1254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9acb6a017729044459ae77d87fd71971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerDataHandler: {fileID: 114910424478352604}
+  sessionData: {fileID: 11400000, guid: d145efb78b7a3894d99040295d0cceb3, type: 2}
   ProgressBarFill: {fileID: 114444928195195544}
   ProgressBarText: {fileID: 114970686581143140}
   OnSavedEnoughTurtles:
@@ -1304,7 +1305,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   Inventory: {fileID: 114632064142718352}
-  playerDataHandler: {fileID: 114910424478352604}
+  sessionData: {fileID: 11400000, guid: d145efb78b7a3894d99040295d0cceb3, type: 2}
   plasticPrefab: {fileID: 114796640138566288, guid: 7aed055a18a12684d99e99f6504c5266,
     type: 2}
 --- !u!114 &114489847184158744
@@ -1334,6 +1335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36bf66944b10eba4b9e58083b9d2fc1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sessionData: {fileID: 0}
   TortpointsText: {fileID: 114349275269424154}
   TortgoldText: {fileID: 114166071775500784}
   ShowScore: 1
@@ -1422,7 +1424,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef9a559e6bf697f488b3316807276d06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Key: 0
+  Key: 105
   interactableLayerMask:
     serializedVersion: 2
     m_Bits: 0
@@ -1505,10 +1507,10 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  sessionData: {fileID: 11400000, guid: d145efb78b7a3894d99040295d0cceb3, type: 2}
   gridContainer: {fileID: 1219272236895998}
   inventorySlotPrefab: {fileID: 1202196545639678, guid: dde910d319fbffc4fbd97fbaf4f6cbe1,
     type: 2}
-  slotCount: 9
 --- !u!114 &114634821605453338
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1763,6 +1765,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36bf66944b10eba4b9e58083b9d2fc1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sessionData: {fileID: 11400000, guid: d145efb78b7a3894d99040295d0cceb3, type: 2}
   TortpointsText: {fileID: 0}
   TortgoldText: {fileID: 0}
   ShowScore: 0
@@ -1793,7 +1796,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d74adffa57c015499da1838ce4d5543, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerDataHandler: {fileID: 114910424478352604}
+  sessionData: {fileID: 11400000, guid: d145efb78b7a3894d99040295d0cceb3, type: 2}
   ProgressBarFill: {fileID: 114404333221140100}
   ProgressBarText: {fileID: 114097936428063652}
 --- !u!114 &114853236239078202

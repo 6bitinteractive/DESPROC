@@ -1406,7 +1406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0da184f77466b14abba81bd1ba93f98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerDataHandler: {fileID: 1300136942}
+  sessionData: {fileID: 0}
   ProgressBarFill: {fileID: 1425155283}
   ProgressBarText: {fileID: 357660837}
   OnCollectedEnoughTrash:
@@ -3533,6 +3533,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36bf66944b10eba4b9e58083b9d2fc1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sessionData: {fileID: 0}
   TortpointsText: {fileID: 1704307744}
   TortgoldText: {fileID: 1309297197}
   ShowScore: 1
@@ -4225,7 +4226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d74adffa57c015499da1838ce4d5543, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerDataHandler: {fileID: 1300136942}
+  sessionData: {fileID: 0}
   ProgressBarFill: {fileID: 1291951206}
   ProgressBarText: {fileID: 1962801241}
 --- !u!1001 &1206363412
@@ -4323,26 +4324,6 @@ Prefab:
       propertyPath: OnAddedToInventory.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 187282291}
-    - target: {fileID: 114632064142718352, guid: bfbabfdd22addb54891582c16f6d89cf,
-        type: 2}
-      propertyPath: OnAddedToInventory.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 2146652374}
-    - target: {fileID: 114632064142718352, guid: bfbabfdd22addb54891582c16f6d89cf,
-        type: 2}
-      propertyPath: OnAddedToInventory.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: UpdateProgress
-      objectReference: {fileID: 0}
-    - target: {fileID: 114632064142718352, guid: bfbabfdd22addb54891582c16f6d89cf,
-        type: 2}
-      propertyPath: OnAddedToInventory.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1393316609}
-    - target: {fileID: 114632064142718352, guid: bfbabfdd22addb54891582c16f6d89cf,
-        type: 2}
-      propertyPath: OnAddedToInventory.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: UpdateProgress
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfbabfdd22addb54891582c16f6d89cf, type: 2}
   m_IsPrefabAsset: 0
@@ -5090,12 +5071,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4789821731012548, guid: 7aed055a18a12684d99e99f6504c5266,
     type: 2}
   m_PrefabInternal: {fileID: 1200622700}
---- !u!114 &1393316609 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114833747968637560, guid: bfbabfdd22addb54891582c16f6d89cf,
-    type: 2}
-  m_PrefabInternal: {fileID: 1211678908}
-  m_Script: {fileID: 11500000, guid: 2d74adffa57c015499da1838ce4d5543, type: 3}
 --- !u!1 &1425155281
 GameObject:
   m_ObjectHideFlags: 0
@@ -6641,7 +6616,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9acb6a017729044459ae77d87fd71971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerDataHandler: {fileID: 1300136942}
+  sessionData: {fileID: 0}
   ProgressBarFill: {fileID: 1493121152}
   ProgressBarText: {fileID: 502158272}
   OnSavedEnoughTurtles:
@@ -6744,9 +6719,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2146652374 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114358371689595722, guid: bfbabfdd22addb54891582c16f6d89cf,
-    type: 2}
-  m_PrefabInternal: {fileID: 1211678908}
-  m_Script: {fileID: 11500000, guid: b0da184f77466b14abba81bd1ba93f98, type: 3}

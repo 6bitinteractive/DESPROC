@@ -7,16 +7,17 @@ using UnityEngine.UI;
 
 public class Score : MonoBehaviour
 {
+    [SerializeField] private TurtleTale.SessionData sessionData;
     public Text TortpointsText;
     public Text TortgoldText;
     public bool ShowScore = false;
 
-    PlayerData playerData;
+    //PlayerData playerData;
 
-    private void Start()
-    {
-        playerData = GetComponent<PlayerDataHandler>().playerData;
-    }
+    //private void Start()
+    //{
+    //    playerData = GetComponent<PlayerDataHandler>().playerData;
+    //}
 
     void Update()
     {
@@ -28,13 +29,17 @@ public class Score : MonoBehaviour
 
     public void EarnScore(float scoreValue)
     {
-        playerData.Tortpoints += scoreValue + (scoreValue * playerData.Luck);
-        playerData.Tortgold += scoreValue + (scoreValue * playerData.Luck);
+        //playerData.Tortpoints += scoreValue + (scoreValue * playerData.Luck);
+        //playerData.Tortgold += scoreValue + (scoreValue * playerData.Luck);
+        sessionData.Tortpoints += scoreValue + (scoreValue * sessionData.Luck);
+        sessionData.Tortgold += scoreValue + (scoreValue * sessionData.Luck);
     }
 
     public void DisplayScore()
     {
-        TortpointsText.text = playerData.Tortpoints.ToString();
-        TortgoldText.text = playerData.Tortgold.ToString();
+        //TortpointsText.text = playerData.Tortpoints.ToString();
+        //TortgoldText.text = playerData.Tortgold.ToString();
+        TortpointsText.text = sessionData.Tortpoints.ToString();
+        TortgoldText.text = sessionData.Tortgold.ToString();
     }
 }
