@@ -7,6 +7,7 @@ public class ReadySetGo : MonoBehaviour
 {
     public float ChangeSpriteTimer;
     public Sprite[] SpritesArray;
+    public AudioSource CountdownSFX;
 
     private void Start()
     {
@@ -23,10 +24,11 @@ public class ReadySetGo : MonoBehaviour
         gameObject.GetComponent<SpriteRenderer>().sprite = SpritesArray[1];
 
         // Go
-        yield return new WaitForSecondsRealtime(2); 
+        yield return new WaitForSecondsRealtime(2);
+        CountdownSFX.Play();
         gameObject.GetComponent<SpriteRenderer>().sprite = SpritesArray[2];
 
-        yield return new WaitForSecondsRealtime(0.5f); 
+        yield return new WaitForSecondsRealtime(0.5f);
         gameObject.SetActive(false);
     }
 }
