@@ -6,4 +6,5 @@ using UnityEngine;
 public class Plastic : InteractableObject
 {
     public RecycleCode RecycleCode;
+    public AudioClip PickupSfx;
 }
