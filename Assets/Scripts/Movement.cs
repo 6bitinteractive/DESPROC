@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+    public bool isAnimated = false;
     public float xSpeed;
     public float ySpeed;
 
@@ -11,7 +12,7 @@ public class Movement : MonoBehaviour
     private Animator animator;
     private float LastXDirection;
     private float LastYDirection;
-
+    
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -20,8 +21,8 @@ public class Movement : MonoBehaviour
 
     public void Move(float xDirection, float yDirection)
     {
-        // Checks if player then player animations (Note this is a placeholder since other moving entites dont have animations yet)
-        if (gameObject.layer == 8)
+        // If the entity has animations then animate
+        if (isAnimated)
         {
            // float heading = Vector3.Normalize(xDirection + yDirection);
             //animator.SetFloat("xDirection", Mathf.Abs(rb.velocity.x));
