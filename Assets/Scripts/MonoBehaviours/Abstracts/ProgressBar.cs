@@ -30,6 +30,12 @@ public abstract class ProgressBar : MonoBehaviour
         UpdateBar();
     }
 
+    public virtual void ResetProgress()
+    {
+        current = 0;
+        UpdateBar();
+    }
+
     protected virtual void UpdateBar()
     {
         float percentage = 0f;
