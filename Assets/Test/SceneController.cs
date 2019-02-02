@@ -1,0 +1,110 @@
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class SceneController : MonoBehaviour
+{
+    public delegate void SceneLoadEvent();
+    public static event SceneLoadEvent BeforeSceneUnload, AfterSceneUnload;
+
+    [Header("Data")]
+    [SerializeField] private SceneData sceneDataToLoad;
+    [SerializeField] private SaveData playerSaveData;
+
+    [Header("Fading")]
+    [SerializeField] private CanvasGroup faderCanvasGroup;
+    [SerializeField] private float fadeDuration = 1f;
+    private bool isFading;
+
+    private IEnumerator Start()
+    {
+        // Start off with a black screen
+        faderCanvasGroup.alpha = 1f;
+
+        // Write the initial starting position to playerSaveData so it can be loaded by the player when the first scene is loaded
+        playerSaveData.Save(Player.StartingPositionKey, sceneDataToLoad.StartingPointName);
+
+        // Start the first scene loading and wait for it to finish
+        yield return StartCoroutine(LoadSceneAndSetActive(sceneDataToLoad.SceneName));
+
+        // Once the scene is finished loading, start fading in
+        StartCoroutine(Fade(0f));
+    }
+
+    public void FadeAndLoadScene(SceneReaction sceneReaction)
+    {
+        // If a fade isn't happening then start fading and switching scenes.
+        if (!isFading)
+        {
+            StartCoroutine(FadeAndSwitchScenes(sceneReaction.sceneName));
+        }
+    }
+
+    private IEnumerator FadeAndSwitchScenes(string sceneName)
+    {
+        // Start fading to black and wait for it to finish before continuing
+        yield return StartCoroutine(Fade(1f));
+
+        // If this event has any subscribers, call it
+        if (BeforeSceneUnload != null)
+            BeforeSceneUnload();
+
+        // Unload the current active scene
+        yield return SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+
+        // Start loading the given scene and wait for it to finish
+        yield return StartCoroutine(LoadSceneAndSetActive(sceneName));
+
+        // If this event has any subscribers, call it
+        if (AfterSceneUnload != null)
+            AfterSceneUnload();
+
+        // Start fading back in and wait for it to finish before exiting the function
+        yield return StartCoroutine(Fade(0f));
+    }
+
+    private IEnumerator LoadSceneAndSetActive(string sceneName)
+    {
+        // Allow the given scene to load over several frames and add it to the already loaded scenes
+        yield return SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
+
+        // Find the scene that was most recently loaded (the one at the last index of the laoded scenes)
+        Scene newlyLoadedScene = SceneManager.GetSceneAt(SceneManager.sceneCount - 1);
+
+        // Set the newly loaded scene as the active scene
+        // This also marks it as the one to be unloaded next
+        SceneManager.SetActiveScene(newlyLoadedScene);
+    }
+
+    private IEnumerator Fade(float finalAlpha)
+    {
+        // Set the fading flag to true so the FadeAndSwitchScenes coroutine won't be called again
+        isFading = true;
+
+        // Make sure the CanvasGroup blocks raycasts into the scene so no more input can be accepted
+        faderCanvasGroup.blocksRaycasts = true;
+
+        // Calculate how fast the CanvasGroup should fade based on its current alpha, its final alpha, and how long it has to change between the two
+        float fadeSpeed = Mathf.Abs(faderCanvasGroup.alpha - finalAlpha) / fadeDuration;
+
+        // While the CanvasGroup hasn't reached the final alpha yet...
+        while (!Mathf.Approximately(faderCanvasGroup.alpha, finalAlpha))
+        {
+            // ... move the alpha towards its target alpha
+            faderCanvasGroup.alpha = Mathf.MoveTowards(faderCanvasGroup.alpha, finalAlpha, fadeSpeed * Time.deltaTime);
+
+            // Wait for a frame then continue
+            yield return null;
+        }
+
+        // Set the flag to false since the fade has finished
+        isFading = false;
+
+        // Stop the CanvasGroup from blocking raycasts so input is no longer ignored
+        faderCanvasGroup.blocksRaycasts = false;
+    }
+}
+
+// Reference: https://unity3d.com/learn/tutorials/projects/adventure-game-tutorial
