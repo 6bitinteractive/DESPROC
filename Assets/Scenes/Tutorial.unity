@@ -173,7 +173,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -151, y: 18.8}
+  m_AnchoredPosition: {x: -151, y: 20.3}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &87383089
@@ -197,7 +197,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 404ee0ded1fa1554aa52818b5e661fdb, type: 3}
-    m_FontSize: 18
+    m_FontSize: 16
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -664,9 +664,20 @@ MonoBehaviour:
   dialogue:
     name: Volunteer
     sentences:
-    - 'You must be the student volunteer sent by our partner school! '
+    - 'Hi! You must be the student volunteer sent by our partner school! '
     - "Welcome to our island! It\u2019s a humble place, but it\u2019s our home."
     - "Unfortunately, it\u2019s been in bad shape as of late."
+    - You see, we have a pretty widespread pollution problem, and all that trash manages
+      to find its way into the rivers and the nearby sea.
+    - "It\u2019s been taking a toll on the local wildlife and the habitats in which
+      they live."
+    - That's where you and I come in.
+    - Here at the Turtle Conservation Society, we do as much as we can to prevent
+      the local turtle population from coming into any harm.
+    - Our aim is to protect their homes, and keep them safe from the hazards that
+      plastic pollution poses to their safety.
+    - Let me show you around the island and get you familiarized with your duties
+      as a volunteer for our organization.
 --- !u!114 &930247080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1030,8 +1041,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -10.695, y: -7}
-  m_SizeDelta: {x: 440.61, y: 34.5}
+  m_AnchoredPosition: {x: -14.505, y: -9.2}
+  m_SizeDelta: {x: 432.99, y: 46.54}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1728606973
 MonoBehaviour:
@@ -1054,7 +1065,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 404ee0ded1fa1554aa52818b5e661fdb, type: 3}
-    m_FontSize: 16
+    m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
