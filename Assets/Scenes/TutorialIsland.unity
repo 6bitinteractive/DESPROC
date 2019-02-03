@@ -732,6 +732,7 @@ Transform:
   - {fileID: 1164877237}
   - {fileID: 313154954}
   - {fileID: 2041782093}
+  - {fileID: 1950946993}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -904,6 +905,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     name: Volunteer
+    dialogueEndTrigger: {fileID: 11400000, guid: dc80785d62a016846b6a4c5771ab7703,
+      type: 2}
     sentences:
     - This is the Turtle Conservation Society. This is where sdhfshdfkj
 --- !u!1001 &318920080
@@ -2796,7 +2799,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1051765740}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.31002194, y: -3.0180218, z: -10}
+  m_LocalPosition: {x: -0.31002218, y: -3.0180218, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3048,6 +3051,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     name: Volunteer
+    dialogueEndTrigger: {fileID: 11400000, guid: aacf4ffd6be0fad45bd1e5d584b886d8,
+      type: 2}
     sentences:
     - 'Hi! You must be the student volunteer sent by our partner school! '
     - "Welcome to our island! It\u2019s a humble place, but it\u2019s our home."
@@ -3489,6 +3494,8 @@ GameObject:
   - component: {fileID: 1380301475}
   - component: {fileID: 1380301477}
   - component: {fileID: 1380301476}
+  - component: {fileID: 1380301479}
+  - component: {fileID: 1380301478}
   m_Layer: 0
   m_Name: Load Scene Prompt
   m_TagString: Untagged
@@ -3620,7 +3627,7 @@ MonoBehaviour:
       m_TypeName: ResponseWithBool, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
   - name: 
-    gameEvent: {fileID: 11400000, guid: aacf4ffd6be0fad45bd1e5d584b886d8, type: 2}
+    gameEvent: {fileID: 11400000, guid: dc80785d62a016846b6a4c5771ab7703, type: 2}
     response:
       m_PersistentCalls:
         m_Calls:
@@ -3680,6 +3687,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OnLoadScene: {fileID: 11400000, guid: f81cb29da7e08a447a90ce75330b45c2, type: 2}
+--- !u!95 &1380301478
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1380301474}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!320 &1380301479
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1380301474}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: 07ccbe609b4c75346a85740a3b05026c, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: 114187909897842730, guid: 07ccbe609b4c75346a85740a3b05026c, type: 2}
+    value: {fileID: 1380301478}
+  m_ExposedReferences:
+    m_References: []
 --- !u!4 &1392269686 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4896251029175670, guid: 84d270d1dc84c5b4caa9d0260dd5a896,
@@ -4524,6 +4567,52 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1950946992
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1950946993}
+  - component: {fileID: 1950946994}
+  m_Layer: 0
+  m_Name: Dialogue 4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1950946993
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1950946992}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 260772728}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1950946994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1950946992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d0091aee95caab41a717ad5152f6792, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: Volunteer
+    dialogueEndTrigger: {fileID: 11400000, guid: eb2b760c478d3d747aadaf9471a542d3,
+      type: 2}
+    sentences:
+    - 
 --- !u!1 &1962602039
 GameObject:
   m_ObjectHideFlags: 0
@@ -4554,7 +4643,6 @@ MonoBehaviour:
   nameText: {fileID: 1211782972}
   dialogueText: {fileID: 1047268706}
   animator: {fileID: 950420740}
-  OnDialogueEnd: {fileID: 11400000, guid: aacf4ffd6be0fad45bd1e5d584b886d8, type: 2}
 --- !u!4 &1962602041
 Transform:
   m_ObjectHideFlags: 0
@@ -4899,8 +4987,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     name: Volunteer
+    dialogueEndTrigger: {fileID: 11400000, guid: e47300e55947ac044a14668c35b2576e,
+      type: 2}
     sentences:
-    - This is the Shop. hgkjdfgfdkg
+    - This is the Shop. You can purchase items and upgrades to help you and the rest
+      of the volunteers with the conservation efforts.
 --- !u!1001 &2045234860
 Prefab:
   m_ObjectHideFlags: 0

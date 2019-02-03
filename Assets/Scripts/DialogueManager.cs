@@ -8,25 +8,32 @@ public class DialogueManager : MonoBehaviour
     public Text nameText;
     public Text dialogueText;
     public Animator animator;
-    private Queue<string> sentences;
     public GameEvent OnDialogueEnd;
+    //private Queue<string> sentences;
+    private Queue<Dialogue> dialogue;
 
     void Awake ()
     {
-        sentences = new Queue<string>();
-	}
+        //sentences = new Queue<string>();
+        dialogue = new Queue<Dialogue>();
+    }
 
-    public void StartDialogue(Dialogue dialogue)
+    public void StartDialogue(Dialogue[] dialogueArray)
     {
         animator.SetBool("IsOpen", true);
-        nameText.text = dialogue.name;
+        //nameText.text = dialogue.name;
 
         // Clear previous sentences
-        sentences.Clear();
+        //sentences.Clear();
+        dialogue.Clear();
 
-        foreach(string sentence in dialogue.sentences)
+        //foreach(string sentence in dialogue.sentences)
+        //{
+        //    sentences.Enqueue(sentence);
+        //}
+        foreach(Dialogue dialogueEntry in dialogueArray)
         {
-            sentences.Enqueue(sentence);
+            dialogue.Enqueue(dialogueEntry);
         }
 
         DisplayNextSentence();
@@ -35,24 +42,30 @@ public class DialogueManager : MonoBehaviour
     public void DisplayNextSentence()
     {
         // If no sentences remain, end dialogue
-        if(sentences.Count <= 0)
+        //if(sentences.Count <= 0)
+        //{
+        //    EndDialogue();
+        //    return;
+        //}
+        if (dialogue.Count <= 0)
         {
             EndDialogue();
             return;
         }
 
-        string sentence = sentences.Dequeue();
+        Dialogue dialogueEntry = dialogue.Dequeue();
         // Makes sure all sentence animations are stopped before typing in new sentence
         StopAllCoroutines();
-        StartCoroutine(TypeSentence(sentence));
+        StartCoroutine(TypeSentence(dialogueEntry));
     }
 
     // Types sentence per letter
-    IEnumerator TypeSentence(string sentence)
+    IEnumerator TypeSentence(Dialogue dialogueEntry)
     {
+        nameText.text = dialogueEntry.name;
         dialogueText.text = "";
 
-        foreach (char letter in sentence.ToCharArray())
+        foreach (char letter in dialogueEntry.sentence.ToCharArray())
         {
             // Adds letter to dialogue text string every after 1 frame
             dialogueText.text += letter;
