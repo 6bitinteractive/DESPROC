@@ -12,11 +12,21 @@ public class InteractAction : Action
         if (target == null)
             return;
 
+        RequirementInteractable requirement = target.GetComponent<RequirementInteractable>();
+        {
+            if (requirement != null)
+            {
+                requirement.Pickup();
+            }
+        }
+
+        /*
         TurtleInteractable turtle = target.GetComponent<TurtleInteractable>();
         if (turtle != null)
         {
             turtle.Save();
             OnTurtlePickup.Invoke();
         }
+        */
     }
 }

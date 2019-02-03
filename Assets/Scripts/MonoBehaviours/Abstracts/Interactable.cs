@@ -9,6 +9,7 @@ public abstract class Interactable : MonoBehaviour
 {
     [SerializeField] private Factory Factory;
     public int baseIndex { get; set; }
+    public bool IsSpriteRandomized = true;
 
     protected SpriteRenderer spriteRenderer;
 
@@ -19,8 +20,11 @@ public abstract class Interactable : MonoBehaviour
 
     private void Start()
     {
-        baseIndex = Random.Range(0, Factory.BaseObjects.Length);
-        spriteRenderer.sprite = Factory.BaseObjects[baseIndex].Sprite;
+        if (IsSpriteRandomized)
+        {
+            baseIndex = Random.Range(0, Factory.BaseObjects.Length);
+            spriteRenderer.sprite = Factory.BaseObjects[baseIndex].Sprite;
+        }
     }
 
     public virtual InteractableObject GetInteractable()
