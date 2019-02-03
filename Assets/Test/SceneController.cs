@@ -33,12 +33,12 @@ public class SceneController : MonoBehaviour
         StartCoroutine(Fade(0f));
     }
 
-    public void FadeAndLoadScene(SceneReaction sceneReaction)
+    public void FadeAndLoadScene(string sceneName)
     {
         // If a fade isn't happening then start fading and switching scenes.
         if (!isFading)
         {
-            StartCoroutine(FadeAndSwitchScenes(sceneReaction.sceneName));
+            StartCoroutine(FadeAndSwitchScenes(sceneName));
         }
     }
 
