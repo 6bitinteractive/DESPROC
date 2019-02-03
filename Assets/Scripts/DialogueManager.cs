@@ -8,30 +8,23 @@ public class DialogueManager : MonoBehaviour
     public Text nameText;
     public Text dialogueText;
     public Animator animator;
-    public GameEvent OnDialogueEnd;
-    //private Queue<string> sentences;
     private Queue<Dialogue> dialogue;
+    private GameEvent trigger;
 
     void Awake ()
     {
-        //sentences = new Queue<string>();
         dialogue = new Queue<Dialogue>();
     }
 
-    public void StartDialogue(Dialogue[] dialogueArray)
+    public void StartDialogue(DialogueTrigger dialogueTrigger)
     {
         animator.SetBool("IsOpen", true);
-        //nameText.text = dialogue.name;
+        trigger = dialogueTrigger.dialogueEndTrigger;
 
         // Clear previous sentences
-        //sentences.Clear();
         dialogue.Clear();
 
-        //foreach(string sentence in dialogue.sentences)
-        //{
-        //    sentences.Enqueue(sentence);
-        //}
-        foreach(Dialogue dialogueEntry in dialogueArray)
+        foreach(Dialogue dialogueEntry in dialogueTrigger.dialogueArray)
         {
             dialogue.Enqueue(dialogueEntry);
         }
@@ -41,12 +34,7 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextSentence()
     {
-        // If no sentences remain, end dialogue
-        //if(sentences.Count <= 0)
-        //{
-        //    EndDialogue();
-        //    return;
-        //}
+        // If no dialogue entries remain, end dialogue
         if (dialogue.Count <= 0)
         {
             EndDialogue();
@@ -76,7 +64,6 @@ public class DialogueManager : MonoBehaviour
     public void EndDialogue()
     {
         animator.SetBool("IsOpen", false);
-        OnDialogueEnd.Raise();
-        Debug.Log("Raised onDialogueEnd");
+        trigger.Raise();
     }
 }

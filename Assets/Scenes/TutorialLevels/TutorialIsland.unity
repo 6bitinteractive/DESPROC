@@ -903,12 +903,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d0091aee95caab41a717ad5152f6792, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-    name: Volunteer
-    dialogueEndTrigger: {fileID: 11400000, guid: dc80785d62a016846b6a4c5771ab7703,
-      type: 2}
-    sentences:
-    - This is the Turtle Conservation Society. This is where sdhfshdfkj
+  dialogueArray:
+  - name: Volunteer
+    sentence: This is the Turtle Conservation Society. This is where you'll be assigned
+      tasks to accomplish throughout your stay here in Pawikan Island.
+  - name: Volunteer
+    sentence: This is also where we keep track of your records as a student volunteer.
+  dialogueEndTrigger: {fileID: 11400000, guid: dc80785d62a016846b6a4c5771ab7703, type: 2}
 --- !u!1001 &318920080
 Prefab:
   m_ObjectHideFlags: 0
@@ -2799,7 +2800,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1051765740}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.31002218, y: -3.0180218, z: -10}
+  m_LocalPosition: {x: -0.31002003, y: -3.0180252, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3049,25 +3050,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d0091aee95caab41a717ad5152f6792, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-    name: Volunteer
-    dialogueEndTrigger: {fileID: 11400000, guid: aacf4ffd6be0fad45bd1e5d584b886d8,
-      type: 2}
-    sentences:
-    - 'Hi! You must be the student volunteer sent by our partner school! '
-    - "Welcome to our island! It\u2019s a humble place, but it\u2019s our home."
-    - "Unfortunately, it\u2019s been in bad shape as of late."
-    - You see, we have a pretty widespread pollution problem, and all that trash manages
-      to find its way into the rivers and the nearby sea.
-    - "It\u2019s been taking a toll on the local wildlife and the habitats in which
-      they live."
-    - That's where you and I come in.
-    - Here at the Turtle Conservation Society, we do as much as we can to prevent
-      the local turtle population from coming into any harm.
-    - Our aim is to protect their homes, and keep them safe from the hazards that
-      plastic pollution poses to their safety.
-    - Let me show you around the island and get you familiarized with your duties
-      as a volunteer for our organization.
+  dialogueArray:
+  - name: Volunteer
+    sentence: 'Hi! You must be the student volunteer sent by our partner school! '
+  - name: Volunteer
+    sentence: "Welcome to Pawikan Island! It\u2019s a humble place, but it\u2019s
+      our home."
+  - name: Volunteer
+    sentence: "Unfortunately, it\u2019s been in bad shape as of late."
+  - name: Volunteer
+    sentence: You see have a pretty widespread pollution problem, and all that trash
+      manages to find its way into the rivers and the nearby sea.
+  - name: Volunteer
+    sentence: "It\u2019s been taking a toll on the local wildlife and the habitats
+      in which they live."
+  - name: Volunteer
+    sentence: "That\u2019s where you and I come in."
+  - name: Volunteer
+    sentence: Here at the Turtle Conservation Society, we do as much as we can to
+      prevent the local turtle population from coming into any harm.
+  - name: Volunteer
+    sentence: Our aim is to protect their homes, and keep them away from the hazards
+      that plastic pollution poses to their safety.
+  - name: Volunteer
+    sentence: Let me show you around the island and get you familiarized with your
+      duties as a volunteer for our organization.
+  dialogueEndTrigger: {fileID: 11400000, guid: aacf4ffd6be0fad45bd1e5d584b886d8, type: 2}
 --- !u!4 &1164877237
 Transform:
   m_ObjectHideFlags: 0
@@ -3542,7 +3550,7 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
-            m_BoolArgument: 1
+            m_BoolArgument: 0
           m_CallState: 2
         - m_Target: {fileID: 1164877236}
           m_MethodName: TriggerDialogue
@@ -3635,7 +3643,7 @@ MonoBehaviour:
           m_MethodName: set_Follow
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 1392269686}
+            m_ObjectArgument: {fileID: 1132583084}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -3645,6 +3653,93 @@ MonoBehaviour:
         - m_Target: {fileID: 2041782094}
           m_MethodName: TriggerDialogue
           m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    responseForSentString:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: ResponseWithString, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+    responseForSentInt:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: ResponseWithInt, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+    responseForSentFloat:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: ResponseWithFloat, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+    responseForSentBool:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: ResponseWithBool, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+  - name: 
+    gameEvent: {fileID: 11400000, guid: e47300e55947ac044a14668c35b2576e, type: 2}
+    response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 255043142}
+          m_MethodName: set_Follow
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 267558778}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 1950946994}
+          m_MethodName: TriggerDialogue
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    responseForSentString:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: ResponseWithString, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+    responseForSentInt:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: ResponseWithInt, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+    responseForSentFloat:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: ResponseWithFloat, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+    responseForSentBool:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: ResponseWithBool, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+  - name: 
+    gameEvent: {fileID: 11400000, guid: eb2b760c478d3d747aadaf9471a542d3, type: 2}
+    response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1816857043}
+          m_MethodName: set_enabled
+          m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3785,7 +3880,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OnEnterArea: {fileID: 11400000, guid: f633a72e49e955744ad98802fa1afd19, type: 2}
-  nextScene: WorldMap
+  nextScene: TutorialWorldMap
   playerLayerMask:
     serializedVersion: 2
     m_Bits: 256
@@ -4607,12 +4702,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d0091aee95caab41a717ad5152f6792, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-    name: Volunteer
-    dialogueEndTrigger: {fileID: 11400000, guid: eb2b760c478d3d747aadaf9471a542d3,
-      type: 2}
-    sentences:
-    - 
+  dialogueArray:
+  - name: Volunteer
+    sentence: "For now, why don\u2019t we head to the boat so I can show you around
+      the other islands?"
+  - name: Volunteer
+    sentence: "You can move using the WASD keys. I hope you\u2019re not too seasick
+      to walk around though!"
+  - name: Volunteer
+    sentence: Go on, try it out!
+  dialogueEndTrigger: {fileID: 11400000, guid: eb2b760c478d3d747aadaf9471a542d3, type: 2}
 --- !u!1 &1962602039
 GameObject:
   m_ObjectHideFlags: 0
@@ -4985,13 +5084,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d0091aee95caab41a717ad5152f6792, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-    name: Volunteer
-    dialogueEndTrigger: {fileID: 11400000, guid: e47300e55947ac044a14668c35b2576e,
-      type: 2}
-    sentences:
-    - This is the Shop. You can purchase items and upgrades to help you and the rest
-      of the volunteers with the conservation efforts.
+  dialogueArray:
+  - name: Volunteer
+    sentence: This is the Shop. You can purchase items and upgrades that might aid
+      you in carrying out your tasks as an island volunteer.
+  dialogueEndTrigger: {fileID: 11400000, guid: e47300e55947ac044a14668c35b2576e, type: 2}
 --- !u!1001 &2045234860
 Prefab:
   m_ObjectHideFlags: 0
