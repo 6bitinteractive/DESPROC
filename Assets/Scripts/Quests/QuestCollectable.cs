@@ -58,6 +58,7 @@ public class QuestCollectable : Quest
             CurrentItemCount++;
             QuestManager.CheckQuestStatus();
             OnPickup.Invoke();
+            Destroy(collision.gameObject);
         }
     }
 }

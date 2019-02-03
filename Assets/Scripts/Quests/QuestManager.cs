@@ -1,16 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 //Reference https://forum.unity.com/threads/goals-missions-objective-system.246842/
 
 public class QuestManager : MonoBehaviour
 {
-    public Quest[] Quests;
+    public List<Quest> Quests = new List<Quest>();
+    public int TotalQuests;
+    public int CurrentQuestCount;
+    public UnityEvent OnRequirementMet = new UnityEvent();
+
+    public bool IsRequirementMet()
+    {
+        return (CurrentQuestCount >= TotalQuests);
+    }
 
     void Awake()
     {
-        Quests = GetComponents<Quest>();
+        Quests = new List<Quest>(GetComponents<Quest>());
+        TotalQuests = Quests.Count;
     }
 
     void OnGUI()
@@ -23,12 +33,21 @@ public class QuestManager : MonoBehaviour
 
     public void CheckQuestStatus()
     {
-        foreach (var quest in Quests)
+        // Check each quest
+        for (var i = Quests.Count - 1; i > -1; i--)
         {
-            if (quest.IsComplete())
+            //If a quest is complete
+            if (Quests[i].IsComplete())
             {
-                quest.Complete();
-                Destroy(quest);
+                CurrentQuestCount++; // Add to current quest count
+                Destroy(Quests[i]);
+                Quests.RemoveAt(i); // Remove quest from list
+
+                // If all quests are complete
+                if (IsRequirementMet())
+                {
+                    OnRequirementMet.Invoke();
+                }
             }
         }
     }
