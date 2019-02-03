@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class SceneController : MonoBehaviour
 {
     public delegate void SceneLoadEvent();
-    public static event SceneLoadEvent BeforeSceneUnload, AfterSceneUnload;
+    public static event SceneLoadEvent BeforeSceneUnload, AfterSceneLoad;
 
     [Header("Data")]
     [SerializeField] private SceneData sceneDataToLoad;
@@ -58,8 +58,8 @@ public class SceneController : MonoBehaviour
         yield return StartCoroutine(LoadSceneAndSetActive(sceneName));
 
         // If this event has any subscribers, call it
-        if (AfterSceneUnload != null)
-            AfterSceneUnload();
+        if (AfterSceneLoad != null)
+            AfterSceneLoad();
 
         // Start fading back in and wait for it to finish before exiting the function
         yield return StartCoroutine(Fade(0f));
