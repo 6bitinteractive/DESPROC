@@ -9,8 +9,9 @@ public class DialogueManager : MonoBehaviour
     public Text dialogueText;
     public Animator animator;
     private Queue<string> sentences;
+    public GameEvent OnDialogueEnd;
 
-	void Start ()
+    void Awake ()
     {
         sentences = new Queue<string>();
 	}
@@ -62,5 +63,7 @@ public class DialogueManager : MonoBehaviour
     public void EndDialogue()
     {
         animator.SetBool("IsOpen", false);
+        OnDialogueEnd.Raise();
+        Debug.Log("Raised onDialogueEnd");
     }
 }
