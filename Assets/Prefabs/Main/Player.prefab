@@ -709,7 +709,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.027363658, y: -2.0960813}
+  m_Offset: {x: 0, y: -3.65}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -720,7 +720,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.99032474, y: 0.10442257}
+  m_Size: {x: 1.31, y: 0.6}
   m_EdgeRadius: 0
 --- !u!95 &95765094612013732
 Animator:
@@ -1064,6 +1064,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FacingRight: 1
+  IsFlippable: 1
   scale: {x: 0, y: 0, z: 0}
 --- !u!114 &114349275269424154
 MonoBehaviour:
@@ -1304,7 +1305,7 @@ MonoBehaviour:
   interactableLayerMask:
     serializedVersion: 2
     m_Bits: 512
-  Inventory: {fileID: 114632064142718352}
+  Inventory: {fileID: 0}
   sessionData: {fileID: 11400000, guid: d145efb78b7a3894d99040295d0cceb3, type: 2}
   plasticPrefab: {fileID: 114796640138566288, guid: 7aed055a18a12684d99e99f6504c5266,
     type: 2}
@@ -1323,7 +1324,7 @@ MonoBehaviour:
   interactableLayerMask:
     serializedVersion: 2
     m_Bits: 512
-  Inventory: {fileID: 114632064142718352}
+  Inventory: {fileID: 0}
 --- !u!114 &114515760080643526
 MonoBehaviour:
   m_ObjectHideFlags: 1
