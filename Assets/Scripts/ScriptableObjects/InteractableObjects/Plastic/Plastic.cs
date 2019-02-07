@@ -7,4 +7,5 @@ public class Plastic : InteractableObject
 {
     public RecycleCode RecycleCode;
     public AudioClip PickupSfx;
+    public int StackSize = 15;
 }

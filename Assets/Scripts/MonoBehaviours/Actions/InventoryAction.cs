@@ -4,5 +4,5 @@ using UnityEngine;
 
 public abstract class InventoryAction : Action
 {
-    public Inventory Inventory;
+    public NewInventory Inventory;
 }

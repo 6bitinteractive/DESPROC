@@ -1,9 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+
+//[System.Serializable] public class OnAddedToInventory : UnityEvent<Interactable> { };
 
 public class NewInventory : MonoBehaviour
 {
+    public OnAddedToInventory OnAddedToInventory = new OnAddedToInventory();
+    public UnityEvent OnEmptyInventory = new UnityEvent();
+    public UnityEvent OnInventoryFull = new UnityEvent();
+
     public GameObject SlotPrefab;
     public int SlotLimit;
 
@@ -20,10 +27,10 @@ public class NewInventory : MonoBehaviour
         }	
 	}
 
-    public void AddToInventory(ItemBase item)
+    public void AddToInventory(PlasticInteractable item)
     {
         //Checks if item can be placed in stack
-        if (item.ItemStackSize > 0)
+        if (item.GetStackSize() > 0)
         {
             if (IsStackable(item))
             {
@@ -35,7 +42,7 @@ public class NewInventory : MonoBehaviour
         IsNotStackable(item);
     }
 
-    private bool IsStackable(ItemBase item)
+    private bool IsStackable(PlasticInteractable item)
     {
         foreach (Slot slot in InventorySlots)
         {
@@ -47,7 +54,7 @@ public class NewInventory : MonoBehaviour
         return false;
     }
 
-    private bool IsNotStackable(ItemBase item)
+    private bool IsNotStackable(PlasticInteractable item)
     {
         foreach (Slot slot in InventorySlots)
         {
@@ -55,19 +62,44 @@ public class NewInventory : MonoBehaviour
             if (slot.IsEmpty)
             {
                 slot.AddItem(Instantiate(item)); // Add item to slot
-
+                OnAddedToInventory.Invoke(item);
                 return true;
             }
         }
 
         // Inventory is full cannot add anymore items
+        OnInventoryFull.Invoke();
+        Debug.Log("Inventory is full.");
         return false;
         
     }
 
-    public void AddItem(ItemBase item)
+    public void AddItem(PlasticInteractable item)
     {
         AddToInventory(item);
     }
-    
+
+    public void Empty()
+    {
+        /*
+        // Move inventory data to bin data
+        sessionData.Bin.AddRange(sessionData.Inventory);
+
+        // Empty inventory data
+        sessionData.Inventory.Clear();
+
+        for (int i = 0; i < slotCount; i++)
+        {
+            if (inventorySlots[i].inventoryItem == null)
+                break;
+
+            inventorySlots[i].inventoryItem.gameObject.SetActive(false);
+            inventorySlots[i].inventoryItem = null;
+        }
+
+        currentEmptySlot = 0;
+        OnEmptyInventory.Invoke();
+        */
+    }
+
 }

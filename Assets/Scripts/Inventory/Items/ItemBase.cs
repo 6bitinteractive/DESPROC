@@ -17,7 +17,7 @@ public abstract class ItemBase : MonoBehaviour, IUseable
         if (ItemSlot != null)
         {
            // Debug.Log("Item Removed");
-            ItemSlot.RemoveItem(this);
+          //  ItemSlot.RemoveItem(this);
         }
     }
    

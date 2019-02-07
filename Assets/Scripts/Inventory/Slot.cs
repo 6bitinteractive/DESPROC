@@ -9,9 +9,9 @@ public class Slot : MonoBehaviour, IPointerClickHandler
     public Image SlotItemIcon;
     public Text StackSize;
 
-    private List<ItemBase> items = new List<ItemBase>();
+    private List<PlasticInteractable> items = new List<PlasticInteractable>();
 
-    public ItemBase GetItem
+    public PlasticInteractable GetItem
     {
         get
         {
@@ -42,7 +42,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler
         StackSize.text = items.Count.ToString(); //Set stack size text to items count
     }
 
-    public void RemoveItem(ItemBase item)
+    public void RemoveItem(PlasticInteractable item)
     {
         //Checks if item count is 0
         if (!IsEmpty)
@@ -75,14 +75,14 @@ public class Slot : MonoBehaviour, IPointerClickHandler
         }
     }
 
-    public bool StackItem(ItemBase item)
+    public bool StackItem(PlasticInteractable item)
     {
         
         // Check if the item has the same name and if its count is less than stack size
-        if (item.name == item.name && items.Count < item.ItemStackSize && !IsEmpty)
+        if (item.name == item.name && items.Count < item.GetStackSize() && !IsEmpty)
         {
             items.Add(item);
-            item.ItemSlot = this;
+           // item.ItemSlot = this;
             UpdateStackUI();
             return true;
         }
@@ -90,13 +90,13 @@ public class Slot : MonoBehaviour, IPointerClickHandler
         return false;
     }
 
-    public bool AddItem(ItemBase item)
+    public bool AddItem(PlasticInteractable item)
     {
 
         items.Add(item); // Add item
-        SlotItemIcon.sprite = item.ItemIcon; // Set slot item icon to new item icon
+        SlotItemIcon.sprite = item.GetSprite(); // Set slot item icon to new item icon
         SlotItemIcon.color = Color.white; // Reset transparency to default
-        item.ItemSlot = this; // Item reference to this slot
+       // item.ItemSlot = this; // Item reference to this slot
         StackSize.color = Color.black; // Set stack size color transparent
         UpdateStackUI(); // Update stack size text
         return true;

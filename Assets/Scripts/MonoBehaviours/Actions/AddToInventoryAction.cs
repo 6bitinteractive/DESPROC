@@ -93,6 +93,8 @@ public class AddToInventoryAction : InventoryAction
         //    playerDataHandler.playerData.TotalTrash++;
         //}
 
+
+        /* Old Working Method
         if (sessionData.Inventory.Count == Inventory.GetSlotCount())
         {
             Inventory.OnInventoryFull.Invoke();
@@ -104,6 +106,12 @@ public class AddToInventoryAction : InventoryAction
 
 
         // Remove the reference to the previous obejct
+        target = null;
+        */
+
+        Inventory.AddItem(interactableObj);
+        interactableObj.GetComponent<SpriteRenderer>().enabled = false;  // Hides this sprite
+        Destroy(interactableObj);
         target = null;
     }
 }

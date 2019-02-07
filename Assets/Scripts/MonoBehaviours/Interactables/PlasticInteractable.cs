@@ -18,4 +18,9 @@ public class PlasticInteractable : Interactable
     {
         return GetPlastic().PickupSfx;
     }
+
+    public int GetStackSize()
+    {
+        return GetPlastic().StackSize;
+    }
 }
