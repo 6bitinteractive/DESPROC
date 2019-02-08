@@ -33,6 +33,11 @@ public class SceneController : MonoBehaviour
         StartCoroutine(Fade(0f));
     }
 
+    public SaveData GetPlayerSaveData()
+    {
+        return playerSaveData;
+    }
+
     public void FadeAndLoadScene(string sceneName)
     {
         // If a fade isn't happening then start fading and switching scenes.
