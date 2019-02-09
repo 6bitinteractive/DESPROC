@@ -59,6 +59,12 @@ public class Slot : MonoBehaviour, IPointerClickHandler
         }
     }
 
+    public void RemoveAllItems()
+    {
+        items.Clear();
+        UpdateStackUI();
+    }
+
     public void UpdateStackUI()
     {
         if (IsEmpty)

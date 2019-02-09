@@ -81,6 +81,19 @@ public class NewInventory : MonoBehaviour
 
     public void Empty()
     {
+        //InventorySlots.Clear();
+
+        for (int i = 0; i < SlotLimit; i++)
+        {
+            if (InventorySlots[i] == null)
+                break;
+            InventorySlots[i].RemoveAllItems(); ;
+          //  InventorySlots[i].inventoryItem.gameObject.SetActive(false);
+          //  InventorySlots[i].inventoryItem = null;
+        }
+
+
+        OnEmptyInventory.Invoke();
         /*
         // Move inventory data to bin data
         sessionData.Bin.AddRange(sessionData.Inventory);
