@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114938895757540040}
   - component: {fileID: 114878217447509486}
   m_Layer: 5
-  m_Name: Inventory
+  m_Name: Old Inventory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68,6 +68,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78e5a3cc9ecbc6d46a86c45dd6f4f84b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnAddedToInventory:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: OnAddedToInventory, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  OnEmptyInventory:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnInventoryFull:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   SlotPrefab: {fileID: 1906438339150224, guid: eb892ec527d6997418a6270c8503472c, type: 2}
   SlotLimit: 10
   InventorySlots: []
