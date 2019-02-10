@@ -368,6 +368,11 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 56226625}
   m_CullTransparentMesh: 0
+--- !u!1 &69752736 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1675562407805276, guid: 9c47bd290e6a8b548904e80b69a3179e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1147525900}
 --- !u!1 &169088234
 GameObject:
   m_ObjectHideFlags: 0
@@ -2939,6 +2944,16 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: Play
       objectReference: {fileID: 0}
+    - target: {fileID: 114982402457968508, guid: 1c624bc3704c0624eafecd10960dd124,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 587251586}
+    - target: {fileID: 114982402457968508, guid: 1c624bc3704c0624eafecd10960dd124,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: EndDialogue
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c624bc3704c0624eafecd10960dd124, type: 2}
   m_IsPrefabAsset: 0
@@ -3022,6 +3037,55 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 69752736}
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    responseForSentString:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: ResponseWithString, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+    responseForSentInt:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: ResponseWithInt, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+    responseForSentFloat:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: ResponseWithFloat, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+    responseForSentBool:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: ResponseWithBool, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+  - name: 
+    gameEvent: {fileID: 11400000, guid: aacf4ffd6be0fad45bd1e5d584b886d8, type: 2}
+    response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 69752736}
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
     responseForSentString:
@@ -3052,10 +3116,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1474588361}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 360127ccd2e199d48a8e6774865df837, type: 3}
+  m_Script: {fileID: 11500000, guid: fbee224226a25df4d9b9d40c4037acec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventToRaise: {fileID: 11400000, guid: f81cb29da7e08a447a90ce75330b45c2, type: 2}
+  OnLoadScene: {fileID: 11400000, guid: f81cb29da7e08a447a90ce75330b45c2, type: 2}
 --- !u!1 &1497217920
 GameObject:
   m_ObjectHideFlags: 0
@@ -3901,7 +3965,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueArray:
   - name: Volunteer
-    sentence: Test
+    sentence: Test 1
+  - name: Volunteer
+    sentence: Test 2
   dialogueEndTrigger: {fileID: 11400000, guid: aacf4ffd6be0fad45bd1e5d584b886d8, type: 2}
 --- !u!1 &2081863777
 GameObject:
