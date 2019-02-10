@@ -481,6 +481,16 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 114115712383272166, guid: 1c624bc3704c0624eafecd10960dd124,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1394898073}
+    - target: {fileID: 114115712383272166, guid: 1c624bc3704c0624eafecd10960dd124,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 596410467}
     - target: {fileID: 114028227470754180, guid: 1c624bc3704c0624eafecd10960dd124,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -488,19 +498,9 @@ Prefab:
       objectReference: {fileID: 1394898073}
     - target: {fileID: 114028227470754180, guid: 1c624bc3704c0624eafecd10960dd124,
         type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: DisplayNextSentence
-      objectReference: {fileID: 0}
-    - target: {fileID: 114028227470754180, guid: 1c624bc3704c0624eafecd10960dd124,
-        type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 596410467}
-    - target: {fileID: 114028227470754180, guid: 1c624bc3704c0624eafecd10960dd124,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: Play
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c624bc3704c0624eafecd10960dd124, type: 2}
   m_IsPrefabAsset: 0
@@ -1380,7 +1380,6 @@ MonoBehaviour:
   nameText: {fileID: 291604292}
   dialogueText: {fileID: 291604291}
   animator: {fileID: 291604293}
-  OnDialogueEnd: {fileID: 11400000, guid: aacf4ffd6be0fad45bd1e5d584b886d8, type: 2}
 --- !u!4 &1394898074
 Transform:
   m_ObjectHideFlags: 0
