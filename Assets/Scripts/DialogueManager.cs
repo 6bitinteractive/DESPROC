@@ -7,10 +7,11 @@ public class DialogueManager : MonoBehaviour
 {
     public Text nameText;
     public Text dialogueText;
+    public Player player;
     public Animator animator;
     private Queue<Dialogue> dialogue;
     private GameEvent trigger;
-
+ 
     void Awake ()
     {
         dialogue = new Queue<Dialogue>();
@@ -20,6 +21,12 @@ public class DialogueManager : MonoBehaviour
     {
         animator.SetBool("IsOpen", true);
         trigger = dialogueTrigger.dialogueEndTrigger;
+
+        if (player.gameObject.layer == 8)
+        {
+            player.GetComponent<Movement>().xSpeed = 0;
+            player.GetComponent<Movement>().ySpeed = 0;
+        }
 
         // Clear previous sentences
         dialogue.Clear();
@@ -64,6 +71,14 @@ public class DialogueManager : MonoBehaviour
     public void EndDialogue()
     {
         animator.SetBool("IsOpen", false);
-        trigger.Raise();
+        if (player.gameObject.layer == 8)
+        {
+            player.GetComponent<Movement>().xSpeed = 2.5f;
+            player.GetComponent<Movement>().ySpeed = 2.5f;
+        }
+        if (trigger!= null)
+        {
+            trigger.Raise();
+        }
     }
 }
