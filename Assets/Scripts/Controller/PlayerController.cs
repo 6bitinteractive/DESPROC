@@ -35,7 +35,10 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        Move();
+        if(movement.enabled == true)
+        {
+            Move();
+        }
     }
 
     void Move()
