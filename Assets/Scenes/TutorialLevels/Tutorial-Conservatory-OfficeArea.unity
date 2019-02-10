@@ -1128,7 +1128,7 @@ Transform:
   - {fileID: 1986574781}
   - {fileID: 1484146422}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &751059965 stripped
 GameObject:
@@ -1203,8 +1203,62 @@ MonoBehaviour:
     sentence: With that in mind, I'll be assigning you to your first task! Don't worry,
       I'll be with you to explain everything you need to know.
   - name: Volunteer
-    sentence: 'Let''s head over to the training area. '
+    sentence: Let's head over to the training area now.
   dialogueEndTrigger: {fileID: 11400000, guid: aacf4ffd6be0fad45bd1e5d584b886d8, type: 2}
+--- !u!1001 &771948586
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4244798460494684, guid: a6b849f3baf832448b5323386010651b, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4244798460494684, guid: a6b849f3baf832448b5323386010651b, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4244798460494684, guid: a6b849f3baf832448b5323386010651b, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4244798460494684, guid: a6b849f3baf832448b5323386010651b, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4244798460494684, guid: a6b849f3baf832448b5323386010651b, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4244798460494684, guid: a6b849f3baf832448b5323386010651b, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4244798460494684, guid: a6b849f3baf832448b5323386010651b, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4244798460494684, guid: a6b849f3baf832448b5323386010651b, type: 2}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 114240164428162366, guid: a6b849f3baf832448b5323386010651b,
+        type: 2}
+      propertyPath: sceneData
+      value: 
+      objectReference: {fileID: 11400000, guid: ad55a41fb40c7054490d1e99dbe9d733,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a6b849f3baf832448b5323386010651b, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!114 &771948587 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114240164428162366, guid: a6b849f3baf832448b5323386010651b,
+    type: 2}
+  m_PrefabInternal: {fileID: 771948586}
+  m_Script: {fileID: 11500000, guid: 94e761d668323d048a292d86a578aa45, type: 3}
 --- !u!1001 &805432171
 Prefab:
   m_ObjectHideFlags: 0
@@ -1708,46 +1762,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4894992979352498, guid: bfbabfdd22addb54891582c16f6d89cf,
     type: 2}
   m_PrefabInternal: {fileID: 805432171}
---- !u!1 &1352900072
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1352900074}
-  - component: {fileID: 1352900073}
-  m_Layer: 0
-  m_Name: SceneHandler
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1352900073
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1352900072}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23d3874e5cc2b1b458bc486cdd84738c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1352900074
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1352900072}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.096341, y: -2.2009501, z: 0.17552893}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1395685069
 Prefab:
   m_ObjectHideFlags: 0
@@ -2267,9 +2281,9 @@ MonoBehaviour:
     response:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1352900073}
+        - m_Target: {fileID: 771948587}
           m_MethodName: LoadScene
-          m_Mode: 5
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2333,5 +2347,5 @@ Transform:
   - {fileID: 507627181}
   - {fileID: 198031472}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

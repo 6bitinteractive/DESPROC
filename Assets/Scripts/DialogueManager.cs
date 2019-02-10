@@ -22,10 +22,14 @@ public class DialogueManager : MonoBehaviour
         animator.SetBool("IsOpen", true);
         trigger = dialogueTrigger.dialogueEndTrigger;
 
-        if (player.gameObject.layer == 8)
+        if(player != null)
         {
-            player.GetComponent<Movement>().xSpeed = 0;
-            player.GetComponent<Movement>().ySpeed = 0;
+            if (player.gameObject.layer == 8)
+            {
+                player.GetComponent<Animator>().SetBool("isMoving", false);
+                player.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+                player.GetComponent<Movement>().enabled = false;
+            }
         }
 
         // Clear previous sentences
@@ -71,11 +75,16 @@ public class DialogueManager : MonoBehaviour
     public void EndDialogue()
     {
         animator.SetBool("IsOpen", false);
-        if (player.gameObject.layer == 8)
+
+        if (player != null)
         {
-            player.GetComponent<Movement>().xSpeed = 2.5f;
-            player.GetComponent<Movement>().ySpeed = 2.5f;
+            if (player.gameObject.layer == 8)
+            {
+                player.GetComponent<Animator>().SetBool("isMoving", true);
+                player.GetComponent<Movement>().enabled = true;
+            }
         }
+
         if (trigger!= null)
         {
             trigger.Raise();

@@ -484,6 +484,58 @@ Canvas:
   m_SortingLayerID: -1540345735
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1001 &189535859
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4203874384872444, guid: eadb399a3521df84586cf52e1a80ba4e, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4203874384872444, guid: eadb399a3521df84586cf52e1a80ba4e, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -1.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 4203874384872444, guid: eadb399a3521df84586cf52e1a80ba4e, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4203874384872444, guid: eadb399a3521df84586cf52e1a80ba4e, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4203874384872444, guid: eadb399a3521df84586cf52e1a80ba4e, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4203874384872444, guid: eadb399a3521df84586cf52e1a80ba4e, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4203874384872444, guid: eadb399a3521df84586cf52e1a80ba4e, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4203874384872444, guid: eadb399a3521df84586cf52e1a80ba4e, type: 2}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1506307287412662, guid: eadb399a3521df84586cf52e1a80ba4e, type: 2}
+      propertyPath: m_Name
+      value: StartPosition-TutorialArea
+      objectReference: {fileID: 0}
+    - target: {fileID: 114629228439782878, guid: eadb399a3521df84586cf52e1a80ba4e,
+        type: 2}
+      propertyPath: sceneData
+      value: 
+      objectReference: {fileID: 11400000, guid: ad55a41fb40c7054490d1e99dbe9d733,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: eadb399a3521df84586cf52e1a80ba4e, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &213588635
 GameObject:
   m_ObjectHideFlags: 0
@@ -3921,6 +3973,14 @@ MonoBehaviour:
   dialogueArray:
   - name: Volunteer
     sentence: Alright, let's start with the basics.
+  - name: Volunteer
+    sentence: One of your duties as a Turtle Conservation Society volunteer is to
+      help out with the island cleanup efforts.
+  - name: Volunteer
+    sentence: "As you can see, there\u2019s already a lot of plastic littered in our
+      vicinity."
+  - name: Volunteer
+    sentence: 'Go ahead and press E to pick them up! '
   dialogueEndTrigger: {fileID: 11400000, guid: aacf4ffd6be0fad45bd1e5d584b886d8, type: 2}
 --- !u!1 &2081863777
 GameObject:
