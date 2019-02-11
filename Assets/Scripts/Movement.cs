@@ -13,7 +13,7 @@ public class Movement : MonoBehaviour
     private float LastXDirection;
     private float LastYDirection;
     
-    void Start()
+    void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
