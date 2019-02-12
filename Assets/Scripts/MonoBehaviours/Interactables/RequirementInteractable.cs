@@ -12,6 +12,7 @@ public class RequirementInteractable : Interactable
     public void Pickup()
     {
         OnRequirementPickup.Invoke();
-        gameObject.SetActive(false);
+        //Destroy(gameObject);
+        gameObject.SetActive(false);    
     }
 }

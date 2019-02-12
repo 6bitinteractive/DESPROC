@@ -33,7 +33,7 @@ public class QuestCollectable : Quest
     {
         // Temporary place holder
         //GUILayout.BeginArea(new Rect(375, 0, 200, 200));
-        GUILayout.Label(string.Format("Collected {0}/{1} " + ItemName, CurrentItemCount, RequiredItemCount));
+       // GUILayout.Label(string.Format("Collected {0}/{1} " + ItemName, CurrentItemCount, RequiredItemCount));
         // GUILayout.EndArea();
     }
 
