@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Wander : MonoBehaviour
 {
-    public float Speed;
     public float startWaitTime;
     public Transform MoveArea;
     public float MinX;
@@ -22,7 +21,7 @@ public class Wander : MonoBehaviour
 
     }
 
-    public void WanderToNewPoint()
+    public void WanderToNewPoint(float Speed)
     {
         transform.position = Vector2.MoveTowards(transform.position, MoveArea.position, Speed * Time.deltaTime);
 
