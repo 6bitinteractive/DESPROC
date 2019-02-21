@@ -18,6 +18,8 @@ public class Wander : MonoBehaviour
 	void Start ()
     {
         waitTime = startWaitTime;
+        FindNextPoint();
+
     }
 
     public void WanderToNewPoint()
@@ -41,9 +43,10 @@ public class Wander : MonoBehaviour
 
     private void FindNextPoint()
     {
+        // Set new target
         MoveArea.position = new Vector2(Random.Range(MinX, MaxX), Random.Range(MinY, MaxY));
 
-        //Rotate Towards new Target
+        // Rotate Towards new Target
         Vector2 direction = MoveArea.position - transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);

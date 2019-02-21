@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212668345168443054}
   - component: {fileID: 114295216150141298}
   - component: {fileID: 114327998434645560}
+  - component: {fileID: 114648725674755580}
   m_Layer: 0
   m_Name: Turtle
   m_TagString: Untagged
@@ -72,6 +73,18 @@ MonoBehaviour:
   MaxX: 5
   MinY: -5
   MaxY: 5
+--- !u!114 &114648725674755580
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1115493859004020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d4ccf3d17329ea43ba5a9de5efbe617, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curState: 0
 --- !u!212 &212668345168443054
 SpriteRenderer:
   m_ObjectHideFlags: 1
