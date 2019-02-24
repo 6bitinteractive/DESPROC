@@ -2,20 +2,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Wander))]
 
 public class TurtleController : MonoBehaviour
 {
     Wander wander;
+    public Image ChokeUI; 
 
     public float Speed;
+    public float ChokeDuration = 5;
 
-    private Transform plastic;
+    private float CurrentChokeDuration;
+    private bool isChoking;
+    private Collider2D plastic;
+    private Rigidbody2D plasticRB;
+    private int counter = 1;
 
     [SerializeField] private LayerMask plasticLayerMask;
-    [SerializeField] private TurtleChildCollision body;
+    [SerializeField] private TurtleChildCollision mouth;
     [SerializeField] private TurtleChildCollision sight;
+    [SerializeField] private GameEvent OnDeath;
+    [SerializeField] private GameEvent OnChoke;
 
     public enum FSMState
     {
@@ -31,6 +40,8 @@ public class TurtleController : MonoBehaviour
     void Awake ()
     {
         wander = GetComponent<Wander>();
+
+        CurrentChokeDuration = ChokeDuration;
         curState = FSMState.Wander;
     }
 
@@ -44,16 +55,37 @@ public class TurtleController : MonoBehaviour
             case FSMState.Choke: ChokeState(); break;
             case FSMState.Dead: DeadState(); break;
         }
+
+        //Debugging Purposes
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            isChoking = false;
+        }
     }
 
     private void DeadState()
     {
-        throw new NotImplementedException();
+        // Do once
+        if (counter == 1)
+        {
+            counter++;
+            DisableColliders();
+            OnDeath.Raise();
+        }
     }
 
     private void ChokeState()
     {
-        throw new NotImplementedException();
+        //Display the ChokeUI
+        ChokeUI.gameObject.SetActive(true);
+
+        if (isChoking)
+        {
+            StartCoroutine(Choke());
+            //OnChoke.Raise();
+        }
+
+        else curState = FSMState.Wander;
     }
 
     private void WanderState()
@@ -63,11 +95,10 @@ public class TurtleController : MonoBehaviour
 
     private void ChaseState()
     {
-        Debug.Log("Chasing");
-        transform.position = Vector2.MoveTowards(transform.position, new Vector2(plastic.position.x, transform.position.y), Speed * Time.deltaTime); // Move Towards target
+        transform.position = Vector2.MoveTowards(transform.position, new Vector2(plastic.transform.position.x, plastic.transform.position.y), Speed * Time.deltaTime); // Move Towards target
         
         // Rotate Towards new Target
-        Vector2 direction = plastic.position - transform.position;
+        Vector2 direction = plastic.transform.position - transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
@@ -75,25 +106,54 @@ public class TurtleController : MonoBehaviour
 
     public void OnChildCollision(TurtleChildCollision childPart, Collider2D collider)
     {
-        plastic = collider.transform;
+        plastic = collider;
+        plasticRB = plastic.GetComponent<Rigidbody2D>();
 
-        // Checks collisions with Body
         int collisionLayerMask = 1 << collider.gameObject.layer;
 
-        // If collides with Plastic
-        if (collisionLayerMask == plasticLayerMask.value)
+        // Check if already choking
+        if (!isChoking)
         {
-            // If collides with Body
-            if (childPart == body)
+            // If collides with Plastic
+            if (collisionLayerMask == plasticLayerMask.value)
             {
-              //  curState = FSMState.Choke;
+                // If collides with Body
+                if (childPart == mouth)
+                {
+                    isChoking = true;
+                    curState = FSMState.Choke;
+                    plasticRB.constraints = RigidbodyConstraints2D.FreezePosition;
+                }
+
+                // If collides with Sight
+                if (childPart == sight)
+                {
+                    curState = FSMState.Chase;
+                }
+            }
+        }      
+    }
+
+    IEnumerator Choke()
+    {
+        while (isChoking)
+        {         
+            // Update choker timer ui (updating ui in a controller disgusting... but oh well)
+            if (CurrentChokeDuration != ChokeUI.fillAmount)
+            {
+                CurrentChokeDuration -= Time.deltaTime;
+                ChokeUI.fillAmount = CurrentChokeDuration / ChokeDuration;
             }
 
-            // If collides with Sight
-            if (childPart == sight)
-            {
-               curState = FSMState.Chase;
-            }
+            yield return new WaitForSeconds(ChokeDuration);
+            plastic.gameObject.SetActive(false);
+            curState = FSMState.Dead;
         }
+    }
+
+    public void DisableColliders()
+    {
+        mouth.gameObject.SetActive(false);
+        sight.gameObject.SetActive(false);
     }
 }

@@ -6,6 +6,13 @@ public class EntityDisabler : MonoBehaviour
 {
     public EntityRuntimeSet Set;
 
+    public void RemoveFromList()
+    {
+        int index = Random.Range(0, Set.Items.Count);
+        Set.Remove(Set.Items[index]); // removes from list
+        Debug.Log("Removed");
+    }
+
     public void DisableAll()
     {
         // Loop backwards since the list may change when disabling
