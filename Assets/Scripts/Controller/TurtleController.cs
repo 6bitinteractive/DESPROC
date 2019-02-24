@@ -2,22 +2,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Wander))]
 
 public class TurtleController : MonoBehaviour
 {
     Wander wander;
+    public Image ChokeUI; 
 
     public float Speed;
     public float ChokeDuration = 5;
 
+    private float CurrentChokeDuration;
     private bool isChoking;
     private Collider2D plastic;
     private Rigidbody2D plasticRB;
+    private int counter = 1;
 
     [SerializeField] private LayerMask plasticLayerMask;
-    [SerializeField] private TurtleChildCollision body;
+    [SerializeField] private TurtleChildCollision mouth;
     [SerializeField] private TurtleChildCollision sight;
     [SerializeField] private GameEvent OnDeath;
     [SerializeField] private GameEvent OnChoke;
@@ -36,6 +40,8 @@ public class TurtleController : MonoBehaviour
     void Awake ()
     {
         wander = GetComponent<Wander>();
+
+        CurrentChokeDuration = ChokeDuration;
         curState = FSMState.Wander;
     }
 
@@ -59,17 +65,24 @@ public class TurtleController : MonoBehaviour
 
     private void DeadState()
     {
-       Debug.Log("Dead");
-     //  OnDeath.Raise();
+        // Do once
+        if (counter == 1)
+        {
+            counter++;
+            DisableColliders();
+            OnDeath.Raise();
+        }
     }
 
     private void ChokeState()
     {
-      
+        //Display the ChokeUI
+        ChokeUI.gameObject.SetActive(true);
+
         if (isChoking)
         {
             StartCoroutine(Choke());
-          //  OnChoke.Raise();
+            //OnChoke.Raise();
         }
 
         else curState = FSMState.Wander;
@@ -105,7 +118,7 @@ public class TurtleController : MonoBehaviour
             if (collisionLayerMask == plasticLayerMask.value)
             {
                 // If collides with Body
-                if (childPart == body)
+                if (childPart == mouth)
                 {
                     isChoking = true;
                     curState = FSMState.Choke;
@@ -124,10 +137,23 @@ public class TurtleController : MonoBehaviour
     IEnumerator Choke()
     {
         while (isChoking)
-        {
+        {         
+            // Update choker timer ui (updating ui in a controller disgusting... but oh well)
+            if (CurrentChokeDuration != ChokeUI.fillAmount)
+            {
+                CurrentChokeDuration -= Time.deltaTime;
+                ChokeUI.fillAmount = CurrentChokeDuration / ChokeDuration;
+            }
+
             yield return new WaitForSeconds(ChokeDuration);
             plastic.gameObject.SetActive(false);
             curState = FSMState.Dead;
         }
+    }
+
+    public void DisableColliders()
+    {
+        mouth.gameObject.SetActive(false);
+        sight.gameObject.SetActive(false);
     }
 }
