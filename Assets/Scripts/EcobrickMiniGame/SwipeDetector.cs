@@ -8,6 +8,9 @@ public class SwipeDetector : MonoBehaviour
     [SerializeField] private float minimumHorizontalSwipeDistance = 20f;
     [SerializeField] private float minimumVerticalSwipeDistance = 20f;
 
+    [Tooltip("Enabling this would allow for a more stricter check, i.e. a diagonal swipe will not be acknowledged as a correct left/right swipe.")]
+    [SerializeField] private bool supportDiagonalDetection = false;
+
     private Vector2 startPosition;
     private Vector2 endPosition;
     private Vector2 DeltaSwipe { get { return startPosition - endPosition; } }
@@ -16,7 +19,7 @@ public class SwipeDetector : MonoBehaviour
 
     private void Update()
     {
-        #region Standalone Inputs
+        #region Standalone Input
 #if UNITY_STANDALONE_WIN
         if (Input.GetMouseButtonDown(0))
         {
@@ -31,7 +34,7 @@ public class SwipeDetector : MonoBehaviour
 #endif
         #endregion
 
-        #region Mobile Inputs
+        #region Mobile Input
 #if UNITY_ANDROID || UNITY_IOS
         if (Input.touchCount > 0)
         {
@@ -66,16 +69,25 @@ public class SwipeDetector : MonoBehaviour
     private SwipeDirection DetermineSwipeDirection()
     {
         SwipeDirection swipeDirection = SwipeDirection.None;
+        float horizontalSwipeDistance = Mathf.Abs(DeltaSwipe.x);
+        float verticalSwipeDistance = Mathf.Abs(DeltaSwipe.y);
 
-        bool minimumDistanceMet = Mathf.Abs(DeltaSwipe.x) > minimumHorizontalSwipeDistance || Mathf.Abs(DeltaSwipe.y) > minimumVerticalSwipeDistance;
-        bool isVerticalSwipe = Mathf.Abs(DeltaSwipe.y) > Mathf.Abs(DeltaSwipe.x);
-
-        if (minimumDistanceMet)
+        if (supportDiagonalDetection)
         {
-            if (isVerticalSwipe)
-                swipeDirection |= (DeltaSwipe.y < 0) ? SwipeDirection.Up : SwipeDirection.Down;
-            else
+            if (horizontalSwipeDistance > minimumHorizontalSwipeDistance)
                 swipeDirection |= (DeltaSwipe.x < 0) ? SwipeDirection.Right : SwipeDirection.Left;
+
+            if (verticalSwipeDistance > minimumVerticalSwipeDistance)
+                swipeDirection |= (DeltaSwipe.y < 0) ? SwipeDirection.Up : SwipeDirection.Down;
+        }
+        else
+        {
+            bool isVerticalSwipe = verticalSwipeDistance > horizontalSwipeDistance;
+
+            if (isVerticalSwipe)
+                swipeDirection = (DeltaSwipe.y < 0) ? SwipeDirection.Up : SwipeDirection.Down;
+            else
+                swipeDirection = (DeltaSwipe.x < 0) ? SwipeDirection.Right : SwipeDirection.Left;
         }
 
         return swipeDirection;
@@ -103,10 +115,10 @@ public enum SwipeDirection
     Down = 8,
 
     // Diagonal
-    //LeftUp = 5,
-    //RightUp = 6,
-    //LeftDown = 9,
-    //RightDown = 10
+    LeftUp = 5,
+    RightUp = 6,
+    LeftDown = 9,
+    RightDown = 10
 }
 
 public struct SwipeData
