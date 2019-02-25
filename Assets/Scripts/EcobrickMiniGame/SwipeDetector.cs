@@ -47,6 +47,7 @@ public class SwipeDetector : MonoBehaviour
                     break;
 
                 case TouchPhase.Ended:
+                case TouchPhase.Canceled:
                     SetEndPosition(touch.position);
                     BroadcastSwipe();
                     break;
@@ -58,7 +59,7 @@ public class SwipeDetector : MonoBehaviour
 
     private void SetStartPosition(Vector2 position)
     {
-        endPosition = startPosition = position;
+        endPosition = startPosition = position; // The endPosition is also at the startPosition at the beginning
     }
 
     private void SetEndPosition(Vector2 position)
@@ -71,23 +72,28 @@ public class SwipeDetector : MonoBehaviour
         SwipeDirection swipeDirection = SwipeDirection.None;
         float horizontalSwipeDistance = Mathf.Abs(DeltaSwipe.x);
         float verticalSwipeDistance = Mathf.Abs(DeltaSwipe.y);
+        bool minHorizontalDistanceMet = horizontalSwipeDistance > minimumHorizontalSwipeDistance;
+        bool minVerticalDistanceMet = verticalSwipeDistance > minimumVerticalSwipeDistance;
 
         if (supportDiagonalDetection)
         {
-            if (horizontalSwipeDistance > minimumHorizontalSwipeDistance)
+            if (minHorizontalDistanceMet)
                 swipeDirection |= (DeltaSwipe.x < 0) ? SwipeDirection.Right : SwipeDirection.Left;
 
-            if (verticalSwipeDistance > minimumVerticalSwipeDistance)
+            if (minVerticalDistanceMet)
                 swipeDirection |= (DeltaSwipe.y < 0) ? SwipeDirection.Up : SwipeDirection.Down;
         }
         else
         {
-            bool isVerticalSwipe = verticalSwipeDistance > horizontalSwipeDistance;
+            if (minHorizontalDistanceMet || minVerticalDistanceMet)
+            {
+                bool isVerticalSwipe = verticalSwipeDistance > horizontalSwipeDistance;
 
-            if (isVerticalSwipe)
-                swipeDirection = (DeltaSwipe.y < 0) ? SwipeDirection.Up : SwipeDirection.Down;
-            else
-                swipeDirection = (DeltaSwipe.x < 0) ? SwipeDirection.Right : SwipeDirection.Left;
+                if (isVerticalSwipe)
+                    swipeDirection = (DeltaSwipe.y < 0) ? SwipeDirection.Up : SwipeDirection.Down;
+                else
+                    swipeDirection = (DeltaSwipe.x < 0) ? SwipeDirection.Right : SwipeDirection.Left;
+            }
         }
 
         return swipeDirection;
