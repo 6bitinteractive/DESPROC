@@ -18,6 +18,7 @@ public class TurtleController : MonoBehaviour
     private bool isChoking;
     private Collider2D plastic;
     private Rigidbody2D plasticRB;
+    private Animator animator;
     private int counter = 1;
 
     [SerializeField] private LayerMask plasticLayerMask;
@@ -40,6 +41,7 @@ public class TurtleController : MonoBehaviour
     void Awake ()
     {
         wander = GetComponent<Wander>();
+        animator = GetComponent<Animator>();
 
         CurrentChokeDuration = ChokeDuration;
         curState = FSMState.Wander;
@@ -70,6 +72,7 @@ public class TurtleController : MonoBehaviour
         {
             counter++;
             DisableColliders();
+            animator.SetBool("isDead", true);
             OnDeath.Raise();
         }
     }

@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114295216150141298}
   - component: {fileID: 114327998434645560}
   - component: {fileID: 114648725674755580}
+  - component: {fileID: 95349946005820980}
   m_Layer: 12
   m_Name: Turtle
   m_TagString: Untagged
@@ -132,8 +133,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1115493859004020}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -475, y: -463, z: -9723.563}
-  m_LocalScale: {x: 21.607918, y: 21.607918, z: 108.0396}
+  m_LocalPosition: {x: -505.1, y: -449.2, z: -9723.563}
+  m_LocalScale: {x: 30.251085, y: 30.251085, z: 151.25543}
   m_Children:
   - {fileID: 4138466662326694}
   - {fileID: 4389448290611554}
@@ -153,9 +154,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 5.58485, y: -0.6421209}
+  m_Offset: {x: 2.9226944, y: -0.083751775}
   serializedVersion: 2
-  m_Radius: 3.2088604
+  m_Radius: 2.4720638
 --- !u!61 &61552513745831654
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -168,7 +169,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 3.0720184, y: -0.25411415}
+  m_Offset: {x: 2.2323704, y: -0.35500896}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -179,8 +180,26 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.3024936, y: 2.215929}
+  m_Size: {x: 3.147333, y: 1.0455568}
   m_EdgeRadius: 0
+--- !u!95 &95349946005820980
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1115493859004020}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f8b49fdd29dd7344b9ff68929dc6abf6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114280203913533004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -353,9 +372,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: bde501fc4be062b44a995e34a06e9101, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 463bcedb7772eb2478ba3750295f95e2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 11.91, y: 7.46}
