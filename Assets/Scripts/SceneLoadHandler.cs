@@ -11,7 +11,7 @@ public class SceneLoadHandler : MonoBehaviour
 
     private void Start()
     {
-        sceneController = FindObjectOfType<SceneController>();
+        sceneController = FindObjectOfType<SceneController>(); // Fix
         playerSaveData = sceneController.GetPlayerSaveData();
     }
 
