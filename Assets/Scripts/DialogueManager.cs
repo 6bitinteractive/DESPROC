@@ -72,6 +72,13 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    public void ChangeDialogueText(Text newText)
+    {
+        // Makes sure all sentence animations are stopped before changing dialogue text
+        StopAllCoroutines();
+        dialogueText = newText;
+    }
+
     public void EndDialogue()
     {
         animator.SetBool("IsOpen", false);
