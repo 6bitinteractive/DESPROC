@@ -35,6 +35,11 @@ public class Movement : MonoBehaviour
         rb.velocity = new Vector3(xDirection * xSpeed, yDirection * ySpeed);
     }
 
+    public void ResetVelocity()
+    {
+        rb.velocity = Vector3.zero;
+    }
+
     private void UpdateAnimation(float xDirection, float yDirection)
     {
         // Check if no longer moving
