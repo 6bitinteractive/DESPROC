@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class Countdown : MonoBehaviour
 {
-    public SceneHandler SceneHandler;
     public GameEvent CountdownEndScreen;
     public float CountdownValue;
     public Text CountdownText;
