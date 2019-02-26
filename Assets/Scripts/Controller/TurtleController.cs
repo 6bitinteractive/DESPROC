@@ -13,9 +13,9 @@ public class TurtleController : MonoBehaviour
 
     public float Speed;
     public float ChokeDuration = 5;
+    public bool isChoking;
 
     private float CurrentChokeDuration;
-    private bool isChoking;
     private Collider2D plastic;
     private Rigidbody2D plasticRB;
     private Animator animator;
@@ -57,12 +57,6 @@ public class TurtleController : MonoBehaviour
             case FSMState.Choke: ChokeState(); break;
             case FSMState.Dead: DeadState(); break;
         }
-
-        //Debugging Purposes
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            isChoking = false;
-        }
     }
 
     private void DeadState()
@@ -82,13 +76,21 @@ public class TurtleController : MonoBehaviour
         //Display the ChokeUI
         ChokeUI.gameObject.SetActive(true);
 
-        if (isChoking)
+        if (isChoking && plastic.gameObject != null)
         {
             StartCoroutine(Choke());
             //OnChoke.Raise();
         }
 
-        else curState = FSMState.Wander;
+        else
+        {
+            StopAllCoroutines(); // Stop choking
+            CurrentChokeDuration = ChokeDuration; //Reset current choke duration
+            ChokeUI.gameObject.SetActive(false); // Hide choke ui
+
+            plastic.gameObject.SetActive(false); // Remove plastic
+            curState = FSMState.Wander; // Wander
+        }
     }
 
     private void WanderState()
@@ -109,9 +111,6 @@ public class TurtleController : MonoBehaviour
 
     public void OnChildCollision(TurtleChildCollision childPart, Collider2D collider)
     {
-        plastic = collider;
-        plasticRB = plastic.GetComponent<Rigidbody2D>();
-
         int collisionLayerMask = 1 << collider.gameObject.layer;
 
         // Check if already choking
@@ -120,7 +119,10 @@ public class TurtleController : MonoBehaviour
             // If collides with Plastic
             if (collisionLayerMask == plasticLayerMask.value)
             {
-                // If collides with Body
+                plastic = collider;
+                plasticRB = plastic.GetComponent<Rigidbody2D>();
+
+                // If collides with Mouth
                 if (childPart == mouth)
                 {
                     isChoking = true;
