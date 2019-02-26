@@ -19,7 +19,11 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(DialogueTrigger dialogueTrigger)
     {
-        animator.SetBool("IsOpen", true);
+        if (animator != null)
+        {
+            animator.SetBool("IsOpen", true);
+        }
+           
         trigger = dialogueTrigger.dialogueEndTrigger;
 
         if(player != null)
@@ -81,7 +85,10 @@ public class DialogueManager : MonoBehaviour
 
     public void EndDialogue()
     {
-        animator.SetBool("IsOpen", false);
+        if (animator != null)
+        {
+            animator.SetBool("IsOpen", false);
+        }
 
         if (player != null)
         {
