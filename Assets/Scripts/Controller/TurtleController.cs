@@ -76,7 +76,7 @@ public class TurtleController : MonoBehaviour
         //Display the ChokeUI
         ChokeUI.gameObject.SetActive(true);
 
-        if (isChoking && plastic.gameObject != null)
+        if (isChoking && plastic.gameObject.activeSelf)
         {
             StartCoroutine(Choke());
             //OnChoke.Raise();
@@ -87,6 +87,7 @@ public class TurtleController : MonoBehaviour
             StopAllCoroutines(); // Stop choking
             CurrentChokeDuration = ChokeDuration; //Reset current choke duration
             ChokeUI.gameObject.SetActive(false); // Hide choke ui
+
 
             plastic.gameObject.SetActive(false); // Remove plastic
             curState = FSMState.Wander; // Wander
