@@ -5,7 +5,13 @@ using UnityEngine.Events;
 
 public class AnimationHelper : MonoBehaviour
 {
+    public UnityEvent OnAnimStart = new UnityEvent();
     public UnityEvent OnAnimEnded = new UnityEvent();
+
+    public void StartAnimation()
+    {
+        OnAnimStart.Invoke();
+    }
 
     public void EndAnimation()
     {

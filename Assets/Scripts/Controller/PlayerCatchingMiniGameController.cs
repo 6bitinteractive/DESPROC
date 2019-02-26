@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class PlayerCatchingMiniGameController : MonoBehaviour
 {
-    [SerializeField] private GameEvent OnRescuingTurtle;
-    [SerializeField] private GameEvent OnTurtleRescued;
     [SerializeField] private LayerMask LayerMask;
     [SerializeField] private AnimationClip rescuingAnimation;
 
@@ -57,6 +55,7 @@ public class PlayerCatchingMiniGameController : MonoBehaviour
                     // If turtle is choking and touches turtle or left clicks turtle
                     if (turtleController.isChoking && Input.GetMouseButtonDown(0))
                     {
+                        animator.SetBool("isRescuing", true);
                         StartCoroutine(Rescue(turtleController));
                     }
                 }
@@ -64,13 +63,10 @@ public class PlayerCatchingMiniGameController : MonoBehaviour
         }    
     }
 
+
     IEnumerator Rescue(TurtleController turtleController)
     {
-
-        OnRescuingTurtle.Raise();
-        animator.SetBool("isRescuing", true);
         yield return new WaitForSeconds(rescuingAnimation.length);
-        OnTurtleRescued.Raise();
         animator.SetBool("isRescuing", false);
         turtleController.isChoking = false;
     }
