@@ -7,8 +7,12 @@ public class Quests
 {
     public QuestScript QuestScript { get; set; }
     public string Name;
+    [TextArea(15, 20)]
+    public string Description;
+
      // Use this for initialization
-     void Start () {
+     void Start ()
+    {
 		
 	}
 	
@@ -17,3 +21,6 @@ public class Quests
 		
 	}
 }
+
+
+// Reference https://www.youtube.com/watch?v=wClMZ2Rim6w

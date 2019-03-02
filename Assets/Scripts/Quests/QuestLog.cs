@@ -58,6 +58,6 @@ public class QuestLog : MonoBehaviour
 
         selected = quest;
 
-        questDescriptionText.text = string.Format("{0}", quest.Name);
+        questDescriptionText.text = string.Format("<size=100>{0}</size>\n{1}", quest.Name, quest.Description);
     }
 }
