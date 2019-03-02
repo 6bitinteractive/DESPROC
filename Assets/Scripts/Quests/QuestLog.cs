@@ -11,6 +11,7 @@ public class QuestLog : MonoBehaviour
     [SerializeField] private InteractAction action;
 
     private Quests selected;
+    private List<QuestScript> questScripts = new List<QuestScript>();
     private static QuestLog instance;
 
     public static QuestLog Instance
@@ -38,6 +39,7 @@ public class QuestLog : MonoBehaviour
         // Assign reference to questscript
         quest.QuestScript = questScript;
         questScript.Quest = quest;
+        questScripts.Add(questScript);
 
         
         gameObject.GetComponent<Text>().text = quest.Name;
@@ -67,5 +69,13 @@ public class QuestLog : MonoBehaviour
     public void UpdateSelectedQuest()
     {
         DisplayDescription(selected);
+    }
+
+    public void CheckCompletion()
+    {
+        foreach (QuestScript questScript in questScripts)
+        {
+            questScript.IsComplete();
+        }
     }
 }

@@ -21,6 +21,22 @@ public class Quests
         }
     }
 
+    public bool IsComplete
+    {
+        get
+        {
+            foreach (Objective objective in collectObjectives)
+            {
+                if (!objective.IsComplete)
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+    }
+
     public string Name;
     [TextArea(15, 20)]
     public string Description;
@@ -31,7 +47,6 @@ public class Quests
 [System.Serializable]
 public abstract class Objective
 {
-
     [SerializeField] private int amount;
     private int currentAmount;
     [SerializeField] private string type;
@@ -71,16 +86,11 @@ public abstract class Objective
         }
     }
 
-    public bool IsCollected
+    public bool IsComplete
     {
         get
         {
-            return isCollected;
-        }
-
-        set
-        {
-            isCollected = value;
+            return CurrentAmount >= Amount;
         }
     }
 }
@@ -90,14 +100,14 @@ public class CollectObjective : Objective
 {
     public UnityEvent OnPickup = new UnityEvent();
     public UnityEvent OnCompletion = new UnityEvent();
-
+    private bool isCollected;
     public void UpdateItemCount(GameObject ItemReference)
     {
         //   Debug.Log("nep");
         //   Debug.Log(ItemReference.name);
 
         // Checks if it has already been picked up
-        if (IsCollected == false)
+        if (isCollected == false)
         {
             //Checks if the collectable's name is the same as the type
             if (string.Equals(ItemReference.name, Type))
@@ -105,14 +115,14 @@ public class CollectObjective : Objective
                 OnPickup.Invoke();
                 CurrentAmount++;
                 QuestLog.Instance.UpdateSelectedQuest();
+                QuestLog.Instance.CheckCompletion();
 
-                // Clamp amount
-                if (CurrentAmount >= Amount)
+                // if quest is complete
+                if (IsComplete)
                 {
                     CurrentAmount = Amount;
                     QuestLog.Instance.UpdateSelectedQuest();
                     OnCompletion.Invoke();
-                    //Remove this object
                 }
             }
         }

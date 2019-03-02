@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class QuestScript : MonoBehaviour
 {
     public Quests Quest { get; set; }
+    private bool isMarkedComplete = false;
 
     public void Select()
     {
@@ -17,5 +18,14 @@ public class QuestScript : MonoBehaviour
     {
 
         GetComponent<Text>().color = Color.white;
+    }
+
+    public void IsComplete()
+    {
+        if (Quest.IsComplete && !isMarkedComplete)
+        {
+            isMarkedComplete = true;
+            GetComponent<Text>().text += "(Complete)";
+        }
     }
 }
