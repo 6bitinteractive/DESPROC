@@ -2,16 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+public delegate void OnInteractAction(GameObject target);
 
 public class InteractAction : Action
 {
-    public UnityEvent OnTurtlePickup = new UnityEvent();
-
+    public event OnInteractAction onInteractAction;
     public override void Act()
     {
         if (target == null)
             return;
 
+        onInteractAction.Invoke(target);
+
+        /*
         RequirementInteractable requirement = target.GetComponent<RequirementInteractable>();
         {
             if (requirement != null)

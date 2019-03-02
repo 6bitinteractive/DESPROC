@@ -7,16 +7,6 @@ public class QuestScript : MonoBehaviour
 {
     public Quests Quest { get; set; }
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
     public void Select()
     {
         GetComponent<Text>().color = Color.yellow;
