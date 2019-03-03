@@ -482,8 +482,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00007980761, y: 175.22}
-  m_SizeDelta: {x: 361.4, y: 106.8}
+  m_AnchoredPosition: {x: 0.00012207031, y: 175.22}
+  m_SizeDelta: {x: 367.3, y: 99.4}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &119018389
 MonoBehaviour:
@@ -497,15 +497,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: -246
+    m_Left: -277
     m_Right: 0
     m_Top: 26
     m_Bottom: 0
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 850, y: 100}
-  m_Spacing: {x: 0, y: -80.8}
+  m_CellSize: {x: 948.32, y: 100}
+  m_Spacing: {x: 0, y: -73.4}
   m_Constraint: 1
   m_ConstraintCount: 1
 --- !u!222 &119018390
@@ -724,6 +724,23 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 151615103}
   m_CullTransparentMesh: 0
+--- !u!1 &215635571 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1578946408385578, guid: a346d595de319884ab34d1af63815e4c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1028738970}
+--- !u!114 &215635576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 215635571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f35581f3f109c04ba4988790072af58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isCollected: 0
 --- !u!1 &215831742
 GameObject:
   m_ObjectHideFlags: 0
@@ -816,7 +833,7 @@ MonoBehaviour:
     type: 2}
   questParent: {fileID: 119018388}
   questDescriptionText: {fileID: 1814216946}
-  action: {fileID: 780734887}
+  interactObjective: {fileID: 780734890}
 --- !u!1 &233531212
 GameObject:
   m_ObjectHideFlags: 0
@@ -896,6 +913,23 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 233531212}
   m_CullTransparentMesh: 0
+--- !u!1 &249826180 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1780947801888508, guid: a346d595de319884ab34d1af63815e4c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1028738970}
+--- !u!114 &249826185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 249826180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f35581f3f109c04ba4988790072af58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isCollected: 0
 --- !u!1 &255043141
 GameObject:
   m_ObjectHideFlags: 0
@@ -1248,18 +1282,7 @@ MonoBehaviour:
   IsSpriteRandomized: 0
   OnTurtleSave:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1725762837}
-        m_MethodName: AddToTotalItemCount
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 394553954}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!58 &394553957
@@ -1588,18 +1611,7 @@ MonoBehaviour:
   IsSpriteRandomized: 0
   OnTurtleSave:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1725762837}
-        m_MethodName: AddToTotalItemCount
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 422285641}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!58 &422285644
@@ -2004,6 +2016,23 @@ Transform:
   m_Father: {fileID: 1069837093}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &727051065 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1923503547740054, guid: a346d595de319884ab34d1af63815e4c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1028738970}
+--- !u!114 &727051070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 727051065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f35581f3f109c04ba4988790072af58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isCollected: 0
 --- !u!1001 &764805289
 Prefab:
   m_ObjectHideFlags: 0
@@ -2172,6 +2201,7 @@ GameObject:
   - component: {fileID: 780734888}
   - component: {fileID: 780734887}
   - component: {fileID: 780734886}
+  - component: {fileID: 780734890}
   m_Layer: 8
   m_Name: InteractionCollider
   m_TagString: Untagged
@@ -2272,6 +2302,38 @@ MonoBehaviour:
   sessionData: {fileID: 11400000, guid: d145efb78b7a3894d99040295d0cceb3, type: 2}
   plasticPrefab: {fileID: 114796640138566288, guid: 7aed055a18a12684d99e99f6504c5266,
     type: 2}
+--- !u!114 &780734890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 780734884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e5e7267c178f9a44a5019cfa5aa82d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Key: 323
+  interactableLayerMask:
+    serializedVersion: 2
+    m_Bits: 512
+--- !u!1 &798853200 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1753127828532160, guid: a346d595de319884ab34d1af63815e4c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1028738970}
+--- !u!114 &798853205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 798853200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f35581f3f109c04ba4988790072af58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isCollected: 0
 --- !u!1 &836240505
 GameObject:
   m_ObjectHideFlags: 0
@@ -2371,6 +2433,23 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eadb399a3521df84586cf52e1a80ba4e, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &846959014 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1403957067250066, guid: a346d595de319884ab34d1af63815e4c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1028738970}
+--- !u!114 &846959019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 846959014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f35581f3f109c04ba4988790072af58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isCollected: 0
 --- !u!1 &870026367
 GameObject:
   m_ObjectHideFlags: 0
@@ -2870,8 +2949,9 @@ GameObject:
   - component: {fileID: 967168268}
   - component: {fileID: 967168267}
   - component: {fileID: 967168266}
+  - component: {fileID: 967168270}
   m_Layer: 9
-  m_Name: Quest Giver
+  m_Name: Bob
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2890,14 +2970,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   quests:
   - Name: Nep Quest
+    Objective: Plastics
     Description: NEppppppu
     collectObjectives:
     - amount: 3
-      type: Plastic
-  - Name: Quest Nep
-    Description: Something something something Something something something Something
-      something something Something something something
-    collectObjectives: []
+      objectiveTag: Plastic
+      OnPickup:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      OnCompletion:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+  - Name: What Makes TheSky Blue
+    Objective: Talk to Bob
+    Description: Talk to Bob desu. I heard all he ever pulled from the daily draws
+      are just blue crystals... It's probably what makes the sky blue.
+    collectObjectives:
+    - amount: 1
+      objectiveTag: Bob
+      OnPickup:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      OnCompletion:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
   tmpLog: {fileID: 215831746}
 --- !u!212 &967168267
 SpriteRenderer:
@@ -2976,6 +3080,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &967168270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 967168265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f35581f3f109c04ba4988790072af58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isCollected: 0
 --- !u!1 &987411549
 GameObject:
   m_ObjectHideFlags: 0
@@ -3097,7 +3213,7 @@ Prefab:
     - target: {fileID: 114819747754164440, guid: a346d595de319884ab34d1af63815e4c,
         type: 2}
       propertyPath: OnPlasticPickup.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4845855378206534, guid: a346d595de319884ab34d1af63815e4c, type: 2}
       propertyPath: m_LocalPosition.x
@@ -3641,6 +3757,23 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1161209210}
   m_CullTransparentMesh: 0
+--- !u!1 &1162717524 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1314084056890428, guid: a346d595de319884ab34d1af63815e4c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1028738970}
+--- !u!114 &1162717529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1162717524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f35581f3f109c04ba4988790072af58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isCollected: 0
 --- !u!1 &1181083364
 GameObject:
   m_ObjectHideFlags: 0
@@ -4403,7 +4536,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0.9999998}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4498,6 +4631,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1659690424 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1817872986883858, guid: a346d595de319884ab34d1af63815e4c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1028738970}
+--- !u!114 &1659690429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1659690424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f35581f3f109c04ba4988790072af58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isCollected: 0
 --- !u!1 &1670026436
 GameObject:
   m_ObjectHideFlags: 0
@@ -4789,7 +4939,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00008237362, y: 175.22006}
+  m_AnchoredPosition: {x: 0.0001128912, y: 175.22006}
   m_SizeDelta: {x: 365.3, y: 421.6}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1726012827
@@ -4983,6 +5133,23 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1757203005}
   m_CullTransparentMesh: 0
+--- !u!1 &1768975330 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1609069892195752, guid: a346d595de319884ab34d1af63815e4c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1028738970}
+--- !u!114 &1768975335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1768975330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f35581f3f109c04ba4988790072af58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isCollected: 0
 --- !u!1 &1771160298
 GameObject:
   m_ObjectHideFlags: 0
@@ -5693,6 +5860,23 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1893011376}
   m_CullTransparentMesh: 0
+--- !u!1 &1902592177 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1654029117125128, guid: a346d595de319884ab34d1af63815e4c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1028738970}
+--- !u!114 &1902592182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1902592177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f35581f3f109c04ba4988790072af58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isCollected: 0
 --- !u!1 &1938941304
 GameObject:
   m_ObjectHideFlags: 0
@@ -5820,6 +6004,23 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 956498755}
   m_Script: {fileID: 11500000, guid: 78e5a3cc9ecbc6d46a86c45dd6f4f84b, type: 3}
+--- !u!1 &1977762360 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1385135377990214, guid: a346d595de319884ab34d1af63815e4c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1028738970}
+--- !u!114 &1977762365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1977762360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f35581f3f109c04ba4988790072af58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isCollected: 0
 --- !u!1 &1997907238
 GameObject:
   m_ObjectHideFlags: 0
@@ -6060,7 +6261,7 @@ RectTransform:
   m_Father: {fileID: 1772173802}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.16878551}
+  m_AnchorMin: {x: 0, y: 0.1687855}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
@@ -6363,7 +6564,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1593904698}
   m_Direction: 2
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.99999994
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

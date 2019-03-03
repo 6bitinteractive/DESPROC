@@ -8,7 +8,7 @@ public class QuestLog : MonoBehaviour
     [SerializeField] private GameObject questPrefab;
     [SerializeField] private Transform questParent;
     [SerializeField] private Text questDescriptionText;
-    [SerializeField] private InteractAction action;
+    [SerializeField] private InteractObjective interactObjective;
 
     private Quests selected;
     private List<QuestScript> questScripts = new List<QuestScript>();
@@ -30,7 +30,7 @@ public class QuestLog : MonoBehaviour
     {
         foreach (CollectObjective objectives in quest.CollectObjectives)
         {
-            action.onInteractAction += new OnInteractAction(objectives.UpdateItemCount);
+            interactObjective.onInteractObjective += new OnInteractObjective(objectives.UpdateItemCount);
         }
 
         GameObject gameObject = Instantiate(questPrefab, questParent);
@@ -60,10 +60,11 @@ public class QuestLog : MonoBehaviour
         // Add objectives 
         foreach (Objective obj in quest.CollectObjectives)
         {
-            objectives += obj.Type + ": " + obj.CurrentAmount + "/" + obj.Amount + "\n";
+            objectives += quest.Objective + ": " + obj.CurrentAmount + "/" + obj.Amount + "\n";
+           // objectives += obj.Type + ": " + obj.CurrentAmount + "/" + obj.Amount + "\n";
         }
 
-        questDescriptionText.text = string.Format("<size=100>{0}</size>\n{1}\n{2}", quest.Name, quest.Description, objectives);
+        questDescriptionText.text = string.Format("<size=100>{0}</size>\n\n{1}\n{2}", quest.Name, quest.Description, objectives);
     }
 
     public void UpdateSelectedQuest()

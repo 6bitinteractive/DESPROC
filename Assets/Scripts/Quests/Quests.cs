@@ -38,6 +38,7 @@ public class Quests
     }
 
     public string Name;
+    public string Objective;
     [TextArea(15, 20)]
     public string Description;
 
@@ -47,16 +48,15 @@ public class Quests
 [System.Serializable]
 public abstract class Objective
 {
-    [SerializeField] private int amount;
-    private int currentAmount;
-    [SerializeField] private string type;
-    private bool isCollected;
+    [SerializeField] protected int amount;
+    protected int currentAmount;
+    [SerializeField] protected string objectiveTag;
 
-    public string Type
+    public string ObjectiveTag
     {
         get
         {
-            return type;
+            return objectiveTag;
         }
     }
 
@@ -100,33 +100,31 @@ public class CollectObjective : Objective
 {
     public UnityEvent OnPickup = new UnityEvent();
     public UnityEvent OnCompletion = new UnityEvent();
-    private bool isCollected;
-    public void UpdateItemCount(GameObject ItemReference)
+
+    public void UpdateItemCount(GameObject objective)
     {
         //   Debug.Log("nep");
         //   Debug.Log(ItemReference.name);
-
         // Checks if it has already been picked up
-        if (isCollected == false)
+     
+        //Checks if the objectives name is the same as the type string
+        if (string.Equals(objective.name, ObjectiveTag))
         {
-            //Checks if the collectable's name is the same as the type
-            if (string.Equals(ItemReference.name, Type))
+            OnPickup.Invoke();
+            CurrentAmount++;
+            QuestLog.Instance.UpdateSelectedQuest();
+            QuestLog.Instance.CheckCompletion();
+                
+            // if quest is complete
+            if (IsComplete)
             {
-                OnPickup.Invoke();
-                CurrentAmount++;
+                CurrentAmount = Amount;
                 QuestLog.Instance.UpdateSelectedQuest();
-                QuestLog.Instance.CheckCompletion();
-
-                // if quest is complete
-                if (IsComplete)
-                {
-                    CurrentAmount = Amount;
-                    QuestLog.Instance.UpdateSelectedQuest();
-                    OnCompletion.Invoke();
-                }
+                OnCompletion.Invoke();
             }
         }
     }
+    
 }
 
 // Reference https://www.youtube.com/watch?v=wClMZ2Rim6w
