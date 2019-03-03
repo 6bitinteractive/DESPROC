@@ -32,13 +32,13 @@ public abstract class Interactable : MonoBehaviour
         return Factory.BaseObjects[baseIndex];
     }
 
-    public virtual Sprite GetSprite()
-    {
-        return spriteRenderer.sprite;
-    }
+    //public virtual Sprite GetSprite()
+    //{
+    //    return spriteRenderer.sprite;
+    //}
 
-    public virtual Factory GetFactory()
-    {
-        return Factory;
-    }
+    //public virtual Factory GetFactory()
+    //{
+    //    return Factory;
+    //}
 }

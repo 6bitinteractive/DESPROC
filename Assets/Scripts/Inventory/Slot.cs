@@ -24,7 +24,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler
             return null;
         }
     }
-    
+
     public bool IsEmpty
     {
         get
@@ -34,7 +34,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler
 
         }
     }
-    
+
     public void Start()
     {
         SlotItemIcon.color = Color.clear; // Set transparency to 0
@@ -49,7 +49,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler
         {
             //Debug.Log("Deleted");
             items.RemoveAt(items.Count - 1);
-            UpdateStackUI(); // Updates inventory UI      
+            UpdateStackUI(); // Updates inventory UI
 
             //If its empty destroy
             if (IsEmpty)
@@ -83,9 +83,9 @@ public class Slot : MonoBehaviour, IPointerClickHandler
 
     public bool StackItem(PlasticInteractable item)
     {
-        
+
         // Check if the item has the same name and if its count is less than stack size
-        if (item.name == item.name && items.Count < item.GetStackSize() && !IsEmpty)
+        if (item.name == item.name && items.Count < item.GetPlasticData().StackSize && !IsEmpty)
         {
             items.Add(item);
            // item.ItemSlot = this;
@@ -100,7 +100,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler
     {
 
         items.Add(item); // Add item
-        SlotItemIcon.sprite = item.GetSprite(); // Set slot item icon to new item icon
+        SlotItemIcon.sprite = item.GetPlasticData().Sprite; // Set slot item icon to new item icon
         SlotItemIcon.color = Color.white; // Reset transparency to default
        // item.ItemSlot = this; // Item reference to this slot
         StackSize.color = Color.black; // Set stack size color transparent
@@ -109,7 +109,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler
     }
 
     public void UseItem()
-    {      
+    {
         // Check if the item has IUseable interface
         if (GetItem is IUseable)
         {

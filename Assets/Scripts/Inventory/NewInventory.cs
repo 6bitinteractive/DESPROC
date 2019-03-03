@@ -17,20 +17,20 @@ public class NewInventory : MonoBehaviour
     public List<Slot> InventorySlots = new List<Slot>();
 
     // Use this for initialization
-    void Start ()
+    void Start()
     {
         // Add slots
         for (int i = 0; i < SlotLimit; i++)
         {
             Slot slot = Instantiate(SlotPrefab, transform).GetComponent<Slot>();
             InventorySlots.Add(slot);
-        }	
-	}
+        }
+    }
 
     public void AddToInventory(PlasticInteractable item)
     {
         //Checks if item can be placed in stack
-        if (item.GetStackSize() > 0)
+        if (item.GetPlasticData().StackSize > 0)
         {
             if (IsStackable(item))
             {
@@ -71,7 +71,7 @@ public class NewInventory : MonoBehaviour
         OnInventoryFull.Invoke();
         Debug.Log("Inventory is full.");
         return false;
-        
+
     }
 
     public void AddItem(PlasticInteractable item)
@@ -88,8 +88,8 @@ public class NewInventory : MonoBehaviour
             if (InventorySlots[i] == null)
                 break;
             InventorySlots[i].RemoveAllItems(); ;
-          //  InventorySlots[i].inventoryItem.gameObject.SetActive(false);
-          //  InventorySlots[i].inventoryItem = null;
+            //  InventorySlots[i].inventoryItem.gameObject.SetActive(false);
+            //  InventorySlots[i].inventoryItem = null;
         }
 
 

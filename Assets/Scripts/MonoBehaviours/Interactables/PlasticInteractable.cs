@@ -7,24 +7,9 @@ public class PlasticInteractable : Interactable
 {
     public UnityEvent OnPlasticPickup = new UnityEvent();
 
-    public Plastic GetPlastic()
+    public Plastic GetPlasticData()
     {
         return base.GetInteractable() as Plastic;
-    }
-
-    public override Sprite GetSprite()
-    {
-        return GetPlastic().Sprite;
-    }
-
-    public AudioClip GetPickupSfx()
-    {
-        return GetPlastic().PickupSfx;
-    }
-
-    public int GetStackSize()
-    {
-        return GetPlastic().StackSize;
     }
 
     public void Pickup()
