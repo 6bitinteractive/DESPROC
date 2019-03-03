@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(PlayerDataHandler))]
-
 public class Score : MonoBehaviour
 {
     [SerializeField] private TurtleTale.SessionData sessionData;

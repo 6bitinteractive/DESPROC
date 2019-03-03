@@ -664,7 +664,6 @@ GameObject:
   - component: {fileID: 114677827106650748}
   - component: {fileID: 95765094612013732}
   - component: {fileID: 114771197757940374}
-  - component: {fileID: 114910424478352604}
   - component: {fileID: 210322459037546010}
   - component: {fileID: 114694066611242636}
   m_Layer: 8
@@ -1940,11 +1939,6 @@ MonoBehaviour:
   interactableLayerMask:
     serializedVersion: 2
     m_Bits: 512
-  OnTurtlePickup:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &114632064142718352
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2540,27 +2534,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114910424478352604
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1818406877250148}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 502c5c38619f7524d886a4713e53cb7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerData:
-    Tortgold: 0
-    Tortpoints: 0
-    InventoryCapacity: 9
-    MovementSpeed: 2.5
-    PickupSpeed: 0
-    Luck: 0
-    Inventory: []
-    Bin: []
-    TotalTrash: 0
 --- !u!114 &114924303174541412
 MonoBehaviour:
   m_ObjectHideFlags: 1
