@@ -28,13 +28,4 @@ public class QuestGiver : MonoBehaviour
             isDisplayingQuest = value;
         }
     }
-
-
-    /*
-    private void Awake()
-    {
-        tmpLog.AcceptQuest(quests[0]);
-        tmpLog.AcceptQuest(quests[1]);
-    }
-    */
 }

@@ -6,23 +6,163 @@ using UnityEngine.UI;
 public class QuestWindow : Window
 {
     private QuestGiver questGiver;
+    private Quests selectedQuest;
     [SerializeField] private GameObject questPrefab;
     [SerializeField] private Transform questArea;
+    [SerializeField] private GameObject acceptButton;
+    [SerializeField] private GameObject backButton;
+    [SerializeField] private GameObject completeButton;
+    [SerializeField] private GameObject questDescriptionText;
+    [SerializeField] private List<GameObject> quests = new List<GameObject>();
+
+    private static QuestWindow instance;
+
+    public static QuestWindow Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = FindObjectOfType<QuestWindow>();
+            }
+            return instance;
+        }
+    }
 
     public void DisplayQuests(QuestGiver questGiver)
     {
         this.questGiver = questGiver;
 
-        //Checks if quest giver has already displayed quests
+        if (!questGiver.IsDisplayingQuest)
+        {
+            // Clear quests
+            foreach (GameObject gameObject in quests)
+            {
+                Destroy(gameObject);
+            }
+
+            // Instantiate quests once 
+            foreach (Quests quest in questGiver.Quests)
+            {
+                if (quest != null)
+                {
+                    GameObject gameObject = Instantiate(questPrefab, questArea);
+                    gameObject.GetComponent<Text>().text = quest.Name; // Display quest name
+                    gameObject.GetComponent<QuestGiverQuestScript>().Quest = quest; // Set quest
+
+                    quests.Add(gameObject); // Add to list
+
+                    // If quest is complete
+                    if (QuestLog.Instance.HasQuest(quest) && quest.IsComplete)
+                    {
+                        gameObject.GetComponent<Text>().text += "C";
+                    }
+
+                    // If quest is accepted
+                    if (QuestLog.Instance.HasQuest(quest))
+                    {
+                        Color color = gameObject.GetComponent<Text>().color;
+                        color.a = 0.5f;
+                        gameObject.GetComponent<Text>().color = color;
+                    }
+                }
+            }
+            questGiver.IsDisplayingQuest = true;
+        }
+       
+        /*
+        //Checks if quest giver has already displayed quests instantiate quests once.
         if (!questGiver.IsDisplayingQuest)
         {
             //Go through each quest from the quest giver
             foreach (Quests quest in questGiver.Quests)
-            {
+            { 
                 GameObject gameObject = Instantiate(questPrefab, questArea);
                 gameObject.GetComponent<Text>().text = quest.Name; // Display quest name
+                gameObject.GetComponent<QuestGiverQuestScript>().Quest = quest; // Set quest
                 questGiver.IsDisplayingQuest = true;
+
+                if (quest.IsAccepted)
+                {
+                    Debug.Log("ACCEPTEDF");
+                }
+               
+                if (QuestLog.Instance.HasQuest(quest))
+                {
+                    Color color = gameObject.GetComponent<Text>().color;
+                    color.a = 0.5f;
+                    gameObject.GetComponent<Text>().color = color;
+                    Debug.Log("Ny)");
+                }
+                
             }
-        }     
-    }	
+            }
+            */
+    }
+
+    public void DisplayQuestInfo(Quests quest)
+    {
+        if (quest != null)
+        {
+            this.selectedQuest = quest;
+
+            //If the quest log already has the quest and its complete
+            if (QuestLog.Instance.HasQuest(quest) && quest.IsComplete)
+            {
+                acceptButton.SetActive(false); // Hide accept button
+                completeButton.SetActive(true); // Display complete button
+            }
+
+            // If doesnt have quest
+            else if (!QuestLog.Instance.HasQuest(quest))
+            {
+                acceptButton.SetActive(true); // Display accept button
+            }
+            
+            backButton.SetActive(true); // Display back button
+            questArea.gameObject.SetActive(false); // Hide quest
+            questDescriptionText.SetActive(true); // Display description
+
+            string objectives = string.Format("<size=100>\nObjectives\n</size>");
+
+            // Add objectives 
+            foreach (Objective obj in quest.CollectObjectives)
+            {
+                objectives += quest.Objective + ": " + obj.CurrentAmount + "/" + obj.Amount + "\n";
+                // objectives += obj.Type + ": " + obj.CurrentAmount + "/" + obj.Amount + "\n";
+            }
+
+            questDescriptionText.GetComponent<Text>().text = string.Format("<size=100>{0}</size>\n\n{1}\n", quest.Name, quest.Description);
+        }
+    }
+
+    public void UpdateQuestWindow()
+    {
+        DisplayQuests(questGiver);
+        questGiver.IsDisplayingQuest = false;
+    }
+
+    public void Accept()
+    {
+        if (!selectedQuest.IsAccepted)
+        {
+            QuestLog.Instance.AcceptQuest(selectedQuest);
+            questGiver.IsDisplayingQuest = false;
+        }
+    }
+
+    public void CompleteQuest()
+    {
+        if (selectedQuest.IsComplete)
+        {
+            for (int i = 0; i < questGiver.Quests.Length; i++)
+            {
+                // If the quest is the same as the selected
+                if (selectedQuest == questGiver.Quests[i])
+                {
+                    questGiver.Quests[i] = null;
+                }
+            }
+        }
+    }
 }

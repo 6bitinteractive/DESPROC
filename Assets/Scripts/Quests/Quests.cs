@@ -7,6 +7,8 @@ using UnityEngine.Events;
 public class Quests
 {
     public QuestScript QuestScript { get; set; }
+    public UnityEvent OnQuestAccepted = new UnityEvent();
+    private bool isAccepted;
 
     public CollectObjective[] CollectObjectives
     {
@@ -34,6 +36,19 @@ public class Quests
             }
 
             return true;
+        }
+    }
+
+    public bool IsAccepted
+    {
+        get
+        {
+            return isAccepted;
+        }
+
+        set
+        {
+            isAccepted = value;
         }
     }
 
@@ -125,6 +140,12 @@ public class CollectObjective : Objective
         }
     }
     
+    public void CheckItemCount()
+    {
+        // if quest is complete
+        QuestLog.Instance.CheckCompletion();
+        QuestLog.Instance.UpdateSelectedQuest();
+    }
 }
 
 // Reference https://www.youtube.com/watch?v=wClMZ2Rim6w
