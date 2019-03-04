@@ -5,20 +5,17 @@ using UnityEngine.Events;
 
 public class FallingPlasticController : MonoBehaviour
 {
-    Movement movement;
+    public GameEvent onPickup;
+    private Rigidbody2D rb;
 
-    // Use this for initialization
-    void Start()
+    public void Start()
     {
-        movement = GetComponent<Movement>();
-        movement.xSpeed = Random.Range(1, 5); // Randomizes speed
-       // transform.localScale = Vector3.one * Random.Range(1, 3);
+        rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void PickUp()
     {
-        movement.Move(0, -1); // Move down
+        rb.constraints = RigidbodyConstraints2D.FreezePosition;
     }
 }
 

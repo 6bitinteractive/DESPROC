@@ -44,10 +44,11 @@ public class PlayerCatchingMiniGameController : MonoBehaviour
            // Debug.DrawRay(playerToClick.origin, playerToClick.direction * 50, Color.yellow);
             if (hit)
             {
-               // Debug.Log(hit.collider.gameObject.name);
+                Debug.Log(hit.collider.gameObject.name);
                 //int collisionLayerMask = 1 << hit.collider.gameObject.layer;
 
                 TurtleController turtleController = hit.collider.gameObject.GetComponent<TurtleController>();
+                FallingPlasticController fallingPlasticController = hit.collider.gameObject.GetComponent<FallingPlasticController>();
 
                 // If Turtle
                 if (turtleController)
@@ -59,10 +60,26 @@ public class PlayerCatchingMiniGameController : MonoBehaviour
                         StartCoroutine(Rescue(turtleController));
                     }
                 }
+
+                // If Falling Plastic
+                if (fallingPlasticController)
+                {
+                    animator.SetBool("isRescuing", true);
+                    fallingPlasticController.PickUp();
+                    StartCoroutine(PickupPlastic(fallingPlasticController));
+                }
             }   
         }    
     }
 
+    IEnumerator PickupPlastic(FallingPlasticController fallingPlasticController)
+    {
+        yield return new WaitForSeconds(rescuingAnimation.length);
+        animator.SetBool("isRescuing", false);
+        fallingPlasticController.onPickup.Raise();
+        fallingPlasticController.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+        fallingPlasticController.gameObject.SetActive(false);
+    }
 
     IEnumerator Rescue(TurtleController turtleController)
     {

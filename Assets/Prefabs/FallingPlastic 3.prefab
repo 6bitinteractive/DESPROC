@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 50626729013393270}
   - component: {fileID: 61784941575470050}
   - component: {fileID: 114066218682282850}
+  - component: {fileID: 114670878581861698}
   m_Layer: 9
   m_Name: FallingPlastic 3
   m_TagString: Untagged
@@ -101,7 +102,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Collected: 0
   Duration: 0
-  BuffValue: 5
+  BuffValue: 0
+--- !u!114 &114670878581861698
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1146301481400082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5874f056dad59547bcbdc94a87bb86b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onPickup: {fileID: 11400000, guid: da5fe587848fcd849bdc144975b390cb, type: 2}
 --- !u!212 &212393479532453306
 SpriteRenderer:
   m_ObjectHideFlags: 1
