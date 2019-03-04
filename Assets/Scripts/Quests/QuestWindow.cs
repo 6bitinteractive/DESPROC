@@ -55,7 +55,7 @@ public class QuestWindow : Window
                     // If quest is complete
                     if (QuestLog.Instance.HasQuest(quest) && quest.IsComplete)
                     {
-                        gameObject.GetComponent<Text>().text += "C";
+                        gameObject.GetComponent<Text>().color = Color.yellow;
                     }
 
                     // If quest is accepted
@@ -69,35 +69,6 @@ public class QuestWindow : Window
             }
             questGiver.IsDisplayingQuest = true;
         }
-       
-        /*
-        //Checks if quest giver has already displayed quests instantiate quests once.
-        if (!questGiver.IsDisplayingQuest)
-        {
-            //Go through each quest from the quest giver
-            foreach (Quests quest in questGiver.Quests)
-            { 
-                GameObject gameObject = Instantiate(questPrefab, questArea);
-                gameObject.GetComponent<Text>().text = quest.Name; // Display quest name
-                gameObject.GetComponent<QuestGiverQuestScript>().Quest = quest; // Set quest
-                questGiver.IsDisplayingQuest = true;
-
-                if (quest.IsAccepted)
-                {
-                    Debug.Log("ACCEPTEDF");
-                }
-               
-                if (QuestLog.Instance.HasQuest(quest))
-                {
-                    Color color = gameObject.GetComponent<Text>().color;
-                    color.a = 0.5f;
-                    gameObject.GetComponent<Text>().color = color;
-                    Debug.Log("Ny)");
-                }
-                
-            }
-            }
-            */
     }
 
     public void DisplayQuestInfo(Quests quest)
@@ -161,6 +132,7 @@ public class QuestWindow : Window
                 if (selectedQuest == questGiver.Quests[i])
                 {
                     questGiver.Quests[i] = null;
+                    questGiver.IsDisplayingQuest = false;
                 }
             }
         }

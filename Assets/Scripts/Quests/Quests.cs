@@ -127,6 +127,13 @@ public class CollectObjective : Objective
         {
             OnPickup.Invoke();
             CurrentAmount++;
+
+            //Displays message feed
+            if (CurrentAmount <= Amount)
+            {
+                MessageFeedManager.Instance.WriteMessage(string.Format("{0}: {1}/{2}", objective.name, CurrentAmount, Amount));
+            }
+
             QuestLog.Instance.UpdateSelectedQuest();
             QuestLog.Instance.CheckCompletion();
                 

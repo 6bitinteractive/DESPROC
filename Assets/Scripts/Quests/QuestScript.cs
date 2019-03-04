@@ -26,6 +26,7 @@ public class QuestScript : MonoBehaviour
         {
             isMarkedComplete = true;
             GetComponent<Text>().text += "(Complete)";
+            MessageFeedManager.Instance.WriteMessage(string.Format("{0} (Complete)", Quest.Name));
         }
     }
 }
