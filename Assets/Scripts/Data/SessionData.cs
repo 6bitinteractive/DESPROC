@@ -14,18 +14,6 @@ namespace TurtleTale
         [SerializeField] private float basePickupSpeed;
         [SerializeField] private float baseLuck;
 
-        //[HideInInspector] public float Tortgold;
-        //[HideInInspector] public float Tortpoints;
-        //[HideInInspector] public int InventoryCapacity;
-        //[HideInInspector] public float MovementSpeed;
-        //[HideInInspector] public float PickupSpeed;
-        //[HideInInspector] public float Luck;
-        //[HideInInspector] public List<Plastic> Inventory;
-        //[HideInInspector] public List<Plastic> Bin;
-        //[HideInInspector] public int TotalTrash;
-        //[HideInInspector] public AudioClip audioToPersist;
-        //[HideInInspector] public float audioTimePause;
-
         [Header("DO NOT CHANGE THE VALUES; Exposed for testing")]
         public float Tortgold;
         public float Tortpoints;
@@ -35,14 +23,18 @@ namespace TurtleTale
         public float Luck;
         public List<Plastic> Inventory;
         public List<Plastic> Bin;
-        public int TotalTrash;
-        public AudioClip audioToPersist;
-        public float audioTimePause;
+        public int TotalPickedUp;
+        public List<GameObject> PickedUpList;
+        public int EcobricksDone;
+        public int TurtleEgg;
+        public int HappinessPoints;
+        //public AudioClip audioToPersist;
+        //public float audioTimePause;
 
         private void OnEnable()
         {
             Reset();
-            Debug.Log("Inventory Count: " + Inventory.Count);
+            //Debug.Log("Inventory Count: " + Inventory.Count);
         }
 
         public void Reset()
@@ -55,7 +47,11 @@ namespace TurtleTale
             Luck = baseLuck;
             Inventory = new List<Plastic>();
             Bin = new List<Plastic>();
-            TotalTrash = 0;
+            TotalPickedUp = 0;
+            PickedUpList = new List<GameObject>();
+            EcobricksDone = 0;
+            TurtleEgg = 0;
+            HappinessPoints = 0;
         }
     }
 }

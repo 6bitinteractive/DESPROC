@@ -46,8 +46,8 @@ public class Inventory : MonoBehaviour
             // Update session data
             if (!alreadyInPlayerData)
             {
-                sessionData.Inventory.Add(interactableObj.GetPlastic());
-                sessionData.TotalTrash++;
+                sessionData.Inventory.Add(interactableObj.GetPlasticData());
+                sessionData.TotalPickedUp++;
             }
 
             // Store to inventory slot

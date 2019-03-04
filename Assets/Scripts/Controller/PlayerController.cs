@@ -4,7 +4,6 @@ using UnityEngine;
 
 [RequireComponent(typeof(Movement))]
 [RequireComponent(typeof(Direction))]
-[RequireComponent(typeof(PlayerDataHandler))]
 
 public class PlayerController : MonoBehaviour
 {

@@ -16,7 +16,7 @@ public class InventorySlot : MonoBehaviour
     public void UpdateImage()
     {
         image.color = Color.white; // show image
-        image.sprite = inventoryItem.GetSprite();
+        image.sprite = inventoryItem.GetPlasticData().Sprite;
     }
 }
 
