@@ -11,6 +11,7 @@ public class DialogueManager : MonoBehaviour
     public Animator animator;
     private Queue<Dialogue> dialogue;
     private GameEvent trigger;
+    private Dialogue[] toDisplay;
  
     void Awake ()
     {
@@ -39,9 +40,27 @@ public class DialogueManager : MonoBehaviour
         // Clear previous sentences
         dialogue.Clear();
 
-        foreach(Dialogue dialogueEntry in dialogueTrigger.dialogueArray)
+        // If quest log is empty or dialogue trigger doesn't contain a quest name, display default dialogue
+        if ((dialogueTrigger.questName == null) || (QuestLog.Instance == null))
         {
-            dialogue.Enqueue(dialogueEntry);
+            toDisplay = dialogueTrigger.dialogueArray;
+        }
+        else
+        {
+            // If dialogue trigger quest name matches a quest on the quest list
+            if (QuestLog.Instance.quests.Exists(x => x.Name == dialogueTrigger.questName))
+            {
+                // Set quest dialogue array for display
+                toDisplay = dialogueTrigger.questDialogueArray;
+            }
+        }
+
+        if(toDisplay != null)
+        {
+            foreach (Dialogue dialogueEntry in toDisplay)
+            {
+                dialogue.Enqueue(dialogueEntry);
+            }
         }
 
         DisplayNextSentence();

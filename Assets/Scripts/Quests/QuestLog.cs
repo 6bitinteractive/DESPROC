@@ -12,7 +12,7 @@ public class QuestLog : MonoBehaviour
 
     private Quests selected;
     private List<QuestScript> questScripts = new List<QuestScript>();
-    private List<Quests> quests = new List<Quests>();
+    public List<Quests> quests = new List<Quests>();
     private static QuestLog instance;
 
     public static QuestLog Instance
