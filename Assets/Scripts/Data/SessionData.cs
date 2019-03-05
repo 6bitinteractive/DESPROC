@@ -24,7 +24,8 @@ namespace TurtleTale
         public List<Plastic> Inventory;
         public List<Plastic> Bin;
         public int TotalPickedUp;
-        public List<GameObject> PickedUpList;
+        public List<GameObject> PickedUpPlastic;
+        public List<GameObject> ForEcobrick;
         public int EcobricksDone;
         public int TurtleEgg;
         public int HappinessPoints;
@@ -48,7 +49,8 @@ namespace TurtleTale
             Inventory = new List<Plastic>();
             Bin = new List<Plastic>();
             TotalPickedUp = 0;
-            PickedUpList = new List<GameObject>();
+            PickedUpPlastic = new List<GameObject>();
+            ForEcobrick = new List<GameObject>();
             EcobricksDone = 0;
             TurtleEgg = 0;
             HappinessPoints = 0;
