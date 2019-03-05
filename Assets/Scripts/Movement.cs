@@ -40,6 +40,21 @@ public class Movement : MonoBehaviour
         rb.velocity = Vector3.zero;
     }
 
+    public void MoveToPosition(GameObject target)
+    {
+        StartCoroutine(AddForce(target));
+    }
+
+    private IEnumerator AddForce(GameObject target)
+    {
+        Vector2 force = new Vector2(-1, 0); // Hard-coded value for now
+        while (transform.position != target.transform.position)
+        {
+            rb.AddForce(force * 2);
+            yield return null;
+        }
+    }
+
     private void UpdateAnimation(float xDirection, float yDirection)
     {
         // Check if no longer moving
