@@ -66,7 +66,7 @@ public class TurtleController : MonoBehaviour
         {
             counter++;
             DisableColliders();
-            animator.SetBool("isDead", true);
+            animator.SetTrigger("Die");
             OnDeath.Raise();
         }
     }
@@ -79,6 +79,7 @@ public class TurtleController : MonoBehaviour
         if (isChoking && plastic.gameObject.activeSelf)
         {
             StartCoroutine(Choke());
+            animator.SetBool("isChoking", true);
             //OnChoke.Raise();
         }
 
@@ -87,7 +88,7 @@ public class TurtleController : MonoBehaviour
             StopAllCoroutines(); // Stop choking
             CurrentChokeDuration = ChokeDuration; //Reset current choke duration
             ChokeUI.gameObject.SetActive(false); // Hide choke ui
-
+            animator.SetBool("isChoking", false);
             isChoking = false;
             plastic.gameObject.SetActive(false); // Remove plastic
             curState = FSMState.Wander; // Wander
