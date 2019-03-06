@@ -683,7 +683,7 @@ Transform:
   m_LocalPosition: {x: -2.0136464, y: 4.9299173, z: 10.404297}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 760190128}
+  - {fileID: 1324655025}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -870,7 +870,7 @@ Prefab:
         type: 2}
       propertyPath: sceneData
       value: 
-      objectReference: {fileID: 11400000, guid: 0f2980adb13ee254982a50da3281ca41,
+      objectReference: {fileID: 11400000, guid: c982ce6c20145224aa59b2c95d6ec4ef,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6b849f3baf832448b5323386010651b, type: 2}
@@ -1001,7 +1001,7 @@ MonoBehaviour:
   OnNPCTalk:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 760190129}
+      - m_Target: {fileID: 1324655026}
         m_MethodName: TriggerDialogue
         m_Mode: 1
         m_Arguments:
@@ -1128,7 +1128,7 @@ Transform:
   - {fileID: 1986574781}
   - {fileID: 1484146422}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &751059965 stripped
 GameObject:
@@ -1141,124 +1141,6 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 805432171}
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
---- !u!1 &760190127
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 760190128}
-  - component: {fileID: 760190129}
-  m_Layer: 0
-  m_Name: Main Dialogue
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &760190128
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 760190127}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 488975367}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &760190129
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 760190127}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d0091aee95caab41a717ad5152f6792, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueArray:
-  - name: Volunteer
-    sentence: "This is the Turtle Conservation Society. This is where you'll be assigned
-      tasks to accomplish throughout your stay here in Pawikan Island.\r"
-  - name: Volunteer
-    sentence: "Unfortunately, the island\u2019s been in bad shape as of late."
-  - name: Volunteer
-    sentence: You see, we have a pretty widespread pollution problem, and all that
-      trash manages to find its way into the rivers and the nearby sea.
-  - name: Volunteer
-    sentence: "It\u2019s been taking a toll on the local wildlife and the habitats
-      in which they live."
-  - name: Volunteer
-    sentence: Here at the Turtle Conservation Society, we do as much as we can to
-      prevent the local turtle population from coming into any harm.
-  - name: Volunteer
-    sentence: Our aim is to protect their homes, and keep them away from the hazards
-      that plastic pollution poses to their safety.
-  - name: Volunteer
-    sentence: With that in mind, I'll be assigning you to your first task! Don't worry,
-      I'll be with you to explain everything you need to know.
-  - name: Volunteer
-    sentence: Let's head over to the training area now.
-  dialogueEndTrigger: {fileID: 11400000, guid: aacf4ffd6be0fad45bd1e5d584b886d8, type: 2}
---- !u!1001 &771948586
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4244798460494684, guid: a6b849f3baf832448b5323386010651b, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4244798460494684, guid: a6b849f3baf832448b5323386010651b, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4244798460494684, guid: a6b849f3baf832448b5323386010651b, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4244798460494684, guid: a6b849f3baf832448b5323386010651b, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4244798460494684, guid: a6b849f3baf832448b5323386010651b, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4244798460494684, guid: a6b849f3baf832448b5323386010651b, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4244798460494684, guid: a6b849f3baf832448b5323386010651b, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4244798460494684, guid: a6b849f3baf832448b5323386010651b, type: 2}
-      propertyPath: m_RootOrder
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 114240164428162366, guid: a6b849f3baf832448b5323386010651b,
-        type: 2}
-      propertyPath: sceneData
-      value: 
-      objectReference: {fileID: 11400000, guid: ad55a41fb40c7054490d1e99dbe9d733,
-        type: 2}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: a6b849f3baf832448b5323386010651b, type: 2}
-  m_IsPrefabAsset: 0
---- !u!114 &771948587 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114240164428162366, guid: a6b849f3baf832448b5323386010651b,
-    type: 2}
-  m_PrefabInternal: {fileID: 771948586}
-  m_Script: {fileID: 11500000, guid: 94e761d668323d048a292d86a578aa45, type: 3}
 --- !u!1001 &805432171
 Prefab:
   m_ObjectHideFlags: 0
@@ -1379,6 +1261,31 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1469664323303660, guid: bfbabfdd22addb54891582c16f6d89cf,
     type: 2}
   m_PrefabInternal: {fileID: 805432171}
+--- !u!224 &805432177 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 224042726800394570, guid: bfbabfdd22addb54891582c16f6d89cf,
+    type: 2}
+  m_PrefabInternal: {fileID: 805432171}
+--- !u!1 &805432178 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1882331064776354, guid: bfbabfdd22addb54891582c16f6d89cf,
+    type: 2}
+  m_PrefabInternal: {fileID: 805432171}
+--- !u!114 &805432179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 805432178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e5e7267c178f9a44a5019cfa5aa82d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Key: 101
+  interactableLayerMask:
+    serializedVersion: 2
+    m_Bits: 4608
 --- !u!1001 &919889671
 Prefab:
   m_ObjectHideFlags: 0
@@ -1700,7 +1607,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -7.444997
+      value: -7.4422417
       objectReference: {fileID: 0}
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1762,6 +1669,78 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4894992979352498, guid: bfbabfdd22addb54891582c16f6d89cf,
     type: 2}
   m_PrefabInternal: {fileID: 805432171}
+--- !u!1 &1324655024
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1324655025}
+  - component: {fileID: 1324655026}
+  m_Layer: 0
+  m_Name: Volunteer Dialogue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1324655025
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1324655024}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 488975367}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1324655026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1324655024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d0091aee95caab41a717ad5152f6792, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questGroupEnabled: 0
+  dialogueArray:
+  - name: Volunteer
+    sentence: Welcome to the Turtle Conservatory! How may I help you today?
+  questName: Tutorial
+  questDialogueArray:
+  - name: Volunteer
+    sentence: "This is the Turtle Conservation Society. This is where you'll be assigned
+      tasks to accomplish throughout your stay here in Pawikan Island.\r"
+  - name: Volunteer
+    sentence: "Unfortunately, the island\u2019s been in bad shape as of late."
+  - name: Volunteer
+    sentence: You see have a pretty widespread pollution problem, and all that trash
+      manages to find its way into the rivers and the nearby sea.
+  - name: Volunteer
+    sentence: "It\u2019s been taking a toll on the local wildlife and the habitats
+      in which they live."
+  - name: Volunteer
+    sentence: Here at the Turtle Conservation Society, we do as much as we can to
+      prevent the local turtle population from coming into any harm.
+  - name: Volunteer
+    sentence: Our aim is to protect their homes, and keep them away from the hazards
+      that plastic pollution poses to their safety.
+  - name: Volunteer
+    sentence: With that in mind, I'll be assigning you to your first task!
+  - name: Volunteer
+    sentence: There's a bridge that collapsed a few nights ago during a storm, and
+      we have reason to believe there are turtle stuck on the other side.
+  - name: Volunteer
+    sentence: We want you to help repair the bridge. The locals may have ideas on
+      how to fix iit. Why don't you head to town?
+  dialogueEndTrigger: {fileID: 11400000, guid: aacf4ffd6be0fad45bd1e5d584b886d8, type: 2}
 --- !u!1001 &1395685069
 Prefab:
   m_ObjectHideFlags: 0
@@ -2274,6 +2253,7 @@ GameObject:
   - component: {fileID: 1935635704}
   - component: {fileID: 1935635705}
   - component: {fileID: 1935635706}
+  - component: {fileID: 1935635707}
   m_Layer: 0
   m_Name: Volunteer
   m_TagString: Untagged
@@ -2358,6 +2338,31 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1935635707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1935635703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c24433325fca0541a83f9fd5ad28fdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questWindow: {fileID: 0}
+  quests:
+  - OnQuestAccepted:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    Name: Building Bridges
+    Objective: Talk to the townsfolk
+    Description: There's a bridge that collapsed a few nights ago during a storm,
+      and we have reason to believe there are turtle stuck on the other side. Head
+      to the town and look for ideas on how to fix the bridge.
+    collectObjectives: []
+  isDisplayingQuest: 0
 --- !u!1 &1986574780
 GameObject:
   m_ObjectHideFlags: 0
@@ -2398,45 +2403,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fe2a7f21b883e64da8e9e62b88fccc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventAndResponses:
-  - name: 
-    gameEvent: {fileID: 11400000, guid: aacf4ffd6be0fad45bd1e5d584b886d8, type: 2}
-    response:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 771948587}
-          m_MethodName: LoadScene
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: TutorialArea
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-    responseForSentString:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: ResponseWithString, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    responseForSentInt:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: ResponseWithInt, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    responseForSentFloat:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: ResponseWithFloat, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    responseForSentBool:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: ResponseWithBool, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
+  eventAndResponses: []
 --- !u!1 &2029795587
 GameObject:
   m_ObjectHideFlags: 0
@@ -2470,5 +2437,141 @@ Transform:
   - {fileID: 507627181}
   - {fileID: 198031472}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2111555343
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 805432177}
+    m_Modifications:
+    - target: {fileID: 114944712622678518, guid: 948c79c039b90224d9eb60edffd7c1d6,
+        type: 2}
+      propertyPath: quests.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224602845801890300, guid: 948c79c039b90224d9eb60edffd7c1d6,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224602845801890300, guid: 948c79c039b90224d9eb60edffd7c1d6,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224602845801890300, guid: 948c79c039b90224d9eb60edffd7c1d6,
+        type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224602845801890300, guid: 948c79c039b90224d9eb60edffd7c1d6,
+        type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224602845801890300, guid: 948c79c039b90224d9eb60edffd7c1d6,
+        type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224602845801890300, guid: 948c79c039b90224d9eb60edffd7c1d6,
+        type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224602845801890300, guid: 948c79c039b90224d9eb60edffd7c1d6,
+        type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224602845801890300, guid: 948c79c039b90224d9eb60edffd7c1d6,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 224602845801890300, guid: 948c79c039b90224d9eb60edffd7c1d6,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -420.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 224602845801890300, guid: 948c79c039b90224d9eb60edffd7c1d6,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 10.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 224602845801890300, guid: 948c79c039b90224d9eb60edffd7c1d6,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 983.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 224602845801890300, guid: 948c79c039b90224d9eb60edffd7c1d6,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 378.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 224602845801890300, guid: 948c79c039b90224d9eb60edffd7c1d6,
+        type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224602845801890300, guid: 948c79c039b90224d9eb60edffd7c1d6,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224602845801890300, guid: 948c79c039b90224d9eb60edffd7c1d6,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224602845801890300, guid: 948c79c039b90224d9eb60edffd7c1d6,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224602845801890300, guid: 948c79c039b90224d9eb60edffd7c1d6,
+        type: 2}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224602845801890300, guid: 948c79c039b90224d9eb60edffd7c1d6,
+        type: 2}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224450656773617330, guid: 948c79c039b90224d9eb60edffd7c1d6,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 97.49999
+      objectReference: {fileID: 0}
+    - target: {fileID: 224492832295298682, guid: 948c79c039b90224d9eb60edffd7c1d6,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.000015258789
+      objectReference: {fileID: 0}
+    - target: {fileID: 224915109498146858, guid: 948c79c039b90224d9eb60edffd7c1d6,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.00006711483
+      objectReference: {fileID: 0}
+    - target: {fileID: 114944712622678518, guid: 948c79c039b90224d9eb60edffd7c1d6,
+        type: 2}
+      propertyPath: interactObjective
+      value: 
+      objectReference: {fileID: 805432179}
+    - target: {fileID: 114944712622678518, guid: 948c79c039b90224d9eb60edffd7c1d6,
+        type: 2}
+      propertyPath: quests.Array.data[0].OnQuestAccepted.m_TypeName
+      value: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      objectReference: {fileID: 0}
+    - target: {fileID: 114944712622678518, guid: 948c79c039b90224d9eb60edffd7c1d6,
+        type: 2}
+      propertyPath: quests.Array.data[0].Name
+      value: Tutorial
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 948c79c039b90224d9eb60edffd7c1d6, type: 2}
+  m_IsPrefabAsset: 0
