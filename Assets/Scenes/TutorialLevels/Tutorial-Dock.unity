@@ -646,7 +646,7 @@ Prefab:
         type: 2}
       propertyPath: sceneData
       value: 
-      objectReference: {fileID: 11400000, guid: ad55a41fb40c7054490d1e99dbe9d733,
+      objectReference: {fileID: 11400000, guid: c35f752f974c461418ca1ffbd6bd324e,
         type: 2}
     - target: {fileID: 1506307287412662, guid: eadb399a3521df84586cf52e1a80ba4e, type: 2}
       propertyPath: m_Icon
@@ -825,7 +825,7 @@ Prefab:
     - target: {fileID: 224915109498146858, guid: 948c79c039b90224d9eb60edffd7c1d6,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -0.000024437904
+      value: -0.000009179115
       objectReference: {fileID: 0}
     - target: {fileID: 224492832295298682, guid: 948c79c039b90224d9eb60edffd7c1d6,
         type: 2}
@@ -1292,7 +1292,7 @@ Prefab:
         type: 2}
       propertyPath: sceneData
       value: 
-      objectReference: {fileID: 11400000, guid: d45645a3e5a58c545b29d7be5412cf2b,
+      objectReference: {fileID: 11400000, guid: 58bb1236d36df734da59f5b41c0e2822,
         type: 2}
     - target: {fileID: 1506307287412662, guid: eadb399a3521df84586cf52e1a80ba4e, type: 2}
       propertyPath: m_Icon
@@ -3051,7 +3051,7 @@ Prefab:
         type: 2}
       propertyPath: NewAreaText
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1593808344}
     - target: {fileID: 61009149069354810, guid: 5f73c90bf8342ec4ba686336cb6eb4b7,
         type: 2}
       propertyPath: m_Offset.x
@@ -6013,7 +6013,7 @@ Prefab:
         type: 2}
       propertyPath: sceneData
       value: 
-      objectReference: {fileID: 11400000, guid: d45645a3e5a58c545b29d7be5412cf2b,
+      objectReference: {fileID: 11400000, guid: 4093ee105f2393243b3c83ee9701781b,
         type: 2}
     - target: {fileID: 4553617598780864, guid: 5f73c90bf8342ec4ba686336cb6eb4b7, type: 2}
       propertyPath: m_RootOrder
@@ -6300,8 +6300,7 @@ MonoBehaviour:
   questName: Tutorial
   questDialogueArray:
   - name: Volunteer
-    sentence: Feel free to look around the place before we get started. Enjoy the
-      sights, talk to the locals!
+    sentence: The conservatory is just east of these docks.
   dialogueEndTrigger: {fileID: 0}
 --- !u!1001 &1761956491
 Prefab:
@@ -7202,8 +7201,10 @@ MonoBehaviour:
     sentence: "Welcome to Pawikan Island! It\u2019s a humble place, but it\u2019s
       our home."
   - name: Volunteer
-    sentence: Feel free to look around the place before we get started. Enjoy the
-      sights, talk to the locals!
+    sentence: Before anything, why don't we head to the Turtle Conservatory first,
+      so we can brief you about your duties as a volunteer for our organization?
+  - name: Volunteer
+    sentence: The conservatory is just east of these docks.
   dialogueEndTrigger: {fileID: 11400000, guid: aacf4ffd6be0fad45bd1e5d584b886d8, type: 2}
 --- !u!1 &2083154569
 GameObject:
