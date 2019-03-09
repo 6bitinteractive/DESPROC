@@ -134,6 +134,7 @@ public class EcobrickLevel : MonoBehaviour
         // Show packing-with-rod animation
         if (currentTurnInBottle % turnsBeforeShowingRodAnim == 0)
         {
+            // TODO: Wait for player tap
             // TODO: Show packing-with-rod animation
             Debug.Log("Current index: " + currentSwipeIndex + " | Show packing with rod animation.");
         }

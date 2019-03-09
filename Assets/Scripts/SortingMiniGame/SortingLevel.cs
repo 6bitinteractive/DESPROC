@@ -77,8 +77,11 @@ public class SortingLevel : MonoBehaviour
         }
     }
 
-    private void Sort(GameObject obj, bool correctlySorted)
+    private void Sort(GameObject obj, RecycleCode binRecycleCode)
     {
+        RecycleCode plasticRecycleCode = obj.GetComponent<PlasticInteractable>().GetPlasticData().RecycleCode;
+        bool correctlySorted = plasticRecycleCode == binRecycleCode;
+
         if (plasticsToSort[0] == obj)
         {
             // Hide the object
@@ -88,13 +91,19 @@ public class SortingLevel : MonoBehaviour
             plasticsToSort.RemoveAt(0);
         }
 
+        // TODO: Add feedback
+
         if (correctlySorted)
         {
+            Debug.Log("Correctly sorted");
+
             // Add to sortedPlastics list
             sortedPlastics.Add(obj);
         }
         else
         {
+            Debug.Log("Sort again.");
+
             // Reset position to plasticPosition
             obj.transform.position = plasticPosition.position;
 
@@ -102,6 +111,7 @@ public class SortingLevel : MonoBehaviour
             plasticsToSort.Add(obj);
         }
 
+        // Show next plastic to sort
         ShowPlastic();
     }
 
