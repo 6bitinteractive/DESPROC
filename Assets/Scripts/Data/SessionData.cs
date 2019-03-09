@@ -29,6 +29,7 @@ namespace TurtleTale
         public int EcobricksDone;
         public int TurtleEgg;
         public int HappinessPoints;
+        public float SortingBestTime;
         //public AudioClip audioToPersist;
         //public float audioTimePause;
 
@@ -54,6 +55,7 @@ namespace TurtleTale
             EcobricksDone = 0;
             TurtleEgg = 0;
             HappinessPoints = 0;
+            SortingBestTime = 0f;
         }
     }
 }
