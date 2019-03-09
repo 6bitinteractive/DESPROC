@@ -3,20 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+[RequireComponent(typeof(SpriteRenderer))]
+
 public class PlasticInteractable : Interactable
 {
-    public UnityEvent OnPlasticPickup = new UnityEvent();
+    [SerializeField] private Plastic plasticData;
 
-    public Plastic GetPlasticData()
+    public Plastic PlasticData
     {
-        return base.GetInteractable() as Plastic;
+        get { return plasticData; }
     }
 
-    public void Pickup()
+    private SpriteRenderer spriteRenderer;
+
+    private void Start()
     {
-        OnPlasticPickup.Invoke();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.sprite = plasticData.Sprite;
+    }
+
+    public override void Interact()
+    {
+        OnInteract.Invoke();
         //Destroy(gameObject);
         gameObject.SetActive(false);
-
     }
 }

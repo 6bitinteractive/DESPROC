@@ -85,7 +85,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler
     {
 
         // Check if the item has the same name and if its count is less than stack size
-        if (item.name == item.name && items.Count < item.GetPlasticData().StackSize && !IsEmpty)
+        if (item.name == item.name && items.Count < item.PlasticData.StackSize && !IsEmpty)
         {
             items.Add(item);
            // item.ItemSlot = this;
@@ -100,7 +100,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler
     {
 
         items.Add(item); // Add item
-        SlotItemIcon.sprite = item.GetPlasticData().Sprite; // Set slot item icon to new item icon
+        SlotItemIcon.sprite = item.PlasticData.Sprite; // Set slot item icon to new item icon
         SlotItemIcon.color = Color.white; // Reset transparency to default
        // item.ItemSlot = this; // Item reference to this slot
         StackSize.color = Color.black; // Set stack size color transparent

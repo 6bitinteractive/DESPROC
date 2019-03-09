@@ -3,12 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class SortingLevel : MonoBehaviour
 {
     [Header("Testing")]
     [Tooltip("For testing only")]
-    [SerializeField] GameObject plasticPrefab;
+    [SerializeField] List<GameObject> plasticPrefabs = new List<GameObject>();
 
     [Header("Setup")]
     [SerializeField] private TurtleTale.SessionData sessionData;
@@ -66,7 +67,8 @@ public class SortingLevel : MonoBehaviour
         // For testing
         for (int i = 0; i < 5; i++)
         {
-            plasticsToSort.Add(Instantiate(plasticPrefab, plasticPosition.position, Quaternion.identity));
+            int randomIndex = Random.Range(0, plasticPrefabs.Count);
+            plasticsToSort.Add(Instantiate(plasticPrefabs[randomIndex], plasticPosition.position, Quaternion.identity));
             plasticsToSort[i].AddComponent<DroppableToBin>();
         }
 
@@ -103,7 +105,7 @@ public class SortingLevel : MonoBehaviour
 
     private void Sort(GameObject obj, RecycleCode binRecycleCode)
     {
-        RecycleCode plasticRecycleCode = obj.GetComponent<PlasticInteractable>().GetPlasticData().RecycleCode;
+        RecycleCode plasticRecycleCode = obj.GetComponent<PlasticInteractable>().PlasticData.RecycleCode;
         bool correctlySorted = plasticRecycleCode == binRecycleCode;
 
         if (plasticsToSort[0] == obj)
