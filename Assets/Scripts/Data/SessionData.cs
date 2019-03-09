@@ -28,7 +28,7 @@ namespace TurtleTale
         public List<GameObject> ForEcobrick;
         public int EcobricksDone;
         public int TurtleEgg;
-        public int HappinessPoints;
+        public int Happiness;
         public float SortingBestTime;
         //public AudioClip audioToPersist;
         //public float audioTimePause;
@@ -54,7 +54,7 @@ namespace TurtleTale
             ForEcobrick = new List<GameObject>();
             EcobricksDone = 0;
             TurtleEgg = 0;
-            HappinessPoints = 0;
+            Happiness = 0;
             SortingBestTime = 0f;
         }
     }
