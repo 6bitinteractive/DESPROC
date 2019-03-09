@@ -51,7 +51,7 @@ public class SortingLevel : MonoBehaviour
         // For testing
         for (int i = 0; i < 5; i++)
         {
-            plasticsToSort.Add(Instantiate(plasticPrefab));
+            plasticsToSort.Add(Instantiate(plasticPrefab, plasticPosition.position, Quaternion.identity));
             plasticsToSort[i].AddComponent<DroppableToBin>();
         }
 
