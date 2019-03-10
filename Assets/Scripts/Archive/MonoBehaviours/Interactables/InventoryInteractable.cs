@@ -35,4 +35,8 @@ public class InventoryInteractable : Interactable
     //        movement.ySpeed = (movement.ySpeed / lambSauce);
     //    }
     //}
+    public override void Interact()
+    {
+        throw new System.NotImplementedException();
+    }
 }

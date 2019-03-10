@@ -30,7 +30,7 @@ public class NewInventory : MonoBehaviour
     public void AddToInventory(PlasticInteractable item)
     {
         //Checks if item can be placed in stack
-        if (item.GetPlasticData().StackSize > 0)
+        if (item.PlasticData.StackSize > 0)
         {
             if (IsStackable(item))
             {

@@ -2,18 +2,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class SortingLevel : MonoBehaviour
 {
+    [Header("Testing")]
     [Tooltip("For testing only")]
-    [SerializeField] GameObject plasticPrefab;
+    [SerializeField] List<GameObject> plasticPrefabs = new List<GameObject>();
 
+    [Header("Setup")]
     [SerializeField] private TurtleTale.SessionData sessionData;
     [SerializeField] Transform plasticPosition;
     [SerializeField] Sorting.SortingBin[] sortingBins;
 
+    [Header("UI Display")]
+    [SerializeField] private Text timeText;
+    [SerializeField] private Text bestTimeText;
+
     private List<GameObject> plasticsToSort = new List<GameObject>();
     private List<GameObject> sortedPlastics = new List<GameObject>();
+    private float timer;
+    private bool gameEnd;
 
     private void Awake()
     {
@@ -45,13 +55,20 @@ public class SortingLevel : MonoBehaviour
 
     private void Start()
     {
+        // Display best time
+        if (sessionData.SortingBestTime > 0f)
+        {
+            bestTimeText.text = string.Format("BEST {0:00.00}", sessionData.SortingBestTime);
+        }
+
         // TODO: Get plastics from the inventory(?)
         //plasticsToSort.AddRange(sessionData.PickedUpList);
 
         // For testing
         for (int i = 0; i < 5; i++)
         {
-            plasticsToSort.Add(Instantiate(plasticPrefab));
+            int randomIndex = Random.Range(0, plasticPrefabs.Count);
+            plasticsToSort.Add(Instantiate(plasticPrefabs[randomIndex], plasticPosition.position, Quaternion.identity));
             plasticsToSort[i].AddComponent<DroppableToBin>();
         }
 
@@ -63,6 +80,15 @@ public class SortingLevel : MonoBehaviour
         }
 
         ShowPlastic();
+    }
+
+    private void Update()
+    {
+        if (gameEnd) { return; }
+
+        // Timer
+        timer += Time.deltaTime;
+        timeText.text = string.Format("{0:00.00}", timer);
     }
 
     private void ShowPlastic()
@@ -77,8 +103,11 @@ public class SortingLevel : MonoBehaviour
         }
     }
 
-    private void Sort(GameObject obj, bool correctlySorted)
+    private void Sort(GameObject obj, RecycleCode binRecycleCode)
     {
+        RecycleCode plasticRecycleCode = obj.GetComponent<PlasticInteractable>().PlasticData.RecycleCode;
+        bool correctlySorted = plasticRecycleCode == binRecycleCode;
+
         if (plasticsToSort[0] == obj)
         {
             // Hide the object
@@ -88,13 +117,19 @@ public class SortingLevel : MonoBehaviour
             plasticsToSort.RemoveAt(0);
         }
 
+        // TODO: Add feedback
+
         if (correctlySorted)
         {
+            Debug.Log("Correctly sorted");
+
             // Add to sortedPlastics list
             sortedPlastics.Add(obj);
         }
         else
         {
+            Debug.Log("Sort again.");
+
             // Reset position to plasticPosition
             obj.transform.position = plasticPosition.position;
 
@@ -102,6 +137,7 @@ public class SortingLevel : MonoBehaviour
             plasticsToSort.Add(obj);
         }
 
+        // Show next plastic to sort
         ShowPlastic();
     }
 
@@ -109,6 +145,16 @@ public class SortingLevel : MonoBehaviour
     {
         // If player quits or reaches end of list
         Debug.Log("End of Sorting minigame.");
+
+        gameEnd = true;
+
+        // Check if its a new record for best time
+        if (timer < sessionData.SortingBestTime || sessionData.SortingBestTime <= 0f)
+        {
+            Debug.Log("Set a new record.");
+            sessionData.SortingBestTime = timer;
+            bestTimeText.text = string.Format("BEST {0:00.00} - New Record", sessionData.SortingBestTime);
+        }
 
         // Add sorted plastic to sessionData's ecobrick list
         sessionData.ForEcobrick.AddRange(sortedPlastics);

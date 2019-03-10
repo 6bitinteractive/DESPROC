@@ -7,11 +7,9 @@ using UnityEngine.Events;
 
 public class TurtleInteractable : Interactable
 {
-    public UnityEvent OnTurtleSave = new UnityEvent();
-
-    public void Save()
+    public override void Interact()
     {
-        OnTurtleSave.Invoke();
+        OnInteract.Invoke();
         gameObject.SetActive(false);
     }
 }

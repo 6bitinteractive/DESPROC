@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 [RequireComponent(typeof(CircleCollider2D))]
 
-public class RequirementInteractable : Interactable
+public class RequirementInteractable : MonoBehaviour
 {
     public UnityEvent OnRequirementPickup = new UnityEvent();
 
@@ -13,6 +13,6 @@ public class RequirementInteractable : Interactable
     {
         OnRequirementPickup.Invoke();
         //Destroy(gameObject);
-        gameObject.SetActive(false);    
+        gameObject.SetActive(false);
     }
 }

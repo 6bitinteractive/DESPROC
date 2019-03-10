@@ -10,7 +10,7 @@ namespace Sorting
     [RequireComponent(typeof(BoxCollider2D))]
 
     [System.Serializable] public class OnDropToBin : UnityEvent<GameObject> { }
-    [System.Serializable] public class OnVerify : UnityEvent<GameObject, bool> { }
+    [System.Serializable] public class OnVerify : UnityEvent<GameObject, RecycleCode> { }
 
     public class SortingBin : MonoBehaviour
     {
@@ -37,19 +37,7 @@ namespace Sorting
 
         private void Verify(GameObject obj)
         {
-            RecycleCode plasticRecycleCode = obj.GetComponent<PlasticInteractable>().GetPlasticData().RecycleCode;
-
-            // TODO: Add feedback
-            if (plasticRecycleCode == recycleCode)
-            {
-                Debug.Log("Correctly sorted");
-                OnVerify.Invoke(obj, true);
-            }
-            else
-            {
-                Debug.Log("Sort again.");
-                OnVerify.Invoke(obj, false);
-            }
+            OnVerify.Invoke(obj, recycleCode);
         }
 
         private void OnTriggerEnter2D(Collider2D collision)

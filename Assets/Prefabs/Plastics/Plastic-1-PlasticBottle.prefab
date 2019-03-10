@@ -19,11 +19,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4789821731012548}
+  - component: {fileID: 114796640138566288}
   - component: {fileID: 58150899838149026}
   - component: {fileID: 212516859009182624}
-  - component: {fileID: 114796640138566288}
   m_Layer: 9
-  m_Name: Plastic
+  m_Name: Plastic-1-PlasticBottle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37,7 +37,7 @@ Transform:
   m_GameObject: {fileID: 1941202660726644}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.13, y: 0.13, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -68,7 +68,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e453b8c07508684a9a7a8356f37ecc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Factory: {fileID: 11400000, guid: 60004cc9f2453c24681673d0522a6157, type: 2}
+  OnInteract:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  plasticData: {fileID: 11400000, guid: c1de511a994600a468ca0757cfe04509, type: 2}
 --- !u!212 &212516859009182624
 SpriteRenderer:
   m_ObjectHideFlags: 1
