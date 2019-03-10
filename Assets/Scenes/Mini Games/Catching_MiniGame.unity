@@ -664,6 +664,10 @@ Prefab:
       propertyPath: m_Name
       value: Turtle (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1115493859004020, guid: e870d1a5a1338f2449a52051ba459efb, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e870d1a5a1338f2449a52051ba459efb, type: 2}
   m_IsPrefabAsset: 0
@@ -1015,6 +1019,10 @@ Prefab:
       propertyPath: m_Name
       value: Turtle (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1115493859004020, guid: e870d1a5a1338f2449a52051ba459efb, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e870d1a5a1338f2449a52051ba459efb, type: 2}
   m_IsPrefabAsset: 0
@@ -1086,6 +1094,11 @@ Prefab:
       propertyPath: m_BoundingShape2D
       value: 
       objectReference: {fileID: 679022173}
+    - target: {fileID: 114050370257173398, guid: 05b064dd15897254caca9a59a7c58d48,
+        type: 2}
+      propertyPath: m_Lens.OrthographicSize
+      value: 2.74
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05b064dd15897254caca9a59a7c58d48, type: 2}
   m_IsPrefabAsset: 0
@@ -1567,15 +1580,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4668677647393484, guid: e870d1a5a1338f2449a52051ba459efb, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4668677647393484, guid: e870d1a5a1338f2449a52051ba459efb, type: 2}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4668677647393484, guid: e870d1a5a1338f2449a52051ba459efb, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4668677647393484, guid: e870d1a5a1338f2449a52051ba459efb, type: 2}
       propertyPath: m_LocalRotation.w
@@ -1585,28 +1598,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 223647135493655188, guid: e870d1a5a1338f2449a52051ba459efb,
-        type: 2}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 519420031}
     - target: {fileID: 114327998434645560, guid: e870d1a5a1338f2449a52051ba459efb,
         type: 2}
       propertyPath: MoveArea
       value: 
       objectReference: {fileID: 889120017}
-    - target: {fileID: 4668677647393484, guid: e870d1a5a1338f2449a52051ba459efb, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 4668677647393484, guid: e870d1a5a1338f2449a52051ba459efb, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 4668677647393484, guid: e870d1a5a1338f2449a52051ba459efb, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 25
-      objectReference: {fileID: 0}
+    - target: {fileID: 223647135493655188, guid: e870d1a5a1338f2449a52051ba459efb,
+        type: 2}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 519420031}
     - target: {fileID: 1115493859004020, guid: e870d1a5a1338f2449a52051ba459efb, type: 2}
       propertyPath: m_Name
       value: Turtle (2)
@@ -2253,7 +2254,7 @@ SortingGroup:
   m_Enabled: 1
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
 --- !u!1 &679022172 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1325044776455956, guid: 884e846457e7cb341a4fe5650e98b2e2,
@@ -2408,33 +2409,6 @@ Prefab:
     - target: {fileID: 1115493859004020, guid: e870d1a5a1338f2449a52051ba459efb, type: 2}
       propertyPath: m_Name
       value: Turtle (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 114578440822775008, guid: e870d1a5a1338f2449a52051ba459efb,
-        type: 2}
-      propertyPath: outlineSize
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 61550729113531836, guid: e870d1a5a1338f2449a52051ba459efb,
-        type: 2}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 7.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 61550729113531836, guid: e870d1a5a1338f2449a52051ba459efb,
-        type: 2}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 3.23
-      objectReference: {fileID: 0}
-    - target: {fileID: 4668677647393484, guid: e870d1a5a1338f2449a52051ba459efb, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 4668677647393484, guid: e870d1a5a1338f2449a52051ba459efb, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 4668677647393484, guid: e870d1a5a1338f2449a52051ba459efb, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e870d1a5a1338f2449a52051ba459efb, type: 2}
@@ -3264,6 +3238,29 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b63348022cb8ea4981366b8640384f3, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1076989869 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1396171041392228, guid: 7c057c46234bfda49a894260009f6303,
+    type: 2}
+  m_PrefabInternal: {fileID: 1830356290}
+--- !u!1818360609 &1076989879
+RotationConstraint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1076989869}
+  m_Enabled: 1
+  m_Weight: 0
+  m_RotationAtRest: {x: 0, y: 0, z: 0}
+  m_RotationOffset: {x: 0, y: 0, z: 0}
+  m_AffectRotationX: 1
+  m_AffectRotationY: 1
+  m_AffectRotationZ: 1
+  m_IsContraintActive: 1
+  m_IsLocked: 1
+  m_Sources:
+  - sourceTransform: {fileID: 296190848}
+    weight: 1
 --- !u!1 &1078622704
 GameObject:
   m_ObjectHideFlags: 0
@@ -3957,6 +3954,10 @@ Prefab:
       propertyPath: m_Name
       value: Turtle (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1115493859004020, guid: e870d1a5a1338f2449a52051ba459efb, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e870d1a5a1338f2449a52051ba459efb, type: 2}
   m_IsPrefabAsset: 0
@@ -4053,11 +4054,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4654429208968598, guid: a3c80656ef1b8d74cad3a320b8b124f3, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.27952412
+      value: 0.28363112
       objectReference: {fileID: 0}
     - target: {fileID: 4654429208968598, guid: a3c80656ef1b8d74cad3a320b8b124f3, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1.403444
+      value: -2.70106
       objectReference: {fileID: 0}
     - target: {fileID: 4654429208968598, guid: a3c80656ef1b8d74cad3a320b8b124f3, type: 2}
       propertyPath: m_LocalPosition.z
@@ -4090,7 +4091,7 @@ Prefab:
     - target: {fileID: 20522339786520762, guid: a3c80656ef1b8d74cad3a320b8b124f3,
         type: 2}
       propertyPath: orthographic size
-      value: 4
+      value: 2.74
       objectReference: {fileID: 0}
     - target: {fileID: 1421251900869434, guid: a3c80656ef1b8d74cad3a320b8b124f3, type: 2}
       propertyPath: m_IsActive
@@ -4236,6 +4237,11 @@ Prefab:
     - target: {fileID: 4730961827658492, guid: 7c057c46234bfda49a894260009f6303, type: 2}
       propertyPath: m_LocalScale.y
       value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 50630761508485086, guid: 7c057c46234bfda49a894260009f6303,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c057c46234bfda49a894260009f6303, type: 2}
