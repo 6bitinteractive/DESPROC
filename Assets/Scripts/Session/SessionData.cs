@@ -21,6 +21,7 @@ public class SessionData : ScriptableObject
     [HideInInspector] public List<Plastic> Inventory;
     [HideInInspector] public List<Plastic> Bin;
     [HideInInspector] public int TotalTrash;
+    [HideInInspector] public List<Quests> Quests;
 
     private void OnEnable()
     {
@@ -33,5 +34,6 @@ public class SessionData : ScriptableObject
         Inventory = new List<Plastic>();
         Bin = new List<Plastic>();
         TotalTrash = 0;
+        Quests = new List<Quests>();
     }
 }

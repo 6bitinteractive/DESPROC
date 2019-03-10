@@ -9,10 +9,11 @@ public class QuestLog : MonoBehaviour
     [SerializeField] private Transform questParent;
     [SerializeField] private Text questDescriptionText;
     [SerializeField] private InteractObjective interactObjective;
+    public TurtleTale.SessionData sessionData;
 
     private Quests selected;
     private List<QuestScript> questScripts = new List<QuestScript>();
-    public List<Quests> quests = new List<Quests>();
+ //   public List<Quests> quests = new List<Quests>();
     private static QuestLog instance;
 
     public static QuestLog Instance
@@ -38,8 +39,8 @@ public class QuestLog : MonoBehaviour
            // objectives.CheckItemCount(); used for checking in inventory fix later
 
         }
-
-        quests.Add(quest);
+        sessionData.Quests.Add(quest);
+        //quests.Add(quest);
         GameObject gameObject = Instantiate(questPrefab, questParent);
         QuestScript questScript = gameObject.GetComponent<QuestScript>();
 
@@ -92,6 +93,6 @@ public class QuestLog : MonoBehaviour
     public bool HasQuest(Quests quest)
     {
         // Check if quest has the same name
-        return quests.Exists(x => x.Name == quest.Name);
+        return sessionData.Quests.Exists(x => x.Name == quest.Name);
     }
 }

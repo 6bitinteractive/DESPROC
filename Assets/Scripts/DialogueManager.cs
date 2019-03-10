@@ -48,7 +48,7 @@ public class DialogueManager : MonoBehaviour
         else
         {
             // If dialogue trigger quest name matches a quest on the quest list
-            if (QuestLog.Instance.quests.Exists(x => x.Name == dialogueTrigger.questName))
+            if (QuestLog.Instance.sessionData.Quests.Exists(x => x.Name == dialogueTrigger.questName))
             {
                 // Set quest dialogue array for display
                 toDisplay = dialogueTrigger.questDialogueArray;

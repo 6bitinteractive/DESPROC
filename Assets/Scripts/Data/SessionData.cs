@@ -30,6 +30,7 @@ namespace TurtleTale
         public int TurtleEgg;
         public int Happiness;
         public float SortingBestTime;
+        public List<Quests> Quests;
         //public AudioClip audioToPersist;
         //public float audioTimePause;
 
@@ -56,6 +57,7 @@ namespace TurtleTale
             TurtleEgg = 0;
             Happiness = 0;
             SortingBestTime = 0f;
+            Quests = new List<Quests>();
         }
     }
 }
