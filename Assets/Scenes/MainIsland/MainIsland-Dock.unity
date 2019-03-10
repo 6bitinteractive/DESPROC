@@ -552,48 +552,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &227194729
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 227194730}
-  - component: {fileID: 227194731}
-  m_Layer: 0
-  m_Name: Main Dialogue
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &227194730
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 227194729}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.31, y: 3.055, z: 10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 942125459}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &227194731
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 227194729}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d0091aee95caab41a717ad5152f6792, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueArray: []
-  dialogueEndTrigger: {fileID: 11400000, guid: aacf4ffd6be0fad45bd1e5d584b886d8, type: 2}
 --- !u!1 &249203129
 GameObject:
   m_ObjectHideFlags: 0
@@ -1203,7 +1161,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 942125459}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &656726969
 MonoBehaviour:
@@ -1221,11 +1179,7 @@ MonoBehaviour:
     sentenceArray:
     - name: Chicken
       sentence: '*cluck*'
-  - questName: Tutorial
-    sentenceArray:
-    - name: Chicken
-      sentence: '*tutorial cluck*'
-  dialogueEndTrigger: {fileID: 0}
+    dialogueEndTrigger: {fileID: 0}
 --- !u!1001 &772655048
 Prefab:
   m_ObjectHideFlags: 0
@@ -1518,7 +1472,6 @@ Transform:
   m_LocalPosition: {x: -0.31, y: -3.055, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 227194730}
   - {fileID: 656726968}
   - {fileID: 1759805763}
   m_Father: {fileID: 0}
@@ -1611,7 +1564,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 227194731}
+        - m_Target: {fileID: 0}
           m_MethodName: TriggerDialogue
           m_Mode: 1
           m_Arguments:
@@ -1649,7 +1602,7 @@ MonoBehaviour:
     response:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 227194729}
+        - m_Target: {fileID: 0}
           m_MethodName: SetActive
           m_Mode: 6
           m_Arguments:
@@ -3089,7 +3042,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 942125459}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1759805764
 MonoBehaviour:
@@ -3104,8 +3057,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueArray:
   - questName: 
-    sentenceArray: []
-  dialogueEndTrigger: {fileID: 0}
+    sentenceArray:
+    - name: Volunteer
+      sentence: It's a nice day out on the docks, isn't it?
+    dialogueEndTrigger: {fileID: 0}
+  - questName: Building Bridges
+    sentenceArray:
+    - name: Volunteer
+      sentence: If you're looking for the town, it's north of this area.
+    dialogueEndTrigger: {fileID: 0}
 --- !u!1001 &1761956491
 Prefab:
   m_ObjectHideFlags: 0
@@ -3611,12 +3571,12 @@ Prefab:
     - target: {fileID: 224915109498146858, guid: 948c79c039b90224d9eb60edffd7c1d6,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 0.0000060796738
+      value: -0.000009179115
       objectReference: {fileID: 0}
     - target: {fileID: 224492832295298682, guid: 948c79c039b90224d9eb60edffd7c1d6,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -0.000091552734
+      value: -0.000076293945
       objectReference: {fileID: 0}
     - target: {fileID: 114944712622678518, guid: 948c79c039b90224d9eb60edffd7c1d6,
         type: 2}
@@ -3661,6 +3621,12 @@ Prefab:
       propertyPath: m_AnchoredPosition.y
       value: 175.21997
       objectReference: {fileID: 0}
+    - target: {fileID: 114944712622678518, guid: 948c79c039b90224d9eb60edffd7c1d6,
+        type: 2}
+      propertyPath: sessionData
+      value: 
+      objectReference: {fileID: 11400000, guid: d145efb78b7a3894d99040295d0cceb3,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 948c79c039b90224d9eb60edffd7c1d6, type: 2}
   m_IsPrefabAsset: 0
