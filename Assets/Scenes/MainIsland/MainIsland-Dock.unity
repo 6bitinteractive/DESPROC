@@ -592,18 +592,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d0091aee95caab41a717ad5152f6792, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questGroupEnabled: 1
   dialogueArray: []
-  questName: Tutorial
-  questDialogueArray:
-  - name: Volunteer
-    sentence: 'Hi! You must be the student volunteer sent by our partner school! '
-  - name: Volunteer
-    sentence: "Welcome to Pawikan Island! It\u2019s a humble place, but it\u2019s
-      our home."
-  - name: Volunteer
-    sentence: Feel free to look around the place before we get started. Enjoy the
-      sights, talk to the locals!
   dialogueEndTrigger: {fileID: 11400000, guid: aacf4ffd6be0fad45bd1e5d584b886d8, type: 2}
 --- !u!1 &249203129
 GameObject:
@@ -1227,14 +1216,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d0091aee95caab41a717ad5152f6792, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questGroupEnabled: 0
   dialogueArray:
-  - name: Chicken
-    sentence: '*cluck*'
-  questName: Tutorial
-  questDialogueArray:
-  - name: Chicken
-    sentence: '*tutorial cluck*'
+  - questName: 
+    sentenceArray:
+    - name: Chicken
+      sentence: '*cluck*'
+  - questName: Tutorial
+    sentenceArray:
+    - name: Chicken
+      sentence: '*tutorial cluck*'
   dialogueEndTrigger: {fileID: 0}
 --- !u!1001 &772655048
 Prefab:
@@ -1245,7 +1235,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -4.3146453
+      value: -4.3068137
       objectReference: {fileID: 0}
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.y
@@ -3112,15 +3102,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d0091aee95caab41a717ad5152f6792, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questGroupEnabled: 0
   dialogueArray:
-  - name: Volunteer
-    sentence: It's a nice day today, isn't it?
-  questName: Tutorial
-  questDialogueArray:
-  - name: Volunteer
-    sentence: Feel free to look around the place before we get started. Enjoy the
-      sights, talk to the locals!
+  - questName: 
+    sentenceArray: []
   dialogueEndTrigger: {fileID: 0}
 --- !u!1001 &1761956491
 Prefab:

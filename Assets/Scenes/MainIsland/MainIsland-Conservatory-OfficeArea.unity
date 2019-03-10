@@ -233,6 +233,11 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 45375128}
   m_Script: {fileID: 11500000, guid: dca93c2a1ae76cb4cb4c5f6a955321ec, type: 3}
+--- !u!1 &45375130 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1148669647333396, guid: 3971ec3ae14347942b703b640f96e60d,
+    type: 2}
+  m_PrefabInternal: {fileID: 45375128}
 --- !u!1 &91788103
 GameObject:
   m_ObjectHideFlags: 0
@@ -1013,8 +1018,9 @@ GameObject:
   - component: {fileID: 619036204}
   - component: {fileID: 619036203}
   - component: {fileID: 619036205}
+  - component: {fileID: 619036206}
   m_Layer: 12
-  m_Name: desk
+  m_Name: Volunteer Desk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1027,11 +1033,12 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 619036200}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.81, y: -0.75, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 937765792}
-  m_RootOrder: 2
+  m_LocalPosition: {x: 0.534498, y: -1.9828062, z: 0}
+  m_LocalScale: {x: 3.4483588, y: 3.4483588, z: 3.4483588}
+  m_Children:
+  - {fileID: 1935635704}
+  m_Father: {fileID: 1899547321}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &619036202
 SpriteRenderer:
@@ -1145,6 +1152,44 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &619036206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 619036200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c24433325fca0541a83f9fd5ad28fdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questWindow: {fileID: 45375129}
+  quests:
+  - OnQuestAccepted:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    Name: Building Bridges
+    Objective: Talk to the locals
+    Description: There seem to be turtles stuck on the other side of the island, and
+      we can't get to them because the bridge connecting the areas is broken. The
+      locals might know of a way to repair the bridge. Why don't you go into town
+      and ask around?
+    collectObjectives:
+    - amount: 1
+      objectiveTag: Bob
+      OnPickup:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      OnCompletion:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+  isDisplayingQuest: 0
 --- !u!1 &626539352
 GameObject:
   m_ObjectHideFlags: 0
@@ -1349,6 +1394,21 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: EndDialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 224912964868538154, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 224786677316838310, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 224249758436251312, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfbabfdd22addb54891582c16f6d89cf, type: 2}
@@ -1727,11 +1787,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -7.4422417
+      value: -7.4420605
       objectReference: {fileID: 0}
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1.9524171
+      value: -1.9523904
       objectReference: {fileID: 0}
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1829,38 +1889,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d0091aee95caab41a717ad5152f6792, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questGroupEnabled: 0
   dialogueArray:
-  - name: Volunteer
-    sentence: Welcome to the Turtle Conservatory! How may I help you today?
-  questName: Tutorial
-  questDialogueArray:
-  - name: Volunteer
-    sentence: "This is the Turtle Conservation Society. This is where you'll be assigned
-      tasks to accomplish throughout your stay here in Pawikan Island.\r"
-  - name: Volunteer
-    sentence: "Unfortunately, the island\u2019s been in bad shape as of late."
-  - name: Volunteer
-    sentence: You see have a pretty widespread pollution problem, and all that trash
-      manages to find its way into the rivers and the nearby sea.
-  - name: Volunteer
-    sentence: "It\u2019s been taking a toll on the local wildlife and the habitats
-      in which they live."
-  - name: Volunteer
-    sentence: Here at the Turtle Conservation Society, we do as much as we can to
-      prevent the local turtle population from coming into any harm.
-  - name: Volunteer
-    sentence: Our aim is to protect their homes, and keep them away from the hazards
-      that plastic pollution poses to their safety.
-  - name: Volunteer
-    sentence: With that in mind, I'll be assigning you to your first task!
-  - name: Volunteer
-    sentence: There's a bridge that collapsed a few nights ago during a storm, and
-      we have reason to believe there are turtle stuck on the other side.
-  - name: Volunteer
-    sentence: We want you to help repair the bridge. The locals may have ideas on
-      how to fix iit. Why don't you head to town?
-  dialogueEndTrigger: {fileID: 11400000, guid: aacf4ffd6be0fad45bd1e5d584b886d8, type: 2}
+  - questName: 
+    sentenceArray:
+    - name: Volunteer
+      sentence: "This is the Turtle Conservation Society. This is where you'll be
+        assigned tasks to accomplish throughout your stay here in Pawikan Island.\r"
+    - name: Volunteer
+      sentence: "Unfortunately, our island has been in bad shape as of late.\r\n"
+    - name: Volunteer
+      sentence: You see have a pretty widespread pollution problem, and all that trash
+        manages to find its way into the rivers and the nearby sea.
+    - name: Volunteer
+      sentence: "It\u2019s been taking a toll on the local wildlife and the habitats
+        in which they live.\r"
+    - name: Volunteer
+      sentence: "That\u2019s where you and I come in."
+    - name: Volunteer
+      sentence: Here at the Turtle Conservation Society, we do as much as we can to
+        prevent the local turtle population from coming into any harm.
+    - name: Volunteer
+      sentence: With that said, why don't I assign you to your first task?
+    - name: Volunteer
+      sentence: There seem to be turtles stuck on the other side of the island, and
+        we can't get to them because the bridge connecting the areas is broken.
+    - name: Volunteer
+      sentence: The huge storm from the other night must have damaged it.
+    - name: Volunteer
+      sentence: The locals might know of a way to repair the bridge. Why don't you
+        go into town and ask around?
+    dialogueEndTrigger: {fileID: 11400000, guid: aacf4ffd6be0fad45bd1e5d584b886d8,
+      type: 2}
+  - questName: Building Bridges
+    sentenceArray:
+    - name: Volunteer
+      sentence: The locals might know of a way to repair the bridge. Why don't you
+        go into town and ask around?
+    dialogueEndTrigger: {fileID: 0}
 --- !u!1001 &1395685069
 Prefab:
   m_ObjectHideFlags: 0
@@ -2359,7 +2424,7 @@ Transform:
   m_LocalPosition: {x: -9.145, y: -0.175, z: 0}
   m_LocalScale: {x: 0.28999302, y: 0.28999302, z: 0.28999302}
   m_Children:
-  - {fileID: 1935635704}
+  - {fileID: 619036201}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2388,10 +2453,10 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1935635703}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.15500021, y: 0.575, z: 0}
+  m_LocalScale: {x: 0.28999302, y: 0.28999302, z: 0.28999302}
   m_Children: []
-  m_Father: {fileID: 1899547321}
+  m_Father: {fileID: 619036201}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1935635705
@@ -2458,31 +2523,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1935635707
-MonoBehaviour:
+--- !u!58 &1935635707
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1935635703}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c24433325fca0541a83f9fd5ad28fdb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  questWindow: {fileID: 0}
-  quests:
-  - OnQuestAccepted:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-    Name: Building Bridges
-    Objective: Talk to the townsfolk
-    Description: There's a bridge that collapsed a few nights ago during a storm,
-      and we have reason to believe there are turtle stuck on the other side. Head
-      to the town and look for ideas on how to fix the bridge.
-    collectObjectives: []
-  isDisplayingQuest: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 3.5699997
 --- !u!1 &1986574780
 GameObject:
   m_ObjectHideFlags: 0
@@ -2529,11 +2584,22 @@ MonoBehaviour:
     response:
       m_PersistentCalls:
         m_Calls:
+        - m_Target: {fileID: 45375130}
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
         - m_Target: {fileID: 45375129}
           m_MethodName: DisplayQuests
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 1935635707}
+            m_ObjectArgument: {fileID: 619036206}
             m_ObjectArgumentAssemblyTypeName: QuestGiver, Assembly-CSharp
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -2702,17 +2768,17 @@ Prefab:
     - target: {fileID: 224450656773617330, guid: 948c79c039b90224d9eb60edffd7c1d6,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 97.49999
+      value: 95.04951
       objectReference: {fileID: 0}
     - target: {fileID: 224492832295298682, guid: 948c79c039b90224d9eb60edffd7c1d6,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -0.000015258789
+      value: 0.000045776367
       objectReference: {fileID: 0}
     - target: {fileID: 224915109498146858, guid: 948c79c039b90224d9eb60edffd7c1d6,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 0.00006711483
+      value: 0.00015866756
       objectReference: {fileID: 0}
     - target: {fileID: 114944712622678518, guid: 948c79c039b90224d9eb60edffd7c1d6,
         type: 2}
@@ -2729,6 +2795,17 @@ Prefab:
         type: 2}
       propertyPath: quests.Array.data[0].Name
       value: Tutorial
+      objectReference: {fileID: 0}
+    - target: {fileID: 114944712622678518, guid: 948c79c039b90224d9eb60edffd7c1d6,
+        type: 2}
+      propertyPath: sessionData
+      value: 
+      objectReference: {fileID: 11400000, guid: d145efb78b7a3894d99040295d0cceb3,
+        type: 2}
+    - target: {fileID: 224044443328000526, guid: 948c79c039b90224d9eb60edffd7c1d6,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0.16878551
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 948c79c039b90224d9eb60edffd7c1d6, type: 2}

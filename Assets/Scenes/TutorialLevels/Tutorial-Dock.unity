@@ -324,6 +324,17 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 323108480}
+          m_MethodName: 
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
     responseForSentString:
@@ -361,17 +372,6 @@ MonoBehaviour:
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 1
-          m_CallState: 2
-        - m_Target: {fileID: 2075340421}
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
           m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
@@ -860,12 +860,23 @@ Prefab:
       value: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
       objectReference: {fileID: 0}
+    - target: {fileID: 114944712622678518, guid: 948c79c039b90224d9eb60edffd7c1d6,
+        type: 2}
+      propertyPath: sessionData
+      value: 
+      objectReference: {fileID: 11400000, guid: d145efb78b7a3894d99040295d0cceb3,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 948c79c039b90224d9eb60edffd7c1d6, type: 2}
   m_IsPrefabAsset: 0
 --- !u!224 &323108479 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 224602845801890300, guid: 948c79c039b90224d9eb60edffd7c1d6,
+    type: 2}
+  m_PrefabInternal: {fileID: 323108478}
+--- !u!1 &323108480 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1402808709214766, guid: 948c79c039b90224d9eb60edffd7c1d6,
     type: 2}
   m_PrefabInternal: {fileID: 323108478}
 --- !u!1 &359113628
@@ -2289,7 +2300,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -4.3146453
+      value: -4.3068137
       objectReference: {fileID: 0}
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.y
@@ -5534,12 +5545,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d0091aee95caab41a717ad5152f6792, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questGroupEnabled: 0
   dialogueArray:
-  - name: Chicken
-    sentence: '*cluck*'
-  questName: 
-  questDialogueArray: []
+  - questName: 
+    sentenceArray:
+    - name: Chicken
+      sentence: '*cluck*'
   dialogueEndTrigger: {fileID: 0}
 --- !u!1 &1563439828
 GameObject:
@@ -6293,14 +6303,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d0091aee95caab41a717ad5152f6792, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questGroupEnabled: 1
   dialogueArray:
-  - name: Volunteer
-    sentence: It's a nice day today, isn't it?
-  questName: Tutorial
-  questDialogueArray:
-  - name: Volunteer
-    sentence: The conservatory is just east of these docks.
+  - questName: 
+    sentenceArray:
+    - name: Volunteer
+      sentence: The conservatory is just east of these docks.
   dialogueEndTrigger: {fileID: 0}
 --- !u!1001 &1761956491
 Prefab:
@@ -7191,20 +7198,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d0091aee95caab41a717ad5152f6792, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questGroupEnabled: 0
-  dialogueArray: []
-  questName: Tutorial
-  questDialogueArray:
-  - name: Volunteer
-    sentence: 'Hi! You must be the student volunteer sent by our partner school! '
-  - name: Volunteer
-    sentence: "Welcome to Pawikan Island! It\u2019s a humble place, but it\u2019s
-      our home."
-  - name: Volunteer
-    sentence: Before anything, why don't we head to the Turtle Conservatory first,
-      so we can brief you about your duties as a volunteer for our organization?
-  - name: Volunteer
-    sentence: The conservatory is just east of these docks.
+  dialogueArray:
+  - questName: 
+    sentenceArray:
+    - name: Volunteer
+      sentence: Hi! You must be the student volunteer sent by our partner school!
+    - name: Volunteer
+      sentence: "Welcome to Pawikan island! It\u2019s a humble place, but it\u2019s
+        our home."
+    - name: Volunteer
+      sentence: "Before anything, why don't we head to the Turtle Conservatory first,\r
+        so we can brief you about your duties as a volunteer for our organization?"
+    - name: Volunteer
+      sentence: The conservatory is just east of these docks.
   dialogueEndTrigger: {fileID: 11400000, guid: aacf4ffd6be0fad45bd1e5d584b886d8, type: 2}
 --- !u!1 &2083154569
 GameObject:
