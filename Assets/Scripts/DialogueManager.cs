@@ -74,7 +74,6 @@ public class DialogueManager : MonoBehaviour
 
         if (toDisplay != null)
         {
-            Debug.Log("toDisplay is not null.");
             foreach (Sentence sentenceEntry in toDisplay)
             {
                 sentences.Enqueue(sentenceEntry);
