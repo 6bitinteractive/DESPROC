@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 114648725674755580}
   - component: {fileID: 95349946005820980}
   - component: {fileID: 61550729113531836}
+  - component: {fileID: 114578440822775008}
   m_Layer: 12
   m_Name: Turtle
   m_TagString: Untagged
@@ -134,8 +135,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1115493859004020}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -505.1, y: -449.2, z: -9723.563}
-  m_LocalScale: {x: 30.251085, y: 30.251085, z: 151.25543}
+  m_LocalPosition: {x: -508, y: -437, z: -9723.563}
+  m_LocalScale: {x: 30.251087, y: 30.251087, z: 151.25543}
   m_Children:
   - {fileID: 4138466662326694}
   - {fileID: 4389448290611554}
@@ -293,6 +294,19 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 0
   m_FillOrigin: 2
+--- !u!114 &114578440822775008
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1115493859004020}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8ff6a37e2175334384afd34cd7913d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: {r: 1, g: 0, b: 0, a: 1}
+  outlineSize: 16
 --- !u!114 &114648725674755580
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -379,7 +393,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5b0bc317862dc5642808511fe7d4ce3c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
