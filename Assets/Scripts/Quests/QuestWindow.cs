@@ -41,7 +41,7 @@ public class QuestWindow : Window
                 Destroy(gameObject);
             }
 
-            // Instantiate quests once
+            // Instantiate quests once 
             foreach (Quests quest in questGiver.Quests)
             {
                 if (quest != null)
@@ -89,14 +89,14 @@ public class QuestWindow : Window
             {
                 acceptButton.SetActive(true); // Display accept button
             }
-
+            
             backButton.SetActive(true); // Display back button
             questArea.gameObject.SetActive(false); // Hide quest
             questDescriptionText.SetActive(true); // Display description
 
             string objectives = string.Format("<size=100>\nObjectives\n</size>");
 
-            // Add objectives
+            // Add objectives 
             foreach (Objective obj in quest.CollectObjectives)
             {
                 objectives += quest.Objective + ": " + obj.CurrentAmount + "/" + obj.Amount + "\n";

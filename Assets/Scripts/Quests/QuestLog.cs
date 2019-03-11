@@ -13,7 +13,7 @@ public class QuestLog : MonoBehaviour
 
     private Quests selected;
     private List<QuestScript> questScripts = new List<QuestScript>();
-
+ //   public List<Quests> quests = new List<Quests>();
     private static QuestLog instance;
 
     public static QuestLog Instance
@@ -25,14 +25,6 @@ public class QuestLog : MonoBehaviour
                 instance = FindObjectOfType<QuestLog>();
             }
             return instance;
-        }
-    }
-
-    private void Awake()
-    {
-        for (int i = 0; i < sessionData.Quests.Count; i++)
-        {
-            CreateQuest(sessionData.Quests[i]);
         }
     }
 
@@ -49,7 +41,16 @@ public class QuestLog : MonoBehaviour
         }
         sessionData.Quests.Add(quest);
         //quests.Add(quest);
-        CreateQuest(quest);
+        GameObject gameObject = Instantiate(questPrefab, questParent);
+        QuestScript questScript = gameObject.GetComponent<QuestScript>();
+
+        // Assign reference to questscript
+        quest.QuestScript = questScript;
+        questScript.Quest = quest;
+        questScripts.Add(questScript);
+
+        gameObject.GetComponent<Text>().text = quest.Name;
+        CheckCompletion(); //Check if already completed before accepting quest
     }
 
     public void DisplayDescription(Quests quest)
@@ -93,19 +94,5 @@ public class QuestLog : MonoBehaviour
     {
         // Check if quest has the same name
         return sessionData.Quests.Exists(x => x.Name == quest.Name);
-    }
-
-    private void CreateQuest(Quests quest)
-    {
-        GameObject gameObject = Instantiate(questPrefab, questParent);
-        QuestScript questScript = gameObject.GetComponent<QuestScript>();
-
-        // Assign reference to questscript
-        quest.QuestScript = questScript;
-        questScript.Quest = quest;
-        questScripts.Add(questScript);
-
-        gameObject.GetComponent<Text>().text = quest.Name;
-        CheckCompletion(); //Check if already completed before accepting quest
     }
 }

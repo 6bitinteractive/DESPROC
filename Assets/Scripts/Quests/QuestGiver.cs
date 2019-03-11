@@ -4,17 +4,15 @@ using UnityEngine;
 
 public class QuestGiver : MonoBehaviour
 {
-    [SerializeField] private Window questWindow;
+    [SerializeField] private Window questWindow; 
     [SerializeField] private Quests[] quests;
     [SerializeField] private bool isDisplayingQuest;
-    [SerializeField] private TurtleTale.SessionData sessionData;
 
     public Quests[] Quests
     {
         get
         {
             return quests;
-            //return quests;
         }
     }
 
