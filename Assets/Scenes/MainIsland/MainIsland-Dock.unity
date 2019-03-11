@@ -1189,7 +1189,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.x
+<<<<<<< HEAD
       value: -4.3068137
+=======
+      value: -4.3130803
+>>>>>>> d3af4cefbe670e60ec832c9e7419027f516651a0
       objectReference: {fileID: 0}
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.y
@@ -2594,6 +2598,66 @@ PolygonCollider2D:
   m_CorrespondingSourceObject: {fileID: 60778670943577932, guid: bb8afe3df0efcd540b2c636b5f1e352f,
     type: 2}
   m_PrefabInternal: {fileID: 1616933681}
+<<<<<<< HEAD
+=======
+--- !u!1 &1634765925
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1634765926}
+  - component: {fileID: 1634765927}
+  m_Layer: 0
+  m_Name: Dock NPC Dialogue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1634765926
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1634765925}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 942125459}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1634765927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1634765925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d0091aee95caab41a717ad5152f6792, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueArray:
+  - questName: 
+    sentenceArray:
+    - name: Dock Guy
+      sentence: Standing in front of the sea like this always calms me down...
+    dialogueEndTrigger: {fileID: 0}
+  - questName: Bricked
+    sentenceArray:
+    - name: Dock Guy
+      sentence: Is that a scuba suit you got there? Ah, you must be the volunteer
+        sent from the Conservatory to rescue these poor turtles.
+    - name: Dock Guy
+      sentence: "I\u2019ll row you out into sea so you can get to the diving spot."
+    - name: Dock Guy
+      sentence: Are you ready? Off we go then.
+    dialogueEndTrigger: {fileID: 11400000, guid: aacf4ffd6be0fad45bd1e5d584b886d8,
+      type: 2}
+>>>>>>> d3af4cefbe670e60ec832c9e7419027f516651a0
 --- !u!1001 &1645237499
 Prefab:
   m_ObjectHideFlags: 0
