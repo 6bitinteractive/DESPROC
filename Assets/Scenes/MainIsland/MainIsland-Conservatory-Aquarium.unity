@@ -676,7 +676,7 @@ GameObject:
   m_Layer: 0
   m_Name: StartPosition-ToConservatoryInterior
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -699,7 +699,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 565212469}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.809619, y: -2.3863523, z: 0.032226562}
+  m_LocalPosition: {x: 6.809619, y: -3.02, z: 0.032226562}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -826,11 +826,11 @@ MonoBehaviour:
       m_TypeName: ResponseWithBool, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
   - name: Enter Next Area
-    gameEvent: {fileID: 11400000, guid: 1162871c6a0f51444b208120340dfcd5, type: 2}
+    gameEvent: {fileID: 11400000, guid: f633a72e49e955744ad98802fa1afd19, type: 2}
     response:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 1602648773}
           m_MethodName: LoadScene
           m_Mode: 1
           m_Arguments:
@@ -1527,11 +1527,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 2.3973236
+      value: 2.3932347
       objectReference: {fileID: 0}
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1.3637803
+      value: -1.3637655
       objectReference: {fileID: 0}
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1802,7 +1802,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fc09075b86b2a94ba3f07b6da9a235f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnEnterArea: {fileID: 11400000, guid: 1162871c6a0f51444b208120340dfcd5, type: 2}
+  OnEnterArea: {fileID: 11400000, guid: f633a72e49e955744ad98802fa1afd19, type: 2}
   nextScene: 
   playerLayerMask:
     serializedVersion: 2
