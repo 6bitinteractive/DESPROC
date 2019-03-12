@@ -9,13 +9,15 @@ public class DialogueManager : MonoBehaviour
     public Text dialogueText;
     public Player player;
     public Animator animator;
-    private Queue<Dialogue> dialogue;
-    private GameEvent trigger;
-    private Dialogue[] toDisplay;
- 
+
+    private Queue<Sentence> sentences;
+    private Dialogue[] triggerArray;
+    private Sentence[] toDisplay;
+    private GameEvent endTrigger;
+
     void Awake ()
     {
-        dialogue = new Queue<Dialogue>();
+        sentences = new Queue<Sentence>();
     }
 
     public void StartDialogue(DialogueTrigger dialogueTrigger)
@@ -24,8 +26,6 @@ public class DialogueManager : MonoBehaviour
         {
             animator.SetBool("IsOpen", true);
         }
-           
-        trigger = dialogueTrigger.dialogueEndTrigger;
 
         if(player != null)
         {
@@ -37,57 +37,73 @@ public class DialogueManager : MonoBehaviour
             }
         }
 
+        triggerArray = dialogueTrigger.dialogueArray;
+
         // Clear previous sentences
-        dialogue.Clear();
+        sentences.Clear();
 
-        // If quest log is empty or dialogue trigger doesn't contain a quest name, display default dialogue
-        if ((dialogueTrigger.questName == null) || (QuestLog.Instance == null))
+        for(int i = 0; i < triggerArray.Length; i++)
         {
-            toDisplay = dialogueTrigger.dialogueArray;
-        }
-        else
-        {
-            // If dialogue trigger quest name matches a quest on the quest list
-            if (QuestLog.Instance.sessionData.Quests.Exists(x => x.Name == dialogueTrigger.questName))
+            // If quest log is empty or dialogue trigger doesn't contain a quest name, display default dialogue
+            if ((QuestLog.Instance == null) || (triggerArray[i].questName == null))
             {
-                // Set quest dialogue array for display
-                toDisplay = dialogueTrigger.questDialogueArray;
+                Debug.Log("Default sentence set for display.");
+                toDisplay = triggerArray[0].sentenceArray;
+                endTrigger = triggerArray[0].dialogueEndTrigger;
+            }
+            // If quest log is populated
+            else
+            {
+                // If dialogue quest name matches a quest on the quest list
+                if (QuestLog.Instance.sessionData.Quests.Exists(x => x.Name == triggerArray[i].questName))
+                {
+                    // Set quest dialogue array for display
+                    Debug.Log("Quest sentence set for display.");
+                    toDisplay = triggerArray[i].sentenceArray;
+                    endTrigger = triggerArray[i].dialogueEndTrigger;
+                }
+                // If quest log is populated, but dialogue doesn't contain a quest
+                else
+                {
+                    Debug.Log("Default sentence set for display.");
+                    toDisplay = triggerArray[0].sentenceArray;
+                    endTrigger = triggerArray[0].dialogueEndTrigger;
+                }
+            }
+        }     
+
+        if (toDisplay != null)
+        {
+            foreach (Sentence sentenceEntry in toDisplay)
+            {
+                sentences.Enqueue(sentenceEntry);
             }
         }
-
-        if(toDisplay != null)
-        {
-            foreach (Dialogue dialogueEntry in toDisplay)
-            {
-                dialogue.Enqueue(dialogueEntry);
-            }
-        }
-
         DisplayNextSentence();
     }
 
     public void DisplayNextSentence()
     {
         // If no dialogue entries remain, end dialogue
-        if (dialogue.Count <= 0)
+        if (sentences.Count <= 0)
         {
             EndDialogue();
             return;
         }
 
-        Dialogue dialogueEntry = dialogue.Dequeue();
+        Sentence sentenceEntry = sentences.Dequeue();
         // Makes sure all sentence animations are stopped before typing in new sentence
         StopAllCoroutines();
-        StartCoroutine(TypeSentence(dialogueEntry));
+        StartCoroutine(TypeSentence(sentenceEntry));
     }
 
     // Types sentence per letter
-    IEnumerator TypeSentence(Dialogue dialogueEntry)
+    IEnumerator TypeSentence(Sentence sentenceEntry)
     {
-        nameText.text = dialogueEntry.name;
+        nameText.text = sentenceEntry.name;
         dialogueText.text = "";
 
-        foreach (char letter in dialogueEntry.sentence.ToCharArray())
+        foreach (char letter in sentenceEntry.sentence.ToCharArray())
         {
             // Adds letter to dialogue text string every after 1 frame
             dialogueText.text += letter;
@@ -118,9 +134,9 @@ public class DialogueManager : MonoBehaviour
             }
         }
 
-        if (trigger!= null)
+        if (endTrigger != null)
         {
-            trigger.Raise();
+            endTrigger.Raise();
         }
     }
 }

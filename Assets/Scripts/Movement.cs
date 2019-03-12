@@ -47,7 +47,17 @@ public class Movement : MonoBehaviour
 
     private IEnumerator AddForce(GameObject target)
     {
-        Vector2 force = new Vector2(-1, 0); // Hard-coded value for now
+        Vector2 force;
+        // Determine vector of force based on target's position relative to game object
+        if(target.transform.position.x < transform.position.x)
+        {
+            force = new Vector2(-1, 0);
+        }
+        else
+        {
+            force = new Vector2(0, -1);
+        }
+
         while (transform.position != target.transform.position)
         {
             rb.AddForce(force * 2);
