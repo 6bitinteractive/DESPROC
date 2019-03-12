@@ -22,6 +22,8 @@ public class SessionData : ScriptableObject
     [HideInInspector] public List<Plastic> Bin;
     [HideInInspector] public int TotalTrash;
     [HideInInspector] public List<Quests> Quests;
+    [HideInInspector] public List<Quests> QuestGiverQuests;
+    [HideInInspector] public bool isQuestGiverQuestComplete;
 
     private void OnEnable()
     {
@@ -35,5 +37,6 @@ public class SessionData : ScriptableObject
         Bin = new List<Plastic>();
         TotalTrash = 0;
         Quests = new List<Quests>();
+        QuestGiverQuests = new List<Quests>();
     }
 }

@@ -52,12 +52,16 @@ public class QuestWindow : Window
 
                     quests.Add(gameObject); // Add to list
 
-                    // If quest is complete
-                    if (QuestLog.Instance.HasQuest(quest) && quest.IsComplete)
-                    {
-                        gameObject.GetComponent<Text>().color = Color.yellow;
-                    }
 
+                    for (int i = 0; i < QuestLog.Instance.sessionData.Quests.Count; i++)
+                    {
+                        // If quest is complete
+                        if (QuestLog.Instance.HasQuest(quest) && QuestLog.Instance.sessionData.Quests[i].IsComplete)
+                        {
+                            gameObject.GetComponent<Text>().color = Color.yellow;
+                        }
+                    }
+                   
                     // If quest is accepted
                     if (QuestLog.Instance.HasQuest(quest))
                     {
@@ -77,19 +81,22 @@ public class QuestWindow : Window
         {
             this.selectedQuest = quest;
 
-            //If the quest log already has the quest and its complete
-            if (QuestLog.Instance.HasQuest(quest) && quest.IsComplete)
+            for (int i = 0; i < QuestLog.Instance.sessionData.Quests.Count; i++)
             {
-                acceptButton.SetActive(false); // Hide accept button
-                completeButton.SetActive(true); // Display complete button
+                //If the quest log already has the quest and its complete
+                if (QuestLog.Instance.HasQuest(quest) && QuestLog.Instance.sessionData.Quests[i].IsComplete)
+                {
+                    acceptButton.SetActive(false); // Hide accept button
+                    completeButton.SetActive(true); // Display complete button
+                }
             }
 
-            // If doesnt have quest
-            else if (!QuestLog.Instance.HasQuest(quest))
+            if (!QuestLog.Instance.HasQuest(quest))
             {
                 acceptButton.SetActive(true); // Display accept button
             }
-            
+
+
             backButton.SetActive(true); // Display back button
             questArea.gameObject.SetActive(false); // Hide quest
             questDescriptionText.SetActive(true); // Display description
@@ -126,7 +133,7 @@ public class QuestWindow : Window
     {
         if (selectedQuest.IsComplete)
         {
-            for (int i = 0; i < questGiver.Quests.Length; i++)
+            for (int i = 0; i < questGiver.Quests.Count; i++)
             {
                 // If the quest is the same as the selected
                 if (selectedQuest == questGiver.Quests[i])
@@ -136,5 +143,6 @@ public class QuestWindow : Window
                 }
             }
         }
+        QuestLog.Instance.RemoveQuest(selectedQuest.QuestScript);
     }
 }

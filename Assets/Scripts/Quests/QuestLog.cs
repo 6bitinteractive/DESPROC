@@ -13,7 +13,7 @@ public class QuestLog : MonoBehaviour
 
     private Quests selected;
     private List<QuestScript> questScripts = new List<QuestScript>();
- //   public List<Quests> quests = new List<Quests>();
+
     private static QuestLog instance;
 
     public static QuestLog Instance
@@ -28,6 +28,18 @@ public class QuestLog : MonoBehaviour
         }
     }
 
+    public void Awake()
+    {
+        // Create quests for persistence
+        if (sessionData.Quests != null)
+        {
+            foreach (Quests quest in sessionData.Quests)
+            {
+                CreateQuest(quest);
+            }
+        }     
+    }
+
     public void AcceptQuest(Quests quest)
     {
         foreach (CollectObjective objectives in quest.CollectObjectives)
@@ -37,19 +49,10 @@ public class QuestLog : MonoBehaviour
             quest.IsAccepted = true;
             quest.OnQuestAccepted.Invoke();
            // objectives.CheckItemCount(); used for checking in inventory fix later
-
         }
+
         sessionData.Quests.Add(quest);
-        //quests.Add(quest);
-        GameObject gameObject = Instantiate(questPrefab, questParent);
-        QuestScript questScript = gameObject.GetComponent<QuestScript>();
-
-        // Assign reference to questscript
-        quest.QuestScript = questScript;
-        questScript.Quest = quest;
-        questScripts.Add(questScript);
-
-        gameObject.GetComponent<Text>().text = quest.Name;
+        CreateQuest(quest);
         CheckCompletion(); //Check if already completed before accepting quest
     }
 
@@ -86,6 +89,7 @@ public class QuestLog : MonoBehaviour
     {
         foreach (QuestScript questScript in questScripts)
         {
+            questScript.Quest.QuestGiver.UpdateQuestStatus();
             questScript.IsComplete();
         }
     }
@@ -94,5 +98,34 @@ public class QuestLog : MonoBehaviour
     {
         // Check if quest has the same name
         return sessionData.Quests.Exists(x => x.Name == quest.Name);
+    }
+
+    public void RemoveQuest(QuestScript questScript)
+    {
+        if (questScript !=  null)
+        {
+            questScripts.Remove(questScript);
+            Destroy(questScript.gameObject);
+            sessionData.Quests.Remove(questScript.Quest);
+            questDescriptionText.text = string.Empty;
+            selected = null;
+            questScript.Quest.QuestGiver.UpdateQuestStatus();
+            questScript = null;
+        }
+      
+
+    }
+
+    public void CreateQuest(Quests quest)
+    {
+        GameObject gameObject = Instantiate(questPrefab, questParent);
+        QuestScript questScript = gameObject.GetComponent<QuestScript>();
+
+        // Assign reference to questscript
+        quest.QuestScript = questScript;
+        questScript.Quest = quest;
+        questScripts.Add(questScript);
+
+        gameObject.GetComponent<Text>().text = quest.Name;
     }
 }

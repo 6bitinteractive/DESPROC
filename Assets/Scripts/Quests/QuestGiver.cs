@@ -5,14 +5,25 @@ using UnityEngine;
 public class QuestGiver : MonoBehaviour
 {
     [SerializeField] private Window questWindow; 
-    [SerializeField] private Quests[] quests;
+    [SerializeField] private List<Quests> quests;
     [SerializeField] private bool isDisplayingQuest;
+    private bool isQuestComplete;
+    public TurtleTale.SessionData sessionData;
 
-    public Quests[] Quests
+    public List<Quests> Quests
     {
         get
         {
-            return quests;
+            return  quests;
+        }
+    }
+
+    private void Start()
+    {
+        foreach (Quests quest in quests)
+        {
+           // sessionData.QuestGiverQuests = quest;
+            quest.QuestGiver = this;
         }
     }
 
@@ -26,6 +37,22 @@ public class QuestGiver : MonoBehaviour
         set
         {
             isDisplayingQuest = value;
+        }
+    }
+
+    public void UpdateQuestStatus()
+    {
+        {
+            foreach (Quests quest in quests)
+            {
+                if (quest != null)
+                {
+                    if (quest.IsComplete && QuestLog.Instance.HasQuest(quest))
+                    {
+                        Debug.Log("Updated Quest");
+                    }
+                }
+            }
         }
     }
 }
