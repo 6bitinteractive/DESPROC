@@ -8,7 +8,7 @@ public class QuestGiver : MonoBehaviour
     [SerializeField] private List<Quests> quests;
     [SerializeField] private bool isDisplayingQuest;
     private bool isQuestComplete;
-    public TurtleTale.SessionData sessionData;
+   // public TurtleTale.SessionData sessionData;
 
     public List<Quests> Quests
     {
@@ -22,7 +22,7 @@ public class QuestGiver : MonoBehaviour
     {
         foreach (Quests quest in quests)
         {
-           // sessionData.QuestGiverQuests = quest;
+           // sessionData.QuestGiverQuests.Add(i);
             quest.QuestGiver = this;
         }
     }
