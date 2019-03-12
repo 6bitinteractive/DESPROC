@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "TrashSet", fileName = "TrashSet00")]
+[CreateAssetMenu(menuName = "Deprecated/Sorting Minigame/Trash Set", fileName = "TrashSet00")]
 
 public class TrashSet : ScriptableObject
 {

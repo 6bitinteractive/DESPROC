@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Plastic/PlasticFactory", fileName = "Plastics")]
+[CreateAssetMenu(menuName = "Deprecated/Interactable/Plastic/Plastic Factory", fileName = "Plastics")]
 public class PlasticFactory : Factory
 {
 }

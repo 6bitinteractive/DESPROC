@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Turtle", fileName = "Turtle")]
+[CreateAssetMenu(menuName = "Deprecated/Interactable/Turtle", fileName = "Turtle")]
 public class Turtle : InteractableObject
 {
 }

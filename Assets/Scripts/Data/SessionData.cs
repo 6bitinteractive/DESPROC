@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace TurtleTale
 {
-    [CreateAssetMenu(menuName = "Session Data", fileName = "SessionData")]
+    [CreateAssetMenu(menuName = "Persistent Data/Session Data", fileName = "SessionData")]
     public class SessionData : ScriptableObject
     {
         [SerializeField] private float baseTortgold;

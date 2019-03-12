@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Instruction", fileName = "Instruction00")]
+[CreateAssetMenu(menuName = "Deprecated/Sorting Minigame/Instruction", fileName = "Instruction00")]
 
 public class Instruction : ScriptableObject
 {
