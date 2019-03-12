@@ -1049,32 +1049,32 @@ Prefab:
     - target: {fileID: 224802849875863162, guid: 8aef3f968f36d2c43b16b003bdde55cd,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 0.00012814999
+      value: 0.000021338463
       objectReference: {fileID: 0}
     - target: {fileID: 224395240637213162, guid: 8aef3f968f36d2c43b16b003bdde55cd,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 0.000091552734
+      value: 0.000015258789
       objectReference: {fileID: 0}
     - target: {fileID: 224395240637213162, guid: 8aef3f968f36d2c43b16b003bdde55cd,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 175.21994
+      value: 175.21999
       objectReference: {fileID: 0}
     - target: {fileID: 224191691394393926, guid: 8aef3f968f36d2c43b16b003bdde55cd,
         type: 2}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 0.000000059604645
       objectReference: {fileID: 0}
     - target: {fileID: 224957337536730784, guid: 8aef3f968f36d2c43b16b003bdde55cd,
         type: 2}
       propertyPath: m_AnchorMin.y
-      value: 0.00000014477027
+      value: 0.16878557
       objectReference: {fileID: 0}
     - target: {fileID: 224216171344163492, guid: 8aef3f968f36d2c43b16b003bdde55cd,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 95.04951
+      value: 96.74418
       objectReference: {fileID: 0}
     - target: {fileID: 114124586305894636, guid: 8aef3f968f36d2c43b16b003bdde55cd,
         type: 2}
@@ -1085,7 +1085,7 @@ Prefab:
     - target: {fileID: 224802849875863162, guid: 8aef3f968f36d2c43b16b003bdde55cd,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 246.37993
+      value: 175.22
       objectReference: {fileID: 0}
     - target: {fileID: 114949159045052704, guid: 8aef3f968f36d2c43b16b003bdde55cd,
         type: 2}
@@ -1115,7 +1115,12 @@ Prefab:
     - target: {fileID: 224957337536730784, guid: 8aef3f968f36d2c43b16b003bdde55cd,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0.8312145
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224884052028164382, guid: 8aef3f968f36d2c43b16b003bdde55cd,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8aef3f968f36d2c43b16b003bdde55cd, type: 2}
@@ -1663,6 +1668,200 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eadb399a3521df84586cf52e1a80ba4e, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &876209822
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1780947801888508, guid: a346d595de319884ab34d1af63815e4c,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 876209827}
+  - component: {fileID: 876209826}
+  - component: {fileID: 876209825}
+  - component: {fileID: 876209824}
+  - component: {fileID: 876209823}
+  m_Layer: 12
+  m_Name: Quest Giver (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &876209823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 876209822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1d05b2eec370de489613bb06feb6ac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnNPCTalk:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1951419938}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1951419940}
+        m_MethodName: DisplayQuests
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 876209824}
+          m_ObjectArgumentAssemblyTypeName: QuestGiver, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &876209824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 876209822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c24433325fca0541a83f9fd5ad28fdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questWindow: {fileID: 1951419940}
+  quests:
+  - OnQuestAccepted:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1379944491}
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 876209822}
+          m_MethodName: 
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    Name: afdesfertfsr
+    Objective: estgreftgsrse
+    Description: setgsetgsetgrfsegtedtgsrtge
+    collectObjectives:
+    - amount: 3
+      objectiveTag: Plastic
+      OnPickup:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      OnCompletion:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+  isDisplayingQuest: 0
+  tempQuests: []
+  sessionData: {fileID: 11400000, guid: d145efb78b7a3894d99040295d0cceb3, type: 2}
+--- !u!212 &876209825
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 212183115273966742, guid: a346d595de319884ab34d1af63815e4c,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 876209822}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 57f042c64cc80734e8139a979cfa2edb, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 9.35, y: 4.57}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!58 &876209826
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 58118083237843952, guid: a346d595de319884ab34d1af63815e4c,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 876209822}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 2
+--- !u!4 &876209827
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 4481069727240146, guid: a346d595de319884ab34d1af63815e4c,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 876209822}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.715, y: -3.514, z: 0}
+  m_LocalScale: {x: 0.13, y: 0.13, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &921904340
 GameObject:
   m_ObjectHideFlags: 0
@@ -2226,6 +2425,8 @@ MonoBehaviour:
         m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
   isDisplayingQuest: 0
+  tempQuests: []
+  sessionData: {fileID: 11400000, guid: d145efb78b7a3894d99040295d0cceb3, type: 2}
 --- !u!212 &967168267
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2386,11 +2587,12 @@ MonoBehaviour:
     sentenceArray:
     - name: Bob
       sentence: Nep
+    dialogueEndTrigger: {fileID: 0}
   - questName: What Makes TheSky Blue
     sentenceArray:
     - name: Bob
       sentence: QuestNep
-  dialogueEndTrigger: {fileID: 0}
+    dialogueEndTrigger: {fileID: 0}
 --- !u!1001 &1028738970
 Prefab:
   m_ObjectHideFlags: 0
@@ -2521,7 +2723,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1051765740}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.31002265, y: -3.01802, z: -10}
+  m_LocalPosition: {x: -0.3100224, y: -3.0180209, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
