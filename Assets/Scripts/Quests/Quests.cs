@@ -7,6 +7,7 @@ using UnityEngine.Events;
 public class Quests
 {
     public QuestScript QuestScript { get; set; }
+    public QuestGiver QuestGiver{ get; set; }
     public UnityEvent OnQuestAccepted = new UnityEvent();
     private bool isAccepted;
 
