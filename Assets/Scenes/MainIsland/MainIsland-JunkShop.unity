@@ -135,7 +135,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 72298696}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.7833339, y: -1.2446979, z: -0.28125}
+  m_LocalPosition: {x: -2.16, y: -1.2446979, z: -0.28125}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1958488853}
@@ -344,7 +344,7 @@ MonoBehaviour:
     response:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 718680891}
+        - m_Target: {fileID: 0}
           m_MethodName: SetActive
           m_Mode: 6
           m_Arguments:
@@ -355,7 +355,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-        - m_Target: {fileID: 718680890}
+        - m_Target: {fileID: 0}
           m_MethodName: DisplayQuests
           m_Mode: 2
           m_Arguments:
@@ -472,11 +472,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1.779932
+      value: 1.7765121
       objectReference: {fileID: 0}
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.64207184
+      value: -0.6420785
       objectReference: {fileID: 0}
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.z
@@ -594,17 +594,6 @@ PolygonCollider2D:
   m_CorrespondingSourceObject: {fileID: 60778670943577932, guid: bb8afe3df0efcd540b2c636b5f1e352f,
     type: 2}
   m_PrefabInternal: {fileID: 194884699}
---- !u!114 &718680890 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114665334435242628, guid: bfbabfdd22addb54891582c16f6d89cf,
-    type: 2}
-  m_PrefabInternal: {fileID: 848643089}
-  m_Script: {fileID: 11500000, guid: dca93c2a1ae76cb4cb4c5f6a955321ec, type: 3}
---- !u!1 &718680891 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1017963205068382, guid: bfbabfdd22addb54891582c16f6d89cf,
-    type: 2}
-  m_PrefabInternal: {fileID: 848643089}
 --- !u!1 &720518251
 GameObject:
   m_ObjectHideFlags: 0
@@ -628,7 +617,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 720518251}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.43, y: -1.05, z: -0.28125}
+  m_LocalPosition: {x: 7.53, y: -0.72, z: -0.28125}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -839,6 +828,66 @@ Prefab:
         type: 2}
       propertyPath: m_AnchorMax.y
       value: 0.83121455
+      objectReference: {fileID: 0}
+    - target: {fileID: 224488950997202800, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.00006711483
+      objectReference: {fileID: 0}
+    - target: {fileID: 224352437526545658, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.000030517578
+      objectReference: {fileID: 0}
+    - target: {fileID: 224352437526545658, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 175.22005
+      objectReference: {fileID: 0}
+    - target: {fileID: 224801277658616096, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224601879398917460, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0.16878563
+      objectReference: {fileID: 0}
+    - target: {fileID: 224350376004828462, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 101.17647
+      objectReference: {fileID: 0}
+    - target: {fileID: 224488950997202800, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 175.22003
+      objectReference: {fileID: 0}
+    - target: {fileID: 114798148428578992, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: m_Value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114798148428578992, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: m_Size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114519964177514732, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: m_Value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224601879398917460, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224801277658616096, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0.99999994
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfbabfdd22addb54891582c16f6d89cf, type: 2}
@@ -1608,6 +1657,12 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43227935ae7068f41b9cdba08a3285e8, type: 2}
   m_IsPrefabAsset: 0
+--- !u!114 &1520659943 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114737864590116522, guid: bfbabfdd22addb54891582c16f6d89cf,
+    type: 2}
+  m_PrefabInternal: {fileID: 848643089}
+  m_Script: {fileID: 11500000, guid: dca93c2a1ae76cb4cb4c5f6a955321ec, type: 3}
 --- !u!1 &1538445795
 GameObject:
   m_ObjectHideFlags: 0
@@ -2160,7 +2215,7 @@ GameObject:
   - component: {fileID: 1787504188}
   - component: {fileID: 1787504189}
   m_Layer: 0
-  m_Name: Renaldo Dialogue
+  m_Name: Carding Dialogue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2193,23 +2248,23 @@ MonoBehaviour:
   dialogueArray:
   - questName: 
     sentenceArray:
-    - name: Renaldo
-      sentence: Test
+    - name: Carding
+      sentence: It sure is hot out today, isn't it?
     dialogueEndTrigger: {fileID: 0}
   - questName: Building Bridges
     sentenceArray:
-    - name: Renaldo
+    - name: Carding
       sentence: Ahh, what a pain...
-    - name: Renaldo
+    - name: Carding
       sentence: Oh, are you here to help repair this here bridge? You couldn't have
         come at a more perfect time!
-    - name: Renaldo
+    - name: Carding
       sentence: See, I can easily fix this in a jiffy. It's just that I don't have
         any materials to work with!
-    - name: Renaldo
+    - name: Carding
       sentence: If you bring me ecobricks, I could use it as foundation for building
         and cementing! Nifty, huh?
-    - name: Renaldo
+    - name: Carding
       sentence: All you need are plastics and a bottle! If you help with the cleanup
         efforts at the docks, I'm sure you can find a bunch.
     dialogueEndTrigger: {fileID: 11400000, guid: aacf4ffd6be0fad45bd1e5d584b886d8,
@@ -2334,7 +2389,7 @@ GameObject:
   - component: {fileID: 1958488859}
   - component: {fileID: 1958488858}
   m_Layer: 12
-  m_Name: Renaldo
+  m_Name: Carding
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2404,9 +2459,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.00000023841858}
+  m_Offset: {x: 0, y: -2.5}
   serializedVersion: 2
-  m_Radius: 3.6599998
+  m_Radius: 1.5
 --- !u!114 &1958488856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2477,7 +2532,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c24433325fca0541a83f9fd5ad28fdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questWindow: {fileID: 718680890}
+  questWindow: {fileID: 1520659943}
   quests:
   - OnQuestAccepted:
       m_PersistentCalls:
@@ -2485,11 +2540,14 @@ MonoBehaviour:
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
     Name: Bricked
-    Objective: Talk to Dock Guy
-    Description: 
+    Objective: Talk to Renaldo
+    Description: If you help with the cleanup efforts at the docks, I'm sure you can
+      find a bunch of plastic. Renaldo, who likes to go on plastic cleanup dives from
+      time to time, would probably appreciate your help. He usually likes to spend
+      his free time enjoying the sea breeze at the dock.
     collectObjectives:
     - amount: 1
-      objectiveTag: Dock Guy
+      objectiveTag: Renaldo
       OnPickup:
         m_PersistentCalls:
           m_Calls: []

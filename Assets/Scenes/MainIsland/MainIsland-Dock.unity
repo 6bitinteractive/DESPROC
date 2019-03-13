@@ -345,8 +345,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -113176751
-  m_SortingLayer: -3
+  m_SortingLayerID: -763151919
+  m_SortingLayer: -1
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: f9e97eddb353dde4a9c4eddc36abc1c9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -946,8 +946,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -113176751
-  m_SortingLayer: -3
+  m_SortingLayerID: -763151919
+  m_SortingLayer: -1
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: fb2655cc7364d94419621bf180b3a24f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1067,7 +1067,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -4.3257565
+      value: -4.3146453
       objectReference: {fileID: 0}
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.y
@@ -2232,6 +2232,16 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: EndDialogue
       objectReference: {fileID: 0}
+    - target: {fileID: 224352437526545658, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224488950997202800, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.000024437904
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfbabfdd22addb54891582c16f6d89cf, type: 2}
   m_IsPrefabAsset: 0
@@ -2416,7 +2426,7 @@ GameObject:
   - component: {fileID: 1634765926}
   - component: {fileID: 1634765927}
   m_Layer: 0
-  m_Name: Dock NPC Dialogue
+  m_Name: Renaldo Dialogue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2449,17 +2459,20 @@ MonoBehaviour:
   dialogueArray:
   - questName: 
     sentenceArray:
-    - name: Dock Guy
+    - name: Renaldo
       sentence: Standing in front of the sea like this always calms me down...
     dialogueEndTrigger: {fileID: 0}
   - questName: Bricked
     sentenceArray:
-    - name: Dock Guy
+    - name: Renaldo
       sentence: Is that a scuba suit you got there? Ah, you must be the volunteer
-        sent from the Conservatory to rescue these poor turtles.
-    - name: Dock Guy
+        sent from the Conservatory to help with the plastic cleanup dive.
+    - name: Renaldo
+      sentence: I'm glad more youth are getting involved in activities like this.
+        A lot of poor marine animals end up in danger because of this plastic debris.
+    - name: Renaldo
       sentence: "I\u2019ll row you out into sea so you can get to the diving spot."
-    - name: Dock Guy
+    - name: Renaldo
       sentence: Are you ready? Off we go then.
     dialogueEndTrigger: {fileID: 11400000, guid: aacf4ffd6be0fad45bd1e5d584b886d8,
       type: 2}
@@ -2673,7 +2686,7 @@ GameObject:
   - component: {fileID: 1664885849}
   - component: {fileID: 1664885853}
   m_Layer: 12
-  m_Name: Dock Guy
+  m_Name: Renaldo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2755,9 +2768,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -2.5}
   serializedVersion: 2
-  m_Radius: 3.6599998
+  m_Radius: 1.5
 --- !u!212 &1664885852
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3199,7 +3212,7 @@ Prefab:
     - target: {fileID: 61118825899227080, guid: 8112c8a055c72f9438acff2b612311ec,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8112c8a055c72f9438acff2b612311ec, type: 2}
@@ -3226,7 +3239,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -8.18721, y: 1.4024271}
+  m_Offset: {x: -8.18721, y: 0.98757184}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -3237,7 +3250,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.49770355, y: 1.1894386}
+  m_Size: {x: 0.49770355, y: 0.3597281}
   m_EdgeRadius: 0
 --- !u!61 &1796269203
 BoxCollider2D:
@@ -3251,7 +3264,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -6.085983, y: 1.4284266}
+  m_Offset: {x: -6.085983, y: 0.9778975}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -3262,7 +3275,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.48977375, y: 1.2563918}
+  m_Size: {x: 0.48977375, y: 0.35533357}
   m_EdgeRadius: 0
 --- !u!60 &1796269204
 PolygonCollider2D:
@@ -3346,7 +3359,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -8.374125, y: -1.7683644}
+    - - {x: -8.348312, y: -1.7748173}
+      - {x: -8.309266, y: 0.7706828}
+      - {x: -8.369707, y: 0.76551574}
+      - {x: -8.41473, y: -1.8180021}
       - {x: -8.896945, y: -1.7440629}
       - {x: -10.039354, y: -1.5535465}
       - {x: -10.848391, y: -1.7347859}
@@ -3361,8 +3377,10 @@ PolygonCollider2D:
       - {x: -0.75740635, y: -1.6902635}
       - {x: -2.1479437, y: -1.6690851}
       - {x: -4.5351157, y: -1.1011096}
-      - {x: -5.729779, y: -1.3828604}
-      - {x: -5.6992645, y: -3.5457969}
+      - {x: -5.7509947, y: -1.5515995}
+      - {x: -5.8003364, y: 0.81295204}
+      - {x: -5.854262, y: 0.79354227}
+      - {x: -5.798569, y: -3.2767966}
       - {x: -6.053432, y: -3.6510205}
       - {x: -7.8411813, y: -3.7906234}
       - {x: -8.110203, y: -3.6676288}
@@ -3573,12 +3591,12 @@ Prefab:
     - target: {fileID: 224915109498146858, guid: 948c79c039b90224d9eb60edffd7c1d6,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 0.0000060796738
+      value: -0.000009179115
       objectReference: {fileID: 0}
     - target: {fileID: 224492832295298682, guid: 948c79c039b90224d9eb60edffd7c1d6,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -0.000091552734
+      value: -0.000076293945
       objectReference: {fileID: 0}
     - target: {fileID: 114944712622678518, guid: 948c79c039b90224d9eb60edffd7c1d6,
         type: 2}
@@ -3629,6 +3647,11 @@ Prefab:
       value: 
       objectReference: {fileID: 11400000, guid: d145efb78b7a3894d99040295d0cceb3,
         type: 2}
+    - target: {fileID: 224752277391650900, guid: 948c79c039b90224d9eb60edffd7c1d6,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 948c79c039b90224d9eb60edffd7c1d6, type: 2}
   m_IsPrefabAsset: 0

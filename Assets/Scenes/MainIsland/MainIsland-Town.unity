@@ -404,7 +404,7 @@ Prefab:
     - target: {fileID: 224450656773617330, guid: 948c79c039b90224d9eb60edffd7c1d6,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 97.36309
+      value: 101.17647
       objectReference: {fileID: 0}
     - target: {fileID: 224118758801124430, guid: 948c79c039b90224d9eb60edffd7c1d6,
         type: 2}
@@ -414,12 +414,12 @@ Prefab:
     - target: {fileID: 224915109498146858, guid: 948c79c039b90224d9eb60edffd7c1d6,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -0.000009179115
+      value: 0.00005185604
       objectReference: {fileID: 0}
     - target: {fileID: 224492832295298682, guid: 948c79c039b90224d9eb60edffd7c1d6,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 0.000015258789
+      value: -0.000030517578
       objectReference: {fileID: 0}
     - target: {fileID: 224492832295298682, guid: 948c79c039b90224d9eb60edffd7c1d6,
         type: 2}
@@ -468,6 +468,11 @@ Prefab:
       value: 
       objectReference: {fileID: 11400000, guid: d145efb78b7a3894d99040295d0cceb3,
         type: 2}
+    - target: {fileID: 224752277391650900, guid: 948c79c039b90224d9eb60edffd7c1d6,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 948c79c039b90224d9eb60edffd7c1d6, type: 2}
   m_IsPrefabAsset: 0
@@ -952,7 +957,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.8845031
+      value: -0.89252543
       objectReference: {fileID: 0}
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1078,6 +1083,26 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: EndDialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 224683777571098390, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 224780468676827952, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 224346173301093704, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 224488950997202800, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.000024437904
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfbabfdd22addb54891582c16f6d89cf, type: 2}
@@ -3160,10 +3185,11 @@ MonoBehaviour:
       sentence: That broken bridge has really put us all in a pickle! We can't even
         get to the junkshop anymore!
     - name: Aling Nena
-      sentence: I know! You should talk to Renaldo. I'm sure he knows a way to repair
-        it.
+      sentence: Poor Carding. He's been standing in front of that bridge, trying to
+        figure out a way to fix it.
     - name: Aling Nena
-      sentence: He fixes the plumbing in my kitchen whenever we have leaks, you know?
+      sentence: You should go talk to him! I'm sure a young, energetic lad such as
+        yourself would be able to help out!
     - name: Aling Nena
       sentence: I'm pretty sure I saw him around the area west of here. Unless my
         eyes are failing me, that is! I am quite old, hahaha!
