@@ -1054,12 +1054,12 @@ Prefab:
     - target: {fileID: 224395240637213162, guid: 8aef3f968f36d2c43b16b003bdde55cd,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 0.000015258789
+      value: 0.000030517578
       objectReference: {fileID: 0}
     - target: {fileID: 224395240637213162, guid: 8aef3f968f36d2c43b16b003bdde55cd,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 175.21999
+      value: 175.21997
       objectReference: {fileID: 0}
     - target: {fileID: 224191691394393926, guid: 8aef3f968f36d2c43b16b003bdde55cd,
         type: 2}
@@ -1069,12 +1069,12 @@ Prefab:
     - target: {fileID: 224957337536730784, guid: 8aef3f968f36d2c43b16b003bdde55cd,
         type: 2}
       propertyPath: m_AnchorMin.y
-      value: 0.16878557
+      value: 0.00000021715539
       objectReference: {fileID: 0}
     - target: {fileID: 224216171344163492, guid: 8aef3f968f36d2c43b16b003bdde55cd,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 96.74418
+      value: 97.12062
       objectReference: {fileID: 0}
     - target: {fileID: 114124586305894636, guid: 8aef3f968f36d2c43b16b003bdde55cd,
         type: 2}
@@ -1085,7 +1085,7 @@ Prefab:
     - target: {fileID: 224802849875863162, guid: 8aef3f968f36d2c43b16b003bdde55cd,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 175.22
+      value: 246.37996
       objectReference: {fileID: 0}
     - target: {fileID: 114949159045052704, guid: 8aef3f968f36d2c43b16b003bdde55cd,
         type: 2}
@@ -1115,7 +1115,7 @@ Prefab:
     - target: {fileID: 224957337536730784, guid: 8aef3f968f36d2c43b16b003bdde55cd,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0.83121455
       objectReference: {fileID: 0}
     - target: {fileID: 224884052028164382, guid: 8aef3f968f36d2c43b16b003bdde55cd,
         type: 2}
@@ -1702,27 +1702,16 @@ MonoBehaviour:
   OnNPCTalk:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1951419938}
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 876209824}
+        m_MethodName: AcceptFirstQuest
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1951419940}
-        m_MethodName: DisplayQuests
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 876209824}
-          m_ObjectArgumentAssemblyTypeName: QuestGiver, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
@@ -1766,7 +1755,93 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
-    Name: afdesfertfsr
+    Name: 1
+    Objective: estgreftgsrse
+    Description: setgsetgsetgrfsegtedtgsrtge
+    collectObjectives:
+    - amount: 3
+      objectiveTag: Plastic
+      OnPickup:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      OnCompletion:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+  - OnQuestAccepted:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1379944491}
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 876209822}
+          m_MethodName: 
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    Name: 2
+    Objective: estgreftgsrse
+    Description: setgsetgsetgrfsegtedtgsrtge
+    collectObjectives:
+    - amount: 3
+      objectiveTag: Plastic
+      OnPickup:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      OnCompletion:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+  - OnQuestAccepted:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1379944491}
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 876209822}
+          m_MethodName: 
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    Name: 3
     Objective: estgreftgsrse
     Description: setgsetgsetgrfsegtedtgsrtge
     collectObjectives:
@@ -1783,8 +1858,6 @@ MonoBehaviour:
         m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
   isDisplayingQuest: 0
-  tempQuests: []
-  sessionData: {fileID: 11400000, guid: d145efb78b7a3894d99040295d0cceb3, type: 2}
 --- !u!212 &876209825
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2425,8 +2498,6 @@ MonoBehaviour:
         m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
   isDisplayingQuest: 0
-  tempQuests: []
-  sessionData: {fileID: 11400000, guid: d145efb78b7a3894d99040295d0cceb3, type: 2}
 --- !u!212 &967168267
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2723,7 +2794,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1051765740}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.3100224, y: -3.0180209, z: -10}
+  m_LocalPosition: {x: -0.31002074, y: -3.0180218, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

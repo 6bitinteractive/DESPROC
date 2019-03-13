@@ -27,6 +27,11 @@ public class QuestGiver : MonoBehaviour
         }
     }
 
+    public void AcceptFirstQuest()
+    {
+        QuestLog.Instance.AcceptQuest(quests[0]);
+    }
+
     public bool IsDisplayingQuest
     {
         get

@@ -112,8 +112,6 @@ public class QuestLog : MonoBehaviour
             questScript.Quest.QuestGiver.UpdateQuestStatus();
             questScript = null;
         }
-      
-
     }
 
     public void CreateQuest(Quests quest)
