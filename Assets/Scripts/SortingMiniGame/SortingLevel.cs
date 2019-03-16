@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
@@ -19,6 +20,11 @@ public class SortingLevel : MonoBehaviour
     [Header("UI Display")]
     [SerializeField] private Text timeText;
     [SerializeField] private Text bestTimeText;
+    [SerializeField] private GameObject actionFeedbackPanel;
+
+    public UnityEvent OnCorrectSort = new UnityEvent();
+    public UnityEvent OnIncorrectSort = new UnityEvent();
+    public UnityEvent OnEnd = new UnityEvent();
 
     private List<GameObject> plasticsToSort = new List<GameObject>();
     private List<GameObject> sortedPlastics = new List<GameObject>();
@@ -112,12 +118,10 @@ public class SortingLevel : MonoBehaviour
         {
             // Hide the object
             obj.SetActive(false);
-
-            // Remove from plasticsToSort list
-            plasticsToSort.RemoveAt(0);
         }
 
-        // TODO: Add feedback
+        // Enable feedback panel
+        actionFeedbackPanel.SetActive(true);
 
         if (correctlySorted)
         {
@@ -125,6 +129,11 @@ public class SortingLevel : MonoBehaviour
 
             // Add to sortedPlastics list
             sortedPlastics.Add(obj);
+
+            // Remove from plasticsToSort list
+            plasticsToSort.RemoveAt(0);
+
+            OnCorrectSort.Invoke();
         }
         else
         {
@@ -133,8 +142,7 @@ public class SortingLevel : MonoBehaviour
             // Reset position to plasticPosition
             obj.transform.position = plasticPosition.position;
 
-            // Add back to end of plasticToSort list
-            plasticsToSort.Add(obj);
+            OnIncorrectSort.Invoke();
         }
 
         // Show next plastic to sort
@@ -162,5 +170,7 @@ public class SortingLevel : MonoBehaviour
         // Add back whatever's unsorted to the pickedup list
         sessionData.PickedUpPlastic.Clear();
         sessionData.PickedUpPlastic.AddRange(plasticsToSort);
+
+        OnEnd.Invoke();
     }
 }
