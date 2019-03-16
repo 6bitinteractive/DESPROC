@@ -61,8 +61,8 @@ public class SortingLevel : MonoBehaviour
             bestTimeText.text = string.Format("BEST {0:00.00}", sessionData.SortingBestTime);
         }
 
-        // TODO: Get plastics from the inventory(?)
-        //plasticsToSort.AddRange(sessionData.PickedUpList);
+        // Get plastics from the inventory
+        plasticsToSort.AddRange(sessionData.PickedUpPlastic);
 
         // For testing
         for (int i = 0; i < 5; i++)

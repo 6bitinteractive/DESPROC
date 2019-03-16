@@ -43,34 +43,29 @@ public class EcobrickLevel : MonoBehaviour
 
     [Space]
 
+    public UnityEvent OnNotEnoughPlastic = new UnityEvent();
     public UnityEvent OnGameEnd = new UnityEvent();
-    public UnityEvent OnAskTap = new UnityEvent();
-    public UnityEvent OnTap = new UnityEvent();
+    public UnityEvent OnActionPrompt = new UnityEvent();
+    public UnityEvent OnActionDone = new UnityEvent();
 
     #endregion
 
     #region Private fields
     private SwipeDetector swipeDetector;
-    //private SwipeDirection[] swipeDirectionFlags;
-    private List<FoldingSet> prompts = new List<FoldingSet>(); // Ratio: 1 plastic = 1 folding set
+    private List<FoldingSet> prompts = new List<FoldingSet>(); // Ratio: 1 plastic = 1 folding set; 1 folding set = FoldingSet.MaxCount
 
     private int ecobrickCount;
     private int currentFold;
     private int currentFoldSet;
     private SwipeDirection currentDirection;
+    private SwipeDirection playerSwipe;
+    private bool playingStickAnimation;
     #endregion
 
     private void Awake()
     {
         swipeDetector = GetComponent<SwipeDetector>();
         swipeDetector.enabled = false;
-
-        // Setup list of directions
-        //swipeDirectionFlags = new SwipeDirection[directionCount];
-        //swipeDirectionFlags[0] = SwipeDirection.Left;
-        //swipeDirectionFlags[1] = SwipeDirection.Right;
-        //swipeDirectionFlags[2] = SwipeDirection.Up;
-        //swipeDirectionFlags[3] = SwipeDirection.Down;
     }
 
     private void OnEnable()
@@ -89,8 +84,8 @@ public class EcobrickLevel : MonoBehaviour
         HidePrompt();
 
         // Determine how many bottles can be filled
-        //int bottlesThatCanBeFilled = (int)(sessionData.PickedUpPlastic.Count / plasticsPerBottle);
-        int bottlesThatCanBeFilled = (int)(plasticCount / plasticsPerBottle); // TEST
+        int bottlesThatCanBeFilled = (int)(sessionData.PickedUpPlastic.Count / plasticsPerBottle);
+        //int bottlesThatCanBeFilled = (int)(plasticCount / plasticsPerBottle); // TEST
         Debug.Log("Bottles that can be filled: " + bottlesThatCanBeFilled);
 
 
@@ -119,7 +114,7 @@ public class EcobrickLevel : MonoBehaviour
         else
         {
             Debug.Log("Not enough plastics to fill a bottle.");
-            OnGameEnd.Invoke();
+            OnNotEnoughPlastic.Invoke();
         }
     }
 
@@ -176,40 +171,20 @@ public class EcobrickLevel : MonoBehaviour
         }
     }
 
-    private SwipeDirection GetDirectionPrompt()
-    {
-        // We get the direction of the next fold
-        return prompts[currentFoldSet].Folds[currentFold + 1].SwipeDirection;
-    }
-
-    private Sprite GetDirectionSprite(SwipeDirection direction)
-    {
-        switch (direction)
-        {
-            case SwipeDirection.Left:
-                return directionSprites[0];
-            case SwipeDirection.Right:
-                return directionSprites[1];
-            case SwipeDirection.Up:
-                return directionSprites[2];
-            case SwipeDirection.Down:
-                return directionSprites[3];
-            default:
-                return null;
-        }
-    }
-
     private void VerifySwipe(SwipeData swipeData)
     {
-        // If correct +1 currentFold
-        // If currentFold >= FoldSet.MaxtCount => start new bottle
+        playerSwipe = swipeData.Direction;
+        Debug.Log("Player Swiped: " + playerSwipe);
 
-        Debug.Log("Player Swiped: " + swipeData.Direction);
+        // Turn off swipe deterctor
         swipeDetector.enabled = false;
+
+        // If playing stick animation, don't move forward
+        if (playingStickAnimation) { return; }
 
         // TODO: Add feedback when correct/wrong
 
-        if (swipeData.Direction == currentDirection)
+        if (playerSwipe == currentDirection)
         {
             StartCoroutine(MoveForward());
         }
@@ -281,15 +256,30 @@ public class EcobrickLevel : MonoBehaviour
         yield return new WaitForSeconds(lastFoldDisplayDelay);
         HidePrompt();
 
-        int tap = 0;
-        while (tap != 3)
-        {
-            OnAskTap.Invoke();
-            yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
+        playingStickAnimation = true;
 
-            tap++;
-            OnTap.Invoke();
-            Debug.Log("Tap Count: " + tap);
+        int action = 0;
+        while (action != 3)
+        {
+            // Make sure playerSwipe is clear
+            playerSwipe = SwipeDirection.None;
+
+            OnActionPrompt.Invoke();
+
+            // Ask for a tap
+            //yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
+
+            // Ask for swipeDown
+            swipeDetector.enabled = true;
+            yield return new WaitUntil(() => IsDonePounding());
+
+            // Turn off swipe detector
+            swipeDetector.enabled = false;
+
+            action++;
+            Debug.Log("Action Count: " + action);
+
+            OnActionDone.Invoke();
 
             // Play stick animation
             stickAnimator.SetBool("PoundStick", true);
@@ -303,6 +293,7 @@ public class EcobrickLevel : MonoBehaviour
             stickAnimator.SetBool("PoundStick", false);
         }
 
+        playingStickAnimation = false;
     }
 
     private void OnEnd()
@@ -317,9 +308,38 @@ public class EcobrickLevel : MonoBehaviour
 
         // Remove plastics used from sessionData list
         int totalPlasticUsed = ecobrickCount * plasticsPerBottle;
-        //sessionData.PickedUpPlastic.RemoveRange(0, totalPlasticUsed);
+        if (totalPlasticUsed > 0)
+            sessionData.PickedUpPlastic.RemoveRange(0, totalPlasticUsed);
 
         OnGameEnd.Invoke();
+    }
+
+    private SwipeDirection GetDirectionPrompt()
+    {
+        // We get the direction of the next fold
+        return prompts[currentFoldSet].Folds[currentFold + 1].SwipeDirection;
+    }
+
+    private Sprite GetDirectionSprite(SwipeDirection direction)
+    {
+        switch (direction)
+        {
+            case SwipeDirection.Left:
+                return directionSprites[0];
+            case SwipeDirection.Right:
+                return directionSprites[1];
+            case SwipeDirection.Up:
+                return directionSprites[2];
+            case SwipeDirection.Down:
+                return directionSprites[3];
+            default:
+                return null;
+        }
+    }
+
+    private bool IsDonePounding()
+    {
+        return playerSwipe == SwipeDirection.Down;
     }
 
     private bool IsDonePlaying(Animator animator)
