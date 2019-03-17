@@ -40,31 +40,6 @@ public class Movement : MonoBehaviour
         rb.velocity = Vector3.zero;
     }
 
-    public void MoveToPosition(GameObject target)
-    {
-        StartCoroutine(AddForce(target));
-    }
-
-    private IEnumerator AddForce(GameObject target)
-    {
-        Vector2 force;
-        // Determine vector of force based on target's position relative to game object
-        if(target.transform.position.x < transform.position.x)
-        {
-            force = new Vector2(-1, 0);
-        }
-        else
-        {
-            force = new Vector2(0, -1);
-        }
-
-        while (transform.position != target.transform.position)
-        {
-            rb.AddForce(force * 2);
-            yield return null;
-        }
-    }
-
     private void UpdateAnimation(float xDirection, float yDirection)
     {
         // Check if no longer moving
