@@ -19,8 +19,11 @@ public class InteractObjective : Action
             {
                 if (onInteractObjective != null)
                 {
-                    objective.isCollected = true;
-                    onInteractObjective.Invoke(objective.gameObject);
+                    if (objective.enabled)
+                    {
+                        objective.isCollected = true;
+                        onInteractObjective.Invoke(objective.gameObject);
+                    }
                 }
             }
         }

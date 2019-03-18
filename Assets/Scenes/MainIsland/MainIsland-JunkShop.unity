@@ -344,7 +344,7 @@ MonoBehaviour:
     response:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 848643098}
+        - m_Target: {fileID: 848643100}
           m_MethodName: SetActive
           m_Mode: 6
           m_Arguments:
@@ -355,7 +355,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-        - m_Target: {fileID: 1520659943}
+        - m_Target: {fileID: 848643098}
           m_MethodName: DisplayQuests
           m_Mode: 2
           m_Arguments:
@@ -832,7 +832,7 @@ Prefab:
     - target: {fileID: 224488950997202800, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 0.000036597252
+      value: 0.00006711483
       objectReference: {fileID: 0}
     - target: {fileID: 224352437526545658, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
@@ -892,12 +892,12 @@ Prefab:
     - target: {fileID: 224912964868538154, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 224605478860438246, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 224346173301093704, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
@@ -912,7 +912,7 @@ Prefab:
     - target: {fileID: 224619953085637010, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 224683777571098390, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
@@ -925,6 +925,41 @@ Prefab:
       value: 
       objectReference: {fileID: 11400000, guid: d145efb78b7a3894d99040295d0cceb3,
         type: 2}
+    - target: {fileID: 224138857399267980, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 224249758436251312, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 224561213617550132, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 224071014818880638, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 224786677316838310, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 224559734026517192, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 224689000571095834, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfbabfdd22addb54891582c16f6d89cf, type: 2}
   m_IsPrefabAsset: 0
@@ -972,17 +1007,23 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 224042726800394570, guid: bfbabfdd22addb54891582c16f6d89cf,
     type: 2}
   m_PrefabInternal: {fileID: 848643089}
---- !u!1 &848643098 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1964763811142526, guid: bfbabfdd22addb54891582c16f6d89cf,
+--- !u!114 &848643098 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114051934878218450, guid: bfbabfdd22addb54891582c16f6d89cf,
     type: 2}
   m_PrefabInternal: {fileID: 848643089}
+  m_Script: {fileID: 11500000, guid: dca93c2a1ae76cb4cb4c5f6a955321ec, type: 3}
 --- !u!114 &848643099 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114264314197080944, guid: bfbabfdd22addb54891582c16f6d89cf,
     type: 2}
   m_PrefabInternal: {fileID: 848643089}
   m_Script: {fileID: 11500000, guid: 8e5e7267c178f9a44a5019cfa5aa82d9, type: 3}
+--- !u!1 &848643100 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1194679291613080, guid: bfbabfdd22addb54891582c16f6d89cf,
+    type: 2}
+  m_PrefabInternal: {fileID: 848643089}
 --- !u!1001 &1027988243
 Prefab:
   m_ObjectHideFlags: 0
@@ -1709,12 +1750,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43227935ae7068f41b9cdba08a3285e8, type: 2}
   m_IsPrefabAsset: 0
---- !u!114 &1520659943 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114737864590116522, guid: bfbabfdd22addb54891582c16f6d89cf,
-    type: 2}
-  m_PrefabInternal: {fileID: 848643089}
-  m_Script: {fileID: 11500000, guid: dca93c2a1ae76cb4cb4c5f6a955321ec, type: 3}
 --- !u!1 &1538445795
 GameObject:
   m_ObjectHideFlags: 0
@@ -2321,6 +2356,13 @@ MonoBehaviour:
         efforts at the docks, I'm sure you can find a bunch.
     dialogueEndTrigger: {fileID: 11400000, guid: aacf4ffd6be0fad45bd1e5d584b886d8,
       type: 2}
+  - questName: Bricked
+    sentenceArray:
+    - name: Carding
+      sentence: If you bring me ecobricks, I could use it as foundation for building
+        and cementing! If you help with the cleanup efforts at the docks, I'm sure
+        you can find a bunch.
+    dialogueEndTrigger: {fileID: 0}
 --- !u!1 &1855855734
 GameObject:
   m_ObjectHideFlags: 0
@@ -2471,7 +2513,7 @@ Prefab:
     - target: {fileID: 224530374812474560, guid: d92f2bf6e000c3d478c15a5a95910f5f,
         type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 224530374812474560, guid: d92f2bf6e000c3d478c15a5a95910f5f,
         type: 2}
@@ -2584,7 +2626,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 848643096}
         m_MethodName: SetActive
@@ -2596,6 +2638,17 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1958488859}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 848643099}
         m_MethodName: Act
@@ -2695,7 +2748,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c24433325fca0541a83f9fd5ad28fdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questWindow: {fileID: 1520659943}
+  questWindow: {fileID: 848643098}
   quests:
   - QuestGiverName: 
     OnQuestAccepted:

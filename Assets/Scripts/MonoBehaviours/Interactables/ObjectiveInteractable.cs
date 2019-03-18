@@ -8,4 +8,9 @@ using UnityEngine.Events;
 public class ObjectiveInteractable : MonoBehaviour
 {
     public bool isCollected;
+
+    public void Start()
+    {
+
+    }
 }
