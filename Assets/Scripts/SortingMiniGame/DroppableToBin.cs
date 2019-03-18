@@ -49,7 +49,7 @@ public class DroppableToBin : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         sortingBin = collision.GetComponent<Sorting.SortingBin>();
     }

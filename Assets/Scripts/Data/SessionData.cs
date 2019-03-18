@@ -31,8 +31,7 @@ namespace TurtleTale
         public int Happiness;
         public float SortingBestTime;
         public List<Quests> Quests;
-        public List<Quests> QuestGiverQuests;
-        public bool isQuestGiverQuestComplete;
+        public List<QuestGiverData> QuestGiverDatas;
         //public AudioClip audioToPersist;
         //public float audioTimePause;
 
@@ -60,7 +59,7 @@ namespace TurtleTale
             Happiness = 0;
             SortingBestTime = 0f;
             Quests = new List<Quests>();
-            QuestGiverQuests = new List<Quests>();
+            QuestGiverDatas = new List<QuestGiverData>();
         }
     }
 }
