@@ -6,6 +6,7 @@ using UnityEngine.Events;
 [System.Serializable]
 public class Quests
 {
+    public string QuestGiverName;
     public QuestScript QuestScript { get; set; }
     public QuestGiver QuestGiver{ get; set; }
     public UnityEvent OnQuestAccepted = new UnityEvent();
@@ -26,6 +27,11 @@ public class Quests
 
     public bool IsComplete
     {
+        set
+        {
+            IsComplete = value;
+        }
+
         get
         {
             foreach (Objective objective in collectObjectives)
@@ -104,6 +110,10 @@ public abstract class Objective
 
     public bool IsComplete
     {
+        set
+        {
+            IsComplete = value;
+        }
         get
         {
             return CurrentAmount >= Amount;
@@ -119,7 +129,7 @@ public class CollectObjective : Objective
 
     public void UpdateItemCount(GameObject objective)
     {
-        //   Debug.Log("nep");
+        // Debug.Log("nep");
         //   Debug.Log(ItemReference.name);
         // Checks if it has already been picked up
      
