@@ -42,35 +42,29 @@ public class DialogueManager : MonoBehaviour
         // Clear previous sentences
         sentences.Clear();
 
-        for(int i = 0; i < triggerArray.Length; i++)
+        for (int i = 0; i < triggerArray.Length; i++)
         {
-            // If quest log is empty or dialogue trigger doesn't contain a quest name, display default dialogue
-            if ((QuestLog.Instance == null) || (triggerArray[i].questName == null))
+            // If dialogue quest name matches a quest on the quest list
+            if (QuestLog.Instance.sessionData.Quests.Exists(x => x.Name == triggerArray[i].questName))
             {
-                Debug.Log("Default sentence set for display.");
+                for (int j = 0; j < QuestLog.Instance.sessionData.Quests.Count; j++)
+                {
+                    // If quest exists and is not complete
+                    if ((QuestLog.Instance.sessionData.Quests[j].Name == triggerArray[i].questName) && (QuestLog.Instance.sessionData.Quests[j].IsComplete == false))
+                    {
+                        // Set quest dialogue array for display
+                        toDisplay = triggerArray[i].sentenceArray;
+                        endTrigger = triggerArray[i].dialogueEndTrigger;
+                    }
+                }
+            }
+            // If quest log is populated, but dialogue doesn't contain a quest
+            else
+            {
                 toDisplay = triggerArray[0].sentenceArray;
                 endTrigger = triggerArray[0].dialogueEndTrigger;
             }
-            // If quest log is populated
-            else
-            {
-                // If dialogue quest name matches a quest on the quest list
-                if (QuestLog.Instance.sessionData.Quests.Exists(x => x.Name == triggerArray[i].questName))
-                {
-                    // Set quest dialogue array for display
-                    Debug.Log("Quest sentence set for display.");
-                    toDisplay = triggerArray[i].sentenceArray;
-                    endTrigger = triggerArray[i].dialogueEndTrigger;
-                }
-                // If quest log is populated, but dialogue doesn't contain a quest
-                else
-                {
-                    Debug.Log("Default sentence set for display.");
-                    toDisplay = triggerArray[0].sentenceArray;
-                    endTrigger = triggerArray[0].dialogueEndTrigger;
-                }
-            }
-        }     
+        }
 
         if (toDisplay != null)
         {

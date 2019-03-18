@@ -24,6 +24,9 @@ GameObject:
   - component: {fileID: 61784941575470050}
   - component: {fileID: 114066218682282850}
   - component: {fileID: 114337388206653520}
+  - component: {fileID: 58316994707614690}
+  - component: {fileID: 114017237657161010}
+  - component: {fileID: 114792434434161342}
   m_Layer: 9
   m_Name: FallingPlastic 1
   m_TagString: Untagged
@@ -64,6 +67,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!58 &58316994707614690
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1146301481400082}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 2.5
 --- !u!61 &61784941575470050
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -89,6 +107,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5, y: 5}
   m_EdgeRadius: 0
+--- !u!114 &114017237657161010
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1146301481400082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f35581f3f109c04ba4988790072af58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isCollected: 0
 --- !u!114 &114066218682282850
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -115,6 +145,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onPickup: {fileID: 11400000, guid: da5fe587848fcd849bdc144975b390cb, type: 2}
+--- !u!114 &114792434434161342
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1146301481400082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e453b8c07508684a9a7a8356f37ecc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInteract:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  plasticData: {fileID: 11400000, guid: c1de511a994600a468ca0757cfe04509, type: 2}
 --- !u!212 &212393479532453306
 SpriteRenderer:
   m_ObjectHideFlags: 1
