@@ -8,9 +8,9 @@ using Random = UnityEngine.Random;
 
 public class SortingLevel : MonoBehaviour
 {
-    [Header("Testing")]
-    [Tooltip("For testing only")]
-    [SerializeField] List<GameObject> plasticPrefabs = new List<GameObject>();
+    //[Header("Testing")]
+    //[Tooltip("For testing only")]
+    //[SerializeField] List<GameObject> plasticPrefabs = new List<GameObject>();
 
     [Header("Setup")]
     [SerializeField] private TurtleTale.SessionData sessionData;
@@ -70,12 +70,16 @@ public class SortingLevel : MonoBehaviour
         // Get plastics from the inventory
         plasticsToSort.AddRange(sessionData.PickedUpPlastic);
 
-        // For testing
         for (int i = 0; i < 5; i++)
         {
-            int randomIndex = Random.Range(0, plasticPrefabs.Count);
-            plasticsToSort.Add(Instantiate(plasticPrefabs[randomIndex], plasticPosition.position, Quaternion.identity));
-            plasticsToSort[i].AddComponent<DroppableToBin>();
+            // For testing
+            //int randomIndex = Random.Range(0, plasticPrefabs.Count);
+            //plasticsToSort.Add(Instantiate(plasticPrefabs[randomIndex], plasticPosition.position, Quaternion.identity));
+
+            plasticsToSort[i].transform.position = plasticPosition.position;
+
+            if (plasticsToSort[i].GetComponent<DroppableToBin>() == null)
+                plasticsToSort[i].AddComponent<DroppableToBin>();
         }
 
         // Hide
