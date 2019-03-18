@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TurtleTale;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,6 +15,7 @@ public class QuestWindow : Window
     [SerializeField] private GameObject completeButton;
     [SerializeField] private GameObject questDescriptionText;
     [SerializeField] private List<GameObject> quests = new List<GameObject>();
+    public SessionData sessionData;
 
     private static QuestWindow instance;
 
@@ -34,25 +36,24 @@ public class QuestWindow : Window
         this.questGiver = questGiver;
 
         if (!questGiver.IsDisplayingQuest)
-        {
+        {        
             // Clear quests
             foreach (GameObject gameObject in quests)
             {
-                Destroy(gameObject);
+               Destroy(gameObject);
             }
-
+            
             // Instantiate quests once 
-            foreach (Quests quest in questGiver.Quests)
+            foreach (Quests quest in questGiver.questGiverData.QuestGiverQuests)
             {
                 if (quest != null)
                 {
                     GameObject gameObject = Instantiate(questPrefab, questArea);
                     gameObject.GetComponent<Text>().text = quest.Name; // Display quest name
                     gameObject.GetComponent<QuestGiverQuestScript>().Quest = quest; // Set quest
-
-                    quests.Add(gameObject); // Add to list
-
-
+                    quests.Add(gameObject);
+                    
+               
                     for (int i = 0; i < QuestLog.Instance.sessionData.Quests.Count; i++)
                     {
                         // If quest is complete
@@ -96,7 +97,6 @@ public class QuestWindow : Window
                 acceptButton.SetActive(true); // Display accept button
             }
 
-
             backButton.SetActive(true); // Display back button
             questArea.gameObject.SetActive(false); // Hide quest
             questDescriptionText.SetActive(true); // Display description
@@ -133,12 +133,15 @@ public class QuestWindow : Window
     {
         if (selectedQuest.IsComplete)
         {
-            for (int i = 0; i < questGiver.Quests.Count; i++)
+            for (int i = 0; i < questGiver.questGiverData.QuestGiverQuests.Count; i++)
             {
                 // If the quest is the same as the selected
-                if (selectedQuest == questGiver.Quests[i])
+                if (selectedQuest == questGiver.questGiverData.QuestGiverQuests[i])
                 {
+                    questGiver.questGiverData.QuestGiverQuests[i] = null;
+                    questGiver.questGiverData.QuestGiverQuests.RemoveAt(i);
                     questGiver.Quests[i] = null;
+                    questGiver.Quests.RemoveAt(i);
                     questGiver.IsDisplayingQuest = false;
                 }
             }

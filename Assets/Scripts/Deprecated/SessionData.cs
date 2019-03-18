@@ -24,6 +24,7 @@ namespace Deprecated
         [HideInInspector] public List<Plastic> Bin;
         [HideInInspector] public int TotalTrash;
         [HideInInspector] public List<Quests> Quests;
+        [HideInInspector] public List<Quests> QuestGiverQuests;
 
         private void OnEnable()
         {
@@ -37,6 +38,7 @@ namespace Deprecated
             Bin = new List<Plastic>();
             TotalTrash = 0;
             Quests = new List<Quests>();
+            QuestGiverQuests = new List<Quests>();
         }
     }
 }

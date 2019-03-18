@@ -36,6 +36,12 @@ public class QuestLog : MonoBehaviour
             foreach (Quests quest in sessionData.Quests)
             {
                 CreateQuest(quest);
+                foreach (CollectObjective objectives in quest.CollectObjectives)
+                {
+                    interactObjective.onInteractObjective += new OnInteractObjective(objectives.UpdateItemCount);
+                    CheckCompletion();
+                }
+                  
             }
         }     
     }
