@@ -112,6 +112,8 @@ public class QuestLog : MonoBehaviour
         {
             questScripts.Remove(questScript);
             Destroy(questScript.gameObject);
+            Destroy(questScript.transform.parent.gameObject);
+            
             sessionData.Quests.Remove(questScript.Quest);
             questDescriptionText.text = string.Empty;
             selected = null;
