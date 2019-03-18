@@ -49,8 +49,8 @@ public class QuestWindow : Window
                 if (quest != null)
                 {
                     GameObject gameObject = Instantiate(questPrefab, questArea);
-                    gameObject.GetComponent<Text>().text = quest.Name; // Display quest name
-                    gameObject.GetComponent<QuestGiverQuestScript>().Quest = quest; // Set quest
+                    gameObject.gameObject.GetComponentInChildren<Text>().text = quest.Name; // Display quest name
+                    gameObject.gameObject.GetComponentInChildren<QuestGiverQuestScript>().Quest = quest; // Set quest
                     quests.Add(gameObject);
                     
                
@@ -59,16 +59,16 @@ public class QuestWindow : Window
                         // If quest is complete
                         if (QuestLog.Instance.HasQuest(quest) && QuestLog.Instance.sessionData.Quests[i].IsComplete)
                         {
-                            gameObject.GetComponent<Text>().color = Color.yellow;
+                            gameObject.gameObject.GetComponentInChildren<Text>().color = Color.yellow;
                         }
                     }
                    
                     // If quest is accepted
                     if (QuestLog.Instance.HasQuest(quest))
                     {
-                        Color color = gameObject.GetComponent<Text>().color;
+                        Color color = gameObject.GetComponentInChildren<Text>().color;
                         color.a = 0.5f;
-                        gameObject.GetComponent<Text>().color = color;
+                        gameObject.GetComponentInChildren<Text>().color = color;
                     }
                 }
             }
@@ -96,9 +96,7 @@ public class QuestWindow : Window
             {
                 acceptButton.SetActive(true); // Display accept button
             }
-
-            backButton.SetActive(true); // Display back button
-            questArea.gameObject.SetActive(false); // Hide quest
+   
             questDescriptionText.SetActive(true); // Display description
 
             string objectives = string.Format("<size=100>\nObjectives\n</size>");
@@ -125,7 +123,7 @@ public class QuestWindow : Window
         if (!selectedQuest.IsAccepted)
         {
             QuestLog.Instance.AcceptQuest(selectedQuest);
-            questGiver.IsDisplayingQuest = false;
+            UpdateQuestWindow();
         }
     }
 

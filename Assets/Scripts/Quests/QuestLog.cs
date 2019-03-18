@@ -123,13 +123,13 @@ public class QuestLog : MonoBehaviour
     public void CreateQuest(Quests quest)
     {
         GameObject gameObject = Instantiate(questPrefab, questParent);
-        QuestScript questScript = gameObject.GetComponent<QuestScript>();
+        QuestScript questScript = gameObject.GetComponentInChildren<QuestScript>();
 
         // Assign reference to questscript
         quest.QuestScript = questScript;
         questScript.Quest = quest;
         questScripts.Add(questScript);
 
-        gameObject.GetComponent<Text>().text = quest.Name;
+        gameObject.GetComponentInChildren<Text>().text = quest.Name;
     }
 }
