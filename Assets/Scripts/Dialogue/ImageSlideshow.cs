@@ -12,7 +12,7 @@ public class ImageSlideshow : MonoBehaviour
     public Button previousImage;
 
     [Header("Dialogue")]
-    public DialogueTrigger dialogue;
+    public DialogueTrigger dialogueTrigger;
     public Text dialogueText;
 
     private int i = 0;
@@ -20,7 +20,7 @@ public class ImageSlideshow : MonoBehaviour
     void Update()
     {
         displayImage.sprite = spriteArray[i % spriteArray.Length];
-        dialogueText.text = dialogue.dialogueArray[0].sentenceArray[i % dialogue.dialogueArray[0].sentenceArray.Length].sentence.ToString();
+        dialogueText.text = dialogueTrigger.dialogueArray[0].sentenceArray[i % dialogueTrigger.dialogueArray[0].sentenceArray.Length].sentence.ToString();
     }
 
     public void BtnNext()
