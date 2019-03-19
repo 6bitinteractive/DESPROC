@@ -27,7 +27,18 @@ public class DroppableToBin : MonoBehaviour
 
         #region Mobile Input
 #if UNITY_ANDROID || UNITY_IOS
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(touch.position);
 
+            switch (touch.phase)
+            {
+                case TouchPhase.Moved:
+                    transform.position = new Vector3(mousePosition.x, mousePosition.y, 0f);
+                    break;
+            }
+        }
 #endif
         #endregion
     }
