@@ -90,32 +90,36 @@ public class DialogueManager : MonoBehaviour
     {
         for (int i = 0; i < triggerArray.Length; i++)
         {
-            // If quest log is empty
-            if ((QuestLog.Instance.sessionData.Quests == null))
+            if(QuestLog.Instance != null)
             {
-                Debug.Log("1");
-            }
-            // If dialogue trigger quest name is empty or doesn't match any quest on the quest log
-            else if ((QuestLog.Instance.sessionData.Quests.Exists(x => x.Name == triggerArray[i].questName) == false))
-            {
-                Debug.Log("2");
-            }
-            // If dialogue quest name matches a quest on the quest list
-            else if (QuestLog.Instance.sessionData.Quests.Exists(x => x.Name == triggerArray[i].questName))
-            {
-                for (int j = 0; j < QuestLog.Instance.sessionData.Quests.Count; j++)
+                // If quest log is empty
+                if ((QuestLog.Instance.sessionData.Quests == null))
                 {
-                    // If quest exists and is not complete
-                    if ((QuestLog.Instance.sessionData.Quests[j].Name == triggerArray[i].questName) && (QuestLog.Instance.sessionData.Quests[j].IsComplete == false))
+                    Debug.Log("1");
+                }
+                // If dialogue trigger quest name is empty or doesn't match any quest on the quest log
+                else if ((QuestLog.Instance.sessionData.Quests.Exists(x => x.Name == triggerArray[i].questName) == false))
+                {
+                    Debug.Log("2");
+                }
+                // If dialogue quest name matches a quest on the quest list
+                else if (QuestLog.Instance.sessionData.Quests.Exists(x => x.Name == triggerArray[i].questName))
+                {
+                    for (int j = 0; j < QuestLog.Instance.sessionData.Quests.Count; j++)
                     {
-                        // Set quest dialogue array for display
-                        Debug.Log("Quest sentence displayed.");
-                        endTrigger = triggerArray[i].dialogueEndTrigger;
-                        return triggerArray[i].sentenceArray;
+                        // If quest exists and is not complete
+                        if ((QuestLog.Instance.sessionData.Quests[j].Name == triggerArray[i].questName) && (QuestLog.Instance.sessionData.Quests[j].IsComplete == false))
+                        {
+                            // Set quest dialogue array for display
+                            Debug.Log("Quest sentence displayed.");
+                            endTrigger = triggerArray[i].dialogueEndTrigger;
+                            return triggerArray[i].sentenceArray;
+                        }
                     }
                 }
             }
         }
+
         Debug.Log("Default sentence displayed.");
         endTrigger = triggerArray[0].dialogueEndTrigger;
         return triggerArray[0].sentenceArray;
