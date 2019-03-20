@@ -2911,6 +2911,14 @@ MonoBehaviour:
     - name: Renaldo
       sentence: Standing in front of the sea like this always calms me down...
     dialogueEndTrigger: {fileID: 0}
+  - questName: Building Bridges
+    sentenceArray:
+    - name: Renaldo
+      sentence: "Are you perhaps looking for the town, young man?\r"
+    - name: Renaldo
+      sentence: "It\u2019s just north of this here dock, actually. There ain\u2019t
+        no way you can get lost, I'm sure of it."
+    dialogueEndTrigger: {fileID: 0}
   - questName: Bricked Part 2
     sentenceArray:
     - name: Renaldo
@@ -3402,8 +3410,10 @@ MonoBehaviour:
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
     Name: Bricked Part 3
-    Objective: 
-    Description: 
+    Objective: Go back to Aling Nena
+    Description: That looks like a pretty hefty load of plastic you got there! I reckon
+      that's enough to fill up an ecobrick. You should go back to Aling Nena. She
+      can teach you how to make an ecobrick.
     collectObjectives:
     - amount: 1
       objectiveTag: Aling Nena
