@@ -7,6 +7,7 @@ using UnityEngine.Events;
 
 public class ObjectiveInteractable : MonoBehaviour
 {
+    public string Name;
     public bool isCollected;
 
     public void Start()

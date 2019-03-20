@@ -129,12 +129,14 @@ public class CollectObjective : Objective
 
     public void UpdateItemCount(GameObject objective)
     {
+        string interactableObjectiveTag = objective.GetComponent<ObjectiveInteractable>().Name;
+        //Debug.Log(interactableObjectiveTag);
         // Debug.Log("nep");
         //   Debug.Log(ItemReference.name);
         // Checks if it has already been picked up
      
         //Checks if the objectives name is the same as the type string
-        if (string.Equals(objective.name, ObjectiveTag))
+        if (string.Equals(interactableObjectiveTag, ObjectiveTag))
         {
             OnPickup.Invoke();
             CurrentAmount++;
