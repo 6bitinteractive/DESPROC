@@ -30,12 +30,13 @@ public class DroppableToBin : MonoBehaviour
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
-            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(touch.position);
+            Vector2 touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
 
             switch (touch.phase)
             {
+                case TouchPhase.Began:
                 case TouchPhase.Moved:
-                    transform.position = new Vector3(mousePosition.x, mousePosition.y, 0f);
+                    transform.position = new Vector3(touchPosition.x, touchPosition.y, 0f);
                     break;
             }
         }
