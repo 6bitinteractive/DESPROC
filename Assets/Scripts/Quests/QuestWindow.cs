@@ -96,6 +96,11 @@ public class QuestWindow : Window
             {
                 acceptButton.SetActive(true); // Display accept button
             }
+
+            else
+            {
+                acceptButton.SetActive(false);
+            }
    
             questDescriptionText.SetActive(true); // Display description
 
@@ -124,6 +129,7 @@ public class QuestWindow : Window
         {
             QuestLog.Instance.AcceptQuest(selectedQuest);
             UpdateQuestWindow();
+            acceptButton.SetActive(false);
         }
     }
 

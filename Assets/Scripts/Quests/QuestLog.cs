@@ -39,9 +39,9 @@ public class QuestLog : MonoBehaviour
                 foreach (CollectObjective objectives in quest.CollectObjectives)
                 {
                     interactObjective.onInteractObjective += new OnInteractObjective(objectives.UpdateItemCount);
-                    CheckCompletion();
-                }
-                  
+                    CheckCompletionInQuestLog();
+                    //CheckCompletion();
+                }   
             }
         }     
     }
@@ -92,6 +92,16 @@ public class QuestLog : MonoBehaviour
     }
 
     public void CheckCompletion()
+    {
+        foreach (QuestScript questScript in questScripts)
+        {
+            questScript.Quest.QuestGiver.UpdateQuestStatus();
+            questScript.IsComplete();
+            questScript.IsCompleteMessageFeed();
+        }
+    }
+
+    public void CheckCompletionInQuestLog()
     {
         foreach (QuestScript questScript in questScripts)
         {
