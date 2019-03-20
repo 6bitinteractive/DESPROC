@@ -304,6 +304,47 @@ PolygonCollider2D:
   m_CorrespondingSourceObject: {fileID: 60778670943577932, guid: bb8afe3df0efcd540b2c636b5f1e352f,
     type: 2}
   m_PrefabInternal: {fileID: 40389358}
+--- !u!1 &52447616
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 52447618}
+  - component: {fileID: 52447617}
+  m_Layer: 0
+  m_Name: Scene Load Handler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &52447617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 52447616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94e761d668323d048a292d86a578aa45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneData: {fileID: 11400000, guid: 9ca2df739ceaae04c83845d24ba2d190, type: 2}
+--- !u!4 &52447618
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 52447616}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.6615568, y: -1.0670544, z: -0.1953125}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &119387337
 Prefab:
   m_ObjectHideFlags: 0
@@ -479,6 +520,7 @@ Transform:
   m_Children:
   - {fileID: 1490578390}
   - {fileID: 1964805721}
+  - {fileID: 1120964958}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -755,6 +797,36 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: EndDialogue
       objectReference: {fileID: 0}
+    - target: {fileID: 114586291259425282, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: dialogueTrigger
+      value: 
+      objectReference: {fileID: 1120964957}
+    - target: {fileID: 114586291259425282, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: spriteArray
+      value: 
+      objectReference: {fileID: 1180143485}
+    - target: {fileID: 114358568831537564, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 52447617}
+    - target: {fileID: 114358568831537564, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 114787871046204160, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 52447617}
+    - target: {fileID: 114787871046204160, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadScene
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfbabfdd22addb54891582c16f6d89cf, type: 2}
   m_IsPrefabAsset: 0
@@ -797,6 +869,38 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 374243514}
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &374243522 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114264314197080944, guid: bfbabfdd22addb54891582c16f6d89cf,
+    type: 2}
+  m_PrefabInternal: {fileID: 374243514}
+  m_Script: {fileID: 11500000, guid: 8e5e7267c178f9a44a5019cfa5aa82d9, type: 3}
+--- !u!114 &374243523 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114051934878218450, guid: bfbabfdd22addb54891582c16f6d89cf,
+    type: 2}
+  m_PrefabInternal: {fileID: 374243514}
+  m_Script: {fileID: 11500000, guid: dca93c2a1ae76cb4cb4c5f6a955321ec, type: 3}
+--- !u!1 &374243524 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1194679291613080, guid: bfbabfdd22addb54891582c16f6d89cf,
+    type: 2}
+  m_PrefabInternal: {fileID: 374243514}
+--- !u!1 &374243525 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1403674824359580, guid: bfbabfdd22addb54891582c16f6d89cf,
+    type: 2}
+  m_PrefabInternal: {fileID: 374243514}
+--- !u!1 &374243526 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1271090950418384, guid: bfbabfdd22addb54891582c16f6d89cf,
+    type: 2}
+  m_PrefabInternal: {fileID: 374243514}
+--- !u!1 &374243527 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1055099807341210, guid: bfbabfdd22addb54891582c16f6d89cf,
+    type: 2}
+  m_PrefabInternal: {fileID: 374243514}
 --- !u!1 &377947644
 GameObject:
   m_ObjectHideFlags: 0
@@ -2336,6 +2440,53 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1120964956
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1120964958}
+  - component: {fileID: 1120964957}
+  m_Layer: 0
+  m_Name: Ecobrick Minigame Tutorial Dialogue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1120964957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1120964956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d0091aee95caab41a717ad5152f6792, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueArray:
+  - questName: 
+    sentenceArray:
+    - name: 
+      sentence: Test
+    dialogueEndTrigger: {fileID: 0}
+--- !u!4 &1120964958
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1120964956}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1180143484}
+  m_Father: {fileID: 157004224}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1141176199
 GameObject:
   m_ObjectHideFlags: 0
@@ -2463,6 +2614,48 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1180143483
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1180143484}
+  - component: {fileID: 1180143485}
+  m_Layer: 0
+  m_Name: Ecobrick Minigame Tutorial Images
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1180143484
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1180143483}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1120964958}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1180143485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1180143483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 463c15f45aa80ae4098b0f995d1509ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: 02fd10b318f8bf04db9aafdfeee52a1a, type: 3}
 --- !u!1 &1205420003
 GameObject:
   m_ObjectHideFlags: 0
@@ -2974,6 +3167,8 @@ GameObject:
   - component: {fileID: 1442522176}
   - component: {fileID: 1442522175}
   - component: {fileID: 1442522174}
+  - component: {fileID: 1442522179}
+  - component: {fileID: 1442522180}
   m_Layer: 12
   m_Name: Aling Nena
   m_TagString: Untagged
@@ -3023,6 +3218,17 @@ MonoBehaviour:
       - m_Target: {fileID: 374243519}
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 374243522}
+        m_MethodName: Act
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3125,6 +3331,60 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1442522179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1442522172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f35581f3f109c04ba4988790072af58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Aling Nena
+  isCollected: 0
+--- !u!114 &1442522180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1442522172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c24433325fca0541a83f9fd5ad28fdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questWindow: {fileID: 374243523}
+  quests:
+  - QuestGiverName: 
+    OnQuestAccepted:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    Name: Bricked Part 2
+    Objective: Bring Aling Nena plastic
+    Description: If you help with the cleanup efforts at the docks, I'm sure you can
+      find a bunch. You can talk to Renaldo, who goes on plastic cleanup dives from
+      time to time. He usually spends his free time enjoying the sea breeze at the
+      docks.
+    collectObjectives:
+    - amount: 1
+      objectiveTag: Renaldo
+      OnPickup:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      OnCompletion:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+  isDisplayingQuest: 0
+  questGiverData: {fileID: 0}
+  sessionData: {fileID: 11400000, guid: d145efb78b7a3894d99040295d0cceb3, type: 2}
 --- !u!1 &1463742243
 GameObject:
   m_ObjectHideFlags: 0
@@ -3732,7 +3992,116 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fe2a7f21b883e64da8e9e62b88fccc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventAndResponses: []
+  eventAndResponses:
+  - name: 
+    gameEvent: {fileID: 11400000, guid: aacf4ffd6be0fad45bd1e5d584b886d8, type: 2}
+    response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 374243524}
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 374243523}
+          m_MethodName: DisplayQuests
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1442522180}
+            m_ObjectArgumentAssemblyTypeName: QuestGiver, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    responseForSentString:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: ResponseWithString, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+    responseForSentInt:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: ResponseWithInt, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+    responseForSentFloat:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: ResponseWithFloat, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+    responseForSentBool:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: ResponseWithBool, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+  - name: 
+    gameEvent: {fileID: 11400000, guid: dc80785d62a016846b6a4c5771ab7703, type: 2}
+    response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 374243525}
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 374243526}
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 374243527}
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    responseForSentString:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: ResponseWithString, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+    responseForSentInt:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: ResponseWithInt, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+    responseForSentFloat:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: ResponseWithFloat, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+    responseForSentBool:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: ResponseWithBool, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
 --- !u!114 &1741938055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4099,6 +4468,43 @@ MonoBehaviour:
     - name: Aling Nena
       sentence: In any case, be careful walking around that bridge now, dearie.
     dialogueEndTrigger: {fileID: 0}
+  - questName: Bricked Part 1
+    sentenceArray:
+    - name: Aling Nena
+      sentence: What is it, dearie? Empty plastic bottles? Why, yes, I do have those
+        in my store!
+    - name: Aling Nena
+      sentence: "I usually turn them in at the junkshop for a pretty penny, but ever
+        since the bridge broke, they\u2019ve just been piling up."
+    - name: Aling Nena
+      sentence: "Oh, but unfortunately, I don\u2019t think I have enough plastics
+        to fill it up with."
+    - name: Aling Nena
+      sentence: Ah, I know! If you help with the cleanup efforts at the docks, I'm
+        sure you can find a bunch.
+    dialogueEndTrigger: {fileID: 11400000, guid: aacf4ffd6be0fad45bd1e5d584b886d8,
+      type: 2}
+  - questName: Bricked Part 2
+    sentenceArray:
+    - name: Aling Nena
+      sentence: If you help with the cleanup efforts at the docks, I'm sure you can
+        find a bunch of plastic to fill the bottle up.
+    - name: Aling Nena
+      sentence: You can talk to Renaldo, who goes on plastic cleanup dives from time
+        to time. He usually spends his free time enjoying the sea breeze at the docks.
+    dialogueEndTrigger: {fileID: 0}
+  - questName: Bricked Part 3
+    sentenceArray:
+    - name: Aling Nena
+      sentence: Look at all this plastic you got here! I'm sure this is enough to
+        fill up several bottles or so!
+    - name: Aling Nena
+      sentence: Now then, shall I teach you how to make an ecobrick? Don't worry!
+        It's so easy, anyone can do it even at home!
+    - name: Aling Nena
+      sentence: Let's start!
+    dialogueEndTrigger: {fileID: 11400000, guid: dc80785d62a016846b6a4c5771ab7703,
+      type: 2}
 --- !u!4 &1964805721
 Transform:
   m_ObjectHideFlags: 0

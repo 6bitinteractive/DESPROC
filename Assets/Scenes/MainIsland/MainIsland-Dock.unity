@@ -1803,6 +1803,17 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1664885855}
+          m_MethodName: AcceptFirstQuest
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
     responseForSentString:
@@ -2656,7 +2667,7 @@ Prefab:
     - target: {fileID: 224336711366434096, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -0.000045776367
+      value: 0.000015258789
       objectReference: {fileID: 0}
     - target: {fileID: 224143051293295818, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
@@ -2715,6 +2726,18 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1469664323303660, guid: bfbabfdd22addb54891582c16f6d89cf,
     type: 2}
   m_PrefabInternal: {fileID: 1593808340}
+--- !u!114 &1593808349 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114051934878218450, guid: bfbabfdd22addb54891582c16f6d89cf,
+    type: 2}
+  m_PrefabInternal: {fileID: 1593808340}
+  m_Script: {fileID: 11500000, guid: dca93c2a1ae76cb4cb4c5f6a955321ec, type: 3}
+--- !u!114 &1593808350 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114264314197080944, guid: bfbabfdd22addb54891582c16f6d89cf,
+    type: 2}
+  m_PrefabInternal: {fileID: 1593808340}
+  m_Script: {fileID: 11500000, guid: 8e5e7267c178f9a44a5019cfa5aa82d9, type: 3}
 --- !u!1001 &1616933681
 Prefab:
   m_ObjectHideFlags: 0
@@ -2888,11 +2911,14 @@ MonoBehaviour:
     - name: Renaldo
       sentence: Standing in front of the sea like this always calms me down...
     dialogueEndTrigger: {fileID: 0}
-  - questName: Bricked
+  - questName: Bricked Part 2
     sentenceArray:
     - name: Renaldo
-      sentence: Is that a scuba suit you got there? Ah, you must be the volunteer
-        sent from the Conservatory to help with the plastic cleanup dive.
+      sentence: "Hmm? You say you need some plastic? The sea\u2019s full of them,
+        sonny."
+    - name: Renaldo
+      sentence: Ah, you must be the volunteer sent from the Conservatory help with
+        the cleanup dive.
     - name: Renaldo
       sentence: I'm glad more youth are getting involved in activities like this.
         A lot of poor marine animals end up in danger because of this plastic debris.
@@ -2901,6 +2927,16 @@ MonoBehaviour:
     - name: Renaldo
       sentence: Are you ready? Off we go then.
     dialogueEndTrigger: {fileID: 11400000, guid: aacf4ffd6be0fad45bd1e5d584b886d8,
+      type: 2}
+  - questName: Bricked Part 3
+    sentenceArray:
+    - name: Renaldo
+      sentence: That looks like a pretty hefty load of plastic you got there! I reckon
+        that's enough to fill up an ecobrick.
+    - name: Renaldo
+      sentence: You should go back to Aling Nena. She can teach you how to make an
+        ecobrick.
+    dialogueEndTrigger: {fileID: 11400000, guid: dc80785d62a016846b6a4c5771ab7703,
       type: 2}
 --- !u!1 &1640219579
 GameObject:
@@ -3170,6 +3206,7 @@ GameObject:
   - component: {fileID: 1664885849}
   - component: {fileID: 1664885853}
   - component: {fileID: 1664885854}
+  - component: {fileID: 1664885855}
   m_Layer: 12
   m_Name: Renaldo
   m_TagString: Untagged
@@ -3219,6 +3256,17 @@ MonoBehaviour:
       - m_Target: {fileID: 1593808348}
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1593808350}
+        m_MethodName: Act
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3314,7 +3362,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f35581f3f109c04ba4988790072af58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: 
+  Name: Renaldo
   isCollected: 0
 --- !u!95 &1664885854
 Animator:
@@ -3334,6 +3382,44 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1664885855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1664885847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c24433325fca0541a83f9fd5ad28fdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questWindow: {fileID: 1593808349}
+  quests:
+  - QuestGiverName: 
+    OnQuestAccepted:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    Name: Bricked Part 3
+    Objective: 
+    Description: 
+    collectObjectives:
+    - amount: 1
+      objectiveTag: Aling Nena
+      OnPickup:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      OnCompletion:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+  isDisplayingQuest: 0
+  questGiverData: {fileID: 0}
+  sessionData: {fileID: 11400000, guid: d145efb78b7a3894d99040295d0cceb3, type: 2}
 --- !u!1 &1686413319
 GameObject:
   m_ObjectHideFlags: 0

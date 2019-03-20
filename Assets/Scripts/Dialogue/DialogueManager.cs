@@ -95,12 +95,12 @@ public class DialogueManager : MonoBehaviour
                 // If quest log is empty
                 if ((QuestLog.Instance.sessionData.Quests == null))
                 {
-                    Debug.Log("1");
+                    //Debug.Log("1");
                 }
                 // If dialogue trigger quest name is empty or doesn't match any quest on the quest log
                 else if ((QuestLog.Instance.sessionData.Quests.Exists(x => x.Name == triggerArray[i].questName) == false))
                 {
-                    Debug.Log("2");
+                    //Debug.Log("2");
                 }
                 // If dialogue quest name matches a quest on the quest list
                 else if (QuestLog.Instance.sessionData.Quests.Exists(x => x.Name == triggerArray[i].questName))

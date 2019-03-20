@@ -1054,12 +1054,12 @@ Prefab:
     - target: {fileID: 224912964868538154, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_RootOrder
-      value: 10
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 224605478860438246, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_RootOrder
-      value: 13
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 224346173301093704, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
@@ -1095,7 +1095,7 @@ Prefab:
     - target: {fileID: 224249758436251312, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 224561213617550132, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
@@ -1105,7 +1105,7 @@ Prefab:
     - target: {fileID: 224071014818880638, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 224786677316838310, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
@@ -1145,7 +1145,7 @@ Prefab:
     - target: {fileID: 224530990922418986, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 224830209416137190, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
@@ -2723,16 +2723,15 @@ MonoBehaviour:
       sentence: If you bring me ecobricks, I could use it as foundation for building
         and cementing! Nifty, huh?
     - name: Carding
-      sentence: All you need are plastics and a bottle! If you help with the cleanup
-        efforts at the docks, I'm sure you can find a bunch.
+      sentence: All you need are plastics and a bottle! You can ask Aling Nena for
+        empty plastic bottles. She tends to the sari-sari store in town.
     dialogueEndTrigger: {fileID: 11400000, guid: aacf4ffd6be0fad45bd1e5d584b886d8,
       type: 2}
-  - questName: Bricked
+  - questName: Bricked Part 1
     sentenceArray:
     - name: Carding
-      sentence: If you bring me ecobricks, I could use it as foundation for building
-        and cementing! If you help with the cleanup efforts at the docks, I'm sure
-        you can find a bunch.
+      sentence: I need an empty plastic bottle to make an ecobrick with. You can ask
+        Aling Nena if she has any. She tends to the sari-sari store in town.
     dialogueEndTrigger: {fileID: 0}
 --- !u!1 &1855855734
 GameObject:
@@ -3127,15 +3126,13 @@ MonoBehaviour:
         m_Calls: []
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
-    Name: Bricked
-    Objective: Bring plastics back to Carding
-    Description: If you help with the cleanup efforts at the docks, I'm sure you can
-      find a bunch of plastic. Renaldo, who likes to go on plastic cleanup dives from
-      time to time, would probably appreciate your help. He usually likes to spend
-      his free time enjoying the sea breeze at the dock.
+    Name: Bricked Part 1
+    Objective: Talk to Aling Nena
+    Description: I need an empty plastic bottle to make an ecobrick with. You can
+      ask Aling Nena if she has any. She tends to the sari-sari store in town.
     collectObjectives:
-    - amount: 3
-      objectiveTag: Falling Plastic
+    - amount: 1
+      objectiveTag: Aling Nena
       OnPickup:
         m_PersistentCalls:
           m_Calls: []
