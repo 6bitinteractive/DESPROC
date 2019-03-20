@@ -19,10 +19,26 @@ public abstract class Action : MonoBehaviour
     protected virtual void Update()
     {
         //Debug.Log("Target: " + target);
+        #region Standard Input
+#if UNITY_STANDALONE_WIN
         if (Input.GetKeyDown(Key))
         {
             Act();
         }
+#endif
+        #endregion
+
+        #region Mobile Input
+#if UNITY_ANDROID || UNITY_IOS
+        if (Input.touchCount > 0)
+        {
+            if (Input.GetTouch(0).phase == TouchPhase.Began)
+            {
+                    Act();
+            }
+        }
+#endif
+        #endregion
     }
 
     protected virtual void OnTriggerStay2D(Collider2D collision)
