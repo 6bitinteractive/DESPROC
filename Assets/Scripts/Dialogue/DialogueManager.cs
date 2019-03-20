@@ -25,7 +25,7 @@ public class DialogueManager : MonoBehaviour
         // Clear cached toDisplay variable
         toDisplay = null;
 
-        if (animator != null)
+        if ((animator != null) &&  (animator.isActiveAndEnabled))
         {
             animator.SetBool("IsOpen", true);
         }
@@ -161,9 +161,22 @@ public class DialogueManager : MonoBehaviour
         dialogueText = newText;
     }
 
+    public void RaiseEventTrigger(GameEvent eventTrigger)
+    {
+        if (eventTrigger != null)
+        {
+            eventTrigger.Raise();
+        }
+    }
+
     public void EndDialogue()
     {
-        if (animator != null)
+        if (endTrigger != null)
+        {
+            endTrigger.Raise();
+        }
+
+        if ((animator != null) && (animator.isActiveAndEnabled))
         {
             animator.SetBool("IsOpen", false);
         }
@@ -175,11 +188,6 @@ public class DialogueManager : MonoBehaviour
                 player.GetComponent<Animator>().SetBool("isMoving", true);
                 player.GetComponent<Movement>().enabled = true;
             }
-        }
-
-        if (endTrigger != null)
-        {
-            endTrigger.Raise();
         }
     }
 }

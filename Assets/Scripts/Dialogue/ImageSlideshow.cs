@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ImageSlideshow : MonoBehaviour
 {
     [Header("Display")]
-    public Sprite[] spriteArray;
+    public SpriteArray spriteArray;
     public Image displayImage;
     public Button nextImage;
     public Button previousImage;
@@ -19,7 +19,7 @@ public class ImageSlideshow : MonoBehaviour
 
     void Update()
     {
-        displayImage.sprite = spriteArray[i % spriteArray.Length];
+        displayImage.sprite = spriteArray.sprites[i % spriteArray.sprites.Length];
         dialogueText.text = dialogueTrigger.dialogueArray[0].sentenceArray[i % dialogueTrigger.dialogueArray[0].sentenceArray.Length].sentence.ToString();
     }
 

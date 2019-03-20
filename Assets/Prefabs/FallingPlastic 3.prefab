@@ -26,7 +26,6 @@ GameObject:
   - component: {fileID: 114670878581861698}
   - component: {fileID: 58605564767386136}
   - component: {fileID: 114382446879544396}
-  - component: {fileID: 114334772815723056}
   m_Layer: 9
   m_Name: FallingPlastic 3
   m_TagString: Untagged
@@ -121,23 +120,6 @@ MonoBehaviour:
   Collected: 0
   Duration: 0
   BuffValue: 0
---- !u!114 &114334772815723056
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1146301481400082}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e453b8c07508684a9a7a8356f37ecc6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnInteract:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  plasticData: {fileID: 11400000, guid: faa6608b4bdbf1047b0df682b3dc1291, type: 2}
 --- !u!114 &114382446879544396
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -149,6 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f35581f3f109c04ba4988790072af58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Name: Falling Plastic
   isCollected: 0
 --- !u!114 &114670878581861698
 MonoBehaviour:
