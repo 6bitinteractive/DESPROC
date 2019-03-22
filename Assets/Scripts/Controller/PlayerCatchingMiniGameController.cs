@@ -79,6 +79,8 @@ public class PlayerCatchingMiniGameController : MonoBehaviour
     {
         yield return new WaitForSeconds(rescuingAnimation.length);
         animator.SetBool("isRescuing", false);
+        enabled = true;
+        GetComponent<PlayerController>().enabled = true;
         fallingPlasticController.onPickup.Raise();
         fallingPlasticController.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
         fallingPlasticController.gameObject.SetActive(false);
@@ -88,6 +90,8 @@ public class PlayerCatchingMiniGameController : MonoBehaviour
     IEnumerator Rescue(TurtleController turtleController)
     {
         yield return new WaitForSeconds(rescuingAnimation.length);
+        enabled = true;
+        GetComponent<PlayerController>().enabled = true;
         animator.SetBool("isRescuing", false);
         turtleController.isChoking = false;
     }
