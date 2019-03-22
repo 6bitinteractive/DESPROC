@@ -12,8 +12,11 @@ public class PlayerCatchingMiniGameController : MonoBehaviour
     private float animationDuration;
     private bool isRescuing;
 
+    private TurtleTale.SessionData sessionData;
+
     private void Start()
     {
+        sessionData = GetComponent<PlayerController>().sessionData;
         player = gameObject;
         animator = GetComponent<Animator>();
     }
@@ -41,7 +44,7 @@ public class PlayerCatchingMiniGameController : MonoBehaviour
             Ray playerToClick = new Ray(player.transform.position, hitPt - player.transform.position);
             RaycastHit2D hit = Physics2D.Raycast(playerToClick.origin, playerToClick.direction, 2.5f, LayerMask);
 
-           // Debug.DrawRay(playerToClick.origin, playerToClick.direction * 50, Color.yellow);
+            // Debug.DrawRay(playerToClick.origin, playerToClick.direction * 50, Color.yellow);
             if (hit)
             {
                 Debug.Log(hit.collider.gameObject.name);
@@ -68,8 +71,8 @@ public class PlayerCatchingMiniGameController : MonoBehaviour
                     fallingPlasticController.PickUp();
                     StartCoroutine(PickupPlastic(fallingPlasticController));
                 }
-            }   
-        }    
+            }
+        }
     }
 
     IEnumerator PickupPlastic(FallingPlasticController fallingPlasticController)
@@ -79,6 +82,7 @@ public class PlayerCatchingMiniGameController : MonoBehaviour
         fallingPlasticController.onPickup.Raise();
         fallingPlasticController.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
         fallingPlasticController.gameObject.SetActive(false);
+        sessionData.PickedUpPlastic.Add(fallingPlasticController.gameObject);
     }
 
     IEnumerator Rescue(TurtleController turtleController)

@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private TurtleTale.SessionData sessionData;
+    public TurtleTale.SessionData sessionData;
 
     Movement movement;
     Direction direction;
