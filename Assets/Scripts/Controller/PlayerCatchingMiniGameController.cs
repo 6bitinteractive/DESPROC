@@ -13,6 +13,7 @@ public class PlayerCatchingMiniGameController : MonoBehaviour
     private bool isRescuing;
 
     private TurtleTale.SessionData sessionData;
+    private GameObject collectedPlastic;
 
     private void Start()
     {
@@ -77,7 +78,7 @@ public class PlayerCatchingMiniGameController : MonoBehaviour
 
     IEnumerator PickupPlastic(FallingPlasticController fallingPlasticController)
     {
-        //sessionData.CollectedPlastic.Add(fallingPlasticController.gameObject);
+        collectedPlastic = fallingPlasticController.gameObject;
 
         yield return new WaitForSeconds(rescuingAnimation.length);
         animator.SetBool("isRescuing", false);
@@ -95,5 +96,17 @@ public class PlayerCatchingMiniGameController : MonoBehaviour
         GetComponent<Movement>().enabled = true;
         animator.SetBool("isRescuing", false);
         turtleController.isChoking = false;
+    }
+
+    // Hack: add plastic to sessionData list
+    public void AddPlasticToSessionData()
+    {
+        if (collectedPlastic)
+            sessionData.CollectedPlastic.Add(collectedPlastic);
+    }
+
+    public void ClearPlasticReference()
+    {
+        collectedPlastic = null;
     }
 }
