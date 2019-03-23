@@ -3845,11 +3845,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.021856308
+      value: 0.023506165
       objectReference: {fileID: 0}
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1.0354242
+      value: -1.0354233
       objectReference: {fileID: 0}
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.z
@@ -5374,6 +5374,7 @@ GameObject:
   - component: {fileID: 1580266843}
   - component: {fileID: 1580266845}
   - component: {fileID: 1580266844}
+  - component: {fileID: 1580266846}
   m_Layer: 5
   m_Name: MovePromptText
   m_TagString: Untagged
@@ -5433,7 +5434,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 0.9
-  m_Text: Drag the joystick to move
+  m_Text: Move text
 --- !u!222 &1580266845
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5442,6 +5443,19 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1580266842}
   m_CullTransparentMesh: 0
+--- !u!114 &1580266846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1580266842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1123b99498060404fa2b44bad777b26f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pcText: Press W/A/S/D to move
+  mobileText: Drag the joystick to move
 --- !u!1 &1589349657
 GameObject:
   m_ObjectHideFlags: 0
