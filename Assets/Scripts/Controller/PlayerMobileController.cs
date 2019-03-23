@@ -14,7 +14,7 @@ public class PlayerMobileController : MonoBehaviour
 
     private void Start()
     {
-        //#if UNITY_ANDROID || UNITY_IOS
+#if UNITY_ANDROID || UNITY_IOS
         // If we're in an android or ios device
         movement = GetComponent<Movement>();
         direction = GetComponent<Direction>();
@@ -23,10 +23,10 @@ public class PlayerMobileController : MonoBehaviour
 
         JoyStickCanvas.SetActive(true);
         enabled = true;
-//#else
-//        JoyStickCanvas.SetActive(false);
-//        enabled = false;
-//#endif
+#else
+        JoyStickCanvas.SetActive(false);
+        enabled = false;
+#endif
     }
 
     private void Update()
