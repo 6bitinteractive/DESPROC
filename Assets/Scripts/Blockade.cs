@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Blockade : MonoBehaviour
 {
-    public Plastic[] Plastics;
+    public PlasticData[] Plastics;
     public Transform SpawnLocation;
 
     // Use this for initialization

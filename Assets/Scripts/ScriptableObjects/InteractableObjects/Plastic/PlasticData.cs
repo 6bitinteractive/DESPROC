@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Plastic/Plastic", fileName = "Plastic")]
-public class Plastic : InteractableObject
+[CreateAssetMenu(menuName = "Plastic/PlasticData", fileName = "PlasticData")]
+public class PlasticData : InteractableObject
 {
     public RecycleCode RecycleCode;
     public AudioClip PickupSfx;

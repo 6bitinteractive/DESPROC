@@ -14,6 +14,7 @@ public class SortingLevel : MonoBehaviour
 
     [Header("Setup")]
     [SerializeField] private TurtleTale.SessionData sessionData;
+    [SerializeField] private GameObject plasticPrefab;
     [SerializeField] Transform plasticPosition;
     [SerializeField] Sorting.SortingBin[] sortingBins;
 
@@ -67,26 +68,16 @@ public class SortingLevel : MonoBehaviour
             bestTimeText.text = string.Format("BEST {0:00.00}", sessionData.SortingBestTime);
         }
 
-        // Get plastics from the inventory
-        plasticsToSort.AddRange(sessionData.PickedUpPlastic);
+        // Get plastics from sessionData
+        plasticsToSort.AddRange(sessionData.CollectedPlastic);
 
-        for (int i = 0; i < 5; i++)
-        {
-            // For testing
-            //int randomIndex = Random.Range(0, plasticPrefabs.Count);
-            //plasticsToSort.Add(Instantiate(plasticPrefabs[randomIndex], plasticPosition.position, Quaternion.identity));
-
-            plasticsToSort[i].transform.position = plasticPosition.position;
-
-            if (plasticsToSort[i].GetComponent<DroppableToBin>() == null)
-                plasticsToSort[i].AddComponent<DroppableToBin>();
-        }
-
-        // Hide
+        // Enable DroppableToBin component; position plastics; hide
         foreach (var plastic in plasticsToSort)
         {
-            plastic.SetActive(false);
+            plastic.GetComponent<DroppableToBin>().enabled = true;
+            plastic.transform.position = plasticPosition.position;
             plastic.transform.SetParent(plasticPosition);
+            plastic.SetActive(false);
         }
 
         ShowPlastic();
@@ -115,7 +106,7 @@ public class SortingLevel : MonoBehaviour
 
     private void Sort(GameObject obj, RecycleCode binRecycleCode)
     {
-        RecycleCode plasticRecycleCode = obj.GetComponent<PlasticInteractable>().PlasticData.RecycleCode;
+        RecycleCode plasticRecycleCode = obj.GetComponent<Plastic>().PlasticData.RecycleCode;
         bool correctlySorted = plasticRecycleCode == binRecycleCode;
 
         if (plasticsToSort[0] == obj)
@@ -168,12 +159,18 @@ public class SortingLevel : MonoBehaviour
             bestTimeText.text = string.Format("BEST {0:00.00} - New Record", sessionData.SortingBestTime);
         }
 
+        // Disable DroppableToBin component
+        foreach (var plastic in sortedPlastics)
+        {
+            plastic.GetComponent<DroppableToBin>().enabled = false;
+        }
+
         // Add sorted plastic to sessionData's ecobrick list
-        sessionData.ForEcobrick.AddRange(sortedPlastics);
+        sessionData.SortedPlastic.AddRange(sortedPlastics);
 
         // Add back whatever's unsorted to the pickedup list
-        sessionData.PickedUpPlastic.Clear();
-        sessionData.PickedUpPlastic.AddRange(plasticsToSort);
+        sessionData.CollectedPlastic.Clear();
+        sessionData.CollectedPlastic.AddRange(plasticsToSort);
 
         OnEnd.Invoke();
     }

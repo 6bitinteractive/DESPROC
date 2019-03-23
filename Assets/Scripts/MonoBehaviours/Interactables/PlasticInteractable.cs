@@ -7,9 +7,9 @@ using UnityEngine.Events;
 
 public class PlasticInteractable : Interactable
 {
-    [SerializeField] private Plastic plasticData;
+    [SerializeField] private PlasticData plasticData;
 
-    public Plastic PlasticData
+    public PlasticData PlasticData
     {
         get { return plasticData; }
     }

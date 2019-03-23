@@ -20,8 +20,8 @@ namespace Deprecated
         [HideInInspector] public float MovementSpeed;
         [HideInInspector] public float PickupSpeed;
         [HideInInspector] public float Luck;
-        [HideInInspector] public List<Plastic> Inventory;
-        [HideInInspector] public List<Plastic> Bin;
+        [HideInInspector] public List<PlasticData> Inventory;
+        [HideInInspector] public List<PlasticData> Bin;
         [HideInInspector] public int TotalTrash;
         [HideInInspector] public List<Quests> Quests;
         [HideInInspector] public List<Quests> QuestGiverQuests;
@@ -34,8 +34,8 @@ namespace Deprecated
             MovementSpeed = baseMovementSpeed;
             PickupSpeed = basePickupSpeed;
             Luck = baseLuck;
-            Inventory = new List<Plastic>();
-            Bin = new List<Plastic>();
+            Inventory = new List<PlasticData>();
+            Bin = new List<PlasticData>();
             TotalTrash = 0;
             Quests = new List<Quests>();
             QuestGiverQuests = new List<Quests>();

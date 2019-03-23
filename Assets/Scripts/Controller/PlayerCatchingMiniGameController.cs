@@ -77,6 +77,8 @@ public class PlayerCatchingMiniGameController : MonoBehaviour
 
     IEnumerator PickupPlastic(FallingPlasticController fallingPlasticController)
     {
+        //sessionData.CollectedPlastic.Add(fallingPlasticController.gameObject);
+
         yield return new WaitForSeconds(rescuingAnimation.length);
         animator.SetBool("isRescuing", false);
         enabled = true;
@@ -84,7 +86,6 @@ public class PlayerCatchingMiniGameController : MonoBehaviour
         fallingPlasticController.onPickup.Raise();
         fallingPlasticController.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
         fallingPlasticController.gameObject.SetActive(false);
-        sessionData.PickedUpPlastic.Add(fallingPlasticController.gameObject);
     }
 
     IEnumerator Rescue(TurtleController turtleController)
@@ -96,5 +97,3 @@ public class PlayerCatchingMiniGameController : MonoBehaviour
         turtleController.isChoking = false;
     }
 }
-
-

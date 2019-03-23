@@ -26,10 +26,10 @@ GameObject:
   - component: {fileID: 114210384397125694}
   - component: {fileID: 58315915181346300}
   - component: {fileID: 114755284093453874}
-  - component: {fileID: 114196889985732758}
-  - component: {fileID: 114565281870262210}
+  - component: {fileID: 114880023265250036}
+  - component: {fileID: 114058034017501220}
   m_Layer: 9
-  m_Name: FallingPlastic 4
+  m_Name: FallingPlastic 7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,7 +99,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5, y: 5}
+    oldSize: {x: 3.3, y: 3.74}
     newSize: {x: 0.38166666, y: 0.52666664}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -108,6 +108,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5, y: 5}
   m_EdgeRadius: 0
+--- !u!114 &114058034017501220
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1146301481400082}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54c3b9d3c2154644881aa56a13d1e4d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114066218682282850
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -122,18 +133,6 @@ MonoBehaviour:
   Collected: 0
   Duration: 0
   BuffValue: 0
---- !u!114 &114196889985732758
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1146301481400082}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da1e8d23d0d53044bae05d46037d811b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PlasticData: {fileID: 11400000, guid: b934c31cdef8c804b8b509a53c5be629, type: 2}
 --- !u!114 &114210384397125694
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -146,17 +145,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onPickup: {fileID: 11400000, guid: da5fe587848fcd849bdc144975b390cb, type: 2}
---- !u!114 &114565281870262210
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1146301481400082}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54c3b9d3c2154644881aa56a13d1e4d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114755284093453874
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -170,6 +158,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Falling Plastic
   isCollected: 0
+--- !u!114 &114880023265250036
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1146301481400082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da1e8d23d0d53044bae05d46037d811b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlasticData: {fileID: 11400000, guid: 2c2d91de8388ba3458a9185b368adbb2, type: 2}
 --- !u!212 &212393479532453306
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -205,7 +205,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: cba02dd5fe35b054db9f182e2e817e64, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 59ce87c2220a4f64b82bd3cf86c0a7ec, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

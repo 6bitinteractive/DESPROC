@@ -12,8 +12,8 @@ public class PlayerData : Data
     public float MovementSpeed;
     public float PickupSpeed;
     public float Luck;
-    public List<Plastic> Inventory;
-    public List<Plastic> Bin;
+    public List<PlasticData> Inventory;
+    public List<PlasticData> Bin;
     public int TotalTrash;
 
     public PlayerData()
@@ -24,8 +24,8 @@ public class PlayerData : Data
         MovementSpeed = 2.5f;
         PickupSpeed = 1f;
         Luck = 1f;
-        Inventory = new List<Plastic>();
-        Bin = new List<Plastic>();
+        Inventory = new List<PlasticData>();
+        Bin = new List<PlasticData>();
         TotalTrash = 0;
     }
 }

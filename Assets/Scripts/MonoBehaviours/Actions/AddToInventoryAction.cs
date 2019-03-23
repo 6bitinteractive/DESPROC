@@ -23,7 +23,7 @@ public class AddToInventoryAction : InventoryAction
         //for (int i = 0; i < inventoryCountInData; i++)
         //{
         //    PlasticInteractable p = Instantiate(plasticPrefab) as PlasticInteractable;
-        //    Plastic plasticInInventory = playerDataHandler.playerData.Inventory[i];
+        //    PlasticData plasticInInventory = playerDataHandler.playerData.Inventory[i];
 
         //    for (int j = 0; j < p.GetFactory().BaseObjects.Length; j++)
         //    {
@@ -46,7 +46,7 @@ public class AddToInventoryAction : InventoryAction
         //for (int i = 0; i < inventoryCountInData; i++)
         //{
         //    PlasticInteractable p = Instantiate(plasticPrefab) as PlasticInteractable;
-        //    Plastic plasticInInventory = sessionData.Inventory[i];
+        //    PlasticData plasticInInventory = sessionData.Inventory[i];
 
         //    for (int j = 0; j < p.GetFactory().BaseObjects.Length; j++)
         //    {

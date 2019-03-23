@@ -88,7 +88,7 @@ public class EcobrickLevel : MonoBehaviour
 
         // Determine how many bottles can be filled
         //int bottlesThatCanBeFilled = (int)(plasticCount / plasticsPerBottle); // TEST
-        int bottlesThatCanBeFilled = (int)(sessionData.PickedUpPlastic.Count / plasticsPerBottle);
+        int bottlesThatCanBeFilled = (int)(sessionData.CollectedPlastic.Count / plasticsPerBottle);
         Debug.Log("Bottles that can be filled: " + bottlesThatCanBeFilled);
 
 
@@ -97,7 +97,7 @@ public class EcobrickLevel : MonoBehaviour
             // Determine how many plastics will be used
             int plasticNeeded = plasticsPerBottle * bottlesThatCanBeFilled;
             //Debug.Log("Number of plastics that will be used: " + plasticNeeded + "/" + plasticCount); // TEST
-            Debug.Log("Number of plastics that will be used: " + plasticNeeded + "/" + sessionData.PickedUpPlastic.Count);
+            Debug.Log("Number of plastics that will be used: " + plasticNeeded + "/" + sessionData.CollectedPlastic.Count);
 
             // Setup the prompts based on how many plastics will be used
             for (int i = 0; i < plasticNeeded; i++)
@@ -120,7 +120,7 @@ public class EcobrickLevel : MonoBehaviour
         {
             // Show some accurate data even if player will not continue with the minigame
             UpdateEcobrickCountDisplay();
-            plasticLeftCountText.text = sessionData.PickedUpPlastic.Count.ToString();
+            plasticLeftCountText.text = sessionData.CollectedPlastic.Count.ToString();
 
             Debug.Log("Not enough plastics to fill a bottle.");
             OnNotEnoughPlastic.Invoke();
@@ -328,7 +328,7 @@ public class EcobrickLevel : MonoBehaviour
         // Remove plastics used to create an ecobrick from sessionData list
         int totalPlasticUsed = ecobrickCount * plasticsPerBottle;
         if (totalPlasticUsed > 0)
-            sessionData.PickedUpPlastic.RemoveRange(0, totalPlasticUsed);
+            sessionData.CollectedPlastic.RemoveRange(0, totalPlasticUsed);
 
         OnGameEnd.Invoke();
     }

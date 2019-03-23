@@ -21,24 +21,21 @@ namespace TurtleTale
         public float MovementSpeed;
         public float PickupSpeed;
         public float Luck;
-        public List<Plastic> Inventory;
-        public List<Plastic> Bin;
+        public List<PlasticData> Inventory;
+        public List<PlasticData> Bin;
         public int TotalPickedUp;
-        public List<GameObject> PickedUpPlastic;
-        public List<GameObject> ForEcobrick;
+        public List<GameObject> CollectedPlastic;
+        public List<GameObject> SortedPlastic;
         public int EcobricksDone;
         public int TurtleEgg;
         public int Happiness;
         public float SortingBestTime;
         public List<Quests> Quests;
         public List<QuestGiverData> QuestGiverDatas;
-        //public AudioClip audioToPersist;
-        //public float audioTimePause;
 
         private void OnEnable()
         {
             Reset();
-            //Debug.Log("Inventory Count: " + Inventory.Count);
         }
 
         public void Reset()
@@ -49,11 +46,11 @@ namespace TurtleTale
             MovementSpeed = baseMovementSpeed;
             PickupSpeed = basePickupSpeed;
             Luck = baseLuck;
-            Inventory = new List<Plastic>();
-            Bin = new List<Plastic>();
+            Inventory = new List<PlasticData>();
+            Bin = new List<PlasticData>();
             TotalPickedUp = 0;
-            PickedUpPlastic = new List<GameObject>();
-            ForEcobrick = new List<GameObject>();
+            CollectedPlastic = new List<GameObject>();
+            SortedPlastic = new List<GameObject>();
             EcobricksDone = 0;
             TurtleEgg = 0;
             Happiness = 0;

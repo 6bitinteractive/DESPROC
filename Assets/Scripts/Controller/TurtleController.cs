@@ -118,7 +118,7 @@ public class TurtleController : MonoBehaviour
         // Check if already choking
         if (!isChoking)
         {
-            // If collides with Plastic
+            // If collides with PlasticData
             if (collisionLayerMask == plasticLayerMask.value)
             {
                 plastic = collider;

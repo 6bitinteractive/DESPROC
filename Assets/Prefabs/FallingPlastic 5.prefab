@@ -26,10 +26,10 @@ GameObject:
   - component: {fileID: 114210384397125694}
   - component: {fileID: 58315915181346300}
   - component: {fileID: 114755284093453874}
-  - component: {fileID: 114196889985732758}
-  - component: {fileID: 114565281870262210}
+  - component: {fileID: 114884844233487402}
+  - component: {fileID: 114624486628783408}
   m_Layer: 9
-  m_Name: FallingPlastic 4
+  m_Name: FallingPlastic 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,7 +99,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5, y: 5}
+    oldSize: {x: 2.26, y: 3.99}
     newSize: {x: 0.38166666, y: 0.52666664}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -122,18 +122,6 @@ MonoBehaviour:
   Collected: 0
   Duration: 0
   BuffValue: 0
---- !u!114 &114196889985732758
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1146301481400082}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da1e8d23d0d53044bae05d46037d811b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PlasticData: {fileID: 11400000, guid: b934c31cdef8c804b8b509a53c5be629, type: 2}
 --- !u!114 &114210384397125694
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -146,7 +134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onPickup: {fileID: 11400000, guid: da5fe587848fcd849bdc144975b390cb, type: 2}
---- !u!114 &114565281870262210
+--- !u!114 &114624486628783408
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -170,6 +158,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Falling Plastic
   isCollected: 0
+--- !u!114 &114884844233487402
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1146301481400082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da1e8d23d0d53044bae05d46037d811b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlasticData: {fileID: 11400000, guid: faa6608b4bdbf1047b0df682b3dc1291, type: 2}
 --- !u!212 &212393479532453306
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -205,7 +205,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: cba02dd5fe35b054db9f182e2e817e64, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 51e1b20f1f329da40a2ed52e35714d3b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
