@@ -2210,12 +2210,6 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1830356290}
   m_Script: {fileID: 11500000, guid: 94ce1c0c066bbaa408d3174a3032493e, type: 3}
---- !u!114 &296190844 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114395312150901178, guid: 7c057c46234bfda49a894260009f6303,
-    type: 2}
-  m_PrefabInternal: {fileID: 1830356290}
-  m_Script: {fileID: 11500000, guid: 2173e0b69b3f40d499b4a9e5b5d65b4b, type: 3}
 --- !u!4 &296190848 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4730961827658492, guid: 7c057c46234bfda49a894260009f6303,
@@ -2906,17 +2900,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-        - m_Target: {fileID: 296190844}
-          m_MethodName: set_enabled
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
         - m_Target: {fileID: 136591469}
           m_MethodName: SetActive
           m_Mode: 6
@@ -2930,6 +2913,17 @@ MonoBehaviour:
           m_CallState: 2
         - m_Target: {fileID: 1892637689}
           m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 296190842}
+          m_MethodName: set_enabled
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -2977,7 +2971,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 296190844}
+        - m_Target: {fileID: 296190842}
           m_MethodName: set_enabled
           m_Mode: 6
           m_Arguments:
@@ -5311,7 +5305,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 179, y: -63}
-  m_SizeDelta: {x: 850, y: 104}
+  m_SizeDelta: {x: 850, y: 104.66165}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &792126641
 GameObject:
@@ -10271,7 +10265,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1488840217}
   m_HandleRect: {fileID: 1488840215}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -10845,11 +10839,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4654429208968598, guid: a3c80656ef1b8d74cad3a320b8b124f3, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.28363112
+      value: 0.28362444
       objectReference: {fileID: 0}
     - target: {fileID: 4654429208968598, guid: a3c80656ef1b8d74cad3a320b8b124f3, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2.7010424
+      value: -2.7009737
       objectReference: {fileID: 0}
     - target: {fileID: 4654429208968598, guid: a3c80656ef1b8d74cad3a320b8b124f3, type: 2}
       propertyPath: m_LocalPosition.z
@@ -11232,6 +11226,16 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114725191558592840, guid: 7c057c46234bfda49a894260009f6303,
+        type: 2}
+      propertyPath: OnAnimEnded.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 296190842}
+    - target: {fileID: 114725191558592840, guid: 7c057c46234bfda49a894260009f6303,
+        type: 2}
+      propertyPath: OnAnimStart.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 296190842}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c057c46234bfda49a894260009f6303, type: 2}
   m_IsPrefabAsset: 0
