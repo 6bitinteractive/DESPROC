@@ -32,8 +32,10 @@ public class EcobrickLevel : MonoBehaviour
     [SerializeField] private Text directionText;
     [SerializeField] private Text ecobrickCountText;
     [SerializeField] private Text ecobrickTotalCountText;
+    [SerializeField] private Text plasticLeftCountText;
     [SerializeField] private Animator bottleAnimator;
     [SerializeField] private Animator stickAnimator;
+    [SerializeField] private ParticleSystem particles;
 
     [Space]
 
@@ -57,6 +59,7 @@ public class EcobrickLevel : MonoBehaviour
     private int ecobrickCount;
     private int currentFold;
     private int currentFoldSet;
+    private int plasticLeft;
     private SwipeDirection currentDirection;
     private SwipeDirection playerSwipe;
     private bool playingStickAnimation;
@@ -84,8 +87,8 @@ public class EcobrickLevel : MonoBehaviour
         HidePrompt();
 
         // Determine how many bottles can be filled
-        int bottlesThatCanBeFilled = (int)(sessionData.PickedUpPlastic.Count / plasticsPerBottle);
         //int bottlesThatCanBeFilled = (int)(plasticCount / plasticsPerBottle); // TEST
+        int bottlesThatCanBeFilled = (int)(sessionData.PickedUpPlastic.Count / plasticsPerBottle);
         Debug.Log("Bottles that can be filled: " + bottlesThatCanBeFilled);
 
 
@@ -93,9 +96,8 @@ public class EcobrickLevel : MonoBehaviour
         {
             // Determine how many plastics will be used
             int plasticNeeded = plasticsPerBottle * bottlesThatCanBeFilled;
-            //Debug.Log("Number of plastics that will be used: " + plasticNeeded + "/" + sessionData.PickedUpPlastic.Count);
-            Debug.Log("Number of plastics that will be used: " + plasticNeeded + "/" + plasticCount); // TEST
-
+            //Debug.Log("Number of plastics that will be used: " + plasticNeeded + "/" + plasticCount); // TEST
+            Debug.Log("Number of plastics that will be used: " + plasticNeeded + "/" + sessionData.PickedUpPlastic.Count);
 
             // Setup the prompts based on how many plastics will be used
             for (int i = 0; i < plasticNeeded; i++)
@@ -105,7 +107,10 @@ public class EcobrickLevel : MonoBehaviour
             }
 
             // Update count display
-            UpdateCountDisplay();
+            UpdateEcobrickCountDisplay();
+
+            plasticLeft = plasticNeeded;
+            UpdatePlasticLeftCountDisplay();
 
             // Turn on bottle animation
             bottleAnimator.SetBool("StartGame", true);
@@ -113,15 +118,19 @@ public class EcobrickLevel : MonoBehaviour
         }
         else
         {
+            // Show some accurate data even if player will not continue with the minigame
+            UpdateEcobrickCountDisplay();
+            plasticLeftCountText.text = sessionData.PickedUpPlastic.Count.ToString();
+
             Debug.Log("Not enough plastics to fill a bottle.");
             OnNotEnoughPlastic.Invoke();
         }
     }
 
-    private void UpdateCountDisplay()
+    private void UpdateEcobrickCountDisplay()
     {
         ecobrickCountText.text = ecobrickCount.ToString();
-        ecobrickTotalCountText.text = string.Format("TOTAL {0}", sessionData.EcobricksDone.ToString());
+        //ecobrickTotalCountText.text = string.Format("TOTAL {0}", sessionData.EcobricksDone.ToString());
     }
 
     private IEnumerator StartNewBottle()
@@ -146,7 +155,6 @@ public class EcobrickLevel : MonoBehaviour
     private void ShowPrompt()
     {
         // Set sprite
-        //if (currentFoldSet < curre)
         promptDisplay.sprite = prompts[currentFoldSet].Folds[currentFold].Sprite;
 
         // Display
@@ -201,7 +209,7 @@ public class EcobrickLevel : MonoBehaviour
         currentFold++;
         Debug.Log(currentFold);
 
-        // If we've reached the end of the current set
+        // If we've reached the end of the current set, i.e. we're done with one plastic
         if (currentFold >= FoldingSet.MaxCount)
         {
             // Reset current fold count
@@ -210,21 +218,29 @@ public class EcobrickLevel : MonoBehaviour
             // Move to next fold set
             currentFoldSet++;
 
+            // Update plastic left count
+            plasticLeft--;
+            UpdatePlasticLeftCountDisplay();
+
+            // Play feedback; supposedly the bottle's shown being filled up by plastic
+            particles.Play();
+
             Debug.Log("Move to next fold set");
-            yield return StartCoroutine(PlayStickAnimation());
 
             // Finished an ecobrick
-            if ((currentFoldSet >= plasticsPerBottle - 1) && (currentFoldSet % (plasticsPerBottle - 1) == 0))
+            if ((currentFoldSet != 0) && (currentFoldSet % plasticsPerBottle == 0))
             {
+                yield return StartCoroutine(PlayStickAnimation());
+
                 // +1 Ecobrick Count
                 ecobrickCount++;
                 sessionData.EcobricksDone++;
-                UpdateCountDisplay();
+                UpdateEcobrickCountDisplay();
 
                 // If we've reached the end
                 if (currentFoldSet >= prompts.Count - 1)
                 {
-                    OnEnd();
+                    EndGameSession();
                     yield break;
                 }
 
@@ -271,32 +287,35 @@ public class EcobrickLevel : MonoBehaviour
 
             // Ask for swipeDown
             swipeDetector.enabled = true;
-            yield return new WaitUntil(() => IsDonePounding());
+            yield return new WaitUntil(() => PlayerHasSwiped());
 
             // Turn off swipe detector
             swipeDetector.enabled = false;
 
-            action++;
-            Debug.Log("Action Count: " + action);
+            if (playerSwipe == SwipeDirection.Down)
+            {
+                action++;
+                Debug.Log("Action Count: " + action);
 
-            OnActionDone.Invoke();
+                OnActionDone.Invoke();
 
-            // Play stick animation
-            stickAnimator.SetBool("PoundStick", true);
+                // Play stick animation
+                stickAnimator.SetBool("PoundStick", true);
 
-            // Wait until we enter current state
-            yield return new WaitUntil(() => stickAnimator.GetCurrentAnimatorStateInfo(0).IsName("PoundStick"));
+                // Wait until we enter current state
+                yield return new WaitUntil(() => stickAnimator.GetCurrentAnimatorStateInfo(0).IsName("PoundStick"));
 
-            // Wait for the animation
-            yield return new WaitUntil(() => IsDonePlaying(stickAnimator));
-            Debug.Log("Done playing stick animation: " + IsDonePlaying(stickAnimator));
-            stickAnimator.SetBool("PoundStick", false);
+                // Wait for the animation
+                yield return new WaitUntil(() => IsDonePlaying(stickAnimator));
+                Debug.Log("Done playing stick animation: " + IsDonePlaying(stickAnimator));
+                stickAnimator.SetBool("PoundStick", false);
+            }
         }
 
         playingStickAnimation = false;
     }
 
-    private void OnEnd()
+    public void EndGameSession()
     {
         Debug.Log("Minigame End");
         HidePrompt();
@@ -306,7 +325,7 @@ public class EcobrickLevel : MonoBehaviour
         bottleAnimator.SetBool("StartGame", false);
         stickAnimator.SetBool("PoundStick", false);
 
-        // Remove plastics used from sessionData list
+        // Remove plastics used to create an ecobrick from sessionData list
         int totalPlasticUsed = ecobrickCount * plasticsPerBottle;
         if (totalPlasticUsed > 0)
             sessionData.PickedUpPlastic.RemoveRange(0, totalPlasticUsed);
@@ -337,9 +356,9 @@ public class EcobrickLevel : MonoBehaviour
         }
     }
 
-    private bool IsDonePounding()
+    private bool PlayerHasSwiped()
     {
-        return playerSwipe == SwipeDirection.Down;
+        return playerSwipe != SwipeDirection.None;
     }
 
     private bool IsDonePlaying(Animator animator)
@@ -351,5 +370,10 @@ public class EcobrickLevel : MonoBehaviour
     {
         promptDisplay.enabled = false;
         directionPanel.SetActive(false);
+    }
+
+    private void UpdatePlasticLeftCountDisplay()
+    {
+        plasticLeftCountText.text = plasticLeft.ToString();
     }
 }
