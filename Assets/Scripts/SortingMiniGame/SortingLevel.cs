@@ -161,14 +161,15 @@ public class SortingLevel : MonoBehaviour
 
         // Disable DroppableToBin component
         foreach (var plastic in sortedPlastics)
-        {
             plastic.GetComponent<DroppableToBin>().enabled = false;
-        }
+
+        foreach (var plastic in plasticsToSort)
+            plastic.GetComponent<DroppableToBin>().enabled = false;
 
         // Add sorted plastic to sessionData's ecobrick list
         sessionData.SortedPlastic.AddRange(sortedPlastics);
 
-        // Add back whatever's unsorted to the pickedup list
+        // Add back whatever's unsorted to the collected list
         sessionData.CollectedPlastic.Clear();
         sessionData.CollectedPlastic.AddRange(plasticsToSort);
 

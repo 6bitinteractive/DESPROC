@@ -88,6 +88,7 @@ public class EcobrickLevel : MonoBehaviour
 
         // Determine how many bottles can be filled
         //int bottlesThatCanBeFilled = (int)(plasticCount / plasticsPerBottle); // TEST
+        //int bottlesThatCanBeFilled = (int)(sessionData.SortedPlastic.Count / plasticsPerBottle); // Original design: sorted plastics are used for ecobrick minigame
         int bottlesThatCanBeFilled = (int)(sessionData.CollectedPlastic.Count / plasticsPerBottle);
         Debug.Log("Bottles that can be filled: " + bottlesThatCanBeFilled);
 
@@ -97,6 +98,7 @@ public class EcobrickLevel : MonoBehaviour
             // Determine how many plastics will be used
             int plasticNeeded = plasticsPerBottle * bottlesThatCanBeFilled;
             //Debug.Log("Number of plastics that will be used: " + plasticNeeded + "/" + plasticCount); // TEST
+            //Debug.Log("Number of plastics that will be used: " + plasticNeeded + "/" + sessionData.SortedPlastic.Count);
             Debug.Log("Number of plastics that will be used: " + plasticNeeded + "/" + sessionData.CollectedPlastic.Count);
 
             // Setup the prompts based on how many plastics will be used
@@ -120,6 +122,7 @@ public class EcobrickLevel : MonoBehaviour
         {
             // Show some accurate data even if player will not continue with the minigame
             UpdateEcobrickCountDisplay();
+            //plasticLeftCountText.text = sessionData.SortedPlastic.Count.ToString();
             plasticLeftCountText.text = sessionData.CollectedPlastic.Count.ToString();
 
             Debug.Log("Not enough plastics to fill a bottle.");
@@ -222,8 +225,12 @@ public class EcobrickLevel : MonoBehaviour
             plasticLeft--;
             UpdatePlasticLeftCountDisplay();
 
+            // Hide the prompt
+            Invoke("HidePrompt", lastFoldDisplayDelay * 0.4f);
+
             // Play feedback; supposedly the bottle's shown being filled up by plastic
             particles.Play();
+            yield return new WaitWhile(() => particles.isPlaying);
 
             Debug.Log("Move to next fold set");
 
@@ -328,7 +335,10 @@ public class EcobrickLevel : MonoBehaviour
         // Remove plastics used to create an ecobrick from sessionData list
         int totalPlasticUsed = ecobrickCount * plasticsPerBottle;
         if (totalPlasticUsed > 0)
+        {
+            //sessionData.SortedPlastic.RemoveRange(0, totalPlasticUsed);
             sessionData.CollectedPlastic.RemoveRange(0, totalPlasticUsed);
+        }
 
         OnGameEnd.Invoke();
     }
