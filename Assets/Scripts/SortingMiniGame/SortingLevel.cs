@@ -21,6 +21,7 @@ public class SortingLevel : MonoBehaviour
     [Header("UI Display")]
     [SerializeField] private Text timeText;
     [SerializeField] private Text bestTimeText;
+    [SerializeField] private Text plasticLeftCountText;
     [SerializeField] private GameObject actionFeedbackPanel;
 
     public UnityEvent OnCorrectSort = new UnityEvent();
@@ -79,6 +80,8 @@ public class SortingLevel : MonoBehaviour
             plasticsToSort.Add(plastic);
         }
 
+        UpdatePlasticLeftCountDisplay();
+
         ShowPlastic();
     }
 
@@ -93,6 +96,8 @@ public class SortingLevel : MonoBehaviour
 
     private void ShowPlastic()
     {
+        UpdatePlasticLeftCountDisplay();
+
         if (plasticsToSort.Count > 0)
         {
             plasticsToSort[0].SetActive(true);
@@ -172,5 +177,10 @@ public class SortingLevel : MonoBehaviour
             sessionData.CollectedPlastic.Add(plastic.GetComponent<Plastic>().PlasticData);
 
         OnEnd.Invoke();
+    }
+
+    private void UpdatePlasticLeftCountDisplay()
+    {
+        plasticLeftCountText.text = plasticsToSort.Count.ToString();
     }
 }
