@@ -140,7 +140,7 @@ Transform:
   m_Children:
   - {fileID: 1958488853}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &90283196
 GameObject:
@@ -420,6 +420,7 @@ Transform:
   m_Children:
   - {fileID: 1787504188}
   - {fileID: 461987588}
+  - {fileID: 651249416}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -791,7 +792,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &461987587
 GameObject:
@@ -858,11 +859,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1.7823601
+      value: 1.7729568
       objectReference: {fileID: 0}
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.6420661
+      value: -0.64208734
       objectReference: {fileID: 0}
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1104,6 +1105,52 @@ PolygonCollider2D:
   m_CorrespondingSourceObject: {fileID: 60778670943577932, guid: bb8afe3df0efcd540b2c636b5f1e352f,
     type: 2}
   m_PrefabInternal: {fileID: 194884699}
+--- !u!1 &651249415
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 651249416}
+  - component: {fileID: 651249417}
+  m_Layer: 0
+  m_Name: Junkshop Closed Dialogue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &651249416
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 651249415}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 214361378}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &651249417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 651249415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d0091aee95caab41a717ad5152f6792, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueArray:
+  - questName: 
+    sentenceArray:
+    - name: 
+      sentence: Junkshop closed for the day. Come back tomorrow. - Carding
+    dialogueEndTrigger: {fileID: 0}
 --- !u!1 &709186811
 GameObject:
   m_ObjectHideFlags: 0
@@ -1206,7 +1253,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &720518253
 MonoBehaviour:
@@ -1419,7 +1466,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4894992979352498, guid: bfbabfdd22addb54891582c16f6d89cf, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 114964840124237320, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
@@ -1489,7 +1536,7 @@ Prefab:
     - target: {fileID: 224143051293295818, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 103.111115
+      value: 103.62818
       objectReference: {fileID: 0}
     - target: {fileID: 114735247798239610, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
@@ -1741,7 +1788,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4603144457613274, guid: 8112c8a055c72f9438acff2b612311ec, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 61280763191319334, guid: 8112c8a055c72f9438acff2b612311ec,
         type: 2}
@@ -2342,7 +2389,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4753531658644794, guid: 5f73c90bf8342ec4ba686336cb6eb4b7, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 114451943748435160, guid: 5f73c90bf8342ec4ba686336cb6eb4b7,
         type: 2}
@@ -2431,6 +2478,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1279879412}
   - component: {fileID: 1279879413}
+  - component: {fileID: 1279879414}
   m_Layer: 0
   m_Name: Alter Scene On Quest Status
   m_TagString: Untagged
@@ -2538,6 +2586,51 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &1279879414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1279879411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 713b841de5edba246966548c7308af1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sessionData: {fileID: 11400000, guid: d145efb78b7a3894d99040295d0cceb3, type: 2}
+  questName: All in a Day's Work
+  OnQuestNotCompleted:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2067937819}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2119521663}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnQuestCompleted:
+    m_PersistentCalls:
+      m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &1291398092
@@ -2834,7 +2927,7 @@ Transform:
   - {fileID: 516542556}
   - {fileID: 1506828129}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1416511649
 GameObject:
@@ -3746,7 +3839,7 @@ Transform:
   - {fileID: 279408157}
   - {fileID: 2051624763}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1864006550
 GameObject:
@@ -4104,7 +4197,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1981345281
 GameObject:
@@ -4291,7 +4384,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4753531658644794, guid: 5f73c90bf8342ec4ba686336cb6eb4b7, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 114451943748435160, guid: 5f73c90bf8342ec4ba686336cb6eb4b7,
         type: 2}
@@ -4420,3 +4513,90 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f73c90bf8342ec4ba686336cb6eb4b7, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &2067937819 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1853647736725186, guid: 5f73c90bf8342ec4ba686336cb6eb4b7,
+    type: 2}
+  m_PrefabInternal: {fileID: 2067937818}
+--- !u!1 &2119521663
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2119521665}
+  - component: {fileID: 2119521664}
+  - component: {fileID: 2119521666}
+  m_Layer: 0
+  m_Name: Junkshop Closed Dialogue Trigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!61 &2119521664
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2119521663}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.43326616, y: -0.39765608}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2, y: 0.7}
+  m_EdgeRadius: 0
+--- !u!4 &2119521665
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2119521663}
+  m_LocalRotation: {x: -0, y: -0, z: 0.20767309, w: 0.9781983}
+  m_LocalPosition: {x: -13.44, y: -1.66, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 23.972002}
+--- !u!114 &2119521666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2119521663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c8f9d60387d159489526645efd0fd7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnCollision:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 651249417}
+        m_MethodName: TriggerDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
