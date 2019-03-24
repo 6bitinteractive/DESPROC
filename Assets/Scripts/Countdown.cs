@@ -34,8 +34,10 @@ public class Countdown : MonoBehaviour
     {
         CountdownText.text = Mathf.Floor(CountdownValue / 60).ToString("00") + ":" + Mathf.FloorToInt(CountdownValue % 60).ToString("00"); // Display countdown
 
-        if (CountdownValue <= 0) OnCountdownEnd(); // If countdown ended call onCountdownEnd function
-
+        if (CountdownValue <= 0)
+        {
+           OnCountdownEnd(); // If countdown ended call onCountdownEnd function
+        }
     }
 
     public IEnumerator StartCountdown()
