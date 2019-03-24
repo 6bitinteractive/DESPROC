@@ -92,7 +92,8 @@ public class EcobrickLevel : MonoBehaviour
         // Determine how many bottles can be filled
         //int bottlesThatCanBeFilled = (int)(plasticCount / plasticsPerBottle); // TEST
         //int bottlesThatCanBeFilled = (int)(sessionData.SortedPlastic.Count / plasticsPerBottle); // Original design: sorted plastics are used for ecobrick minigame
-        int bottlesThatCanBeFilled = (int)(sessionData.CollectedPlastic.Count / plasticsPerBottle);
+        //int bottlesThatCanBeFilled = (int)(sessionData.CollectedPlastic.Count / plasticsPerBottle);
+        int bottlesThatCanBeFilled = (int)(sessionData.CollectedPlastic.Count + 5 / plasticsPerBottle); // Add 5 plastics on start to prevent player from getting locked out of ecobrick minigame
         Debug.Log("Bottles that can be filled: " + bottlesThatCanBeFilled);
 
 
