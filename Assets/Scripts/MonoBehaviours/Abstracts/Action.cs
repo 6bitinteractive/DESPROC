@@ -27,38 +27,38 @@ public abstract class Action : MonoBehaviour
             Act();
         }
 
-        if (Input.GetMouseButtonUp(0) && canInteractAgain)
-        {
-            Vector2 inputPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            RaycastHit2D hit = Physics2D.Raycast(inputPosition, Vector2.zero, Mathf.Infinity, 1 << interactableLayerMask);
+        //if (Input.GetMouseButtonUp(0) && canInteractAgain)
+        //{
+        //    Vector2 inputPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        //    RaycastHit2D hit = Physics2D.Raycast(inputPosition, Vector2.zero, Mathf.Infinity, 1 << interactableLayerMask);
 
-            if (hit.transform != null)
-            {
-                canInteractAgain = false;
-                //Debug.Log(hit.transform.gameObject);
-                Act();
-            }
-        }
+        //    if (hit.transform != null)
+        //    {
+        //        canInteractAgain = false;
+        //        //Debug.Log(hit.transform.gameObject);
+        //        Act();
+        //    }
+        //}
 #endif
         #endregion
 
         #region Mobile Input
 #if UNITY_ANDROID || UNITY_IOS
-        if (Input.touchCount > 0)
-        {
-            Touch touch = Input.GetTouch(0);
-            if (touch.phase == TouchPhase.Ended && canInteractAgain)
-            {
-                Vector2 inputPosition = Camera.main.ScreenToWorldPoint(touch.position);
-                RaycastHit2D hit = Physics2D.Raycast(inputPosition, Vector2.zero, Mathf.Infinity, 1 << interactableLayerMask);
+        //if (Input.touchCount > 0)
+        //{
+        //    Touch touch = Input.GetTouch(0);
+        //    if (touch.phase == TouchPhase.Ended && canInteractAgain)
+        //    {
+        //        Vector2 inputPosition = Camera.main.ScreenToWorldPoint(touch.position);
+        //        RaycastHit2D hit = Physics2D.Raycast(inputPosition, Vector2.zero, Mathf.Infinity, 1 << interactableLayerMask);
 
-                if (hit.transform != null)
-                {
-                    canInteractAgain = false;
-                    Act();
-                }
-            }
-        }
+        //        if (hit.transform != null)
+        //        {
+        //            canInteractAgain = false;
+        //            Act();
+        //        }
+        //    }
+        //}
 #endif
         #endregion
     }
