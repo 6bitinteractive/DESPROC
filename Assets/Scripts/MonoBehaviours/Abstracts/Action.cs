@@ -29,13 +29,12 @@ public abstract class Action : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0) && canInteractAgain)
         {
-            canInteractAgain = false;
-
             Vector2 inputPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(inputPosition, Vector2.zero, Mathf.Infinity, 1 << interactableLayerMask);
 
             if (hit.transform != null)
             {
+                canInteractAgain = false;
                 //Debug.Log(hit.transform.gameObject);
                 Act();
             }
@@ -50,13 +49,12 @@ public abstract class Action : MonoBehaviour
             Touch touch = Input.GetTouch(0);
             if (touch.phase == TouchPhase.Ended && canInteractAgain)
             {
-                canInteractAgain = false;
-
                 Vector2 inputPosition = Camera.main.ScreenToWorldPoint(touch.position);
                 RaycastHit2D hit = Physics2D.Raycast(inputPosition, Vector2.zero, Mathf.Infinity, 1 << interactableLayerMask);
 
                 if (hit.transform != null)
                 {
+                    canInteractAgain = false;
                     Act();
                 }
             }
