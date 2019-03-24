@@ -102,7 +102,7 @@ public class PlayerCatchingMiniGameController : MonoBehaviour
     public void AddPlasticToSessionData()
     {
         if (collectedPlastic)
-            sessionData.CollectedPlastic.Add(collectedPlastic);
+            sessionData.CollectedPlastic.Add(collectedPlastic.GetComponent<Plastic>().PlasticData);
     }
 
     public void ClearPlasticReference()

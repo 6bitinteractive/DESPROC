@@ -69,15 +69,14 @@ public class SortingLevel : MonoBehaviour
         }
 
         // Get plastics from sessionData
-        plasticsToSort.AddRange(sessionData.CollectedPlastic);
-
-        // Enable DroppableToBin component; position plastics; hide
-        foreach (var plastic in plasticsToSort)
+        for (int i = 0; i < sessionData.CollectedPlastic.Count; i++)
         {
-            plastic.GetComponent<DroppableToBin>().enabled = true;
-            plastic.transform.position = plasticPosition.position;
+            GameObject plastic = Instantiate(plasticPrefab, plasticPosition.position, Quaternion.identity);
+            plastic.GetComponent<Plastic>().PlasticData = sessionData.CollectedPlastic[i];
             plastic.transform.SetParent(plasticPosition);
             plastic.SetActive(false);
+
+            plasticsToSort.Add(plastic);
         }
 
         ShowPlastic();
@@ -159,19 +158,14 @@ public class SortingLevel : MonoBehaviour
             bestTimeText.text = string.Format("BEST {0:00.00} - New Record", sessionData.SortingBestTime);
         }
 
-        // Disable DroppableToBin component
-        foreach (var plastic in sortedPlastics)
-            plastic.GetComponent<DroppableToBin>().enabled = false;
-
-        foreach (var plastic in plasticsToSort)
-            plastic.GetComponent<DroppableToBin>().enabled = false;
-
         // Add sorted plastic to sessionData's ecobrick list
-        sessionData.SortedPlastic.AddRange(sortedPlastics);
+        foreach (var plastic in sortedPlastics)
+            sessionData.SortedPlastic.Add(plastic.GetComponent<Plastic>().PlasticData);
 
         // Add back whatever's unsorted to the collected list
         sessionData.CollectedPlastic.Clear();
-        sessionData.CollectedPlastic.AddRange(plasticsToSort);
+        foreach (var plastic in plasticsToSort)
+            sessionData.CollectedPlastic.Add(plastic.GetComponent<Plastic>().PlasticData);
 
         OnEnd.Invoke();
     }

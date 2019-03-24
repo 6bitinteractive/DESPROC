@@ -338,13 +338,13 @@ public class EcobrickLevel : MonoBehaviour
         bottleAnimator.SetBool("StartGame", false);
         stickAnimator.SetBool("PoundStick", false);
 
-        // Remove plastics used to create an ecobrick from sessionData list
-        int totalPlasticUsed = ecobrickCount * plasticsPerBottle;
-        if (totalPlasticUsed > 0)
-        {
-            //sessionData.SortedPlastic.RemoveRange(0, totalPlasticUsed);
-            sessionData.CollectedPlastic.RemoveRange(0, totalPlasticUsed);
-        }
+        // Remove plastics used to create an ecobrick from sessionData list; For now, don't remove because player has too few to work with
+        //int totalPlasticUsed = ecobrickCount * plasticsPerBottle;
+        //if (totalPlasticUsed > 0)
+        //{
+        //    //sessionData.SortedPlastic.RemoveRange(0, totalPlasticUsed);
+        //    sessionData.CollectedPlastic.RemoveRange(0, totalPlasticUsed);
+        //}
 
         OnGameEnd.Invoke();
     }
