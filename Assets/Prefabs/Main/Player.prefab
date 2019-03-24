@@ -552,6 +552,7 @@ GameObject:
   - component: {fileID: 222978223567012758}
   - component: {fileID: 114500756638640628}
   - component: {fileID: 114148810911471434}
+  - component: {fileID: 114253377514282780}
   m_Layer: 5
   m_Name: Interact Text
   m_TagString: Untagged
@@ -1706,7 +1707,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1818406877250148}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.3, y: -0.63, z: 0}
+  m_LocalPosition: {x: -9.26, y: -2.84, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children:
   - {fileID: 224706407606302066}
@@ -2792,6 +2793,19 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.ScrollRect+ScrollRectEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114253377514282780
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1325786292352036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1123b99498060404fa2b44bad777b26f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pcText: Press E to interact
+  mobileText: Tap to interact
 --- !u!114 &114253405100959712
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5044,8 +5058,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114380712628051686}
   m_HandleRect: {fileID: 224597690360265418}
   m_Direction: 2
-  m_Value: 0
-  m_Size: 1
+  m_Value: 1
+  m_Size: 0.9999999
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -5974,6 +5988,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 0}
         m_MethodName: EndDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7182,7 +7207,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 95, y: 95}
+  m_SizeDelta: {x: 120, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224113479210274868
 RectTransform:
@@ -7295,7 +7320,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 179, y: -56}
-  m_SizeDelta: {x: 850, y: 104.159134}
+  m_SizeDelta: {x: 850, y: 104}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!224 &224148093115907532
 RectTransform:
@@ -7555,7 +7580,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000076293945, y: 120.11499}
+  m_AnchoredPosition: {x: 0.000015258789, y: 120.115}
   m_SizeDelta: {x: 367.3, y: 17.7}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!224 &224360435681218338
@@ -7668,7 +7693,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 150, y: 130}
-  m_SizeDelta: {x: 150, y: 150}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224408506305201786
 RectTransform:
@@ -8027,8 +8052,8 @@ RectTransform:
   m_Father: {fileID: 224705470045541476}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0.9999999}
+  m_AnchorMin: {x: 0, y: 0.00000011920929}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -1.6099968, y: -28.44}
   m_SizeDelta: {x: -66.4, y: 39.67}
   m_Pivot: {x: 0.5, y: 0.5}
