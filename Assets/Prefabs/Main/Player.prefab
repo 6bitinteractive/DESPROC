@@ -1305,6 +1305,7 @@ GameObject:
   - component: {fileID: 222261757246235316}
   - component: {fileID: 114990226847206694}
   - component: {fileID: 114358568831537564}
+  - component: {fileID: 114613315063131134}
   m_Layer: 5
   m_Name: MinigameTutorial_StartButton
   m_TagString: Untagged
@@ -1814,7 +1815,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1818406877250148}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.26, y: -2.84, z: 0}
+  m_LocalPosition: {x: -7.02, y: 0.65, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children:
   - {fileID: 224706407606302066}
@@ -3750,19 +3751,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: RaiseEventTrigger
-        m_Mode: 2
+      - m_Target: {fileID: 114613315063131134}
+        m_MethodName: LoadScene
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: dc80785d62a016846b6a4c5771ab7703,
-            type: 2}
-          m_ObjectArgumentAssemblyTypeName: GameEvent, Assembly-CSharp
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 82694982648090236}
+      - m_Target: {fileID: 0}
         m_MethodName: Play
         m_Mode: 1
         m_Arguments:
@@ -4644,6 +4644,18 @@ MonoBehaviour:
   interactableLayerMask:
     serializedVersion: 2
     m_Bits: 4608
+--- !u!114 &114613315063131134
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1763017448094984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94e761d668323d048a292d86a578aa45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneData: {fileID: 11400000, guid: b3f08fbc99ddc9642969f6412fa08f8e, type: 2}
 --- !u!114 &114616718798816702
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7811,7 +7823,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 179, y: -56}
-  m_SizeDelta: {x: 850, y: 104.66165}
+  m_SizeDelta: {x: 850, y: 104}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!224 &224148093115907532
 RectTransform:
@@ -8071,7 +8083,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000015258789, y: 120.114944}
+  m_AnchoredPosition: {x: 0.000076293945, y: 120.11499}
   m_SizeDelta: {x: 367.3, y: 17.7}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!224 &224360435681218338
