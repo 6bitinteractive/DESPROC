@@ -150,12 +150,16 @@ public class SortingLevel : MonoBehaviour
 
         gameEnd = true;
 
+        // Show time/plastic
+        float timePerPlastic = timer / (float)sessionData.CollectedPlastic.Count;
+        timeText.text = string.Format("{0:00.00}/plastic", timePerPlastic);
+
         // Check if its a new record for best time
-        if (timer < sessionData.SortingBestTime || sessionData.SortingBestTime <= 0f)
+        if (timePerPlastic < sessionData.SortingBestTime || sessionData.SortingBestTime <= 0f)
         {
             Debug.Log("Set a new record.");
-            sessionData.SortingBestTime = timer;
-            bestTimeText.text = string.Format("BEST {0:00.00} - New Record", sessionData.SortingBestTime);
+            sessionData.SortingBestTime = timePerPlastic;
+            bestTimeText.text = string.Format("BEST {0:00.00}", sessionData.SortingBestTime);
         }
 
         // Add sorted plastic to sessionData's ecobrick list
