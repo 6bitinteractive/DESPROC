@@ -20,6 +20,8 @@ public class EcobrickLevel : MonoBehaviour
     [SerializeField] private TurtleTale.SessionData sessionData;
     [SerializeField] private int plasticsPerBottle = 5;
     [SerializeField] private FoldingSet[] foldingSets;
+    public AudioSource foldSFX;
+    public AudioSource stickSFX;
 
     [Space]
 
@@ -197,6 +199,7 @@ public class EcobrickLevel : MonoBehaviour
 
         if (playerSwipe == currentDirection)
         {
+            foldSFX.Play();
             StartCoroutine(MoveForward());
         }
         else
@@ -315,6 +318,7 @@ public class EcobrickLevel : MonoBehaviour
                 // Wait for the animation
                 yield return new WaitUntil(() => IsDonePlaying(stickAnimator));
                 Debug.Log("Done playing stick animation: " + IsDonePlaying(stickAnimator));
+                stickSFX.Play();
                 stickAnimator.SetBool("PoundStick", false);
             }
         }
