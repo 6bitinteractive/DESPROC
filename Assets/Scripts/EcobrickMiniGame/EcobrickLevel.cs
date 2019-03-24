@@ -20,6 +20,7 @@ public class EcobrickLevel : MonoBehaviour
     [SerializeField] private TurtleTale.SessionData sessionData;
     [SerializeField] private int plasticsPerBottle = 5;
     [SerializeField] private FoldingSet[] foldingSets;
+    public AudioSource slideSFX;
     public AudioSource foldSFX;
     public AudioSource stickSFX;
 
@@ -148,6 +149,7 @@ public class EcobrickLevel : MonoBehaviour
         bottleAnimator.SetBool("StartNewBottle", false);
 
         // Wait until we enter current state
+        slideSFX.PlayDelayed(1.0f);
         yield return new WaitUntil(() => bottleAnimator.GetCurrentAnimatorStateInfo(0).IsName("SlideInBottle"));
 
         // Wait until done playing
