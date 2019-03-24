@@ -9,6 +9,7 @@ public abstract class Action : MonoBehaviour
     [SerializeField] protected LayerMask interactableLayerMask;
 
     protected GameObject target;
+    private bool canInteractAgain = true;
 
     public abstract void Act();
 
@@ -26,13 +27,16 @@ public abstract class Action : MonoBehaviour
             Act();
         }
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonUp(0) && canInteractAgain)
         {
+            canInteractAgain = false;
+
             Vector2 inputPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(inputPosition, Vector2.zero, Mathf.Infinity, 1 << interactableLayerMask);
 
             if (hit.transform != null)
             {
+                //Debug.Log(hit.transform.gameObject);
                 Act();
             }
         }
@@ -44,8 +48,10 @@ public abstract class Action : MonoBehaviour
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
-            if (touch.phase == TouchPhase.Began)
+            if (touch.phase == TouchPhase.Ended && canInteractAgain)
             {
+                canInteractAgain = false;
+
                 Vector2 inputPosition = Camera.main.ScreenToWorldPoint(touch.position);
                 RaycastHit2D hit = Physics2D.Raycast(inputPosition, Vector2.zero, Mathf.Infinity, 1 << interactableLayerMask);
 
@@ -70,6 +76,7 @@ public abstract class Action : MonoBehaviour
     protected virtual void OnTriggerExit2D(Collider2D collision)
     {
         target = null;
+        canInteractAgain = true;
     }
 }
 
