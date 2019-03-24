@@ -25,6 +25,17 @@ public abstract class Action : MonoBehaviour
         {
             Act();
         }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            Vector2 inputPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            RaycastHit2D hit = Physics2D.Raycast(inputPosition, Vector2.zero, Mathf.Infinity, 1 << interactableLayerMask);
+
+            if (hit.transform != null)
+            {
+                Act();
+            }
+        }
 #endif
         #endregion
 
@@ -32,9 +43,16 @@ public abstract class Action : MonoBehaviour
 #if UNITY_ANDROID || UNITY_IOS
         if (Input.touchCount > 0)
         {
-            if (Input.GetTouch(0).phase == TouchPhase.Began)
+            Touch touch = Input.GetTouch(0);
+            if (touch.phase == TouchPhase.Began)
             {
+                Vector2 inputPosition = Camera.main.ScreenToWorldPoint(touch.position);
+                RaycastHit2D hit = Physics2D.Raycast(inputPosition, Vector2.zero, Mathf.Infinity, 1 << interactableLayerMask);
+
+                if (hit.transform != null)
+                {
                     Act();
+                }
             }
         }
 #endif
