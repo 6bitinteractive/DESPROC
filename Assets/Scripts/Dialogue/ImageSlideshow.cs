@@ -19,8 +19,8 @@ public class ImageSlideshow : MonoBehaviour
 
     void Update()
     {
-        displayImage.sprite = spriteArray.sprites[i % spriteArray.sprites.Length];
-        dialogueText.text = dialogueTrigger.dialogueArray[0].sentenceArray[i % dialogueTrigger.dialogueArray[0].sentenceArray.Length].sentence.ToString();
+        displayImage.sprite = spriteArray.sprites[mod(i, spriteArray.sprites.Length)];
+        dialogueText.text = dialogueTrigger.dialogueArray[0].sentenceArray[mod(i, dialogueTrigger.dialogueArray[0].sentenceArray.Length)].sentence.ToString();
     }
 
     public void BtnNext()
@@ -31,5 +31,11 @@ public class ImageSlideshow : MonoBehaviour
     public void BtnPrev()
     {
          i--;
+    }
+
+    private int mod(int x, int m)
+    {
+        // Custom modulo function (C# modulo operation does not operate as intended on negative numbers)
+        return (x % m + m) % m;
     }
 }
