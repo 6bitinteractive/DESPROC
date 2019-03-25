@@ -18,6 +18,7 @@ public class EcobrickLevel : MonoBehaviour
 
     [Header("Setup")]
     [SerializeField] private TurtleTale.SessionData sessionData;
+    [SerializeField] private PlasticFactory plasticDataTypes;
     [SerializeField] private int plasticsPerBottle = 5;
     [SerializeField] private FoldingSet[] foldingSets;
     public AudioSource slideSFX;
@@ -89,11 +90,22 @@ public class EcobrickLevel : MonoBehaviour
         // Hide folding prompt
         HidePrompt();
 
+        List<PlasticData> randomPlastics = new List<PlasticData>(); ;
+        // Create 5 random plastic data
+        for (int i = 0; i < 5; i++)
+        {
+            int randomIndex = Random.Range(0, plasticDataTypes.BaseObjects.Length);
+            randomPlastics.Add(plasticDataTypes.BaseObjects[randomIndex] as PlasticData);
+        }
+
+        // Add random to collected
+        sessionData.CollectedPlastic.AddRange(randomPlastics);
+
         // Determine how many bottles can be filled
         //int bottlesThatCanBeFilled = (int)(plasticCount / plasticsPerBottle); // TEST
         //int bottlesThatCanBeFilled = (int)(sessionData.SortedPlastic.Count / plasticsPerBottle); // Original design: sorted plastics are used for ecobrick minigame
-        //int bottlesThatCanBeFilled = (int)(sessionData.CollectedPlastic.Count / plasticsPerBottle);
-        int bottlesThatCanBeFilled = (int)(sessionData.CollectedPlastic.Count + 5 / plasticsPerBottle); // Add 5 plastics on start to prevent player from getting locked out of ecobrick minigame
+        int bottlesThatCanBeFilled = (int)(sessionData.CollectedPlastic.Count / plasticsPerBottle);
+        //int bottlesThatCanBeFilled = (int)(sessionData.CollectedPlastic.Count + 5 / plasticsPerBottle); // Add 5 plastics on start to prevent player from getting locked out of ecobrick minigame
         Debug.Log("Bottles that can be filled: " + bottlesThatCanBeFilled);
 
 
