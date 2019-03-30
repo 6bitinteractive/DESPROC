@@ -19,6 +19,5 @@ public class SceneLoadHandler : MonoBehaviour
     {
         playerSaveData.Save(Player.StartingPositionKey, sceneData.StartingPointName);
         sceneController.FadeAndLoadScene(sceneData.SceneName);
-
     }
 }

@@ -27,7 +27,8 @@ public class SceneController : MonoBehaviour
         playerSaveData.Save(Player.StartingPositionKey, sceneDataToLoad.StartingPointName);
 
         // Start the first scene loading and wait for it to finish
-        yield return StartCoroutine(LoadSceneAndSetActive(sceneDataToLoad.SceneName));
+        //yield return StartCoroutine(LoadSceneAndSetActive(sceneDataToLoad.SceneName));
+        yield return StartCoroutine(FadeAndSwitchScenes(sceneDataToLoad.SceneName));
 
         // Once the scene is finished loading, start fading in
         StartCoroutine(Fade(0f));
@@ -49,6 +50,20 @@ public class SceneController : MonoBehaviour
 
     private IEnumerator FadeAndSwitchScenes(string sceneName)
     {
+        Debug.Log("Loading " + sceneName);
+
+        // Don't load the scene again if it has been loaded in the editor
+        if (Application.isEditor)
+        {
+            Scene scene = SceneManager.GetSceneByName(sceneName);
+            if (scene.isLoaded)
+            {
+                Debug.Log(sceneDataToLoad.SceneName + " is already loaded.");
+                SceneManager.SetActiveScene(scene); // Set it as the active scene, the one to be unloaded next
+                yield break;
+            }
+        }
+
         // Start fading to black and wait for it to finish before continuing
         yield return StartCoroutine(Fade(1f));
 
