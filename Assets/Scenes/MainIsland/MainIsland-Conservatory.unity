@@ -1024,6 +1024,22 @@ MonoBehaviour:
   dialogueText: {fileID: 805432174}
   player: {fileID: 805432173}
   animator: {fileID: 805432172}
+  OnFullDialogueEnd:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 898986375}
+        m_MethodName: set_blocksRaycasts
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!4 &431351867
 Transform:
   m_ObjectHideFlags: 0
@@ -2438,62 +2454,42 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: 114751277070520550, guid: bfbabfdd22addb54891582c16f6d89cf,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 431351866}
-    - target: {fileID: 114751277070520550, guid: bfbabfdd22addb54891582c16f6d89cf,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 2058690315}
-    - target: {fileID: 114185947642636606, guid: bfbabfdd22addb54891582c16f6d89cf,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 431351866}
-    - target: {fileID: 114185947642636606, guid: bfbabfdd22addb54891582c16f6d89cf,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 2058690315}
     - target: {fileID: 114964840124237320, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 431351866}
-    - target: {fileID: 224143051293295818, guid: bfbabfdd22addb54891582c16f6d89cf,
+    - target: {fileID: 114751277070520550, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
-      propertyPath: m_SizeDelta.y
-      value: 103.62818
-      objectReference: {fileID: 0}
-    - target: {fileID: 224597690360265418, guid: bfbabfdd22addb54891582c16f6d89cf,
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 431351866}
+    - target: {fileID: 114751277070520550, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224336711366434096, guid: bfbabfdd22addb54891582c16f6d89cf,
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2058690315}
+    - target: {fileID: 114185947642636606, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: 0.000045776367
-      objectReference: {fileID: 0}
-    - target: {fileID: 224336711366434096, guid: bfbabfdd22addb54891582c16f6d89cf,
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 431351866}
+    - target: {fileID: 114185947642636606, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: 120.11497
-      objectReference: {fileID: 0}
-    - target: {fileID: 114735247798239610, guid: bfbabfdd22addb54891582c16f6d89cf,
-        type: 2}
-      propertyPath: m_Size
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2058690315}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfbabfdd22addb54891582c16f6d89cf, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &898986373 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1681481346812266, guid: bfbabfdd22addb54891582c16f6d89cf,
+    type: 2}
+  m_PrefabInternal: {fileID: 898986372}
+--- !u!225 &898986375 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 225460789972584252, guid: bfbabfdd22addb54891582c16f6d89cf,
     type: 2}
   m_PrefabInternal: {fileID: 898986372}
 --- !u!1001 &919889671
@@ -3284,11 +3280,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1.7725706
+      value: -1.7761259
       objectReference: {fileID: 0}
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.99315643
+      value: 0.9931624
       objectReference: {fileID: 0}
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.z
@@ -3460,13 +3456,15 @@ MonoBehaviour:
     - name: Tired Volunteer
       sentence: "The job sucks, but hey, someone's gotta do it. \rI'll do it. For.
         The. Turtles.\r\n"
-    dialogueEndTrigger: {fileID: 0}
+    dialogueEndTrigger: {fileID: 11400000, guid: aacf4ffd6be0fad45bd1e5d584b886d8,
+      type: 2}
   - questName: Broken Bridges
     sentenceArray:
     - name: Tired Volunteer
       sentence: You're looking for the town? It's north of the docks, which you can
         get to if you go west of here.
-    dialogueEndTrigger: {fileID: 0}
+    dialogueEndTrigger: {fileID: 11400000, guid: aacf4ffd6be0fad45bd1e5d584b886d8,
+      type: 2}
 --- !u!1 &1090737393
 GameObject:
   m_ObjectHideFlags: 0

@@ -126,6 +126,7 @@ GameObject:
   - component: {fileID: 222617177038961580}
   - component: {fileID: 114965104277362426}
   - component: {fileID: 95344861348416744}
+  - component: {fileID: 225460789972584252}
   m_Layer: 5
   m_Name: Dialogue Box
   m_TagString: Untagged
@@ -1620,7 +1621,7 @@ GameObject:
   - component: {fileID: 225410361222579020}
   m_Layer: 5
   m_Name: JoystickCanvas
-  m_TagString: Untagged
+  m_TagString: JoystickCanvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5530,6 +5531,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 225460789972584252}
+        m_MethodName: set_blocksRaycasts
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114726883854277332
@@ -5592,7 +5604,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 224597690360265418}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.33270124
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -7515,7 +7527,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!223 &223250687206599314
 Canvas:
@@ -7535,7 +7547,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: -1540345735
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!223 &223880405768592844
 Canvas:
@@ -8606,7 +8618,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0.33270124}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -1.6099968, y: -28.44}
   m_SizeDelta: {x: -66.4, y: 39.67}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -9326,6 +9338,17 @@ CanvasGroup:
   m_Alpha: 0.4
   m_Interactable: 1
   m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!225 &225460789972584252
+CanvasGroup:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1055099807341210}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!225 &225838089084309552
 CanvasGroup:

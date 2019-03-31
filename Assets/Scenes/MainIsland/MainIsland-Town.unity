@@ -144,6 +144,22 @@ MonoBehaviour:
   dialogueText: {fileID: 374243516}
   player: {fileID: 374243515}
   animator: {fileID: 374243518}
+  OnFullDialogueEnd:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 374243528}
+        m_MethodName: set_blocksRaycasts
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!4 &11702835
 Transform:
   m_ObjectHideFlags: 0
@@ -1262,6 +1278,11 @@ GameObject:
 --- !u!1 &374243527 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1055099807341210, guid: bfbabfdd22addb54891582c16f6d89cf,
+    type: 2}
+  m_PrefabInternal: {fileID: 374243514}
+--- !u!225 &374243528 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 225460789972584252, guid: bfbabfdd22addb54891582c16f6d89cf,
     type: 2}
   m_PrefabInternal: {fileID: 374243514}
 --- !u!1 &377947644
