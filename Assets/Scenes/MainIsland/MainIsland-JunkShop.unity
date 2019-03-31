@@ -151,6 +151,7 @@ GameObject:
   m_Component:
   - component: {fileID: 90283197}
   - component: {fileID: 90283198}
+  - component: {fileID: 90283199}
   m_Layer: 0
   m_Name: SFX Ambient River
   m_TagString: Untagged
@@ -266,6 +267,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &90283199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 90283196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc4ad90c0bf40bf4fb19a845f0459a60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioType: 1
 --- !u!1001 &194884699
 Prefab:
   m_ObjectHideFlags: 0
@@ -2818,6 +2831,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1316746468}
   - component: {fileID: 1316746469}
+  - component: {fileID: 1316746470}
   m_Layer: 0
   m_Name: BGM Island
   m_TagString: Untagged
@@ -2933,6 +2947,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1316746470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1316746467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc4ad90c0bf40bf4fb19a845f0459a60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioType: 0
 --- !u!1 &1415509656
 GameObject:
   m_ObjectHideFlags: 0

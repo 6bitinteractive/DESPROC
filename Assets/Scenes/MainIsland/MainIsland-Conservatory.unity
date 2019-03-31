@@ -3550,6 +3550,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1097281516}
   - component: {fileID: 1097281517}
+  - component: {fileID: 1097281518}
   m_Layer: 0
   m_Name: SFX Ambient
   m_TagString: Untagged
@@ -3667,6 +3668,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1097281518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1097281515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc4ad90c0bf40bf4fb19a845f0459a60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioType: 1
 --- !u!4 &1133279775 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4894992979352498, guid: bfbabfdd22addb54891582c16f6d89cf,
@@ -4596,6 +4609,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1889573677}
   - component: {fileID: 1889573678}
+  - component: {fileID: 1889573679}
   m_Layer: 0
   m_Name: BGM Island
   m_TagString: Untagged
@@ -4711,6 +4725,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1889573679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1889573676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc4ad90c0bf40bf4fb19a845f0459a60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioType: 0
 --- !u!1 &1898283128
 GameObject:
   m_ObjectHideFlags: 0
