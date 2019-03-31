@@ -20,10 +20,11 @@ public class PersistentAudioManager : MonoBehaviour
         return null;
     }
 
-    public void SwitchAudio(AudioClip clip, AudioType type)
+    public void SwitchAudio(AudioSetting audioSetting, AudioType type)
     {
         AudioSource audioSource = AudioSource(type);
-        audioSource.clip = clip;
+        audioSource.clip = audioSetting.clip;
+        audioSource.volume = audioSetting.volume;
         audioSource.Play();
     }
 }

@@ -144,6 +144,22 @@ MonoBehaviour:
   dialogueText: {fileID: 374243516}
   player: {fileID: 374243515}
   animator: {fileID: 374243518}
+  OnFullDialogueEnd:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 374243528}
+        m_MethodName: set_blocksRaycasts
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!4 &11702835
 Transform:
   m_ObjectHideFlags: 0
@@ -1262,6 +1278,11 @@ GameObject:
 --- !u!1 &374243527 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1055099807341210, guid: bfbabfdd22addb54891582c16f6d89cf,
+    type: 2}
+  m_PrefabInternal: {fileID: 374243514}
+--- !u!225 &374243528 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 225460789972584252, guid: bfbabfdd22addb54891582c16f6d89cf,
     type: 2}
   m_PrefabInternal: {fileID: 374243514}
 --- !u!1 &377947644
@@ -4680,6 +4701,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1431824542}
   - component: {fileID: 1431824543}
+  - component: {fileID: 1431824544}
   m_Layer: 0
   m_Name: SFX Ambient Beach
   m_TagString: Untagged
@@ -4797,6 +4819,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1431824544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1431824541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc4ad90c0bf40bf4fb19a845f0459a60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioType: 1
 --- !u!1 &1432061087
 GameObject:
   m_ObjectHideFlags: 0
@@ -5453,6 +5487,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1535108084}
   - component: {fileID: 1535108085}
+  - component: {fileID: 1535108086}
   m_Layer: 0
   m_Name: BGM Level
   m_TagString: Untagged
@@ -5570,6 +5605,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1535108086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1535108083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc4ad90c0bf40bf4fb19a845f0459a60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioType: 0
 --- !u!1 &1542375015
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,6 +10,12 @@ using UnityEngine.Events;
 
 public class AudioSwitcher : MonoBehaviour
 {
+    [SerializeField]
+    [TextArea(3, 5)]
+    private string note = "Some scenes do not have ambient sound so this is probably " +
+        "attached to some object with an empty AudioSource component; simply ignore this script if such is the case." +
+        " Please do not remove.";
+
     [SerializeField] private AudioType audioType;
     private AudioSource audioSource;
     private static PersistentAudioManager audioManager;
@@ -25,17 +31,12 @@ public class AudioSwitcher : MonoBehaviour
         // Turn off for now; this is more of a workaround since audio clips are already set up in most scenes
         audioSource.enabled = false;
 
-        if (audioSource.clip == null)
-        {
-            Debug.LogWarning("Audio clip is null");
-            return;
-        }
-
         // Check
         AudioClip currentPlayingClip = audioManager.AudioSource(audioType).clip;
         if (audioSource.clip != currentPlayingClip || currentPlayingClip == null)
         {
-            audioManager.SwitchAudio(audioSource.clip, audioType);
+            AudioSetting audioSetting = new AudioSetting(audioSource.clip, audioSource.volume);
+            audioManager.SwitchAudio(audioSetting, audioType);
         }
     }
 }
@@ -44,4 +45,16 @@ public enum AudioType
 {
     BGM,
     Ambient
+}
+
+public struct AudioSetting
+{
+    public AudioClip clip;
+    public float volume;
+
+    public AudioSetting(AudioClip clip, float volume)
+    {
+        this.clip = clip;
+        this.volume = volume;
+    }
 }

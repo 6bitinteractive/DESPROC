@@ -912,6 +912,22 @@ MonoBehaviour:
   dialogueText: {fileID: 805432174}
   player: {fileID: 805432173}
   animator: {fileID: 805432172}
+  OnFullDialogueEnd:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 805432178}
+        m_MethodName: set_blocksRaycasts
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!4 &431351867
 Transform:
   m_ObjectHideFlags: 0
@@ -2397,7 +2413,7 @@ Prefab:
     - target: {fileID: 224249758436251312, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 224912964868538154, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
@@ -2412,7 +2428,7 @@ Prefab:
     - target: {fileID: 224605478860438246, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 224071014818880638, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
@@ -2427,7 +2443,7 @@ Prefab:
     - target: {fileID: 224786677316838310, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 224138857399267980, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
@@ -2452,7 +2468,7 @@ Prefab:
     - target: {fileID: 224143051293295818, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 103.62818
+      value: 104
       objectReference: {fileID: 0}
     - target: {fileID: 224830209416137190, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
@@ -2482,7 +2498,7 @@ Prefab:
     - target: {fileID: 224628479541603484, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfbabfdd22addb54891582c16f6d89cf, type: 2}
@@ -2518,6 +2534,11 @@ RectTransform:
 --- !u!1 &805432177 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1681481346812266, guid: bfbabfdd22addb54891582c16f6d89cf,
+    type: 2}
+  m_PrefabInternal: {fileID: 805432171}
+--- !u!225 &805432178 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 225460789972584252, guid: bfbabfdd22addb54891582c16f6d89cf,
     type: 2}
   m_PrefabInternal: {fileID: 805432171}
 --- !u!1001 &919889671
@@ -3286,7 +3307,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1.3746786
+      value: -1.3746872
       objectReference: {fileID: 0}
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.z
@@ -3362,6 +3383,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1097281516}
   - component: {fileID: 1097281517}
+  - component: {fileID: 1097281518}
   m_Layer: 0
   m_Name: SFX Ambient
   m_TagString: Untagged
@@ -3479,6 +3501,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1097281518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1097281515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc4ad90c0bf40bf4fb19a845f0459a60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioType: 1
 --- !u!4 &1133279775 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4894992979352498, guid: bfbabfdd22addb54891582c16f6d89cf,
@@ -4711,6 +4745,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1693907773}
   - component: {fileID: 1693907774}
+  - component: {fileID: 1693907775}
   m_Layer: 0
   m_Name: BGM Island
   m_TagString: Untagged
@@ -4826,6 +4861,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1693907775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1693907772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc4ad90c0bf40bf4fb19a845f0459a60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioType: 0
 --- !u!1 &1708727495
 GameObject:
   m_ObjectHideFlags: 0

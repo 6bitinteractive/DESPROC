@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
@@ -15,9 +16,12 @@ public class DialogueManager : MonoBehaviour
     private Sentence[] toDisplay;
     private GameEvent endTrigger;
 
+    public UnityEvent OnFullDialogueEnd; // Note: Added this to avoid creating different GameEvent triggers
+
     void Awake ()
     {
         sentences = new Queue<Sentence>();
+        if (OnFullDialogueEnd == null) OnFullDialogueEnd = new UnityEvent();
     }
 
     public void StartDialogue(DialogueTrigger dialogueTrigger)
@@ -171,6 +175,8 @@ public class DialogueManager : MonoBehaviour
 
     public void EndDialogue()
     {
+        OnFullDialogueEnd.Invoke();
+
         if (endTrigger != null)
         {
             endTrigger.Raise();

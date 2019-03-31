@@ -28,10 +28,11 @@ public class SceneController : MonoBehaviour
 
         // Start the first scene loading and wait for it to finish
         //yield return StartCoroutine(LoadSceneAndSetActive(sceneDataToLoad.SceneName));
-        yield return StartCoroutine(FadeAndSwitchScenes(sceneDataToLoad.SceneName));
 
         // Once the scene is finished loading, start fading in
-        StartCoroutine(Fade(0f));
+        //StartCoroutine(Fade(0f));
+
+        yield return StartCoroutine(FadeAndSwitchScenes(sceneDataToLoad.SceneName));
     }
 
     public SaveData GetPlayerSaveData()
@@ -59,6 +60,7 @@ public class SceneController : MonoBehaviour
             if (scene.isLoaded)
             {
                 Debug.Log(sceneDataToLoad.SceneName + " is already loaded.");
+                StartCoroutine(Fade(0f)); // Makes sure that the display isn't just black
                 SceneManager.SetActiveScene(scene); // Set it as the active scene, the one to be unloaded next
                 yield break;
             }
@@ -115,6 +117,10 @@ public class SceneController : MonoBehaviour
             // ... move the alpha towards its target alpha
             faderCanvasGroup.alpha = Mathf.MoveTowards(faderCanvasGroup.alpha, finalAlpha, fadeSpeed * Time.deltaTime);
 
+            // Enable input sooner (so that UX doesn't feel like there's a delay in reading the input)
+            if (faderCanvasGroup.alpha <= 0.7f)
+                faderCanvasGroup.blocksRaycasts = false;
+
             // Wait for a frame then continue
             yield return null;
         }
@@ -123,7 +129,7 @@ public class SceneController : MonoBehaviour
         isFading = false;
 
         // Stop the CanvasGroup from blocking raycasts so input is no longer ignored
-        faderCanvasGroup.blocksRaycasts = false;
+        //faderCanvasGroup.blocksRaycasts = false;
     }
 }
 
