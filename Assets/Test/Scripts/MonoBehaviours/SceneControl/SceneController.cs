@@ -27,8 +27,7 @@ public class SceneController : MonoBehaviour
         playerSaveData.Save(Player.StartingPositionKey, sceneDataToLoad.StartingPointName);
 
         // Start the first scene loading and wait for it to finish
-        //yield return StartCoroutine(LoadSceneAndSetActive(sceneDataToLoad.SceneName));
-        yield return StartCoroutine(FadeAndSwitchScenes(sceneDataToLoad.SceneName));
+        yield return StartCoroutine(LoadSceneAndSetActive(sceneDataToLoad.SceneName));
 
         // Once the scene is finished loading, start fading in
         StartCoroutine(Fade(0f));
