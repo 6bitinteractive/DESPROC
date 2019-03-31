@@ -115,6 +115,10 @@ public class SceneController : MonoBehaviour
             // ... move the alpha towards its target alpha
             faderCanvasGroup.alpha = Mathf.MoveTowards(faderCanvasGroup.alpha, finalAlpha, fadeSpeed * Time.deltaTime);
 
+            // Enable input sooner (so that UX doesn't feel like there's a delay in reading the input)
+            if (faderCanvasGroup.alpha <= 0.7f)
+                faderCanvasGroup.blocksRaycasts = false;
+
             // Wait for a frame then continue
             yield return null;
         }
@@ -123,7 +127,7 @@ public class SceneController : MonoBehaviour
         isFading = false;
 
         // Stop the CanvasGroup from blocking raycasts so input is no longer ignored
-        faderCanvasGroup.blocksRaycasts = false;
+        //faderCanvasGroup.blocksRaycasts = false;
     }
 }
 
