@@ -1756,6 +1756,11 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfbabfdd22addb54891582c16f6d89cf, type: 2}
   m_IsPrefabAsset: 0
+--- !u!225 &758820808 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 225460789972584252, guid: bfbabfdd22addb54891582c16f6d89cf,
+    type: 2}
+  m_PrefabInternal: {fileID: 758820807}
 --- !u!1 &758820809 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1403674824359580, guid: bfbabfdd22addb54891582c16f6d89cf,
@@ -2135,7 +2140,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -8.016611
+      value: -8.018329
       objectReference: {fileID: 0}
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.y
@@ -2713,6 +2718,22 @@ MonoBehaviour:
   dialogueText: {fileID: 805432172}
   player: {fileID: 805432175}
   animator: {fileID: 805432174}
+  OnFullDialogueEnd:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 758820808}
+        m_MethodName: set_blocksRaycasts
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!4 &1599040003
 Transform:
   m_ObjectHideFlags: 0

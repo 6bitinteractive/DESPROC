@@ -520,6 +520,22 @@ MonoBehaviour:
   dialogueText: {fileID: 805432174}
   player: {fileID: 805432173}
   animator: {fileID: 805432172}
+  OnFullDialogueEnd:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 805432180}
+        m_MethodName: set_blocksRaycasts
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!4 &431351867
 Transform:
   m_ObjectHideFlags: 0
@@ -1603,17 +1619,17 @@ Prefab:
     - target: {fileID: 224336711366434096, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 0.000045776367
+      value: -0.000015258789
       objectReference: {fileID: 0}
     - target: {fileID: 224336711366434096, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 120.115005
+      value: 120.115036
       objectReference: {fileID: 0}
     - target: {fileID: 224143051293295818, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 103.62818
+      value: 104
       objectReference: {fileID: 0}
     - target: {fileID: 224559734026517192, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
@@ -1695,6 +1711,11 @@ MonoBehaviour:
 --- !u!1 &805432179 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1681481346812266, guid: bfbabfdd22addb54891582c16f6d89cf,
+    type: 2}
+  m_PrefabInternal: {fileID: 805432171}
+--- !u!225 &805432180 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 225460789972584252, guid: bfbabfdd22addb54891582c16f6d89cf,
     type: 2}
   m_PrefabInternal: {fileID: 805432171}
 --- !u!1001 &937765791
@@ -2307,7 +2328,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -3.5791006
+      value: -3.582656
       objectReference: {fileID: 0}
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.y

@@ -563,6 +563,17 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 848643101}
+          m_MethodName: set_blocksRaycasts
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
     responseForSentString:
@@ -1617,6 +1628,11 @@ MonoBehaviour:
 --- !u!1 &848643100 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1194679291613080, guid: bfbabfdd22addb54891582c16f6d89cf,
+    type: 2}
+  m_PrefabInternal: {fileID: 848643089}
+--- !u!225 &848643101 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 225460789972584252, guid: bfbabfdd22addb54891582c16f6d89cf,
     type: 2}
   m_PrefabInternal: {fileID: 848643089}
 --- !u!1 &1000468192
@@ -2777,6 +2793,22 @@ MonoBehaviour:
   dialogueText: {fileID: 848643092}
   player: {fileID: 848643095}
   animator: {fileID: 848643094}
+  OnFullDialogueEnd:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 848643101}
+        m_MethodName: set_blocksRaycasts
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1316746467
 GameObject:
   m_ObjectHideFlags: 0
@@ -4603,6 +4635,17 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 848643101}
+        m_MethodName: set_blocksRaycasts
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
