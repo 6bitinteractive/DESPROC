@@ -31,6 +31,7 @@ public class EcobrickLevel : MonoBehaviour
     [SerializeField] private float lastFoldDisplayDelay = 1.3f;
     [SerializeField] private float promptDelay = 0.5f;
     [SerializeField] private SpriteRenderer promptDisplay;
+    [SerializeField] private GameObject quitButton;
     [SerializeField] private GameObject directionPanel;
     [SerializeField] private Image directionImage;
     [SerializeField] private Text directionText;
@@ -44,8 +45,8 @@ public class EcobrickLevel : MonoBehaviour
     [Space]
 
     [Header("UI | Direction Sprites (Order: Left - Right - Up - Down")]
-    [SerializeField] private Sprite[] directionSprites = new Sprite[directionCount];
     private static int directionCount = 4;
+    [SerializeField] private Sprite[] directionSprites = new Sprite[directionCount];
 
     [Space]
 
@@ -261,6 +262,10 @@ public class EcobrickLevel : MonoBehaviour
                 ecobrickCount++;
                 sessionData.EcobricksDone++;
                 UpdateEcobrickCountDisplay();
+
+                // HACK: Only show the quit button when player has done at least one ecobrick
+                if (ecobrickCount > 0)
+                    quitButton.SetActive(true);
 
                 // If we've reached the end
                 if (currentFoldSet >= prompts.Count - 1)
