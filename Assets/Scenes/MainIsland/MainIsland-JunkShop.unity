@@ -278,6 +278,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc4ad90c0bf40bf4fb19a845f0459a60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  note: Some scenes do not have ambient sound so this is probably attached to some
+    object with an empty AudioSource component; simply ignore this script if such
+    is the case. Please do not remove.
   audioType: 1
 --- !u!1001 &194884699
 Prefab:
@@ -1273,7 +1276,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 720518251}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.53, y: -0.72, z: -0.28125}
+  m_LocalPosition: {x: 7.52, y: 0.55, z: -0.28125}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1365,9 +1368,10 @@ PolygonCollider2D:
       - {x: 5.6724343, y: -4.64729}
       - {x: 5.427042, y: -3.9813192}
       - {x: 5.3084054, y: -3.2013185}
-      - {x: 5.2901244, y: -1.8215516}
-      - {x: 4.6631837, y: -1.9203129}
-      - {x: 4.5488524, y: -1.6607898}
+      - {x: 5.125698, y: -1.5502759}
+      - {x: 6.511196, y: -1.4203464}
+      - {x: 6.482331, y: -0.79192543}
+      - {x: 4.972489, y: -0.95868206}
       - {x: 4.512418, y: -1.1164346}
       - {x: 4.55678, y: -0.7918288}
       - {x: 4.364137, y: -0.43316934}
@@ -1550,12 +1554,12 @@ Prefab:
     - target: {fileID: 224336711366434096, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 120.11504
+      value: 120.11502
       objectReference: {fileID: 0}
     - target: {fileID: 224597690360265418, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 0.000000059604645
       objectReference: {fileID: 0}
     - target: {fileID: 224143051293295818, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
@@ -2958,6 +2962,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc4ad90c0bf40bf4fb19a845f0459a60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  note: Some scenes do not have ambient sound so this is probably attached to some
+    object with an empty AudioSource component; simply ignore this script if such
+    is the case. Please do not remove.
   audioType: 0
 --- !u!1 &1415509656
 GameObject:
@@ -3994,6 +4001,7 @@ GameObject:
   - component: {fileID: 1958488854}
   - component: {fileID: 1958488859}
   - component: {fileID: 1958488858}
+  - component: {fileID: 1958488860}
   m_Layer: 12
   m_Name: Carding
   m_TagString: Untagged
@@ -4087,9 +4095,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -2.5}
+  m_Offset: {x: 0.13999684, y: -0.57505506}
   serializedVersion: 2
-  m_Radius: 1.5
+  m_Radius: 1.1150126
 --- !u!114 &1958488856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4201,6 +4209,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Carding
   isCollected: 0
+--- !u!210 &1958488860
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1958488852}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!1 &1961493736
 GameObject:
   m_ObjectHideFlags: 0
