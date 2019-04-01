@@ -53,6 +53,10 @@ public class Spawner : MonoBehaviour
             PooledObjectList[i].transform.position = SpawnLocations[spawnLocationIndex].position; // Sets spawn location back to originanl position
             PooledObjectList[i].SetActive(true); // Activate the pooled object
 
+            // Hack: If this object is a plastic, call its ResetObject method
+            FallingPlasticController plasticController = PooledObjectList[i].GetComponent<FallingPlasticController>();
+            if (plasticController)
+                plasticController.ResetObject();
         }
         StartCoroutine(SpawnRandomObjects()); // Restart the process
     }

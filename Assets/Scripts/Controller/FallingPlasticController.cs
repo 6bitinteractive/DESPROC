@@ -14,7 +14,9 @@ public class FallingPlasticController : MonoBehaviour
     public void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        spriteOutline = GetComponent<SpriteOutline>();
+
+        if (spriteOutline == null)
+            spriteOutline = GetComponent<SpriteOutline>();
     }
 
     public void PickUp()
@@ -39,6 +41,9 @@ public class FallingPlasticController : MonoBehaviour
 
     public void ResetObject()
     {
+        if (spriteOutline == null)
+            spriteOutline = GetComponent<SpriteOutline>();
+
         spriteOutline.enabled = false;
         playerIsPickingUp = false;
     }
