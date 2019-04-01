@@ -9,11 +9,12 @@ using UnityEngine.UI;
 public class TurtleController : MonoBehaviour
 {
     Wander wander;
-    public Image ChokeUI; 
+    public Image ChokeUI;
 
     public float Speed;
     public float ChokeDuration = 5;
     public bool isChoking;
+    public FallingPlasticController plasticInContact { get; private set; } // This is to get the reference on which plastic is the turtle choking
 
     private float CurrentChokeDuration;
     private Collider2D plastic;
@@ -38,7 +39,7 @@ public class TurtleController : MonoBehaviour
     public FSMState curState; // current state
 
     // Use this for initialization
-    void Awake ()
+    void Awake()
     {
         wander = GetComponent<Wander>();
         animator = GetComponent<Animator>();
@@ -47,8 +48,8 @@ public class TurtleController : MonoBehaviour
         curState = FSMState.Wander;
     }
 
-	// Update is called once per frame
-	void Update ()
+    // Update is called once per frame
+    void Update()
     {
         switch (curState)
         {
@@ -82,7 +83,6 @@ public class TurtleController : MonoBehaviour
             animator.SetBool("isChoking", true);
             //OnChoke.Raise();
         }
-
         else
         {
             StopAllCoroutines(); // Stop choking
@@ -91,6 +91,8 @@ public class TurtleController : MonoBehaviour
             animator.SetBool("isChoking", false);
             isChoking = false;
             plastic.gameObject.SetActive(false); // Remove plastic
+            plasticInContact.ResetObject(); // Reset plastic's outline
+            plasticInContact = null; // Remove the reference
             curState = FSMState.Wander; // Wander
         }
     }
@@ -103,7 +105,7 @@ public class TurtleController : MonoBehaviour
     private void ChaseState()
     {
         transform.position = Vector2.MoveTowards(transform.position, new Vector2(plastic.transform.position.x, plastic.transform.position.y), Speed * Time.deltaTime); // Move Towards target
-        
+
         // Rotate Towards new Target
         Vector2 direction = plastic.transform.position - transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
@@ -122,14 +124,19 @@ public class TurtleController : MonoBehaviour
             if (collisionLayerMask == plasticLayerMask.value)
             {
                 plastic = collider;
-                plasticRB = plastic.GetComponent<Rigidbody2D>();
 
                 // If collides with Mouth
                 if (childPart == mouth)
                 {
                     isChoking = true;
                     curState = FSMState.Choke;
+
+                    plasticRB = plastic.GetComponent<Rigidbody2D>();
                     plasticRB.constraints = RigidbodyConstraints2D.FreezePosition;
+
+                    // Show an outline to easily see on which plastic is the turtle choking
+                    plasticInContact = plastic.GetComponent<FallingPlasticController>();
+                    plasticInContact.ShowOutline(false);
                 }
 
                 // If collides with Sight
@@ -138,13 +145,13 @@ public class TurtleController : MonoBehaviour
                     curState = FSMState.Chase;
                 }
             }
-        }      
+        }
     }
 
     IEnumerator Choke()
     {
         while (isChoking)
-        {         
+        {
             // Update choker timer ui (updating ui in a controller disgusting... but oh well)
             if (CurrentChokeDuration != ChokeUI.fillAmount)
             {

@@ -1133,6 +1133,51 @@ Prefab:
       propertyPath: m_LocalScale.x
       value: 1.73
       objectReference: {fileID: 0}
+    - target: {fileID: 114160065535760776, guid: ceccc46a222ca3141b31ba531bec1c5c,
+        type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 114160065535760776, guid: ceccc46a222ca3141b31ba531bec1c5c,
+        type: 2}
+      propertyPath: m_FontData.m_Alignment
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 224816414377108454, guid: ceccc46a222ca3141b31ba531bec1c5c,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -6.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224816414377108454, guid: ceccc46a222ca3141b31ba531bec1c5c,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 111.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 224816414377108454, guid: ceccc46a222ca3141b31ba531bec1c5c,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 1.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 224816414377108454, guid: ceccc46a222ca3141b31ba531bec1c5c,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 338.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 114160065535760776, guid: ceccc46a222ca3141b31ba531bec1c5c,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114160065535760776, guid: ceccc46a222ca3141b31ba531bec1c5c,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 0.865044
+      objectReference: {fileID: 0}
+    - target: {fileID: 114160065535760776, guid: ceccc46a222ca3141b31ba531bec1c5c,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 0.3726415
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ceccc46a222ca3141b31ba531bec1c5c, type: 2}
   m_IsPrefabAsset: 0
@@ -8812,6 +8857,25 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1245798075}
   m_CullTransparentMesh: 0
+--- !u!1 &1260410968 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1674076864893158, guid: ceccc46a222ca3141b31ba531bec1c5c,
+    type: 2}
+  m_PrefabInternal: {fileID: 136591468}
+--- !u!114 &1260410971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1260410968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1573420865, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0.24313727, g: 0.019607844, b: 0.019607844, a: 1}
+  m_EffectDistance: {x: 2, y: -2}
+  m_UseGraphicAlpha: 1
 --- !u!4 &1267568109 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4342573363857900, guid: 60743644d72186e4baffa587f48f4e6e,
@@ -11002,6 +11066,10 @@ Prefab:
         type: 2}
       propertyPath: m_ForceIntoRT
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1421251900869434, guid: a3c80656ef1b8d74cad3a320b8b124f3, type: 2}
+      propertyPath: m_Layer
+      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3c80656ef1b8d74cad3a320b8b124f3, type: 2}

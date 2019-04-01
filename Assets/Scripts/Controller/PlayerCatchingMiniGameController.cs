@@ -17,9 +17,9 @@ public class PlayerCatchingMiniGameController : MonoBehaviour
 
     private void Start()
     {
-        sessionData = GetComponent<PlayerController>().sessionData;
         player = gameObject;
         animator = GetComponent<Animator>();
+        sessionData = GetComponent<PlayerController>().sessionData;
     }
 
     // Update is called once per frame
@@ -61,6 +61,7 @@ public class PlayerCatchingMiniGameController : MonoBehaviour
                     if (turtleController.isChoking && Input.GetMouseButtonDown(0))
                     {
                         animator.SetBool("isRescuing", true);
+                        turtleController.plasticInContact.ShowOutline(true); // Show the outline similar to pickup
                         StartCoroutine(Rescue(turtleController));
                     }
                 }
@@ -79,6 +80,9 @@ public class PlayerCatchingMiniGameController : MonoBehaviour
     IEnumerator PickupPlastic(FallingPlasticController fallingPlasticController)
     {
         collectedPlastic = fallingPlasticController.gameObject;
+
+        // Show an outline to the plastic being picked up
+        fallingPlasticController.ShowOutline();
 
         yield return new WaitForSeconds(rescuingAnimation.length);
         animator.SetBool("isRescuing", false);

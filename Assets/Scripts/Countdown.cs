@@ -34,6 +34,13 @@ public class Countdown : MonoBehaviour
     {
         CountdownText.text = Mathf.Floor(CountdownValue / 60).ToString("00") + ":" + Mathf.FloorToInt(CountdownValue % 60).ToString("00"); // Display countdown
 
+        // NOTE: For UX, turn text to red when it's less than 10s left
+        if(CountdownValue > 0 && CountdownValue <= 10f)
+        {
+            CountdownText.color = Color.red;
+            return;
+        }
+
         if (CountdownValue <= 0)
         {
            OnCountdownEnd(); // If countdown ended call onCountdownEnd function
