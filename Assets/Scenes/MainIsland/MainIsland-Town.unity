@@ -1156,6 +1156,12 @@ CanvasGroup:
   m_CorrespondingSourceObject: {fileID: 225460789972584252, guid: bfbabfdd22addb54891582c16f6d89cf,
     type: 2}
   m_PrefabInternal: {fileID: 374243514}
+--- !u!114 &374243529 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114852064040859662, guid: bfbabfdd22addb54891582c16f6d89cf,
+    type: 2}
+  m_PrefabInternal: {fileID: 374243514}
+  m_Script: {fileID: 11500000, guid: 083f357f6a296274ca6841e774e5fab4, type: 3}
 --- !u!1 &377947644
 GameObject:
   m_ObjectHideFlags: 0
@@ -6333,6 +6339,17 @@ MonoBehaviour:
           m_Arguments:
             m_ObjectArgument: {fileID: 1442522180}
             m_ObjectArgumentAssemblyTypeName: QuestGiver, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 374243529}
+          m_MethodName: SelectLast
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
