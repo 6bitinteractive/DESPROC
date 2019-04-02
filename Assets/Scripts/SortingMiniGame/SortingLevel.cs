@@ -15,8 +15,8 @@ public class SortingLevel : MonoBehaviour
     [Header("Setup")]
     [SerializeField] private TurtleTale.SessionData sessionData;
     [SerializeField] private GameObject plasticPrefab;
-    [SerializeField] Transform plasticPosition;
-    [SerializeField] Sorting.SortingBin[] sortingBins;
+    [SerializeField] private Transform plasticPosition;
+    [SerializeField] private Sorting.SortingBin[] sortingBins;
 
     [Header("UI Display")]
     [SerializeField] private Text timeText;

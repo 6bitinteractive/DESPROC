@@ -502,6 +502,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc4ad90c0bf40bf4fb19a845f0459a60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  note: Some scenes do not have ambient sound so this is probably attached to some
+    object with an empty AudioSource component; simply ignore this script if such
+    is the case. Please do not remove.
   audioType: 0
 --- !u!1 &431351865
 GameObject:
@@ -1266,7 +1269,7 @@ Prefab:
     - target: {fileID: 224138857399267980, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_RootOrder
-      value: 17
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 224336711366434096, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
@@ -1301,7 +1304,7 @@ Prefab:
     - target: {fileID: 224830209416137190, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_RootOrder
-      value: 18
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 224530990922418986, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
@@ -1331,7 +1334,17 @@ Prefab:
     - target: {fileID: 224790950330813622, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_RootOrder
-      value: 16
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 114964840124237320, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 805432179}
+    - target: {fileID: 114964840124237320, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Play
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfbabfdd22addb54891582c16f6d89cf, type: 2}
@@ -1372,6 +1385,11 @@ GameObject:
 --- !u!225 &805432178 stripped
 CanvasGroup:
   m_CorrespondingSourceObject: {fileID: 225460789972584252, guid: bfbabfdd22addb54891582c16f6d89cf,
+    type: 2}
+  m_PrefabInternal: {fileID: 805432171}
+--- !u!82 &805432179 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 82694982648090236, guid: bfbabfdd22addb54891582c16f6d89cf,
     type: 2}
   m_PrefabInternal: {fileID: 805432171}
 --- !u!4 &919889673
@@ -2090,6 +2108,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc4ad90c0bf40bf4fb19a845f0459a60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  note: Some scenes do not have ambient sound so this is probably attached to some
+    object with an empty AudioSource component; simply ignore this script if such
+    is the case. Please do not remove.
   audioType: 1
 --- !u!4 &1133279775 stripped
 Transform:

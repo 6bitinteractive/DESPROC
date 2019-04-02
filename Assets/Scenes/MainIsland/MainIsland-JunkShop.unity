@@ -1198,6 +1198,7 @@ GameObject:
   m_Component:
   - component: {fileID: 709186812}
   - component: {fileID: 709186813}
+  - component: {fileID: 709186814}
   m_Layer: 0
   m_Name: Bridge_Fixed_front
   m_TagString: Untagged
@@ -1264,6 +1265,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!210 &709186814
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 709186811}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!1 &720518251
 GameObject:
   m_ObjectHideFlags: 0
@@ -1560,17 +1571,17 @@ Prefab:
     - target: {fileID: 224336711366434096, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 0.000045776367
+      value: -0.000015258789
       objectReference: {fileID: 0}
     - target: {fileID: 224336711366434096, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 120.115
+      value: 120.11501
       objectReference: {fileID: 0}
     - target: {fileID: 224597690360265418, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_AnchorMin.y
-      value: 0.00000017881393
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224143051293295818, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
@@ -1593,6 +1604,16 @@ Prefab:
       value: 
       objectReference: {fileID: 11400000, guid: de6ba31b91eec6f4899bafd2c99470df,
         type: 2}
+    - target: {fileID: 114964840124237320, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 848643103}
+    - target: {fileID: 114964840124237320, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfbabfdd22addb54891582c16f6d89cf, type: 2}
   m_IsPrefabAsset: 0
@@ -1669,6 +1690,11 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 848643089}
   m_Script: {fileID: 11500000, guid: 083f357f6a296274ca6841e774e5fab4, type: 3}
+--- !u!82 &848643103 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 82694982648090236, guid: bfbabfdd22addb54891582c16f6d89cf,
+    type: 2}
+  m_PrefabInternal: {fileID: 848643089}
 --- !u!1 &1000468192
 GameObject:
   m_ObjectHideFlags: 0
@@ -2080,8 +2106,8 @@ PolygonCollider2D:
       - {x: -1.5745287, y: 1.2013873}
       - {x: -1.0725632, y: 0.96187836}
       - {x: -0.20077384, y: 1.1583704}
-      - {x: 0.22255808, y: 1.735799}
-      - {x: 0.5784211, y: 1.8118111}
+      - {x: 0.059610426, y: 1.138324}
+      - {x: 0.74136925, y: 1.241494}
       - {x: 1.2562528, y: 1.9556634}
       - {x: 3.097067, y: 1.8861018}
       - {x: 4.9883385, y: 1.8237466}
@@ -2397,11 +2423,11 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: 5.301544, y: -3.502411}
-      - {x: 5.5921936, y: -2.8843117}
-      - {x: 6.308563, y: -2.8117294}
-      - {x: 6.5737915, y: -2.5454903}
-      - {x: 6.5872498, y: -1.6298027}
-      - {x: -1.393158, y: -1.6734161}
+      - {x: 5.2560425, y: -2.5865364}
+      - {x: 5.210388, y: -2.121685}
+      - {x: 6.5309143, y: -2.1070557}
+      - {x: 6.5559998, y: -1.334816}
+      - {x: -1.3699036, y: -1.3247108}
       - {x: -1.3950195, y: -2.050499}
       - {x: -1.4758301, y: -2.680954}
       - {x: -1.1229553, y: -3.2635612}
