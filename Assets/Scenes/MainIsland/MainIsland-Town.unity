@@ -1050,7 +1050,7 @@ Prefab:
     - target: {fileID: 224336711366434096, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -0.000015258789
+      value: 0.000015258789
       objectReference: {fileID: 0}
     - target: {fileID: 114749271423588208, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
@@ -1160,7 +1160,7 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 374243531}
+      objectReference: {fileID: 374243532}
     - target: {fileID: 114861681341757964, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -1269,6 +1269,11 @@ AudioSource:
 --- !u!1 &374243531 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1049383383790788, guid: bfbabfdd22addb54891582c16f6d89cf,
+    type: 2}
+  m_PrefabInternal: {fileID: 374243514}
+--- !u!114 &374243532 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114243449263722578, guid: bfbabfdd22addb54891582c16f6d89cf,
     type: 2}
   m_PrefabInternal: {fileID: 374243514}
   m_Script: {fileID: 11500000, guid: 083f357f6a296274ca6841e774e5fab4, type: 3}
