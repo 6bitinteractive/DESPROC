@@ -41,9 +41,9 @@ public class QuestLog : MonoBehaviour
                     interactObjective.onInteractObjective += new OnInteractObjective(objectives.UpdateItemCount);
                     CheckCompletionInQuestLog();
                     //CheckCompletion();
-                }   
+                }
             }
-        }     
+        }
     }
 
     public void AcceptQuest(Quests quest)
@@ -123,7 +123,7 @@ public class QuestLog : MonoBehaviour
             questScripts.Remove(questScript);
             Destroy(questScript.gameObject);
             Destroy(questScript.transform.parent.gameObject);
-            
+
             sessionData.Quests.Remove(questScript.Quest);
             questDescriptionText.text = string.Empty;
             selected = null;

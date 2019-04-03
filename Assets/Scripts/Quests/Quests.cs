@@ -12,6 +12,8 @@ public class Quests
     public UnityEvent OnQuestAccepted = new UnityEvent();
     private bool isAccepted;
 
+    public bool HasBeenDisplayed; // Hack: avoid redundantly displaying completed quest message feed
+
     public CollectObjective[] CollectObjectives
     {
         get
@@ -134,7 +136,7 @@ public class CollectObjective : Objective
         // Debug.Log("nep");
         //   Debug.Log(ItemReference.name);
         // Checks if it has already been picked up
-     
+
         //Checks if the objectives name is the same as the type string
         if (string.Equals(interactableObjectiveTag, ObjectiveTag))
         {
@@ -149,7 +151,7 @@ public class CollectObjective : Objective
 
             QuestLog.Instance.UpdateSelectedQuest();
             QuestLog.Instance.CheckCompletion();
-                
+
             // if quest is complete
             if (IsComplete)
             {
@@ -159,7 +161,7 @@ public class CollectObjective : Objective
             }
         }
     }
-    
+
     public void CheckItemCount()
     {
         // if quest is complete
