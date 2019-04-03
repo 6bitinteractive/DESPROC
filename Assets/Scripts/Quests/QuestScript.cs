@@ -7,6 +7,7 @@ public class QuestScript : MonoBehaviour
 {
     public Quests Quest { get; set; }
     private bool isMarkedComplete = false;
+    private bool hasBeenDisplayed;
 
     public void Select()
     {
@@ -33,7 +34,12 @@ public class QuestScript : MonoBehaviour
     {
         if (Quest.IsComplete && isMarkedComplete)
         {
-            MessageFeedManager.Instance.WriteMessage(string.Format("{0} (Complete)", Quest.Name));
+            //Hack: to avoid displaying this twice
+            if (!hasBeenDisplayed)
+            {
+                MessageFeedManager.Instance.WriteMessage(string.Format("{0} (Complete)", Quest.Name));
+                hasBeenDisplayed = true;
+            }
         }
     }
 }
