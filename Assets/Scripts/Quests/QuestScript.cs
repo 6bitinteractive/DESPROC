@@ -31,9 +31,8 @@ public class QuestScript : MonoBehaviour
 
     public void IsCompleteMessageFeed()
     {
-        if (Quest.IsComplete && !isMarkedComplete)
+        if (Quest.IsComplete && isMarkedComplete)
         {
-            isMarkedComplete = true;
             MessageFeedManager.Instance.WriteMessage(string.Format("{0} (Complete)", Quest.Name));
         }
     }
