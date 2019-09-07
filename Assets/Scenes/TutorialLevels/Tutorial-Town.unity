@@ -546,17 +546,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d0091aee95caab41a717ad5152f6792, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questGroupEnabled: 0
   dialogueArray:
-  - name: Aling Nena
-    sentence: Well, look at you! What a bright, young boy. I could just pinch your
-      cheeks!
-  - name: Aling Nena
-    sentence: It's nice to see young folk like you come around our island. I hope
-      you enjoy your stay, hijo.
-  questName: 
-  questDialogueArray: []
-  dialogueEndTrigger: {fileID: 0}
+  - questName: 
+    sentenceArray: []
+    dialogueEndTrigger: {fileID: 0}
+  - questName: 
+    sentenceArray: []
+    dialogueEndTrigger: {fileID: 0}
 --- !u!1001 &361835146
 Prefab:
   m_ObjectHideFlags: 0
@@ -821,6 +817,36 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: EndDialogue
       objectReference: {fileID: 0}
+    - target: {fileID: 224143051293295818, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 108
+      objectReference: {fileID: 0}
+    - target: {fileID: 224336711366434096, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.000076293945
+      objectReference: {fileID: 0}
+    - target: {fileID: 224336711366434096, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 120.11504
+      objectReference: {fileID: 0}
+    - target: {fileID: 224597690360265418, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0.000000059604645
+      objectReference: {fileID: 0}
+    - target: {fileID: 114735247798239610, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: m_Value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224597690360265418, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0.9999997
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfbabfdd22addb54891582c16f6d89cf, type: 2}
   m_IsPrefabAsset: 0
@@ -1067,13 +1093,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d0091aee95caab41a717ad5152f6792, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questGroupEnabled: 0
   dialogueArray:
-  - name: Chicken
-    sentence: '*cluck cluck*'
-  questName: 
-  questDialogueArray: []
-  dialogueEndTrigger: {fileID: 0}
+  - questName: 
+    sentenceArray: []
+    dialogueEndTrigger: {fileID: 0}
 --- !u!1 &671789443
 GameObject:
   m_ObjectHideFlags: 0
@@ -1907,21 +1930,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d0091aee95caab41a717ad5152f6792, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questGroupEnabled: 0
   dialogueArray:
-  - name: Volunteer
-    sentence: This is the town. It's quite lively today too.
-  - name: Volunteer
-    sentence: This is where you'll find the sari-sari store and the junkshop. The
-      townsfolk are quite accomodating. I'm sure they'd love to meet you.
-  - name: Volunteer
-    sentence: But for now, why don't we head to the conservatory first, so we can
-      brief you about your duties as a volunteer for our organization?
-  - name: Volunteer
-    sentence: You can find the conservatory down the path to your right.
-  questName: 
-  questDialogueArray: []
-  dialogueEndTrigger: {fileID: 11400000, guid: aacf4ffd6be0fad45bd1e5d584b886d8, type: 2}
+  - questName: 
+    sentenceArray: []
+    dialogueEndTrigger: {fileID: 0}
+  - questName: 
+    sentenceArray: []
+    dialogueEndTrigger: {fileID: 0}
+  - questName: 
+    sentenceArray: []
+    dialogueEndTrigger: {fileID: 0}
+  - questName: 
+    sentenceArray: []
+    dialogueEndTrigger: {fileID: 0}
 --- !u!1 &888263117
 GameObject:
   m_ObjectHideFlags: 0
@@ -2349,6 +2370,11 @@ MonoBehaviour:
   dialogueText: {fileID: 534613549}
   player: {fileID: 461550198}
   animator: {fileID: 534613548}
+  OnFullDialogueEnd:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!4 &1178393703
 Transform:
   m_ObjectHideFlags: 0
@@ -2663,13 +2689,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d0091aee95caab41a717ad5152f6792, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questGroupEnabled: 0
   dialogueArray:
-  - name: Junkshop Owner
-    sentence: Dialogue
-  questName: 
-  questDialogueArray: []
-  dialogueEndTrigger: {fileID: 0}
+  - questName: 
+    sentenceArray: []
+    dialogueEndTrigger: {fileID: 0}
 --- !u!1 &1316450969
 GameObject:
   m_ObjectHideFlags: 0
@@ -2867,7 +2890,7 @@ Prefab:
         type: 2}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 42c93fd6e37566f479d33de0d222875c, type: 3}
+      objectReference: {fileID: 8300000, guid: 3bd45ba6d815e39468e26474b99c87aa, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac2a293f2e958a14daeb7d5a426742dd, type: 2}
   m_IsPrefabAsset: 0
@@ -3129,13 +3152,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d0091aee95caab41a717ad5152f6792, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questGroupEnabled: 0
   dialogueArray:
-  - name: Volunteer
-    sentence: You can find the conservatory down the path to your right.
-  questName: 
-  questDialogueArray: []
-  dialogueEndTrigger: {fileID: 0}
+  - questName: 
+    sentenceArray: []
+    dialogueEndTrigger: {fileID: 0}
 --- !u!1 &1846087726
 GameObject:
   m_ObjectHideFlags: 0

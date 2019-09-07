@@ -1055,7 +1055,7 @@ Prefab:
     - target: {fileID: 224336711366434096, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -0.000015258789
+      value: -0.000045776367
       objectReference: {fileID: 0}
     - target: {fileID: 114749271423588208, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
@@ -1094,7 +1094,7 @@ Prefab:
     - target: {fileID: 224143051293295818, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 104
+      value: 108
       objectReference: {fileID: 0}
     - target: {fileID: 114861681341757964, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
@@ -1236,6 +1236,26 @@ Prefab:
     - target: {fileID: 1164761057078024, guid: bfbabfdd22addb54891582c16f6d89cf, type: 2}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224597690360265418, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224336711366434096, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 120.115074
+      objectReference: {fileID: 0}
+    - target: {fileID: 114735247798239610, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: m_Value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224597690360265418, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0.9999997
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfbabfdd22addb54891582c16f6d89cf, type: 2}
@@ -3122,6 +3142,7 @@ MonoBehaviour:
         m_Calls: []
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
+    HasBeenDisplayed: 0
     Name: Building Bridges
     Objective: Bring the ecobricks back to Carding
     Description: Bring the ecobricks you just made back to Carding so he can use them
@@ -5394,6 +5415,7 @@ MonoBehaviour:
         m_Calls: []
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
+    HasBeenDisplayed: 0
     Name: Diving for Debris
     Objective: Bring Aling Nena plastic
     Description: Help with the cleanup efforts at the docks to acquire. You can talk
@@ -5703,7 +5725,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 42c93fd6e37566f479d33de0d222875c, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 3bd45ba6d815e39468e26474b99c87aa, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.7
   m_Pitch: 1

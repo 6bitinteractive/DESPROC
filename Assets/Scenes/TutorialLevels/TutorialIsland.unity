@@ -904,12 +904,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueArray:
-  - name: Volunteer
-    sentence: This is the Turtle Conservation Society. This is where you'll be assigned
-      tasks to accomplish throughout your stay here in Pawikan Island.
-  - name: Volunteer
-    sentence: This is also where we keep track of your records as a student volunteer.
-  dialogueEndTrigger: {fileID: 11400000, guid: dc80785d62a016846b6a4c5771ab7703, type: 2}
+  - questName: 
+    sentenceArray: []
+    dialogueEndTrigger: {fileID: 0}
+  - questName: 
+    sentenceArray: []
+    dialogueEndTrigger: {fileID: 0}
 --- !u!1001 &318920080
 Prefab:
   m_ObjectHideFlags: 0
@@ -1086,7 +1086,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 42c93fd6e37566f479d33de0d222875c, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 3bd45ba6d815e39468e26474b99c87aa, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.3
   m_Pitch: 1
@@ -3051,29 +3051,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueArray:
-  - name: Volunteer
-    sentence: 'Hi! You must be the student volunteer sent by our partner school! '
-  - name: Volunteer
-    sentence: "Welcome to Pawikan Island! It\u2019s a humble place, but it\u2019s
-      our home."
-  - name: Volunteer
-    sentence: "Unfortunately, it\u2019s been in bad shape as of late."
-  - name: Volunteer
-    sentence: You see have a pretty widespread pollution problem, and all that trash
-      manages to find its way into the rivers and the nearby sea.
-  - name: Volunteer
-    sentence: "It\u2019s been taking a toll on the local wildlife and the habitats
-      in which they live."
-  - name: Volunteer
-    sentence: Here at the Turtle Conservation Society, we do as much as we can to
-      prevent the local turtle population from coming into any harm.
-  - name: Volunteer
-    sentence: Our aim is to protect their homes, and keep them away from the hazards
-      that plastic pollution poses to their safety.
-  - name: Volunteer
-    sentence: Let me show you around the island and get you familiarized with your
-      duties as a volunteer for our organization.
-  dialogueEndTrigger: {fileID: 11400000, guid: aacf4ffd6be0fad45bd1e5d584b886d8, type: 2}
+  - questName: 
+    sentenceArray: []
+    dialogueEndTrigger: {fileID: 0}
+  - questName: 
+    sentenceArray: []
+    dialogueEndTrigger: {fileID: 0}
+  - questName: 
+    sentenceArray: []
+    dialogueEndTrigger: {fileID: 0}
+  - questName: 
+    sentenceArray: []
+    dialogueEndTrigger: {fileID: 0}
+  - questName: 
+    sentenceArray: []
+    dialogueEndTrigger: {fileID: 0}
+  - questName: 
+    sentenceArray: []
+    dialogueEndTrigger: {fileID: 0}
+  - questName: 
+    sentenceArray: []
+    dialogueEndTrigger: {fileID: 0}
+  - questName: 
+    sentenceArray: []
+    dialogueEndTrigger: {fileID: 0}
 --- !u!4 &1164877237
 Transform:
   m_ObjectHideFlags: 0
@@ -3435,27 +3436,27 @@ Prefab:
     - target: {fileID: 224480069699930530, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 224249758436251312, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 224619953085637010, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 224605478860438246, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 224163949817584082, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 224249758436251312, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
@@ -3470,6 +3471,81 @@ Prefab:
     - target: {fileID: 223250687206599314, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_PixelPerfect
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224689000571095834, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224138857399267980, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 224559734026517192, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 224530990922418986, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 224830209416137190, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 224561213617550132, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 224786677316838310, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 224628479541603484, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 224912964868538154, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 224071014818880638, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 224790950330813622, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 224336711366434096, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.000015258789
+      objectReference: {fileID: 0}
+    - target: {fileID: 224336711366434096, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 120.11504
+      objectReference: {fileID: 0}
+    - target: {fileID: 224143051293295818, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 108
+      objectReference: {fileID: 0}
+    - target: {fileID: 224597690360265418, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: m_AnchorMin.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -4701,15 +4777,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueArray:
-  - name: Volunteer
-    sentence: "For now, why don\u2019t we head to the boat so I can show you around
-      the other islands?"
-  - name: Volunteer
-    sentence: "You can move using the WASD keys. I hope you\u2019re not too seasick
-      to walk around though!"
-  - name: Volunteer
-    sentence: Go on, try it out!
-  dialogueEndTrigger: {fileID: 11400000, guid: eb2b760c478d3d747aadaf9471a542d3, type: 2}
+  - questName: 
+    sentenceArray: []
+    dialogueEndTrigger: {fileID: 0}
+  - questName: 
+    sentenceArray: []
+    dialogueEndTrigger: {fileID: 0}
+  - questName: 
+    sentenceArray: []
+    dialogueEndTrigger: {fileID: 0}
 --- !u!1 &1962602039
 GameObject:
   m_ObjectHideFlags: 0
@@ -4739,7 +4815,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 1211782972}
   dialogueText: {fileID: 1047268706}
+  player: {fileID: 0}
   animator: {fileID: 950420740}
+  OnFullDialogueEnd:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!4 &1962602041
 Transform:
   m_ObjectHideFlags: 0
@@ -5094,10 +5176,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueArray:
-  - name: Volunteer
-    sentence: This is the Shop. You can purchase items and upgrades that might aid
-      you in carrying out your tasks as an island volunteer.
-  dialogueEndTrigger: {fileID: 11400000, guid: e47300e55947ac044a14668c35b2576e, type: 2}
+  - questName: 
+    sentenceArray: []
+    dialogueEndTrigger: {fileID: 0}
 --- !u!1001 &2045234860
 Prefab:
   m_ObjectHideFlags: 0

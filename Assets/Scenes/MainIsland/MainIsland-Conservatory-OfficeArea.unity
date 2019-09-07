@@ -1295,6 +1295,7 @@ MonoBehaviour:
         m_Calls: []
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
+    HasBeenDisplayed: 0
     Name: Broken Bridges
     Objective: Talk to the locals
     Description: "We can't get to the junkshop because the bridge is broken.\r The
@@ -1746,17 +1747,17 @@ Prefab:
     - target: {fileID: 224143051293295818, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 104
+      value: 108
       objectReference: {fileID: 0}
     - target: {fileID: 224336711366434096, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 0.000045776367
+      value: 0.000015258789
       objectReference: {fileID: 0}
     - target: {fileID: 224336711366434096, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 120.115
+      value: 120.115074
       objectReference: {fileID: 0}
     - target: {fileID: 114164320960644118, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
@@ -1943,6 +1944,16 @@ Prefab:
     - target: {fileID: 1772382163200114, guid: bfbabfdd22addb54891582c16f6d89cf, type: 2}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114735247798239610, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: m_Value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224597690360265418, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0.9999997
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfbabfdd22addb54891582c16f6d89cf, type: 2}
@@ -3099,7 +3110,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: b6545c68e41856248bbcb01031c939a1, type: 3}
+  m_audioClip: {fileID: 8300000, guid: ee0a4d1725771954fbe3c5a90e356777, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

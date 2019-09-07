@@ -3026,7 +3026,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 4ae2c85b922590f40ab51fb759c39529, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 43e8fad88f673a548bb416ff7db0da6a, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -5188,6 +5188,11 @@ MonoBehaviour:
   dialogueText: {fileID: 291604291}
   player: {fileID: 0}
   animator: {fileID: 291604293}
+  OnFullDialogueEnd:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!4 &1394898074
 Transform:
   m_ObjectHideFlags: 0
