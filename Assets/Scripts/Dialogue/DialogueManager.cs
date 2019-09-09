@@ -191,7 +191,7 @@ public class DialogueManager : MonoBehaviour
         {
             if (player.gameObject.layer == 8)
             {
-                player.GetComponent<Animator>().SetBool("isMoving", true);
+               // player.GetComponent<Animator>().SetBool("isMoving", true); Disabled to prevent player's animation to start "Moving in place" when the player movement is given back
                 player.GetComponent<Movement>().enabled = true;
             }
         }
