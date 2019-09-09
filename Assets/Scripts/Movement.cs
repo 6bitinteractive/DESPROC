@@ -35,15 +35,29 @@ public class Movement : MonoBehaviour
         rb.velocity = new Vector3(xDirection * xSpeed, yDirection * ySpeed);
     }
 
+    public void TapToMove(float xDirection, float yDirection)
+    {
+        // If the entity has animations then animate
+        if (isAnimated)
+        {
+            UpdateAnimation(xDirection, yDirection);
+        }
+    }
+
     public void ResetVelocity()
     {
         rb.velocity = Vector3.zero;
     }
 
+    public void StopMovingAnimation()
+    {
+        animator.SetBool("isMoving", false);
+    }
+
     private void UpdateAnimation(float xDirection, float yDirection)
     {
         // Check if no longer moving
-        if (xDirection == 0 && yDirection == 0)
+        if (xDirection == transform.position.x && yDirection == transform.position.y)
         {
             // Set last directions
             animator.SetFloat("LastXDirection", LastXDirection);
