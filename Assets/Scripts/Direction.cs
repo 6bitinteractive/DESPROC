@@ -19,12 +19,12 @@ public class Direction : MonoBehaviour
         if (IsFlippable)
         {
             // Checks direction and determines if the sprite should flip or not
-            if (direction > 0 && !FacingRight)
+            if (direction >= transform.position.x && !FacingRight)
             {
                 scale.x = -scale.x;
                 FacingRight = true;
             }
-            else if (direction < 0 && FacingRight)
+            else if (direction <= transform.position.x && FacingRight)
             {
                 scale.x = -scale.x;
                 FacingRight = false;
