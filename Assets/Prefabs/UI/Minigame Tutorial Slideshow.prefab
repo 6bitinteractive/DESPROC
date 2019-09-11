@@ -63,7 +63,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1312426907521494
 GameObject:
   m_ObjectHideFlags: 1
@@ -504,14 +504,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdd71dd03d96be0429c222510362a0fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteArray:
-  - {fileID: 21300000, guid: 02fd10b318f8bf04db9aafdfeee52a1a, type: 3}
-  - {fileID: 21300000, guid: f3a0c54ba161a9c40818d0006a65e535, type: 3}
-  - {fileID: 21300000, guid: c9de45d321ff1d146aac4c966d2d62f2, type: 3}
-  - {fileID: 21300000, guid: dabc0a3a52ebb0a4bbcbaf0db6c7c39f, type: 3}
+  spriteArray: {fileID: 0}
   displayImage: {fileID: 114647131608370082}
   nextImage: {fileID: 114979374587949498}
   previousImage: {fileID: 114004771455529074}
+  startButton: {fileID: 0}
   dialogueTrigger: {fileID: 0}
   dialogueText: {fileID: 114617222601006624}
 --- !u!114 &114744849731552960
