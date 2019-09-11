@@ -52,7 +52,7 @@ public class ImageSlideshow : MonoBehaviour
 
     public void BtnPrev()
     {
-        if (i <= 0)
+        if (i <= 1)
         {
             i = 0;
             previousImage.gameObject.SetActive(false);
