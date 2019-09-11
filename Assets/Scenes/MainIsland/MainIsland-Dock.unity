@@ -1694,11 +1694,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -4.315679
+      value: -4.3174787
       objectReference: {fileID: 0}
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.6513835
+      value: 0.65138257
       objectReference: {fileID: 0}
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.z
@@ -3859,7 +3859,7 @@ Prefab:
     - target: {fileID: 224336711366434096, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 120.11503
+      value: 120.11498
       objectReference: {fileID: 0}
     - target: {fileID: 114358568831537564, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
@@ -4016,7 +4016,7 @@ Prefab:
     - target: {fileID: 224143051293295818, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 108
+      value: 104.965836
       objectReference: {fileID: 0}
     - target: {fileID: 114164320960644118, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
@@ -4046,6 +4046,19 @@ Prefab:
     - target: {fileID: 224597690360265418, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114586291259425282, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: startButton
+      value: 
+      objectReference: {fileID: 1593808360}
+    - target: {fileID: 1414149938677222, guid: bfbabfdd22addb54891582c16f6d89cf, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1267987314742690, guid: bfbabfdd22addb54891582c16f6d89cf, type: 2}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -4219,6 +4232,12 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &1593808360 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114787871046204160, guid: bfbabfdd22addb54891582c16f6d89cf,
+    type: 2}
+  m_PrefabInternal: {fileID: 1593808340}
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &1616933681
 Prefab:
   m_ObjectHideFlags: 0

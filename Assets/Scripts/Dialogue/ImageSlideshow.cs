@@ -10,12 +10,19 @@ public class ImageSlideshow : MonoBehaviour
     public Image displayImage;
     public Button nextImage;
     public Button previousImage;
+    public Button startButton;
 
     [Header("Dialogue")]
     public DialogueTrigger dialogueTrigger;
     public Text dialogueText;
 
     private int i = 0;
+    private bool readAll;
+
+    void Start()
+    {
+        readAll = false;
+    }
 
     void Update()
     {
@@ -25,12 +32,36 @@ public class ImageSlideshow : MonoBehaviour
 
     public void BtnNext()
     {
-        i++;
+        if (i >= spriteArray.sprites.Length - 1)
+        {
+            i = spriteArray.sprites.Length;
+            readAll = true;
+            nextImage.gameObject.SetActive(false);
+
+            if(readAll)
+            {
+                startButton.gameObject.SetActive(true);
+            }
+        }
+        else
+        {
+            i++;
+            previousImage.gameObject.SetActive(true);
+        }
     }
 
     public void BtnPrev()
     {
-         i--;
+        if (i <= 0)
+        {
+            i = 0;
+            previousImage.gameObject.SetActive(false);
+        }
+        else
+        {
+            i--;
+            nextImage.gameObject.SetActive(true);
+        }
     }
 
     private int mod(int x, int m)

@@ -1747,7 +1747,7 @@ Prefab:
     - target: {fileID: 224143051293295818, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 108
+      value: 104.965836
       objectReference: {fileID: 0}
     - target: {fileID: 224336711366434096, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
@@ -1816,7 +1816,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1267987314742690, guid: bfbabfdd22addb54891582c16f6d89cf, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114990226847206694, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
@@ -1955,6 +1955,15 @@ Prefab:
       propertyPath: m_AnchorMax.y
       value: 0.9999997
       objectReference: {fileID: 0}
+    - target: {fileID: 1414149938677222, guid: bfbabfdd22addb54891582c16f6d89cf, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114586291259425282, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: startButton
+      value: 
+      objectReference: {fileID: 758820821}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfbabfdd22addb54891582c16f6d89cf, type: 2}
   m_IsPrefabAsset: 0
@@ -2092,6 +2101,12 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &758820821 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114787871046204160, guid: bfbabfdd22addb54891582c16f6d89cf,
+    type: 2}
+  m_PrefabInternal: {fileID: 758820807}
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!114 &805432172 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114316647120422808, guid: bfbabfdd22addb54891582c16f6d89cf,
@@ -2450,7 +2465,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -8.018329
+      value: -8.019679
       objectReference: {fileID: 0}
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.y
