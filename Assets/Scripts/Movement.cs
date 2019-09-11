@@ -24,9 +24,9 @@ public class Movement : MonoBehaviour
         // If the entity has animations then animate
         if (isAnimated)
         {
-           // float heading = Vector3.Normalize(xDirection + yDirection);
+            //float heading = Vector3.Normalize(xDirection + yDirection);
             //animator.SetFloat("xDirection", Mathf.Abs(rb.velocity.x));
-          //  animator.SetFloat("yDirection", Mathf.Abs(rb.velocity.y));
+            //animator.SetFloat("yDirection", Mathf.Abs(rb.velocity.y));
 
              UpdateAnimation(xDirection, yDirection); 
         }

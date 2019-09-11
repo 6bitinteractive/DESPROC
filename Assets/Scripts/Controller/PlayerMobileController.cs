@@ -32,39 +32,10 @@ public class PlayerMobileController : MonoBehaviour
 
 
     private void Update()
-    {
-        if (movement.enabled == true && Input.GetMouseButtonDown(0))
-        {
-           CastRay();
-        }
-
-        /*
+    {    
         if (movement.enabled == true)
         {
             Move();
-        }
-        */
-    }
-
-    void FixedUpdate()
-    {
-        if (movement.enabled == true)
-        {
-            // Move towards target position
-            if (transform.position.x != targetPos.x)
-            {
-                //  animator.SetBool("isMoving", true);
-                Move2();
-                //transform.position = Vector3.MoveTowards(transform.position, targetPos, movement.xSpeed * Time.deltaTime);
-
-                // Reached target destination
-                if (transform.position.x == targetPos.x)
-                {
-                    //   animator.SetBool("isMoving", false);
-                    Debug.Log("Reached target destination");
-                }
-            }
-            // transform.position = new Vector3(Mathf.Clamp(transform.position.x, minX, maxX), transform.position.y, transform.position.z);
         }
     }
 
@@ -74,29 +45,5 @@ public class PlayerMobileController : MonoBehaviour
         float yDirection = SimpleInput.GetAxisRaw("Vertical");
         movement.Move(xDirection, yDirection);
         direction.CheckDirection(xDirection);
-    }
-
-    void Move2()
-    {
-     //   float xDirection = SimpleInput.GetAxis("Horizontal");
-      //  float yDirection = SimpleInput.GetAxisRaw("Vertical");
-        movement.TapToMove(targetPos.x, targetPos.y);
-       // direction.CheckDirection(targetPos.x);
-        transform.position = Vector3.MoveTowards(transform.position, targetPos, movement.xSpeed * Time.deltaTime);
-    }
-
-    void CastRay()
-    {
-        Vector3 worldPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        worldPoint.z = Camera.main.transform.position.z;
-        Ray ray = new Ray(worldPoint, new Vector3(0, 0, 1));
-        RaycastHit2D hit = Physics2D.GetRayIntersection(ray);
-
-        if (hit)
-        {
-            targetPos = hit.point; // Set target pos
-            direction.CheckDirection(targetPos.x); // Face target pos
-            // Debug.Log("Target Hit:" + targetPos.x);
-        }
     }
 }
