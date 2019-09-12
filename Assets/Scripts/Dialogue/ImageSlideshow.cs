@@ -32,9 +32,9 @@ public class ImageSlideshow : MonoBehaviour
 
     public void BtnNext()
     {
-        if (i >= spriteArray.sprites.Length - 1)
+        if (i >= spriteArray.sprites.Length - 2)
         {
-            i = spriteArray.sprites.Length;
+            i = spriteArray.sprites.Length - 1;
             readAll = true;
             nextImage.gameObject.SetActive(false);
 
