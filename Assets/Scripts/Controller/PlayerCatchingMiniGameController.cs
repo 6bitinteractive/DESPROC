@@ -6,6 +6,7 @@ public class PlayerCatchingMiniGameController : MonoBehaviour
 {
     [SerializeField] private LayerMask LayerMask;
     [SerializeField] private AnimationClip rescuingAnimation;
+    [SerializeField] private float pickUpRange = 1.5f;
 
     private GameObject player;
     private Animator animator;
@@ -43,7 +44,7 @@ public class PlayerCatchingMiniGameController : MonoBehaviour
         {
             Vector3 hitPt = ray.GetPoint(distance);
             Ray playerToClick = new Ray(player.transform.position, hitPt - player.transform.position);
-            RaycastHit2D hit = Physics2D.Raycast(playerToClick.origin, playerToClick.direction, 2.5f, LayerMask);
+            RaycastHit2D hit = Physics2D.Raycast(playerToClick.origin, playerToClick.direction, pickUpRange, LayerMask);
 
             // Debug.DrawRay(playerToClick.origin, playerToClick.direction * 50, Color.yellow);
             if (hit)
