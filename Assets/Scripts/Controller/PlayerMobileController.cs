@@ -1,12 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
+// This script is a placeholder for playermobilecontroller simply to test tap to move
 public class PlayerMobileController : MonoBehaviour
 {
     [SerializeField] private TurtleTale.SessionData sessionData;
-    [SerializeField] private GameObject JoyStickCanvas;
+    [SerializeField] private LayerMask LayerMask;
 
     private Movement movement;
     private Direction direction;
@@ -15,35 +15,55 @@ public class PlayerMobileController : MonoBehaviour
 
     private void Awake()
     {
-//#if UNITY_ANDROID || UNITY_IOS
-        // If we're in an android or ios device
         movement = GetComponent<Movement>();
         direction = GetComponent<Direction>();
         playerController = GetComponent<PlayerController>();
         playerController.enabled = false;
-
-        JoyStickCanvas.SetActive(true);
-        enabled = true;
-//#else
-//        JoyStickCanvas.SetActive(false);
-//        enabled = false;
-//#endif
+        targetPos = transform.position; // quick fix to prevent player from moving to vector(0,0,0) on start
     }
 
-
     private void Update()
-    {    
-        if (movement.enabled == true)
+    {
+        if (movement.enabled == true && Input.GetMouseButtonDown(0))
+        {
+            CastRay();
+        }
+    }
+
+    void FixedUpdate()
+    {
+        // Move towards target position
+        if (transform.position.x != targetPos.x)
         {
             Move();
+
+            /*
+            // Reached target destination
+            if (transform.position.x == targetPos.x)
+            {
+                Debug.Log("Reached target destination");
+            }
+            */
         }
     }
 
     void Move()
     {
-        float xDirection = SimpleInput.GetAxis("Horizontal");
-        float yDirection = SimpleInput.GetAxisRaw("Vertical");
-        movement.Move(xDirection, yDirection);
-        direction.CheckDirection(xDirection);
+        transform.position = Vector3.MoveTowards(transform.position, targetPos, movement.xSpeed * Time.deltaTime);
+        movement.TapToMove(targetPos.x, targetPos.y);
+    }
+
+    void CastRay()
+    {
+        Vector3 worldPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        worldPoint.z = Camera.main.transform.position.z;
+        Ray ray = new Ray(worldPoint, new Vector3(0, 0, 1));
+        RaycastHit2D hit = Physics2D.GetRayIntersection(ray, LayerMask);
+
+        if (hit)
+        {
+            targetPos = hit.point; // Set target pos
+            direction.CheckDirection(targetPos.x); // Face target pos
+        }
     }
 }

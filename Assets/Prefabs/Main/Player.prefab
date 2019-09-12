@@ -1663,7 +1663,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1914326923897948
 GameObject:
   m_ObjectHideFlags: 1
@@ -3505,7 +3505,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sessionData: {fileID: 11400000, guid: d145efb78b7a3894d99040295d0cceb3, type: 2}
-  JoyStickCanvas: {fileID: 1899197926935442}
+  LayerMask:
+    serializedVersion: 2
+    m_Bits: 32768
 --- !u!114 &114264314197080944
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4769,6 +4771,7 @@ MonoBehaviour:
   displayImage: {fileID: 114649355744576438}
   nextImage: {fileID: 114763636463020608}
   previousImage: {fileID: 114749271423588208}
+  startButton: {fileID: 0}
   dialogueTrigger: {fileID: 0}
   dialogueText: {fileID: 114229469226475470}
 --- !u!114 &114597343873716802
