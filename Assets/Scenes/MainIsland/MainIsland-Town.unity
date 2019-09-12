@@ -1055,7 +1055,7 @@ Prefab:
     - target: {fileID: 224336711366434096, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -0.000076293945
+      value: 0.000015258789
       objectReference: {fileID: 0}
     - target: {fileID: 114749271423588208, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
@@ -1094,7 +1094,7 @@ Prefab:
     - target: {fileID: 224143051293295818, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 108
+      value: 104.289696
       objectReference: {fileID: 0}
     - target: {fileID: 114861681341757964, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
@@ -1245,7 +1245,7 @@ Prefab:
     - target: {fileID: 224336711366434096, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 120.11505
+      value: 120.11503
       objectReference: {fileID: 0}
     - target: {fileID: 114735247798239610, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
@@ -1974,7 +1974,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.89252543
+      value: -0.89472556
       objectReference: {fileID: 0}
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.y
@@ -7582,16 +7582,14 @@ MonoBehaviour:
       sentence: That broken bridge has really put us all in a pickle! We can't even
         get to the junkshop anymore!
     - name: Aling Nena
-      sentence: Poor Carding. He's been standing in front of that bridge, trying to
-        figure out a way to fix it.
+      sentence: Poor <keyword>Carding</keyword>. He's been standing in front of that
+        bridge, trying to figure out a way to fix it.
     - name: Aling Nena
       sentence: You should go talk to him! I'm sure a young, energetic lad such as
         yourself would be able to help out!
     - name: Aling Nena
-      sentence: I'm pretty sure I saw him around the area west of here. Unless my
-        eyes are failing me, that is! I am quite old, hahaha!
-    - name: Aling Nena
-      sentence: In any case, be careful walking around that bridge now, dearie.
+      sentence: I'm pretty sure I saw him around the <keyword>area west of here</keyword>.
+        Unless my eyes are failing me, that is! I am quite old, hahaha!
     dialogueEndTrigger: {fileID: 0}
   - questName: Bricked
     sentenceArray:
@@ -7602,7 +7600,7 @@ MonoBehaviour:
       sentence: "I usually turn them in at the junkshop for a pretty penny, but ever
         since the bridge broke, they\u2019ve just been piling up."
     - name: Aling Nena
-      sentence: "Oh, but unfortunately, I don\u2019t think I have enough plastics
+      sentence: "Oh, but unfortunately, I don\u2019t think I have enough <keyword>plastics</keyword>
         to fill it up with."
     - name: Aling Nena
       sentence: Ah, I know! If you help with the cleanup efforts at the docks, I'm
@@ -7613,10 +7611,11 @@ MonoBehaviour:
     sentenceArray:
     - name: Aling Nena
       sentence: If you help with the cleanup efforts at the docks, I'm sure you can
-        find a bunch of plastic to fill the bottle up.
+        find a bunch of <keyword>plastic</keyword> to fill the bottle up.
     - name: Aling Nena
-      sentence: You can talk to Renaldo, who goes on plastic cleanup dives from time
-        to time. He usually spends his free time enjoying the sea breeze at the docks.
+      sentence: You can talk to <keyword>Renaldo</keyword>, who goes on plastic cleanup
+        dives from time to time. He usually spends his free time enjoying the sea
+        breeze at the <keyword>docks</keyword>.
     dialogueEndTrigger: {fileID: 0}
   - questName: Bottled Up
     sentenceArray:
@@ -7633,8 +7632,8 @@ MonoBehaviour:
   - questName: Building Bridges
     sentenceArray:
     - name: Aling Nena
-      sentence: Wasn't that easy? Now you can bring these ecobricks to Carding! I
-        think he'll be able to work with these.
+      sentence: Wasn't that easy? Now you can bring these ecobricks to <keyword>Carding</keyword>!
+        I think he'll be able to work with these.
     dialogueEndTrigger: {fileID: 0}
 --- !u!4 &1964805721
 Transform:

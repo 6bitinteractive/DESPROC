@@ -2487,12 +2487,12 @@ Prefab:
     - target: {fileID: 224336711366434096, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -0.000045776367
+      value: 0.0001373291
       objectReference: {fileID: 0}
     - target: {fileID: 224336711366434096, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 120.11506
+      value: 120.11499
       objectReference: {fileID: 0}
     - target: {fileID: 114964840124237320, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
@@ -2619,7 +2619,7 @@ Prefab:
     - target: {fileID: 224143051293295818, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 108
+      value: 104.289696
       objectReference: {fileID: 0}
     - target: {fileID: 224597690360265418, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
@@ -3538,11 +3538,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1.7761259
+      value: -1.778327
       objectReference: {fileID: 0}
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.9931624
+      value: 0.9931655
       objectReference: {fileID: 0}
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.z
@@ -3735,8 +3735,8 @@ MonoBehaviour:
   - questName: Broken Bridges
     sentenceArray:
     - name: Tired Volunteer
-      sentence: You're looking for the town? It's north of the docks, which you can
-        get to if you go west of here.
+      sentence: You're looking for the <keyword>town</keyword>? It's <keyword>north
+        of the docks</keyword>, which you can get to if you go <keyword>west of here.</keyword>
     dialogueEndTrigger: {fileID: 11400000, guid: aacf4ffd6be0fad45bd1e5d584b886d8,
       type: 2}
 --- !u!1 &1090737393
@@ -5219,14 +5219,14 @@ MonoBehaviour:
   - questName: 
     sentenceArray:
     - name: Tourist
-      sentence: "I'm so glad I visited the conservatory! I got so many pictures of
-        sea turtles! They're so cute! Ahhhhh!\r"
+      sentence: "I'm so glad I visited the <keyword>conservatory</keyword>! I got
+        so many pictures of sea turtles! They're so cute! Ahhhhh!\r"
     dialogueEndTrigger: {fileID: 0}
   - questName: Broken Bridges
     sentenceArray:
     - name: Tourist
-      sentence: I haven't been to the town, actually. I went straight to the conservatory
-        because I wanted to see the turtles sooo bad. Sorry!
+      sentence: I haven't been to the <keyword>town</keyword>, actually. I went straight
+        to the conservatory because I wanted to see the turtles sooo bad. Sorry!
     dialogueEndTrigger: {fileID: 0}
 --- !u!1 &1945213574
 GameObject:

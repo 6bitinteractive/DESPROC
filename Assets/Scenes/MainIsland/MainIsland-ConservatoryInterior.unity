@@ -779,6 +779,14 @@ MonoBehaviour:
       sentence: I know there are books about them, but seeing everything for myself
         gives me more insight.
     dialogueEndTrigger: {fileID: 0}
+  - questName: Broken Bridges
+    sentenceArray:
+    - name: Researcher
+      sentence: 'Are you perhaps looking for the <keyword>town</keyword>? '
+    - name: Researcher
+      sentence: If I recall correctly, it should be <keyword>north of the docks</keyword>.
+        I hope you find your way there without any problems.
+    dialogueEndTrigger: {fileID: 0}
 --- !u!1 &420809766
 GameObject:
   m_ObjectHideFlags: 0
@@ -2485,7 +2493,7 @@ Prefab:
     - target: {fileID: 224912964868538154, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_RootOrder
-      value: 16
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 224619953085637010, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
@@ -2495,12 +2503,12 @@ Prefab:
     - target: {fileID: 224605478860438246, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_RootOrder
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 224071014818880638, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 224561213617550132, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
@@ -2510,7 +2518,7 @@ Prefab:
     - target: {fileID: 224786677316838310, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 224138857399267980, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
@@ -2520,12 +2528,12 @@ Prefab:
     - target: {fileID: 224336711366434096, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -0.000045776367
+      value: 0.00010681152
       objectReference: {fileID: 0}
     - target: {fileID: 224336711366434096, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 120.11504
+      value: 120.11496
       objectReference: {fileID: 0}
     - target: {fileID: 224597690360265418, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
@@ -2535,7 +2543,7 @@ Prefab:
     - target: {fileID: 224143051293295818, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 108
+      value: 104.289696
       objectReference: {fileID: 0}
     - target: {fileID: 224830209416137190, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
@@ -2545,7 +2553,7 @@ Prefab:
     - target: {fileID: 224530990922418986, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_RootOrder
-      value: 17
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 224559734026517192, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
@@ -2670,7 +2678,7 @@ Prefab:
     - target: {fileID: 224790950330813622, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_RootOrder
-      value: 18
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 224530990922418986, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
@@ -3609,11 +3617,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.4960742
+      value: -0.49607468
       objectReference: {fileID: 0}
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1.3746872
+      value: -1.3746924
       objectReference: {fileID: 0}
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.z

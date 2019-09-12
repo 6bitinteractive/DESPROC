@@ -302,49 +302,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2b0d53aadd183840881aa88414400d1, type: 2}
   m_IsPrefabAsset: 0
---- !u!1 &196634321
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 196634323}
-  - component: {fileID: 196634322}
-  m_Layer: 0
-  m_Name: Quest Log Tutorial Images
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &196634322
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 196634321}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 463c15f45aa80ae4098b0f995d1509ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sprites:
-  - {fileID: 21300000, guid: 444277548ea387a42b4c4c5889a2cfc6, type: 3}
-  - {fileID: 21300000, guid: c2696deeb832d5a47a1a973e049aca46, type: 3}
---- !u!4 &196634323
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 196634321}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1363202329}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &198031471
 GameObject:
   m_ObjectHideFlags: 0
@@ -870,7 +827,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1324655025}
-  - {fileID: 1363202329}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1373,7 +1329,7 @@ MonoBehaviour:
     Name: Broken Bridges
     Objective: Talk to the locals
     Description: "We can't get to the junkshop because the bridge is broken.\r The
-      locals might know of a way to repair the bridge. Why don't you go into town
+      locals might know of a way to repair the bridge. Why don't you go into <color=teal>town</color>
       and ask around?\r\n"
     collectObjectives:
     - amount: 1
@@ -1805,12 +1761,12 @@ Prefab:
         type: 2}
       propertyPath: spriteArray
       value: 
-      objectReference: {fileID: 196634322}
+      objectReference: {fileID: 0}
     - target: {fileID: 114586291259425282, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: dialogueTrigger
       value: 
-      objectReference: {fileID: 1363202330}
+      objectReference: {fileID: 0}
     - target: {fileID: 114358568831537564, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1834,17 +1790,17 @@ Prefab:
     - target: {fileID: 224143051293295818, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 108
+      value: 104.289696
       objectReference: {fileID: 0}
     - target: {fileID: 224336711366434096, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -0.000015258789
+      value: 0.0001373291
       objectReference: {fileID: 0}
     - target: {fileID: 224336711366434096, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 120.11504
+      value: 120.11499
       objectReference: {fileID: 0}
     - target: {fileID: 114164320960644118, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
@@ -2553,7 +2509,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -8.018329
+      value: -8.0199795
       objectReference: {fileID: 0}
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.y
@@ -2721,21 +2677,21 @@ MonoBehaviour:
       sentence: The Turtle Conservation Society works closely with the locals in observing
         our organizational objectives.
     - name: Volunteer
-      sentence: Manong Carding from the junkshop helps us segregate the trash we pick
-        up from the cleanup drives.
+      sentence: <keyword>Manong Carding</keyword> from the junkshop helps us segregate
+        the trash we pick up from the cleanup drives.
     - name: Volunteer
       sentence: But we can't get to the junkshop because the bridge connecting the
         areas is broken. The huge storm from last night must have damaged it.
     - name: Volunteer
       sentence: The locals might know of a way to repair the bridge. Why don't you
-        go into town and ask around?
+        go into <keyword>town</keyword> and ask around?
     dialogueEndTrigger: {fileID: 11400000, guid: aacf4ffd6be0fad45bd1e5d584b886d8,
       type: 2}
   - questName: Broken Bridges
     sentenceArray:
     - name: Volunteer
       sentence: The locals might know of a way to repair the bridge. Why don't you
-        go into town and ask around?
+        go into <keyword>town</keyword> and ask around?
     dialogueEndTrigger: {fileID: 0}
   - questName: All in a Day's Work
     sentenceArray:
@@ -2749,55 +2705,6 @@ MonoBehaviour:
         rest. I'll see you tomorrow then.
     dialogueEndTrigger: {fileID: 11400000, guid: e47300e55947ac044a14668c35b2576e,
       type: 2}
---- !u!1 &1363202328
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1363202329}
-  - component: {fileID: 1363202330}
-  m_Layer: 0
-  m_Name: Quest Log Tutorial Dialogue
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1363202329
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1363202328}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 196634323}
-  m_Father: {fileID: 488975367}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1363202330
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1363202328}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d0091aee95caab41a717ad5152f6792, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueArray:
-  - questName: 
-    sentenceArray:
-    - name: 
-      sentence: This is your journal. You can use it to keep track of your tasks.
-    - name: 
-      sentence: Select an entry to view the task description and objectives.
-    dialogueEndTrigger: {fileID: 0}
 --- !u!1001 &1395685069
 Prefab:
   m_ObjectHideFlags: 0

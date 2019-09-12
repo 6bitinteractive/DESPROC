@@ -919,11 +919,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1.7765121
+      value: 1.7787132
       objectReference: {fileID: 0}
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.6420785
+      value: -0.6420735
       objectReference: {fileID: 0}
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1665,12 +1665,12 @@ Prefab:
     - target: {fileID: 224336711366434096, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -0.000045776367
+      value: 0.00016784668
       objectReference: {fileID: 0}
     - target: {fileID: 224336711366434096, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 120.115074
+      value: 120.11505
       objectReference: {fileID: 0}
     - target: {fileID: 224597690360265418, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
@@ -1680,7 +1680,7 @@ Prefab:
     - target: {fileID: 224143051293295818, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 108
+      value: 104.289696
       objectReference: {fileID: 0}
     - target: {fileID: 114735247798239610, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
@@ -4237,15 +4237,17 @@ MonoBehaviour:
       sentence: If you bring me ecobricks, I could use it as foundation for building
         and cementing! Nifty, huh?
     - name: Carding
-      sentence: All you need are plastics and a bottle! You can ask Aling Nena for
-        empty plastic bottles. She tends to the sari-sari store in town.
+      sentence: All you need are plastics and a bottle! You can ask <keyword>Aling
+        Nena</keyword> for empty plastic bottles. She tends to <keyword>the sari-sari
+        store in town.</keyword>
     dialogueEndTrigger: {fileID: 11400000, guid: aacf4ffd6be0fad45bd1e5d584b886d8,
       type: 2}
   - questName: Bricked
     sentenceArray:
     - name: Carding
       sentence: I need an empty plastic bottle to make an ecobrick with. You can ask
-        Aling Nena if she has any. She tends to the sari-sari store in town.
+        <keyword>Aling Nena</keyword> if she has any. She tends to <keyword>the sari-sari
+        store in town.</keyword>
     dialogueEndTrigger: {fileID: 0}
   - questName: Building Bridges
     sentenceArray:
@@ -4556,7 +4558,8 @@ MonoBehaviour:
     Name: Bricked
     Objective: Talk to Aling Nena
     Description: I need an empty plastic bottle to make an ecobrick with. You can
-      ask Aling Nena if she has any. She tends to the sari-sari store in town.
+      ask <color=teal>Aling Nena</color> if she has any. She tends to the sari-sari
+      store in town.
     collectObjectives:
     - amount: 1
       objectiveTag: Aling Nena
