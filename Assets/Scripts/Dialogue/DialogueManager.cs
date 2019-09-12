@@ -11,6 +11,7 @@ public class DialogueManager : MonoBehaviour
     public Player player;
     public Animator animator;
 
+    private Color keywordColor = Color.cyan;
     private Queue<Sentence> sentences;
     private Dialogue[] triggerArray;
     private Sentence[] toDisplay;
@@ -48,32 +49,6 @@ public class DialogueManager : MonoBehaviour
 
         // Clear previous sentences
         sentences.Clear();
-
-        //for (int i = 0; i < triggerArray.Length; i++)
-        //{
-        //    // If dialogue quest name matches a quest on the quest list
-        //    if (QuestLog.Instance.sessionData.Quests.Exists(x => x.Name == triggerArray[i].questName))
-        //    {
-        //        for (int j = 0; j < QuestLog.Instance.sessionData.Quests.Count; j++)
-        //        {
-        //            // If quest exists and is not complete
-        //            if ((QuestLog.Instance.sessionData.Quests[j].Name == triggerArray[i].questName) && (QuestLog.Instance.sessionData.Quests[j].IsComplete == false))
-        //            {
-        //                // Set quest dialogue array for display
-        //                Debug.Log("Quest sentence displayed.");
-        //                toDisplay = triggerArray[i].sentenceArray;
-        //                endTrigger = triggerArray[i].dialogueEndTrigger;
-        //            }
-        //        }
-        //    }
-        //    // If quest log is populated, but dialogue doesn't contain a quest
-        //    else if ((QuestLog.Instance.sessionData.Quests.Exists(x => x.Name == triggerArray[i].questName) == false))
-        //    {
-        //        Debug.Log("Default sentence displayed.");
-        //        toDisplay = triggerArray[0].sentenceArray;
-        //        endTrigger = triggerArray[0].dialogueEndTrigger;
-        //    }
-        //}
 
         if (toDisplay == null)
         {
@@ -150,12 +125,53 @@ public class DialogueManager : MonoBehaviour
         nameText.text = sentenceEntry.name;
         dialogueText.text = "";
 
-        foreach (char letter in sentenceEntry.sentence.ToCharArray())
+        if (sentenceEntry.sentence.Contains("<keyword>"))
         {
-            // Adds letter to dialogue text string every after 1 frame
-            dialogueText.text += letter;
-            yield return null;
+            string stringBeforeTag = sentenceEntry.sentence.Substring(0, sentenceEntry.sentence.IndexOf("<keyword>"));
+            string stringAfterTag = sentenceEntry.sentence.Substring(sentenceEntry.sentence.LastIndexOf("</keyword>") + 10);
+
+            Debug.Log(stringBeforeTag.ToString());
+            Debug.Log(ExtractKeyword(sentenceEntry.sentence, "keyword"));
+            Debug.Log(stringAfterTag);
+
+            foreach (char letter in stringBeforeTag.ToCharArray())
+            {
+                dialogueText.text += letter;
+                yield return null;
+            }
+            foreach (char letter in ExtractKeyword(sentenceEntry.sentence, "keyword"))
+            {
+                dialogueText.text += "<color=" + ColorToHexString(keywordColor) + ">" + letter + "</color>";
+                yield return null;
+            }
+            foreach (char letter in stringAfterTag.ToCharArray())
+            {
+                dialogueText.text += letter;
+                yield return null;
+            }
         }
+        else
+        {
+            foreach (char letter in sentenceEntry.sentence.ToCharArray())
+            {
+                dialogueText.text += letter;
+                yield return null;
+            }
+        }
+    }
+
+    string ExtractKeyword(string s, string tag)
+    {
+        string startTag = "<" + tag + ">";
+        int startIndex = s.IndexOf(startTag) + startTag.Length;
+        int endIndex = s.IndexOf("</" + tag + ">", startIndex);
+        return s.Substring(startIndex, endIndex - startIndex);
+    }
+
+    string ColorToHexString(Color color)
+    {
+        Color32 color32 = color;
+        return string.Format("#{0:X2}{1:X2}{2:X2}{3:X2}", color32.r, color32.g, color32.b, color32.a);
     }
 
     public void ChangeDialogueText(Text newText)
