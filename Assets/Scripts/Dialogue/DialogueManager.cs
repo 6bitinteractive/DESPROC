@@ -50,32 +50,6 @@ public class DialogueManager : MonoBehaviour
         // Clear previous sentences
         sentences.Clear();
 
-        //for (int i = 0; i < triggerArray.Length; i++)
-        //{
-        //    // If dialogue quest name matches a quest on the quest list
-        //    if (QuestLog.Instance.sessionData.Quests.Exists(x => x.Name == triggerArray[i].questName))
-        //    {
-        //        for (int j = 0; j < QuestLog.Instance.sessionData.Quests.Count; j++)
-        //        {
-        //            // If quest exists and is not complete
-        //            if ((QuestLog.Instance.sessionData.Quests[j].Name == triggerArray[i].questName) && (QuestLog.Instance.sessionData.Quests[j].IsComplete == false))
-        //            {
-        //                // Set quest dialogue array for display
-        //                Debug.Log("Quest sentence displayed.");
-        //                toDisplay = triggerArray[i].sentenceArray;
-        //                endTrigger = triggerArray[i].dialogueEndTrigger;
-        //            }
-        //        }
-        //    }
-        //    // If quest log is populated, but dialogue doesn't contain a quest
-        //    else if ((QuestLog.Instance.sessionData.Quests.Exists(x => x.Name == triggerArray[i].questName) == false))
-        //    {
-        //        Debug.Log("Default sentence displayed.");
-        //        toDisplay = triggerArray[0].sentenceArray;
-        //        endTrigger = triggerArray[0].dialogueEndTrigger;
-        //    }
-        //}
-
         if (toDisplay == null)
         {
             toDisplay = DetermineDisplay(dialogueTrigger);
@@ -151,26 +125,38 @@ public class DialogueManager : MonoBehaviour
         nameText.text = sentenceEntry.name;
         dialogueText.text = "";
 
-        string[] words = sentenceEntry.sentence.Split(' ');
-
-        foreach (var word in words)
+        if (sentenceEntry.sentence.Contains("<keyword>"))
         {
-            if (word.Contains("<keyword>"))
+            string stringBeforeTag = sentenceEntry.sentence.Substring(0, sentenceEntry.sentence.IndexOf("<keyword>"));
+            string stringAfterTag = sentenceEntry.sentence.Substring(sentenceEntry.sentence.LastIndexOf("</keyword>") + 10);
+
+            Debug.Log(stringBeforeTag.ToString());
+            Debug.Log(ExtractKeyword(sentenceEntry.sentence, "keyword"));
+            Debug.Log(stringAfterTag);
+
+            foreach (char letter in stringBeforeTag.ToCharArray())
             {
-                foreach (char letter in ExtractKeyword(word, "keyword"))
-                {
-                    dialogueText.text += "<color=" + ColorToHexString(keywordColor) + ">" + letter + "</color>";
-                }
+                dialogueText.text += letter;
+                yield return null;
             }
-            else
+            foreach (char letter in ExtractKeyword(sentenceEntry.sentence, "keyword"))
             {
-                foreach (char letter in word)
-                {
-                    dialogueText.text += letter;
-                }
+                dialogueText.text += "<color=" + ColorToHexString(keywordColor) + ">" + letter + "</color>";
+                yield return null;
             }
-            dialogueText.text += " ";
-            yield return null;
+            foreach (char letter in stringAfterTag.ToCharArray())
+            {
+                dialogueText.text += letter;
+                yield return null;
+            }
+        }
+        else
+        {
+            foreach (char letter in sentenceEntry.sentence.ToCharArray())
+            {
+                dialogueText.text += letter;
+                yield return null;
+            }
         }
     }
 
