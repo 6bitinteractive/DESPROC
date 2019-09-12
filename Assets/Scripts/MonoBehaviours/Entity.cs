@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Entity : MonoBehaviour
 {
-    public EntityRuntimeSet RuntimeSet;
+    public EntityRuntimeSet EntityRunTimeSet;
 
     private void OnEnable()
     {
-        RuntimeSet.Add(this);
+        EntityRunTimeSet.Add(this);
     }
 
     private void OnDisable()
     {
-        RuntimeSet.Remove(this);
+        EntityRunTimeSet.Remove(this);
     }
 }
