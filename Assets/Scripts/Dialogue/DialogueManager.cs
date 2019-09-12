@@ -11,6 +11,7 @@ public class DialogueManager : MonoBehaviour
     public Player player;
     public Animator animator;
 
+    private Color keywordColor = Color.cyan;
     private Queue<Sentence> sentences;
     private Dialogue[] triggerArray;
     private Sentence[] toDisplay;
@@ -150,12 +151,41 @@ public class DialogueManager : MonoBehaviour
         nameText.text = sentenceEntry.name;
         dialogueText.text = "";
 
-        foreach (char letter in sentenceEntry.sentence.ToCharArray())
+        string[] words = sentenceEntry.sentence.Split(' ');
+
+        foreach (var word in words)
         {
-            // Adds letter to dialogue text string every after 1 frame
-            dialogueText.text += letter;
+            if (word.Contains("<keyword>"))
+            {
+                foreach (char letter in ExtractKeyword(word, "keyword"))
+                {
+                    dialogueText.text += "<color=" + ColorToHexString(keywordColor) + ">" + letter + "</color>";
+                }
+            }
+            else
+            {
+                foreach (char letter in word)
+                {
+                    dialogueText.text += letter;
+                }
+            }
+            dialogueText.text += " ";
             yield return null;
         }
+    }
+
+    string ExtractKeyword(string s, string tag)
+    {
+        string startTag = "<" + tag + ">";
+        int startIndex = s.IndexOf(startTag) + startTag.Length;
+        int endIndex = s.IndexOf("</" + tag + ">", startIndex);
+        return s.Substring(startIndex, endIndex - startIndex);
+    }
+
+    string ColorToHexString(Color color)
+    {
+        Color32 color32 = color;
+        return string.Format("#{0:X2}{1:X2}{2:X2}{3:X2}", color32.r, color32.g, color32.b, color32.a);
     }
 
     public void ChangeDialogueText(Text newText)
