@@ -4013,6 +4013,11 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
   m_IsPrefabAsset: 0
+--- !u!20 &982729409 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 20543699009844772, guid: 58ac3c4fa95ff9a4d858acc33815ca0b,
+    type: 2}
+  m_PrefabInternal: {fileID: 982729408}
 --- !u!1 &989305981
 GameObject:
   m_ObjectHideFlags: 0
@@ -6367,6 +6372,7 @@ MonoBehaviour:
   LayerMask:
     serializedVersion: 2
     m_Bits: 32768
+  MainCamera: {fileID: 982729409}
 --- !u!1 &1835498444
 GameObject:
   m_ObjectHideFlags: 0
