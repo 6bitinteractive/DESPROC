@@ -22,7 +22,7 @@ public class AudioSwitcher : MonoBehaviour
 
     private void Awake()
     {
-        audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<PersistentAudioManager>();
+        audioManager = PersistentAudioManager.Instance; //GameObject.FindGameObjectWithTag("AudioManager").GetComponent<PersistentAudioManager>();
         audioSource = GetComponent<AudioSource>();
     }
 
