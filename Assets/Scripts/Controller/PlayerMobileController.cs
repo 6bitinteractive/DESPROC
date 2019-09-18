@@ -13,6 +13,7 @@ public class PlayerMobileController : MonoBehaviour
     private Direction direction;
     private PlayerController playerController;
     private Vector3 targetPos;
+    public bool isMoving;
 
     private void Awake()
     {
@@ -20,7 +21,6 @@ public class PlayerMobileController : MonoBehaviour
         direction = GetComponent<Direction>();
         playerController = GetComponent<PlayerController>();
         playerController.enabled = false;
-        targetPos = transform.position; // quick fix to prevent player from moving to vector(0,0,0) on start
     }
 
     private void Update()
@@ -34,10 +34,10 @@ public class PlayerMobileController : MonoBehaviour
     void FixedUpdate()
     {
         // Move towards target position
-        if (transform.position.x != targetPos.x)
+        if (isMoving)
         {
             Move();
-
+            
             /*
             // Reached target destination
             if (transform.position.x == targetPos.x)
@@ -50,8 +50,7 @@ public class PlayerMobileController : MonoBehaviour
 
     void Move()
     {
-        transform.position = Vector3.MoveTowards(transform.position, targetPos, movement.xSpeed * Time.deltaTime);
-        movement.TapToMove(targetPos.x, targetPos.y);
+        movement.TapToMove(targetPos.x, targetPos.y, targetPos);
     }
 
     void CastRay()
@@ -65,6 +64,13 @@ public class PlayerMobileController : MonoBehaviour
         {
             targetPos = hit.point; // Set target pos
             direction.CheckDirection(targetPos.x); // Face target pos
+            isMoving = true; // Enable Move function
         }
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        isMoving = false;
+        movement.StopMovingAnimation();
     }
 }
