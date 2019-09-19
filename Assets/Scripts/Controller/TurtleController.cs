@@ -9,31 +9,30 @@ using UnityEngine.UI;
 public class TurtleController : MonoBehaviour
 {
     Wander wander;
-    public Image ChokeUI;
-
-    public float Speed;
-    public float ChokeDuration = 5;
     public bool isChoking;
     public FallingPlasticController plasticInContact { get; private set; } // This is to get the reference on which plastic is the turtle choking
 
-    private float CurrentChokeDuration;
-    private Collider2D plastic;
-    private Rigidbody2D plasticRB;
-    private Animator animator;
-    private int counter = 1;
-
+    [SerializeField] private Image chokeUI;
+    [SerializeField] private float speed = 1.5f;
+    [SerializeField] private float chokeDuration = 5;
     [SerializeField] private LayerMask plasticLayerMask;
     [SerializeField] private TurtleChildCollision mouth;
     [SerializeField] private TurtleChildCollision sight;
     [SerializeField] private GameEvent OnDeath;
     [SerializeField] private GameEvent OnChoke;
 
+    private float currentChokingDuration;
+    private Collider2D plastic;
+    private Rigidbody2D plasticRB;
+    private Animator animator;
+    private int counter = 1;
+
     public enum FSMState
     {
-        Wander,
-        Chase,
-        Choke,
-        Dead,
+        Wander = 0,
+        Chase = 1,
+        Choke = 2,
+        Dead = 3,
     }
 
     public FSMState curState; // current state
@@ -44,7 +43,7 @@ public class TurtleController : MonoBehaviour
         wander = GetComponent<Wander>();
         animator = GetComponent<Animator>();
 
-        CurrentChokeDuration = ChokeDuration;
+        currentChokingDuration = chokeDuration;
         curState = FSMState.Wander;
     }
 
@@ -75,7 +74,7 @@ public class TurtleController : MonoBehaviour
     private void ChokeState()
     {
         //Display the ChokeUI
-        ChokeUI.gameObject.SetActive(true);
+        chokeUI.gameObject.SetActive(true);
 
         if (isChoking && plastic.gameObject.activeSelf)
         {
@@ -86,8 +85,8 @@ public class TurtleController : MonoBehaviour
         else
         {
             StopAllCoroutines(); // Stop choking
-            CurrentChokeDuration = ChokeDuration; //Reset current choke duration
-            ChokeUI.gameObject.SetActive(false); // Hide choke ui
+            currentChokingDuration = chokeDuration; //Reset current choke duration
+            chokeUI.gameObject.SetActive(false); // Hide choke ui
             animator.SetBool("isChoking", false);
             isChoking = false;
             plastic.gameObject.SetActive(false); // Remove plastic
@@ -99,12 +98,12 @@ public class TurtleController : MonoBehaviour
 
     private void WanderState()
     {
-        wander.WanderToNewPoint(Speed);
+        wander.WanderToNewPoint(speed);
     }
 
     private void ChaseState()
     {
-        transform.position = Vector2.MoveTowards(transform.position, new Vector2(plastic.transform.position.x, plastic.transform.position.y), Speed * Time.deltaTime); // Move Towards target
+        transform.position = Vector2.MoveTowards(transform.position, new Vector2(plastic.transform.position.x, plastic.transform.position.y), speed * Time.deltaTime); // Move Towards target
 
         // Rotate Towards new Target
         Vector2 direction = plastic.transform.position - transform.position;
@@ -153,13 +152,13 @@ public class TurtleController : MonoBehaviour
         while (isChoking)
         {
             // Update choker timer ui (updating ui in a controller disgusting... but oh well)
-            if (CurrentChokeDuration != ChokeUI.fillAmount)
+            if (currentChokingDuration != chokeUI.fillAmount)
             {
-                CurrentChokeDuration -= Time.deltaTime;
-                ChokeUI.fillAmount = CurrentChokeDuration / ChokeDuration;
+                currentChokingDuration -= Time.deltaTime;
+                chokeUI.fillAmount = currentChokingDuration / chokeDuration;
             }
 
-            yield return new WaitForSeconds(ChokeDuration);
+            yield return new WaitForSeconds(chokeDuration);
             plastic.gameObject.SetActive(false);
             curState = FSMState.Dead;
         }
