@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Direction : MonoBehaviour
 {
-    public bool FacingRight = true;
-    public bool IsFlippable = true;
-    public Vector3 scale;
+    private bool FacingRight = true;
+    private bool IsFlippable = true;
+    private Vector3 scale;
 
     // Use this for initialization
     void Start ()
