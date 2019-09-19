@@ -39,9 +39,7 @@ public class DialogueManager : MonoBehaviour
         {
             if (player.gameObject.layer == 8)
             {
-                player.GetComponent<Animator>().SetBool("isMoving", false);
-                player.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
-                player.GetComponent<Movement>().enabled = false;
+                DisableMovement();
             }
         }
 
@@ -207,9 +205,21 @@ public class DialogueManager : MonoBehaviour
         {
             if (player.gameObject.layer == 8)
             {
-               // player.GetComponent<Animator>().SetBool("isMoving", true); Disabled to prevent player's animation to start "Moving in place" when the player movement is given back
-                player.GetComponent<Movement>().enabled = true;
+                EnableMovement();
             }
         }
+    }
+
+    public void DisableMovement()
+    {
+        player.GetComponent<Movement>().StopMovingAnimation();
+        player.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+        player.GetComponent<Movement>().enabled = false;
+    }
+
+    public void EnableMovement()
+    {
+        // player.GetComponent<Animator>().SetBool("isMoving", true); Disabled to prevent player's animation to start "Moving in place" when the player movement is given back
+        player.GetComponent<Movement>().enabled = true;
     }
 }
