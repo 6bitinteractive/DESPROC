@@ -37,20 +37,12 @@ public class PlayerMobileController : MonoBehaviour
         if (isMoving)
         {
             Move();
-            
-            /*
-            // Reached target destination
-            if (transform.position.x == targetPos.x)
-            {
-                Debug.Log("Reached target destination");
-            }
-            */
         }
     }
 
     void Move()
     {
-        movement.TapToMove(targetPos.x, targetPos.y, targetPos);
+        movement.TapToMove(targetPos);
     }
 
     void CastRay()

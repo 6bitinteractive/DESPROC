@@ -35,10 +35,10 @@ public class Movement : MonoBehaviour
         rb.velocity = new Vector3(xDirection * xSpeed, yDirection * ySpeed);
     }
 
-    public void TapToMove(float xDirection, float yDirection, Vector3 targetPos)
+    public void TapToMove(Vector3 targetPos)
     {
         transform.position = Vector3.MoveTowards(transform.position, targetPos, xSpeed * Time.deltaTime);   
-        UpdateTapAnimation(xDirection, yDirection);
+        UpdateTapAnimation(targetPos);
     }
 
     public void ResetVelocity()
@@ -63,10 +63,10 @@ public class Movement : MonoBehaviour
         enabled = true;
     }
 
-    private void UpdateTapAnimation(float xDirection, float yDirection)
+    private void UpdateTapAnimation(Vector3 targetPos)
     {
         // Check if no longer moving
-        if (xDirection == transform.position.x && yDirection == transform.position.y)
+        if (targetPos == transform.position)
         {
             // Become idle
             animator.SetBool("isMoving", false);
