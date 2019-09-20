@@ -35,12 +35,9 @@ public class DialogueManager : MonoBehaviour
             animator.SetBool("IsOpen", true);
         }
 
-        if(player != null)
+        if(player != null && player.gameObject.layer == 8)
         {
-            if (player.gameObject.layer == 8)
-            {
-                player.GetComponent<Movement>().DisableMovement();
-            }
+            player.GetComponent<Movement>().DisableMovement();
         }
 
         triggerArray = dialogueTrigger.dialogueArray;
@@ -201,12 +198,9 @@ public class DialogueManager : MonoBehaviour
             animator.SetBool("IsOpen", false);
         }
 
-        if (player != null)
+        if (player != null && player.gameObject.layer == 8)
         {
-            if (player.gameObject.layer == 8)
-            {
-                player.GetComponent<Movement>().EnableMovement();
-            }
+            player.GetComponent<Movement>().EnableMovement();
         }
     }
 }
