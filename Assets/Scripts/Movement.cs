@@ -51,6 +51,18 @@ public class Movement : MonoBehaviour
         animator.SetBool("isMoving", false);
     }
 
+    public void DisableMovement()
+    {
+        StopMovingAnimation();
+        rb.velocity = Vector3.zero;
+        enabled = false;
+    }
+
+    public void EnableMovement()
+    {
+        enabled = true;
+    }
+
     private void UpdateTapAnimation(float xDirection, float yDirection)
     {
         // Check if no longer moving
