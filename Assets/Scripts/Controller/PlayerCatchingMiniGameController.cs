@@ -4,23 +4,30 @@ using UnityEngine;
 
 public class PlayerCatchingMiniGameController : MonoBehaviour
 {
+    [SerializeField] private TurtleTale.SessionData sessionData;
     [SerializeField] private LayerMask LayerMask;
     [SerializeField] private AnimationClip rescuingAnimation;
     [SerializeField] private float pickUpRange = 1.5f;
 
     private GameObject player;
+    private Rigidbody2D rb;
     private Animator animator;
+    private Movement movement;
+    private Direction direction;
+    private Vector3 targetPos;
     private float animationDuration;
     private bool isRescuing;
-
-    private TurtleTale.SessionData sessionData;
+    private bool isMoving;
+    
     private GameObject collectedPlastic;
 
     private void Start()
     {
         player = gameObject;
+        movement = GetComponent<Movement>();
+        direction = GetComponent<Direction>();
         animator = GetComponent<Animator>();
-        sessionData = GetComponent<PlayerController>().sessionData;
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -28,7 +35,17 @@ public class PlayerCatchingMiniGameController : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            CastMovementRay();
             CastRay();
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        // Move towards target position
+        if (isMoving)
+        {
+            Move();
         }
     }
 
@@ -71,9 +88,10 @@ public class PlayerCatchingMiniGameController : MonoBehaviour
                 if (fallingPlasticController)
                 {
                     animator.SetBool("isRescuing", true);
+                    rb.velocity = Vector3.zero;
                     fallingPlasticController.PickUp();
                     StartCoroutine(PickupPlastic(fallingPlasticController));
-                }
+                }   
             }
         }
     }
@@ -113,5 +131,25 @@ public class PlayerCatchingMiniGameController : MonoBehaviour
     public void ClearPlasticReference()
     {
         collectedPlastic = null;
+    }
+
+    void CastMovementRay()
+    {
+        Vector3 worldPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        worldPoint.z = Camera.main.transform.position.z;
+        Ray ray = new Ray(worldPoint, new Vector3(0, 0, 1));
+        RaycastHit2D hit = Physics2D.GetRayIntersection(ray);
+
+        if (hit)
+        {
+            targetPos = hit.point; // Set target pos
+            direction.CheckDirection(targetPos.x); // Face target pos
+            isMoving = true;
+        }
+    }
+
+    private void Move()
+    {
+        movement.TapToMove(targetPos);
     }
 }
