@@ -3514,8 +3514,9 @@ MonoBehaviour:
   sessionData: {fileID: 11400000, guid: d145efb78b7a3894d99040295d0cceb3, type: 2}
   LayerMask:
     serializedVersion: 2
-    m_Bits: 32768
+    m_Bits: 36864
   MainCamera: {fileID: 0}
+  isMoving: 0
 --- !u!114 &114264314197080944
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3646,9 +3647,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08a112771d00eee46a8e1fa22ff5163c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FacingRight: 1
-  IsFlippable: 1
-  scale: {x: 0, y: 0, z: 0}
 --- !u!114 &114309868050229604
 MonoBehaviour:
   m_ObjectHideFlags: 1
