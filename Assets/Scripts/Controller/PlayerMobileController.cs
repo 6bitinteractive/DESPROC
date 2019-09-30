@@ -29,7 +29,7 @@ public class PlayerMobileController : MonoBehaviour
         if (movement.enabled == true && Input.GetMouseButtonDown(0))
         {
             // Check if hovering over UI elements
-            if (EventSystem.current.IsPointerOverGameObject())
+            if (EventSystem.current.IsPointerOverGameObject(0))
                 return;
 
             CastRay();
