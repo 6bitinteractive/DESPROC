@@ -20,7 +20,7 @@ public class EcobrickLevel : MonoBehaviour
     [SerializeField] private TurtleTale.SessionData sessionData;
     [SerializeField] private PlasticFactory plasticDataTypes;
     [SerializeField] private int plasticsPerBottle = 5;
-    [SerializeField] private FoldingSet[] foldingSets;
+    [SerializeField] private FoldableSet[] foldableSets;
     public AudioSource slideSFX;
     public AudioSource foldSFX;
     public AudioSource stickSFX;
@@ -59,7 +59,7 @@ public class EcobrickLevel : MonoBehaviour
 
     #region Private fields
     private SwipeDetector swipeDetector;
-    private List<FoldingSet> prompts = new List<FoldingSet>(); // Ratio: 1 plastic = 1 folding set; 1 folding set = FoldingSet.MaxCount
+    private List<FoldableSet> prompts = new List<FoldableSet>(); // Ratio: 1 plastic = 1 folding set; 1 folding set = FoldingSet.MaxCount
 
     private int ecobrickCount;
     private int currentFold;
@@ -121,8 +121,8 @@ public class EcobrickLevel : MonoBehaviour
             // Setup the prompts based on how many plastics will be used
             for (int i = 0; i < plasticNeeded; i++)
             {
-                int randomFoldingSetIndex = Random.Range(0, foldingSets.Length);
-                prompts.Add(foldingSets[randomFoldingSetIndex]);
+                int randomFoldingSetIndex = Random.Range(0, foldableSets.Length);
+                prompts.Add(foldableSets[randomFoldingSetIndex]);
             }
 
             // Update count display
