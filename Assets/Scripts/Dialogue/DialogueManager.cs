@@ -125,10 +125,6 @@ public class DialogueManager : MonoBehaviour
             string stringBeforeTag = sentenceEntry.sentence.Substring(0, sentenceEntry.sentence.IndexOf("<keyword>"));
             string stringAfterTag = sentenceEntry.sentence.Substring(sentenceEntry.sentence.LastIndexOf("</keyword>") + 10);
 
-            Debug.Log(stringBeforeTag.ToString());
-            Debug.Log(ExtractKeyword(sentenceEntry.sentence, "keyword"));
-            Debug.Log(stringAfterTag);
-
             foreach (char letter in stringBeforeTag.ToCharArray())
             {
                 dialogueText.text += letter;
