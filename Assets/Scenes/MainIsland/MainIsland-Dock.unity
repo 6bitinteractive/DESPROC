@@ -1815,11 +1815,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -4.312593
+      value: -4.315679
       objectReference: {fileID: 0}
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.6513852
+      value: 0.6513835
       objectReference: {fileID: 0}
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.z
@@ -3379,6 +3379,36 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: set_blocksRaycasts
       objectReference: {fileID: 0}
+    - target: {fileID: 224128271504240896, guid: 640b11d095fdcf340bf77a2cdfc79cd5,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -965.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 224128271504240896, guid: 640b11d095fdcf340bf77a2cdfc79cd5,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -534.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 224128271504240896, guid: 640b11d095fdcf340bf77a2cdfc79cd5,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 38.658
+      objectReference: {fileID: 0}
+    - target: {fileID: 224128271504240896, guid: 640b11d095fdcf340bf77a2cdfc79cd5,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 38.658
+      objectReference: {fileID: 0}
+    - target: {fileID: 224594917489915914, guid: 640b11d095fdcf340bf77a2cdfc79cd5,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -23.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 224594917489915914, guid: 640b11d095fdcf340bf77a2cdfc79cd5,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 93.57
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 640b11d095fdcf340bf77a2cdfc79cd5, type: 2}
   m_IsPrefabAsset: 0
@@ -4388,7 +4418,7 @@ Prefab:
     - target: {fileID: 224336711366434096, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 120.115
+      value: 120.11503
       objectReference: {fileID: 0}
     - target: {fileID: 114358568831537564, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
@@ -4545,7 +4575,7 @@ Prefab:
     - target: {fileID: 224143051293295818, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 103.33333
+      value: 108
       objectReference: {fileID: 0}
     - target: {fileID: 114164320960644118, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
@@ -5338,6 +5368,7 @@ GameObject:
   - component: {fileID: 1664885853}
   - component: {fileID: 1664885854}
   - component: {fileID: 1664885855}
+  - component: {fileID: 1664885856}
   m_Layer: 12
   m_Name: Renaldo
   m_TagString: Untagged
@@ -5436,9 +5467,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -2}
+  m_Offset: {x: -0.08353657, y: -1.4996675}
   serializedVersion: 2
-  m_Radius: 2
+  m_Radius: 1.2473032
 --- !u!212 &1664885852
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5557,6 +5588,21 @@ MonoBehaviour:
   isDisplayingQuest: 0
   questGiverData: {fileID: 0}
   sessionData: {fileID: 11400000, guid: d145efb78b7a3894d99040295d0cceb3, type: 2}
+--- !u!58 &1664885856
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1664885847}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.8186457, y: -0.16707209}
+  serializedVersion: 2
+  m_Radius: 3.2115736
 --- !u!1001 &1681786611
 Prefab:
   m_ObjectHideFlags: 0
