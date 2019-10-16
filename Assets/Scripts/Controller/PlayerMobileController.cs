@@ -39,7 +39,7 @@ public class PlayerMobileController : MonoBehaviour
     void FixedUpdate()
     {
         // Move towards target position
-        if (isMoving)
+        if (movement.enabled == true && isMoving)
         {
             Move();
         }
