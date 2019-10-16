@@ -16,6 +16,7 @@ public class DialogueManager : MonoBehaviour
     private Dialogue[] triggerArray;
     private Sentence[] toDisplay;
     private GameEvent endTrigger;
+    private bool coroutineRunning;
 
     public UnityEvent OnFullDialogueEnd; // Note: Added this to avoid creating different GameEvent triggers
 
@@ -57,7 +58,7 @@ public class DialogueManager : MonoBehaviour
                 sentences.Enqueue(sentenceEntry);
             }
         }
-        DisplayNextSentence();
+        AdvanceDialogue();
     }
 
     public Sentence[] DetermineDisplay(DialogueTrigger dialogueTrigger)
@@ -99,7 +100,37 @@ public class DialogueManager : MonoBehaviour
         return triggerArray[0].sentenceArray;
     }
 
-    public void DisplayNextSentence()
+    public void DisplayNextSentence(Sentence sentenceEntry)
+    {
+        // Makes sure all sentence animations are stopped before typing in new sentence
+        StopAllCoroutines();
+        StartCoroutine(StartTyping(sentenceEntry));
+    }
+
+    void SkipTextTyping()
+    {
+        // Stop sentence animation to display full text, then dequeue current sentence
+        StopAllCoroutines();
+        coroutineRunning = false;
+
+        Sentence sentenceEntry = sentences.Peek();
+        if (sentenceEntry.sentence.Contains("<keyword>"))
+        {
+            string stringBeforeTag = sentenceEntry.sentence.Substring(0, sentenceEntry.sentence.IndexOf("<keyword>"));
+            string stringAfterTag = sentenceEntry.sentence.Substring(sentenceEntry.sentence.LastIndexOf("</keyword>") + 10);
+
+            dialogueText.text = stringBeforeTag +
+                "<color=" + ColorToHexString(keywordColor) + ">" + ExtractKeyword(sentenceEntry.sentence, "keyword") +
+                "</color>" + stringAfterTag;
+        }
+        else
+        {
+            dialogueText.text = sentences.Peek().sentence.ToString();
+        }
+        sentences.Dequeue();
+    }
+
+    public void AdvanceDialogue()
     {
         // If no dialogue entries remain, end dialogue
         if (sentences.Count <= 0)
@@ -108,15 +139,29 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        Sentence sentenceEntry = sentences.Dequeue();
-        // Makes sure all sentence animations are stopped before typing in new sentence
-        StopAllCoroutines();
-        StartCoroutine(TypeSentence(sentenceEntry));
+        // If text is currently being typed
+        if (coroutineRunning)
+        {
+            SkipTextTyping();
+        }
+        // If no coroutine is running, type next sentence
+        else
+        {
+            DisplayNextSentence(sentences.Peek());
+        }
+    }
+
+    IEnumerator StartTyping(Sentence sentenceEntry)
+    {
+        // Only dequeue sentence after coroutine has finished, so SkipTextTyping() can display the current sentence
+        yield return TypeSentence(sentenceEntry);
+        sentences.Dequeue();
     }
 
     // Types sentence per letter
     IEnumerator TypeSentence(Sentence sentenceEntry)
     {
+        coroutineRunning = true;
         nameText.text = sentenceEntry.name;
         dialogueText.text = "";
 
