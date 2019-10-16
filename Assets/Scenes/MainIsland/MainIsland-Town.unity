@@ -1563,6 +1563,12 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 374243514}
   m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &374243540 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114262608548538896, guid: bfbabfdd22addb54891582c16f6d89cf,
+    type: 2}
+  m_PrefabInternal: {fileID: 374243514}
+  m_Script: {fileID: 11500000, guid: 9656b07336b95fa4e9db8fe789bba229, type: 3}
 --- !u!1 &377947644
 GameObject:
   m_ObjectHideFlags: 0
@@ -8149,6 +8155,17 @@ MonoBehaviour:
         - m_Target: {fileID: 374243522}
           m_MethodName: Act
           m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 374243540}
+          m_MethodName: set_enabled
+          m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
