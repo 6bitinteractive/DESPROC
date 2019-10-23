@@ -515,8 +515,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 88721191}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -270.02, y: -296.14, z: 0}
-  m_LocalScale: {x: 1, y: 0.95, z: 1}
+  m_LocalPosition: {x: -270, y: -296.14, z: 0}
+  m_LocalScale: {x: 1.1, y: 0.95, z: 1}
   m_Children: []
   m_Father: {fileID: 1835498445}
   m_RootOrder: 1
@@ -1503,7 +1503,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 49.58715, y: 0}
+  m_Offset: {x: 49.7, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2810,7 +2810,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 771533310}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.9, y: 6.2, z: 0}
+  m_LocalPosition: {x: -7, y: 6.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 218173703}
@@ -3373,12 +3373,12 @@ Prefab:
     - target: {fileID: 60778670943577932, guid: bb8afe3df0efcd540b2c636b5f1e352f,
         type: 2}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].x
-      value: 55.76046
+      value: 55.760464
       objectReference: {fileID: 0}
     - target: {fileID: 60778670943577932, guid: bb8afe3df0efcd540b2c636b5f1e352f,
         type: 2}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].y
-      value: 5.093848
+      value: 4.938319
       objectReference: {fileID: 0}
     - target: {fileID: 60778670943577932, guid: bb8afe3df0efcd540b2c636b5f1e352f,
         type: 2}
@@ -3398,7 +3398,7 @@ Prefab:
     - target: {fileID: 60778670943577932, guid: bb8afe3df0efcd540b2c636b5f1e352f,
         type: 2}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].y
-      value: -5.020764
+      value: -5.0985274
       objectReference: {fileID: 0}
     - target: {fileID: 60778670943577932, guid: bb8afe3df0efcd540b2c636b5f1e352f,
         type: 2}
@@ -3443,12 +3443,12 @@ Prefab:
     - target: {fileID: 60778670943577932, guid: bb8afe3df0efcd540b2c636b5f1e352f,
         type: 2}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[4].y
-      value: 5.0348196
+      value: 5.093848
       objectReference: {fileID: 0}
     - target: {fileID: 60778670943577932, guid: bb8afe3df0efcd540b2c636b5f1e352f,
         type: 2}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[4].x
-      value: 55.937546
+      value: 55.76046
       objectReference: {fileID: 0}
     - target: {fileID: 60778670943577932, guid: bb8afe3df0efcd540b2c636b5f1e352f,
         type: 2}
@@ -3965,11 +3965,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.024271011
+      value: 0.017412663
       objectReference: {fileID: 0}
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1.0354228
+      value: -1.0397067
       objectReference: {fileID: 0}
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.z
@@ -4311,6 +4311,17 @@ MonoBehaviour:
       - m_Target: {fileID: 1063419471}
         m_MethodName: set_enabled
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1394898073}
+        m_MethodName: AdvanceDialogue
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4696,7 +4707,7 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 1, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
