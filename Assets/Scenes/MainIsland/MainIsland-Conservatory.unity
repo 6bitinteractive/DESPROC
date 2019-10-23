@@ -2870,7 +2870,7 @@ Prefab:
     - target: {fileID: 224336711366434096, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -0.000015258789
+      value: 0.000076293945
       objectReference: {fileID: 0}
     - target: {fileID: 224336711366434096, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
@@ -3002,7 +3002,7 @@ Prefab:
     - target: {fileID: 224143051293295818, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 108
+      value: 103.78378
       objectReference: {fileID: 0}
     - target: {fileID: 224597690360265418, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
@@ -3980,11 +3980,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1.7761259
+      value: -1.780571
       objectReference: {fileID: 0}
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.9931624
+      value: 0.9931686
       objectReference: {fileID: 0}
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.z
@@ -4182,8 +4182,10 @@ MonoBehaviour:
   - questName: Broken Bridges
     sentenceArray:
     - name: Tired Volunteer
-      sentence: You're looking for the <keyword>town</keyword>? It's <keyword>north
-        of the docks</keyword>, which you can get to if you go <keyword>west of here.</keyword>
+      sentence: 'You seem lost. Are you looking for the <keyword>town?</keyword> '
+    - name: Tired Volunteer
+      sentence: It's <keyword>north of the docks</keyword>, which you can get to if
+        you go west of here.
     dialogueEndTrigger: {fileID: 11400000, guid: aacf4ffd6be0fad45bd1e5d584b886d8,
       type: 2}
 --- !u!1 &1090737393
