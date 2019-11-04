@@ -208,6 +208,14 @@ public class EcobrickLevel : MonoBehaviour
         // Turn off swipe deterctor
         swipeDetector.enabled = false;
 
+        // Fix for when the player swipe no longer works
+        if (playerSwipe == SwipeDirection.None)
+        {
+            Debug.Log("None");
+            swipeDetector.enabled = true;
+            playerSwipe = SwipeDirection.None; // Clear the player's swipe direction
+        }
+
         // If playing stick animation, don't move forward
         if (playingStickAnimation) { return; }
 
