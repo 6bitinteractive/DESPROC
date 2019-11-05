@@ -14,6 +14,8 @@ public class PlayerMobileController : MonoBehaviour
     private Direction direction;
     private PlayerController playerController;
     private Vector3 targetPos;
+    private Vector3 lastPosition;
+    private float speed;
     public bool isMoving;
 
     private void Awake()
@@ -41,6 +43,7 @@ public class PlayerMobileController : MonoBehaviour
         // Move towards target position
         if (movement.enabled == true && isMoving)
         {
+            lastPosition = transform.position;
             Move();
         }
     }
@@ -76,8 +79,10 @@ public class PlayerMobileController : MonoBehaviour
     }
 
     private void OnCollisionStay2D(Collision2D collision)
-    {
-        isMoving = false;
-        movement.StopMovingAnimation();
+    {    
+        if (lastPosition == transform.position)
+        {
+            movement.StopMovingAnimation();
+        }
     }
 }
