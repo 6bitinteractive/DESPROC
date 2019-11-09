@@ -155,7 +155,7 @@ public class DialogueManager : MonoBehaviour
     {
         // Only dequeue sentence after coroutine has finished, so SkipTextTyping() can display the current sentence
         yield return TypeSentence(sentenceEntry);
-        sentences.Dequeue();
+       // sentences.Dequeue(); // This causes a bug in which names can interchange when talking to other people from what I see it causes the TypeSentence() function to not occur consistently
     }
 
     // Types sentence per letter
