@@ -9,9 +9,10 @@ public class ObjectiveInteractable : MonoBehaviour
 {
     public string Name;
     public bool isCollected;
+    public UnityEvent OnObjectiveInteract = new UnityEvent();
 
-    public void Start()
+    public void InteractObjective()
     {
-
+        OnObjectiveInteract.Invoke();
     }
 }
