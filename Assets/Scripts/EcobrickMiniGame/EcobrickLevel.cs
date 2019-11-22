@@ -24,6 +24,7 @@ public class EcobrickLevel : MonoBehaviour
     public AudioSource slideSFX;
     public AudioSource foldSFX;
     public AudioSource stickSFX;
+    public AudioSource foldTearSFX;
 
     [Space]
 
@@ -41,6 +42,7 @@ public class EcobrickLevel : MonoBehaviour
     [SerializeField] private Animator bottleAnimator;
     [SerializeField] private Animator stickAnimator;
     [SerializeField] private ParticleSystem particles;
+    [SerializeField] private ParticleSystem particlesBad;
 
     [Space]
 
@@ -229,6 +231,30 @@ public class EcobrickLevel : MonoBehaviour
         else
         {
             Debug.Log("Player swiped incorrectly.");
+            //foldTearSFX.Play();
+            foldSFX.Play();
+            StartCoroutine(BreakPlastic());
+          //  ShowPrompt();
+        }
+    }
+
+    private IEnumerator BreakPlastic()
+    {
+        MoveCurrentFold();
+
+        // Place holder for effects
+        particlesBad.Play();
+        yield return new WaitWhile(() => particlesBad.isPlaying);
+
+        // If we've reached the end
+        if (currentFoldSet >= prompts.Count - 1)
+        {
+            EndGameSession();
+            yield break;
+        }
+
+        else
+        {
             ShowPrompt();
         }
     }
@@ -242,18 +268,7 @@ public class EcobrickLevel : MonoBehaviour
         // If we've reached the end of the current set, i.e. we're done with one plastic
         if (currentFold >= FoldingSet.MaxCount)
         {
-            // Reset current fold count
-            currentFold = 0;
-
-            // Move to next fold set
-            currentFoldSet++;
-
-            // Update plastic left count
-            plasticLeft--;
-            UpdatePlasticLeftCountDisplay();
-
-            // Hide the prompt
-            Invoke("HidePrompt", lastFoldDisplayDelay * 0.4f);
+            MoveCurrentFold();
 
             // Play feedback; supposedly the bottle's shown being filled up by plastic
             particles.Play();
@@ -272,8 +287,8 @@ public class EcobrickLevel : MonoBehaviour
                 UpdateEcobrickCountDisplay();
 
                 // HACK: Only show the quit button when player has done at least one ecobrick
-                if (ecobrickCount > 0)
-                    quitButton.SetActive(true);
+               // if (ecobrickCount > 0)
+               //     quitButton.SetActive(true);
 
                 // If we've reached the end
                 if (currentFoldSet >= prompts.Count - 1)
@@ -302,6 +317,22 @@ public class EcobrickLevel : MonoBehaviour
         {
             ShowPrompt();
         }
+    }
+
+    public void MoveCurrentFold()
+    {
+        // Reset current fold count
+        currentFold = 0;
+
+        // Move to next fold set
+        currentFoldSet++;
+
+        // Update plastic left count
+        plasticLeft--;
+        UpdatePlasticLeftCountDisplay();
+
+        // Hide the prompt
+        Invoke("HidePrompt", lastFoldDisplayDelay * 0.4f);
     }
 
     private IEnumerator PlayStickAnimation()
