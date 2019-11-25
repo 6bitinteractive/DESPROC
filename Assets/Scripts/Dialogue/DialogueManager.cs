@@ -20,7 +20,7 @@ public class DialogueManager : MonoBehaviour
 
     public UnityEvent OnFullDialogueEnd; // Note: Added this to avoid creating different GameEvent triggers
 
-    void Awake ()
+    void Awake()
     {
         sentences = new Queue<Sentence>();
         if (OnFullDialogueEnd == null) OnFullDialogueEnd = new UnityEvent();
@@ -31,12 +31,12 @@ public class DialogueManager : MonoBehaviour
         // Clear cached toDisplay variable
         toDisplay = null;
 
-        if ((animator != null) &&  (animator.isActiveAndEnabled))
+        if ((animator != null) && (animator.isActiveAndEnabled))
         {
             animator.SetBool("IsOpen", true);
         }
 
-        if(player != null && player.gameObject.layer == 8)
+        if (player != null && player.gameObject.layer == 8)
         {
             player.GetComponent<Movement>().DisableMovement();
         }
@@ -65,7 +65,7 @@ public class DialogueManager : MonoBehaviour
     {
         for (int i = 0; i < triggerArray.Length; i++)
         {
-            if(QuestLog.Instance != null)
+            if (QuestLog.Instance != null)
             {
                 // If quest log is empty
                 if ((QuestLog.Instance.sessionData.Quests == null))
@@ -155,7 +155,7 @@ public class DialogueManager : MonoBehaviour
     {
         // Only dequeue sentence after coroutine has finished, so SkipTextTyping() can display the current sentence
         yield return TypeSentence(sentenceEntry);
-       // sentences.Dequeue(); // This causes a bug in which names can interchange when talking to other people from what I see it causes the TypeSentence() function to not occur consistently
+        // sentences.Dequeue(); // This causes a bug in which names can interchange when talking to other people from what I see it causes the TypeSentence() function to not occur consistently
     }
 
     // Types sentence per letter
@@ -227,6 +227,30 @@ public class DialogueManager : MonoBehaviour
 
     public void EndDialogue()
     {
+        StartCoroutine(EndingDialogue());
+        /*
+        OnFullDialogueEnd.Invoke();
+
+        if (endTrigger != null)
+        {
+            endTrigger.Raise();
+        }
+
+        if ((animator != null) && (animator.isActiveAndEnabled))
+        {
+            animator.SetBool("IsOpen", false);
+        }
+
+        if (player != null && player.gameObject.layer == 8)
+        {
+            player.GetComponent<Movement>().EnableMovement();
+        }
+        */
+    }
+
+    private IEnumerator EndingDialogue()
+    {
+        yield return new WaitForSeconds(0.5f);
         OnFullDialogueEnd.Invoke();
 
         if (endTrigger != null)

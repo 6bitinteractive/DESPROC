@@ -232,9 +232,9 @@ public class EcobrickLevel : MonoBehaviour
         {
             Debug.Log("Player swiped incorrectly.");
             //foldTearSFX.Play();
-            foldSFX.Play();
-            StartCoroutine(BreakPlastic());
-          //  ShowPrompt();
+           // foldSFX.Play();
+           // StartCoroutine(BreakPlastic());
+           ShowPrompt();
         }
     }
 
@@ -287,8 +287,8 @@ public class EcobrickLevel : MonoBehaviour
                 UpdateEcobrickCountDisplay();
 
                 // HACK: Only show the quit button when player has done at least one ecobrick
-               // if (ecobrickCount > 0)
-               //     quitButton.SetActive(true);
+               if (ecobrickCount > 0)
+                   quitButton.SetActive(true);
 
                 // If we've reached the end
                 if (currentFoldSet >= prompts.Count - 1)
