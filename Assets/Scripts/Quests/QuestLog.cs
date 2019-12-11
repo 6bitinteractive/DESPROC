@@ -48,18 +48,26 @@ public class QuestLog : MonoBehaviour
 
     public void AcceptQuest(Quests quest)
     {
-        foreach (CollectObjective objectives in quest.CollectObjectives)
+        if (HasQuest(quest))
         {
-            interactObjective.onInteractObjective += new OnInteractObjective(objectives.UpdateItemCount);
-
-            quest.IsAccepted = true;
-            quest.OnQuestAccepted.Invoke();
-           // objectives.CheckItemCount(); used for checking in inventory fix later
+            Debug.Log("We already have this quest owo");
         }
 
-        sessionData.Quests.Add(quest);
-        CreateQuest(quest);
-        CheckCompletion(); //Check if already completed before accepting quest
+        else
+        {
+            foreach (CollectObjective objectives in quest.CollectObjectives)
+            {
+                interactObjective.onInteractObjective += new OnInteractObjective(objectives.UpdateItemCount);
+
+                quest.IsAccepted = true;
+                quest.OnQuestAccepted.Invoke();
+                // objectives.CheckItemCount(); used for checking in inventory fix later
+            }
+
+            sessionData.Quests.Add(quest);
+            CreateQuest(quest);
+            CheckCompletion(); //Check if already completed before accepting quest
+        }
     }
 
     public void DisplayDescription(Quests quest)
