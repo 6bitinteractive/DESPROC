@@ -128,21 +128,19 @@ public class CollectObjective : Objective
 {
     public UnityEvent OnPickup = new UnityEvent();
     public UnityEvent OnCompletion = new UnityEvent();
+    string tag;
 
     public void UpdateItemCount(GameObject objective)
     {
-        string interactableObjectiveTag = objective.GetComponent<ObjectiveInteractable>().Name;
-        //Debug.Log(interactableObjectiveTag);
-        // Debug.Log("nep");
-        //   Debug.Log(ItemReference.name);
-        // Checks if it has already been picked up
+        ObjectiveInteractable oi = objective.GetComponent<ObjectiveInteractable>();
+        if (oi != null) tag = oi.name;
 
         //Checks if the objectives name is the same as the type string
-        if (string.Equals(interactableObjectiveTag, ObjectiveTag))
+        if (string.Equals(tag, ObjectiveTag))
         {
             OnPickup.Invoke();
             CurrentAmount++;
-
+            Debug.Log(oi.name);
             //Displays message feed
             if (CurrentAmount <= Amount)
             {

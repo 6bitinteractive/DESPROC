@@ -48,10 +48,7 @@ public class QuestLog : MonoBehaviour
 
     public void AcceptQuest(Quests quest)
     {
-        if (HasQuest(quest))
-        {
-            Debug.Log("We already have this quest owo");
-        }
+        if (HasQuest(quest)) return;
 
         else
         {
@@ -68,6 +65,7 @@ public class QuestLog : MonoBehaviour
             CreateQuest(quest);
             CheckCompletion(); //Check if already completed before accepting quest
         }
+        return;
     }
 
     public void DisplayDescription(Quests quest)
