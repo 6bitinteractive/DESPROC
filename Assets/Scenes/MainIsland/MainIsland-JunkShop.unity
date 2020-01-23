@@ -933,7 +933,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.39051294
+      value: -0.38601446
       objectReference: {fileID: 0}
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1688,12 +1688,12 @@ Prefab:
     - target: {fileID: 224336711366434096, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -0.00010681152
+      value: -0.000045776367
       objectReference: {fileID: 0}
     - target: {fileID: 224336711366434096, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 120.11498
+      value: 120.11501
       objectReference: {fileID: 0}
     - target: {fileID: 224597690360265418, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
@@ -1703,7 +1703,7 @@ Prefab:
     - target: {fileID: 224143051293295818, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 104.03941
+      value: 105.42429
       objectReference: {fileID: 0}
     - target: {fileID: 114735247798239610, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
@@ -2514,7 +2514,7 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.5}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -3488,7 +3488,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1416511650
 Transform:
   m_ObjectHideFlags: 0
@@ -4887,6 +4887,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Carding
   isCollected: 0
+  OnObjectiveInteract:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!210 &1958488860
 SortingGroup:
   m_ObjectHideFlags: 0
@@ -4988,7 +4993,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1981345282
 Transform:
   m_ObjectHideFlags: 0
