@@ -38,8 +38,11 @@ public class DialogueManager : MonoBehaviour
 
         if (player != null && player.gameObject.layer == 8)
         {
-            player.GetComponent<Movement>().DisableMovement();
-            player.GetComponent<PlayerMobileController>().SetIsMoving(false);
+            if (player.GetComponent<Movement>() != null)
+                player.GetComponent<Movement>().DisableMovement();
+
+            if (player.GetComponent<PlayerMobileController>() != null)
+                player.GetComponent<PlayerMobileController>().SetIsMoving(false);
         }
 
         triggerArray = dialogueTrigger.dialogueArray;
