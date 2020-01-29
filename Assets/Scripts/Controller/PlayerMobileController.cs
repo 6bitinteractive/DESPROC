@@ -31,9 +31,14 @@ public class PlayerMobileController : MonoBehaviour
         if (movement.enabled == true && Input.GetMouseButtonDown(0))
         {
             // Check if hovering over UI elements
-            if (EventSystem.current.IsPointerOverGameObject(0))
+#if UNITY_EDITOR || UNITY_STANDALONE
+            if (EventSystem.current.IsPointerOverGameObject())
                 return;
-
+#else
+            // For mobile (But then again this won't be called at all *shrugs*)
+            if (EventSystem.current.IsPointerOverGameObject(0))
+            return;
+#endif
             CastRay();
         }
     }
@@ -82,7 +87,13 @@ public class PlayerMobileController : MonoBehaviour
     {    
         if (lastPosition == transform.position)
         {
+            isMoving = false;
             movement.StopMovingAnimation();
         }
+    }
+
+    public void SetIsMoving(bool isEnabled)
+    {
+        isMoving = isEnabled;
     }
 }

@@ -39,6 +39,7 @@ public class DialogueManager : MonoBehaviour
         if (player != null && player.gameObject.layer == 8)
         {
             player.GetComponent<Movement>().DisableMovement();
+            player.GetComponent<PlayerMobileController>().SetIsMoving(false);
         }
 
         triggerArray = dialogueTrigger.dialogueArray;
@@ -162,6 +163,7 @@ public class DialogueManager : MonoBehaviour
     IEnumerator TypeSentence(Sentence sentenceEntry)
     {
         coroutineRunning = true;
+        yield return null;
         nameText.text = sentenceEntry.name;
         dialogueText.text = "";
 
@@ -194,6 +196,8 @@ public class DialogueManager : MonoBehaviour
                 yield return null;
             }
         }
+        coroutineRunning = false;
+        sentences.Dequeue();
     }
 
     string ExtractKeyword(string s, string tag)

@@ -9,8 +9,14 @@ public class ReadySetGo : MonoBehaviour
     public Sprite[] SpritesArray;
     public AudioSource CountdownSFX;
 
+    private PlayerCatchingMiniGameController controller;
+
     private void Start()
     {
+        controller = FindObjectOfType<PlayerCatchingMiniGameController>();
+        // Stop player from moving
+        controller.enabled = false;
+
         StartCoroutine(readySetGoTimer(ChangeSpriteTimer));
 
         // Ready
@@ -30,5 +36,8 @@ public class ReadySetGo : MonoBehaviour
 
         yield return new WaitForSecondsRealtime(0.5f);
         gameObject.SetActive(false);
+
+        // Player can move again
+        controller.enabled = true;
     }
 }
