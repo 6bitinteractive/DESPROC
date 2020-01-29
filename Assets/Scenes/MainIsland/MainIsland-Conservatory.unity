@@ -4241,12 +4241,12 @@ Prefab:
     - target: {fileID: 224336711366434096, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 0.000015258789
+      value: 0.000076293945
       objectReference: {fileID: 0}
     - target: {fileID: 224336711366434096, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 120.11501
+      value: 120.115
       objectReference: {fileID: 0}
     - target: {fileID: 114964840124237320, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
@@ -4373,12 +4373,12 @@ Prefab:
     - target: {fileID: 224143051293295818, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 102.62807
+      value: 101.46342
       objectReference: {fileID: 0}
     - target: {fileID: 224597690360265418, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 0.000000059604645
       objectReference: {fileID: 0}
     - target: {fileID: 114735247798239610, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
@@ -5475,11 +5475,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1.7884235
+      value: -2.4976254
       objectReference: {fileID: 0}
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.9931779
+      value: 0.9941058
       objectReference: {fileID: 0}
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.z
@@ -5672,8 +5672,7 @@ MonoBehaviour:
     - name: Tired Volunteer
       sentence: "The job sucks, but hey, someone's gotta do it. \rI'll do it. For.
         The. Turtles.\r\n"
-    dialogueEndTrigger: {fileID: 11400000, guid: dc80785d62a016846b6a4c5771ab7703,
-      type: 2}
+    dialogueEndTrigger: {fileID: 0}
   - questName: Broken Bridges
     sentenceArray:
     - name: Tired Volunteer
@@ -5681,8 +5680,7 @@ MonoBehaviour:
     - name: Tired Volunteer
       sentence: It's <keyword>north of the docks</keyword>, which you can get to if
         you go west of here.
-    dialogueEndTrigger: {fileID: 11400000, guid: aacf4ffd6be0fad45bd1e5d584b886d8,
-      type: 2}
+    dialogueEndTrigger: {fileID: 0}
 --- !u!1 &1090737393
 GameObject:
   m_ObjectHideFlags: 0

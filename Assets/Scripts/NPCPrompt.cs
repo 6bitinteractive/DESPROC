@@ -18,7 +18,7 @@ public class NPCPrompt : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // If colliding with player
-        if (collision.gameObject.layer == 8 && collision.GetComponent<Rigidbody2D>() == null)
+        if (collision.gameObject.layer == 8 && collision.isTrigger)
         {
             canvas.enabled = true;
             OnNPCCollision.Raise();
@@ -28,7 +28,7 @@ public class NPCPrompt : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         // If colliding with player
-        if (collision.gameObject.layer == 8 && collision.GetComponent<Rigidbody2D>() == null)
+        if (collision.gameObject.layer == 8 && collision.isTrigger)
         {
             canvas.enabled = false;
             OnNPCCollisionExit.Raise();

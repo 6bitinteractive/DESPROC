@@ -1941,50 +1941,6 @@ MonoBehaviour:
     - name: Chicken
       sentence: '*cluck*'
     dialogueEndTrigger: {fileID: 0}
---- !u!1 &704207400
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 704207401}
-  - component: {fileID: 704207402}
-  m_Layer: 12
-  m_Name: BoundingCircle
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &704207401
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 704207400}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1664885848}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &704207402
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 704207400}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -1.5475465}
-  serializedVersion: 2
-  m_Radius: 2.0475461
 --- !u!1 &753262132
 GameObject:
   m_ObjectHideFlags: 0
@@ -2074,11 +2030,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -5.02406
+      value: -5.0371795
       objectReference: {fileID: 0}
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.65102065
+      value: 0.651014
       objectReference: {fileID: 0}
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.z
@@ -4899,6 +4855,11 @@ Prefab:
       propertyPath: MainCamera
       value: 
       objectReference: {fileID: 772655049}
+    - target: {fileID: 224143051293295818, guid: bfbabfdd22addb54891582c16f6d89cf,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 101.46342
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfbabfdd22addb54891582c16f6d89cf, type: 2}
   m_IsPrefabAsset: 0
@@ -5542,6 +5503,7 @@ GameObject:
   - component: {fileID: 1664885855}
   - component: {fileID: 1664885856}
   - component: {fileID: 1664885851}
+  - component: {fileID: 1664885857}
   m_Layer: 12
   m_Name: Renaldo
   m_TagString: Untagged
@@ -5561,7 +5523,6 @@ Transform:
   m_Children:
   - {fileID: 504899175}
   - {fileID: 1234982350}
-  - {fileID: 704207401}
   m_Father: {fileID: 212974399}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5787,6 +5748,21 @@ CircleCollider2D:
   m_Offset: {x: -0.8186457, y: -0.16707209}
   serializedVersion: 2
   m_Radius: 3.2115736
+--- !u!58 &1664885857
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1664885847}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -2.16}
+  serializedVersion: 2
+  m_Radius: 1.09
 --- !u!1001 &1681786611
 Prefab:
   m_ObjectHideFlags: 0

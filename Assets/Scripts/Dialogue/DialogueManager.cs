@@ -257,12 +257,23 @@ public class DialogueManager : MonoBehaviour
 
     private IEnumerator EndingDialogue()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForEndOfFrame();
         OnFullDialogueEnd.Invoke();
 
         if (endTrigger != null)
         {
             endTrigger.Raise();
+        }
+        else
+        {
+            if (player != null && player.gameObject.layer == 8)
+            {
+                if (player.GetComponent<Movement>() != null)
+                    player.GetComponent<Movement>().EnableMovement();
+
+                if (player.GetComponent<PlayerMobileController>() != null)
+                    player.GetComponent<PlayerMobileController>().SetIsMoving(false);
+            }
         }
 
         if ((animator != null) && (animator.isActiveAndEnabled))
@@ -270,9 +281,5 @@ public class DialogueManager : MonoBehaviour
             animator.SetBool("IsOpen", false);
         }
 
-        if (player != null && player.gameObject.layer == 8)
-        {
-            player.GetComponent<Movement>().EnableMovement();
-        }
     }
 }

@@ -130,6 +130,7 @@ public class QuestWindow : Window
             QuestLog.Instance.AcceptQuest(selectedQuest);
             UpdateQuestWindow();
             acceptButton.SetActive(false);
+            transform.parent.parent.GetComponent<Movement>().EnableMovement();
         }
     }
 
