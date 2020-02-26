@@ -38,7 +38,11 @@ public class DialogueManager : MonoBehaviour
 
         if (player != null && player.gameObject.layer == 8)
         {
-            player.GetComponent<Movement>().DisableMovement();
+            if (player.GetComponent<Movement>() != null)
+                player.GetComponent<Movement>().DisableMovement();
+
+            if (player.GetComponent<PlayerMobileController>() != null)
+                player.GetComponent<PlayerMobileController>().SetIsMoving(false);
         }
 
         triggerArray = dialogueTrigger.dialogueArray;
@@ -162,6 +166,7 @@ public class DialogueManager : MonoBehaviour
     IEnumerator TypeSentence(Sentence sentenceEntry)
     {
         coroutineRunning = true;
+        yield return null;
         nameText.text = sentenceEntry.name;
         dialogueText.text = "";
 
@@ -194,6 +199,8 @@ public class DialogueManager : MonoBehaviour
                 yield return null;
             }
         }
+        coroutineRunning = false;
+        sentences.Dequeue();
     }
 
     string ExtractKeyword(string s, string tag)
@@ -250,12 +257,23 @@ public class DialogueManager : MonoBehaviour
 
     private IEnumerator EndingDialogue()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForEndOfFrame();
         OnFullDialogueEnd.Invoke();
 
         if (endTrigger != null)
         {
             endTrigger.Raise();
+        }
+        else
+        {
+            if (player != null && player.gameObject.layer == 8)
+            {
+                if (player.GetComponent<Movement>() != null)
+                    player.GetComponent<Movement>().EnableMovement();
+
+                if (player.GetComponent<PlayerMobileController>() != null)
+                    player.GetComponent<PlayerMobileController>().SetIsMoving(false);
+            }
         }
 
         if ((animator != null) && (animator.isActiveAndEnabled))
@@ -263,9 +281,5 @@ public class DialogueManager : MonoBehaviour
             animator.SetBool("IsOpen", false);
         }
 
-        if (player != null && player.gameObject.layer == 8)
-        {
-            player.GetComponent<Movement>().EnableMovement();
-        }
     }
 }

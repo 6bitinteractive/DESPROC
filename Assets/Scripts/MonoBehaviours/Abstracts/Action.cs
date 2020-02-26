@@ -62,7 +62,6 @@ public abstract class Action : MonoBehaviour
 #endif
         #endregion
     }
-
     protected virtual void OnTriggerStay2D(Collider2D collision)
     {
         if ((interactableLayerMask.value & 1 << collision.gameObject.layer) != 0)

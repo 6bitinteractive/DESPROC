@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class Entity : MonoBehaviour
 {
-    public EntityRuntimeSet EntityRunTimeSet;
+    public EntityRuntimeSet EntityRunTimeSetVariable;
 
     private void OnEnable()
     {
-        EntityRunTimeSet.Add(this);
+        if (EntityRunTimeSetVariable != null)
+            EntityRunTimeSetVariable.Add(this);
+        else
+            Debug.Log("EntityRunTimeSetVariable is empty.");
     }
 
     private void OnDisable()
     {
-        EntityRunTimeSet.Remove(this);
+        if (EntityRunTimeSetVariable != null)
+            EntityRunTimeSetVariable.Remove(this);
+        else
+            Debug.Log("EntityRunTimeSetVariable is empty.");
     }
 }
