@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class SceneController : MonoBehaviour
 {
     public delegate void SceneLoadEvent();
-    public static event SceneLoadEvent BeforeSceneUnload, AfterSceneLoad;
+    public static event SceneLoadEvent BeforeSceneUnload, AfterSceneLoad, BeforeFade, AfterFade;
 
     [SerializeField] private Camera mainCamera; // To prevent having more than 1 MainCamera
 
@@ -68,6 +68,9 @@ public class SceneController : MonoBehaviour
             }
         }
 
+        if (BeforeFade != null)
+            BeforeFade();
+
         // Start fading to black and wait for it to finish before continuing
         yield return StartCoroutine(Fade(1f));
 
@@ -91,6 +94,8 @@ public class SceneController : MonoBehaviour
 
         // Start fading back in and wait for it to finish before exiting the function
         yield return StartCoroutine(Fade(0f));
+        if (AfterFade != null)
+            AfterFade();
     }
 
     private IEnumerator LoadSceneAndSetActive(string sceneName)
