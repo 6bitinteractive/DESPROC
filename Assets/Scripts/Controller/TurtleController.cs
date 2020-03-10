@@ -67,6 +67,7 @@ public class TurtleController : MonoBehaviour
             counter++;
             DisableColliders();
             animator.SetTrigger("Die");
+            Debug.Log("OnDeath");
             OnDeath.Raise();
         }
     }

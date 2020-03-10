@@ -74,7 +74,7 @@ public class SortingLevel : MonoBehaviour
         for (int i = 0; i < sessionData.CollectedPlastic.Count; i++)
         {
             GameObject plastic = Instantiate(plasticPrefab, plasticPosition.position, Quaternion.identity);
-            plastic.GetComponent<Plastic>().PlasticData = plasticDatas[Random.Range(0, plasticDatas.Count-1)];
+            plastic.GetComponent<Plastic>().PlasticData = plasticDatas[Random.Range(0, plasticDatas.Count)];
             plastic.transform.SetParent(plasticPosition);
             plastic.SetActive(false);
 

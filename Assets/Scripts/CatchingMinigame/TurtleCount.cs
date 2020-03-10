@@ -3,22 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(Text))]
-
 public class TurtleCount : MonoBehaviour
 {
     [SerializeField] private int count = 5;
-    private Text text;
-
+    [SerializeField] private Text text;
+    public GameEvent OnZero;
     private void Awake()
     {
-        text = GetComponent<Text>();
         text.text = count.ToString();
     }
 
     public void Decrease()
     {
+        Debug.Log("Decreased");
         count--;
         text.text = count.ToString();
+
+        if (count == 0)
+            OnZero.Raise();
     }
 }
