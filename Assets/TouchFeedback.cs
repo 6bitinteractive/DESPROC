@@ -15,7 +15,7 @@ public class TouchFeedback : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 #if UNITY_EDITOR || UNITY_STANDALONE
-        if(Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
             psObject.GetComponent<ParticleSystem>().Play();
 
         if (Input.GetMouseButton(0))
@@ -31,7 +31,7 @@ public class TouchFeedback : MonoBehaviour {
             stopEmission();
         }
 #else
-        if(Input.touchCount > 0 && fingerId < 0)
+        if (Input.touchCount > 0 && fingerId < 0)
         {
             psObject.GetComponent<ParticleSystem>().Play();
             fingerId = Input.touches[0].fingerId;
@@ -47,7 +47,7 @@ public class TouchFeedback : MonoBehaviour {
 
         if((Input.touchCount > 0 && Input.touches[0].fingerId != fingerId) || Input.touchCount == 0)
         {
-            stopEmission()
+            stopEmission();
 
             fingerId = -1;
         }
