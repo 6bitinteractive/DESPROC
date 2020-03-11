@@ -35,6 +35,8 @@ public class QuestLog : MonoBehaviour
         {
             foreach (Quests quest in sessionData.Quests)
             {
+                if (quest.IsComplete) continue;
+
                 CreateQuest(quest);
                 foreach (CollectObjective objectives in quest.CollectObjectives)
                 {
@@ -44,6 +46,8 @@ public class QuestLog : MonoBehaviour
                 }
             }
         }
+
+        CheckCompletionInQuestLog();
     }
 
     public void AcceptQuest(Quests quest)
@@ -99,11 +103,18 @@ public class QuestLog : MonoBehaviour
 
     public void CheckCompletion()
     {
-        foreach (QuestScript questScript in questScripts)
+        for(int i = questScripts.Count - 1; i >= 0; i --)
         {
-            questScript.Quest.QuestGiver.UpdateQuestStatus();
-            questScript.IsComplete();
-            questScript.IsCompleteMessageFeed();
+            if(questScripts[i].Quest.QuestGiver != null)
+                questScripts[i].Quest.QuestGiver.UpdateQuestStatus();
+
+            questScripts[i].IsComplete();
+            questScripts[i].IsCompleteMessageFeed();
+
+            if (questScripts[i].Quest.IsComplete)
+            {
+                RemoveQuest(questScripts[i]);
+            }
         }
     }
 
@@ -111,7 +122,9 @@ public class QuestLog : MonoBehaviour
     {
         foreach (QuestScript questScript in questScripts)
         {
-            questScript.Quest.QuestGiver.UpdateQuestStatus();
+            if (questScript.Quest.QuestGiver != null)
+                questScript.Quest.QuestGiver.UpdateQuestStatus();
+
             questScript.IsComplete();
         }
     }
@@ -130,10 +143,11 @@ public class QuestLog : MonoBehaviour
             Destroy(questScript.gameObject);
             Destroy(questScript.transform.parent.gameObject);
 
-            sessionData.Quests.Remove(questScript.Quest);
+            //sessionData.Quests.Remove(questScript.Quest);
             questDescriptionText.text = string.Empty;
             selected = null;
-            questScript.Quest.QuestGiver.UpdateQuestStatus();
+            if(questScript.Quest.QuestGiver != null)
+                questScript.Quest.QuestGiver.UpdateQuestStatus();
             questScript = null;
         }
     }

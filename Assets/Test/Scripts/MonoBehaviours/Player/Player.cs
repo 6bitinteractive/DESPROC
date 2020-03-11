@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         SetStartingPosition();
+        CheckpointSave.instance.SaveGame();
     }
 
     private void SetStartingPosition()
@@ -18,7 +19,8 @@ public class Player : MonoBehaviour
         string startingPositionName = "";
         playerSaveData.Load(StartingPositionKey, ref startingPositionName);
         Transform startingPosition = StartingPosition.FindStartingPosition(startingPositionName);
-
-        transform.position = startingPosition.position;
+        
+        if(startingPosition != null)
+            transform.position = startingPosition.position;
     }
 }

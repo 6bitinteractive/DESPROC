@@ -11,6 +11,7 @@ public class Quests
     public QuestGiver QuestGiver{ get; set; }
     public UnityEvent OnQuestAccepted = new UnityEvent();
     private bool isAccepted;
+    public bool IsAlreadyDone = false; // Hack: Just so IsComplete can be called correctly on loading a save file
 
     public bool HasBeenDisplayed; // Hack: avoid redundantly displaying completed quest message feed
 
@@ -36,15 +37,21 @@ public class Quests
 
         get
         {
-            foreach (Objective objective in collectObjectives)
+            if (!IsAlreadyDone)
             {
-                if (!objective.IsComplete)
+                foreach (Objective objective in collectObjectives)
                 {
-                    return false;
+                    if (!objective.IsComplete)
+                    {
+                        return false;
+                    }
                 }
-            }
 
-            return true;
+                IsAlreadyDone = true;
+                return true;
+            }
+            else
+                return true;
         }
     }
 

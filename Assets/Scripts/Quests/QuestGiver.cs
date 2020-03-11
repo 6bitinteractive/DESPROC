@@ -97,6 +97,7 @@ public class QuestGiver : MonoBehaviour
         }
     }
 
+    // I swear what does this even do - Pado
     public void UpdateQuestStatus()
     {
         {
