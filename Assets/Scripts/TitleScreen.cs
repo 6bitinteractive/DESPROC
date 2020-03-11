@@ -1,18 +1,40 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using TurtleTale;
 
 public class TitleScreen : MonoBehaviour
 {
-    public string NextScene;
-    void Update()
+    [SerializeField] private GameObject ContinueButton;
+    [SerializeField] CanvasGroup buttonsCanvasGroup;
+    [SerializeField] AudioSource buttonClick;
+    [SerializeField] SessionData data;
+
+    private void Start()
     {
-        if (Input.anyKeyDown) Invoke("LoadScene", 0.5f);
+        ContinueButton.SetActive(CheckpointSave.instance.HasSaveFile);
     }
 
-    private void LoadScene()
+    public void LoadPreviousSave()
     {
-        SceneManager.LoadScene(NextScene);
+        buttonClick.Play();
+        buttonsCanvasGroup.interactable = false;
+        CheckpointSave.instance.LoadGame();
+    }
+
+    public void StartNewGame(SceneLoadHandler handler)
+    {
+        buttonClick.Play();
+        buttonsCanvasGroup.interactable = false;
+        CheckpointSave.instance.ClearSaveFile();
+        data.Reset();
+
+        handler.LoadScene();
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 }

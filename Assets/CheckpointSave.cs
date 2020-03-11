@@ -79,20 +79,11 @@ public class CheckpointSave : MonoBehaviour {
         PlayerPrefs.DeleteKey(QuestGiver);
     }
 
-    public bool HasSaveFile()
+    public bool HasSaveFile
     {
-        return PlayerPrefs.HasKey(Quests);
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.S))
+        get
         {
-            SaveGame();
-        }
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            LoadGame();
+            return PlayerPrefs.HasKey(Quests);
         }
     }
 }
