@@ -24,7 +24,8 @@ public class EcobrickLevel : MonoBehaviour
     public AudioSource slideSFX;
     public AudioSource foldSFX;
     public AudioSource stickSFX;
-    public AudioSource foldTearSFX;
+    public AudioSource correctSFX;
+    public AudioSource wrongSFX;
 
     [Space]
 
@@ -226,12 +227,13 @@ public class EcobrickLevel : MonoBehaviour
         if (playerSwipe == currentDirection)
         {
             foldSFX.Play();
+            correctSFX.Play();
             StartCoroutine(MoveForward());
         }
         else
         {
             Debug.Log("Player swiped incorrectly.");
-            //foldTearSFX.Play();
+            wrongSFX.Play();
            // foldSFX.Play();
            // StartCoroutine(BreakPlastic());
            ShowPrompt();
