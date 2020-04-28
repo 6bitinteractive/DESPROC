@@ -18660,8 +18660,8 @@ MonoBehaviour:
   slideSFX: {fileID: 708980435}
   foldSFX: {fileID: 1121432989}
   stickSFX: {fileID: 1772681158}
-  correctSFX: {fileID: 0}
-  wrongSFX: {fileID: 0}
+  correctSFX: {fileID: 1202952240}
+  wrongSFX: {fileID: 492616739}
   lastFoldDisplayDelay: 1.3
   promptDelay: 0.5
   promptDisplay: {fileID: 2040374779}
@@ -18758,6 +18758,17 @@ MonoBehaviour:
       - m_Target: {fileID: 2144200088}
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 791391704}
+        m_MethodName: Stop
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

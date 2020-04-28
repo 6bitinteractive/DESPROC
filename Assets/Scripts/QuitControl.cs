@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class QuitControl : MonoBehaviour {
 
     private bool IsQuitting = false;
     private Canvas canvas;
     public bool CanQuit = true;
+    public UnityEngine.UI.Text MainText;
+    public UnityEngine.UI.Text AcceptText;
 
     private AudioSource audioSource;
     private void Awake()
@@ -33,7 +36,21 @@ public class QuitControl : MonoBehaviour {
 
             canvas.enabled = IsQuitting;
 
-            if (IsQuitting) Time.timeScale = 0;
+            if (IsQuitting)
+            {
+                Time.timeScale = 0;
+
+                if(SceneManager.GetActiveScene().name == "TitleScreen")
+                {
+                    MainText.text = "Quit Game?";
+                    AcceptText.text = "Quit";
+                }
+                else
+                {
+                    MainText.text = "Return to Title Screen?";
+                    AcceptText.text = "Return";
+                }
+            }
 
             else CancelQuit();
         }
@@ -41,7 +58,13 @@ public class QuitControl : MonoBehaviour {
 
     public void QuitGame()
     {
-        Application.Quit();
+        if (SceneManager.GetActiveScene().name == "TitleScreen")
+            Application.Quit();
+        else
+        {
+            GetComponentInChildren<SceneLoadHandler>().LoadScene();
+            CancelQuit();
+        }
     }
 
     public void CancelQuit()
