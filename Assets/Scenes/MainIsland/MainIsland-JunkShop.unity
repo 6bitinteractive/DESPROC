@@ -955,7 +955,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.38719416
+      value: -0.37651205
       objectReference: {fileID: 0}
     - target: {fileID: 4604267641589000, guid: 58ac3c4fa95ff9a4d858acc33815ca0b, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1603,6 +1603,76 @@ Transform:
   m_Father: {fileID: 1027988244}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &830619939
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 830619941}
+  - component: {fileID: 830619940}
+  m_Layer: 0
+  m_Name: Carding Quest Trigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &830619940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 830619939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c24433325fca0541a83f9fd5ad28fdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questWindow: {fileID: 848643098}
+  quests:
+  - QuestGiverName: Cardingyyy
+    OnQuestAccepted:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    IsAlreadyDone: 0
+    HasBeenDisplayed: 0
+    Name: Follow Carding
+    Objective: Go to Carding's Junkshop
+    Description: Now that the bridge is fixed, I can visit his Junkshop to help him
+      in recyling more of the trash I picked up awhile ago!
+    collectObjectives:
+    - amount: 1
+      objectiveTag: Shop
+      OnPickup:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      OnCompletion:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+  isDisplayingQuest: 0
+  questGiverData: {fileID: 0}
+  sessionData: {fileID: 0}
+--- !u!4 &830619941
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 830619939}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 262.4987, y: 119.65976, z: -4.625}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &848643089
 Prefab:
   m_ObjectHideFlags: 0
@@ -1710,12 +1780,12 @@ Prefab:
     - target: {fileID: 224336711366434096, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 0.000015258789
+      value: -0.000015258789
       objectReference: {fileID: 0}
     - target: {fileID: 224336711366434096, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 120.11499
+      value: 120.115
       objectReference: {fileID: 0}
     - target: {fileID: 224597690360265418, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
@@ -1725,7 +1795,7 @@ Prefab:
     - target: {fileID: 224143051293295818, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 99.386505
+      value: 101.721855
       objectReference: {fileID: 0}
     - target: {fileID: 114735247798239610, guid: bfbabfdd22addb54891582c16f6d89cf,
         type: 2}
@@ -2352,6 +2422,17 @@ MonoBehaviour:
       - m_Target: {fileID: 1958488862}
         m_MethodName: set_simulated
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 830619940}
+        m_MethodName: AcceptFirstQuest
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
