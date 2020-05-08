@@ -76,7 +76,7 @@ public class PlayerCatchingMiniGameController : MonoBehaviour
                 if (turtleController)
                 {
                     // If turtle is choking and touches turtle or left clicks turtle
-                    if (turtleController.isChoking && Input.GetMouseButtonDown(0))
+                    if (turtleController.isChoking && Input.GetMouseButtonDown(0) && turtleController.isAlive)
                     {
                         animator.SetBool("isRescuing", true);
                         turtleController.plasticInContact.ShowOutline(true); // Show the outline similar to pickup

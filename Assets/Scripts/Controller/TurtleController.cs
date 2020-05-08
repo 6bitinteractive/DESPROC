@@ -10,6 +10,7 @@ public class TurtleController : MonoBehaviour
 {
     Wander wander;
     public bool isChoking;
+    public bool isAlive = true;
     public FallingPlasticController plasticInContact { get; private set; } // This is to get the reference on which plastic is the turtle choking
 
     [SerializeField] private Image chokeUI;
@@ -69,6 +70,7 @@ public class TurtleController : MonoBehaviour
             animator.SetTrigger("Die");
             Debug.Log("OnDeath");
             OnDeath.Raise();
+            isAlive = false;
         }
     }
 
