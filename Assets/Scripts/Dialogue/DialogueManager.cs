@@ -28,6 +28,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(DialogueTrigger dialogueTrigger)
     {
+        ToggleQuestLogButton(false);
         // Clear cached toDisplay variable
         toDisplay = null;
 
@@ -280,6 +281,16 @@ public class DialogueManager : MonoBehaviour
         {
             animator.SetBool("IsOpen", false);
         }
+
+        ToggleQuestLogButton(true);
+    }
+
+    //Hacky
+    private void ToggleQuestLogButton(bool canInteract)
+    {
+        Transform button = animator.transform.parent.Find("Quest Log Button");
+        if(button != null)
+            button.GetComponent<CanvasGroup>().interactable = canInteract;
 
     }
 }

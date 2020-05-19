@@ -18,6 +18,7 @@ public class PlayerCatchingMiniGameController : MonoBehaviour
     private float animationDuration;
     private bool isRescuing;
     private bool isMoving;
+    private Coroutine currentCoroutine;
     
     private GameObject collectedPlastic;
 
@@ -61,7 +62,8 @@ public class PlayerCatchingMiniGameController : MonoBehaviour
         {
             Vector3 hitPt = ray.GetPoint(distance);
             Ray playerToClick = new Ray(player.transform.position, hitPt - player.transform.position);
-            RaycastHit2D hit = Physics2D.Raycast(playerToClick.origin, playerToClick.direction, pickUpRange, LayerMask);
+            //RaycastHit2D hit = Physics2D.Raycast(playerToClick.origin, playerToClick.direction, pickUpRange, LayerMask);
+            RaycastHit2D hit = Physics2D.Raycast(playerToClick.origin, playerToClick.direction, float.MaxValue, LayerMask);
 
             // Debug.DrawRay(playerToClick.origin, playerToClick.direction * 50, Color.yellow);
             if (hit)
@@ -72,27 +74,33 @@ public class PlayerCatchingMiniGameController : MonoBehaviour
                 TurtleController turtleController = hit.collider.gameObject.GetComponent<TurtleController>();
                 FallingPlasticController fallingPlasticController = hit.collider.gameObject.GetComponent<FallingPlasticController>();
 
-                // If Turtle
-                if (turtleController)
-                {
-                    // If turtle is choking and touches turtle or left clicks turtle
-                    if (turtleController.isChoking && Input.GetMouseButtonDown(0) && turtleController.isAlive)
-                    {
-                        animator.SetBool("isRescuing", true);
-                        turtleController.plasticInContact.ShowOutline(true); // Show the outline similar to pickup
-                        StartCoroutine(Rescue(turtleController));
-                    }
-                }
+                if (currentCoroutine != null)
+                    StopCoroutine(currentCoroutine);
 
-                // If Falling Plastic
-                if (fallingPlasticController)
-                {
-                    animator.SetBool("isRescuing", true);
-                    rb.velocity = Vector3.zero;
-                    fallingPlasticController.PickUp();
-                    StartCoroutine(PickupPlastic(fallingPlasticController));
-                }   
+                currentCoroutine = StartCoroutine(CheckIfNear(turtleController, fallingPlasticController));
             }
+        }
+    }
+
+    IEnumerator CheckIfNear(TurtleController tc, FallingPlasticController pc)
+    {
+        if (tc)
+        {
+            yield return new WaitUntil(()=> Vector2.Distance(player.transform.position, tc.transform.position) <= pickUpRange);
+            if (tc.isChoking && tc.isAlive)
+            {
+                animator.SetBool("isRescuing", true);
+                tc.plasticInContact.ShowOutline(true); // Show the outline similar to pickup
+                StartCoroutine(Rescue(tc));
+            }
+        }
+        else if (pc)
+        {
+            yield return new WaitUntil(() => Vector2.Distance(player.transform.position, pc.transform.position) <= pickUpRange);
+            animator.SetBool("isRescuing", true);
+            rb.velocity = Vector3.zero;
+            pc.PickUp();
+            StartCoroutine(PickupPlastic(pc));
         }
     }
 

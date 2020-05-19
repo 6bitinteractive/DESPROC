@@ -46,8 +46,8 @@ public class ImageSlideshow : MonoBehaviour
         else
         {
             i++;
-            previousImage.gameObject.SetActive(true);
         }
+        previousImage.gameObject.SetActive(true);
     }
 
     public void BtnPrev()
@@ -60,8 +60,12 @@ public class ImageSlideshow : MonoBehaviour
         else
         {
             i--;
-            nextImage.gameObject.SetActive(true);
         }
+
+        if(readAll)
+            startButton.gameObject.SetActive(false);
+
+        nextImage.gameObject.SetActive(true);
     }
 
     private int mod(int x, int m)
