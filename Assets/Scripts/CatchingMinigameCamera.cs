@@ -9,6 +9,13 @@ public class CatchingMinigameCamera : MonoBehaviour
     public float Speed = 3f;
     public Transform target;
 
+    private void Awake()
+    {
+        // To resize the initial camera so that the sides of the boundry is not seen
+        float aspectRatio = (16f / 9f);
+        this.GetComponent<Camera>().orthographicSize = 5 * (aspectRatio / Camera.main.aspect);
+    }
+
     void Update()
     {
         Vector3 targetPos = target.position;
